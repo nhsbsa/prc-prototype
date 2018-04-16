@@ -1,0 +1,33 @@
+{% extends "layout_bsa_internal.html" %} {% block page_title %} Single User View {% endblock %} {% block after_header %} {% endblock %} {% block content %}
+
+<main id="content" role="main">
+
+    <div class="grid-row">
+            <a href="processdecision.html" class="link-back">Back</a>
+            <h2 class="heading-large">Who are you applying for?</h2>
+
+            <form>
+                <div class="form-group">
+                    <fieldset>
+                        <legend class="visually-hidden">Who are you applying for?</legend>
+                        <div class="multiple-choice">
+                            <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Myself">
+                            <label for="radio-inline-1">Myself</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="radio-inline-2" type="radio" name="radio-inline-group" value="Depend">
+                            <label for="radio-inline-2">Dependant/Other</label>
+                        </div>
+                        <!-- the selecting circle in the middle is not properly aligned -->
+
+                    </fieldset>
+                </div>
+            </form>
+
+            <div></div>
+            <a class="button" href="ehicwith.html" role="button">Next</a>
+
+        </div>
+
+</main>
+{% endblock %}

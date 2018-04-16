@@ -1,0 +1,21 @@
+{% extends "layout_bsa_internal.html" %} {% block page_title %} Single User View {% endblock %} {% block after_header %} {% endblock %} {% block content %}
+<main id="content" role="main">
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <h2 class="heading-large">PRC Time span</h2>
+            <div class="form-group">
+                <label class="form-label" for="time-span">Treatment start date</label>
+                <input class="form-control" id="start-date" name="start-date" type="Start Date">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="time-span">PRC expiry date</label>
+                <p class="font-xsmall"> This can be the return ticket date. For example 29/04/2018.</p>
+                <input class="form-control" id="expiry-date" name="expiry-date" type="Expiry Date">
+            </div>
+            <a class="button" href="hospitaldetails.html" role="button">Next</a>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "layout_bsa_internal.html" %} {% block page_title %} Single User View {% endblock %} {% block after_header %} {% endblock %} {% block content %}
+<style>
+    th {
+        font-weight: 700;
+    }
+
+</style>
+<main id="content" role="main">
+    <div class="grid-row">
+
+
+            <!-- <p>
+                <a href="personsearchdepend.html">Add dependant</a>
+            </p> -->
+
+<div class="column-one-third">
+    <p>Content</p>
+  </div>
+<div class="column-two-thirds">
+   
+
+            <table>
+                <caption class="heading-large">Search Results</caption>
+                <!-- <h2 class="heading-large"><span class="heading-secondary" style="color:white">Reference number</span> K5G-V78</h2> -->
+                <!-- <p class="font-xsmall"><span style="font-size: 16px"> -->
+                <thead>
+
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">DoB</th>
+                        <th scope="col">NiNo</th>
+                        <!-- <th class="numeric" scope="col">Rate for vehicles</th>
+                        <th class="numeric" scope="col">Rate for bicycles</th> -->
+                        <th scope="col"> Address</th>
+                        <th scope="col">EHIC</th>
+                        <th scope="col"> S1</th>
+                        <th scope="col"> Select</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">John Smith</th>
+                        <td >15/08/1986</td>
+                        <td >SR 12 34 56 A</td>
+                        <td >5 Church Street, <br>Newcastle,<br> NE12 3AB</td>
+                        <td >No</td>
+                        <td >Yes</td>
+                        <td > <a href="personsummarys1.html">Select</a></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Jon Smith</th>
+                        <td >03/11/1996</td>
+                        <td >HT 56 78 81 D</td>
+                        <td >1 Church Street, <br>Newcastle,<br> NE12 3AB</td>
+                        <td >Yes</td>
+                        <td >No</td>
+                        <td > <a href="personsummaryehic.html">Select</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">John Smithe</th>
+                        <td >21/01/1946</td>
+                        <td >CD 43 85 50 Q</td>
+                        <td >1 Front Street, <br>Newcastle,<br> NE12 4cd</td>
+                        <td >Yes</td>
+                        <td >No</td>
+                        <td > <a href="personsummaryehic.html">Select</a></td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <br>
+            <a class="button" href="registerperson.html" role="button">No results</a>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}

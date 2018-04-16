@@ -1,0 +1,55 @@
+{% extends "layout_bsa_internal.html" %} {% block page_title %} Single User View {% endblock %} {% block after_header %} {% endblock %} {% block content %}
+<main id="content" role="main">
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h2 class="heading-large">PRC Details</h2>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <th scope="row">Forename</th>
+                        <td class="numeric">Jon</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Lastname</th>
+                        <td class="numeric">Smith</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Date of birth</th>
+                        <td class="numeric">15/08/1986</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">NINO</th>
+                        <td class="numeric">SR 12 34 56 A</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Address</th>
+                        <td class="numeric">5 Church Street<br>Newcastle<br> NE12 3AB</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Treatment start date</th>
+                        <td class="numeric"> 17/11/2001</td>
+                        <tr>
+                            <th scope="row">PRC expiry date</th>
+                            <td class="numeric"> 17/11/2001</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Hospital Name</th>
+                            <td class="numeric"> Sant Joan de Déu Barcelona</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Email/Fax</th>
+                            <td class="numeric"> + 34 963 989 926</td>
+                        </tr>
+                </tbody>
+
+            </table>
+            <br>
+            <a class="button" href="generatedprc.html" role="button">Generate PRC</a>
+        </div>
+        <br>
+
+    </div>
+</main>
+{% endblock %}
