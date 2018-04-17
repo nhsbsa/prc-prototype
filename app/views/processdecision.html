@@ -1,0 +1,34 @@
+{% extends "layout_bsa_internal.html" %} {% block page_title %} Single User View {% endblock %} {% block after_header %} {% endblock %} {% block content %}
+<main id="content" role="main">
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="loginpage.html" class="link-back">Back</a>
+            <h2 class="heading-large">What is the nature of the call?</h2>
+            <form>
+                <div class="form-group">
+                    <fieldset>
+
+                        <legend class="visually-hidden">Whatg is the nature of the call?</legend>
+
+                        <div class="multiple-choice">
+                            <input id="radio-inline-1" type="radio" name="radio-inline-group" value="PRC">
+                            <label for="radio-inline-1">PRC</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="radio-inline-2" type="radio" name="radio-inline-group" value="EHIC">
+                            <label for="radio-inline-2">EHIC</label>
+                        </div>
+                        <!-- the selecting circle in the middle is not properly aligned -->
+
+                    </fieldset>
+                </div>
+            </form>
+
+            <div></div>
+            <a class="button" href="applyingfor.html" role="button">Start now</a>
+
+        </div>
+    </div>
+</main>
+{% endblock %}

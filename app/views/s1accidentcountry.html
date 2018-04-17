@@ -1,0 +1,34 @@
+{% extends "layout_bsa_internal.html" %} {% block page_title %} Single User View {% endblock %} {% block after_header %} {% endblock %} {% block content %}
+<main id="content" role="main">
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="applyingfor.html" class="link-back">Back</a>
+            <h2 class="heading-large">Do you require treatment in the country in which you are S1 registered?</h2>
+
+            <form action="country-handler" method="get" class="form">
+                <div class="form-group">
+                    <fieldset class="inline">
+                        <legend class="visually-hidden">Do you require treatment in the country in which you are S1 registered?</legend>
+                        <div class="multiple-choice">
+                            <input id="yes" type="radio" name="s1" value="yes">
+                            <label for="yes">Yes</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="no" type="radio" name="s1" value="no">
+                            <label for="no">No</label>
+                        </div>
+                        <!-- the selecting circle in the middle is not properly aligned -->
+
+                    </fieldset>
+                </div>
+
+
+                <div>
+                    <input class="button" type="submit" value="Next">
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}

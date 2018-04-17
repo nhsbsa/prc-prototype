@@ -1,9 +1,25 @@
 {% extends "layout_bsa_internal.html" %} {% block page_title %} Single User View {% endblock %} {% block after_header %} {% endblock %} {% block content %}
+<style>
+.highlight {
+    min-height: 40%;
+}
+    .link-back{
+        position: absolute;
+        
+    }
+</style>
+
 
 <main id="content" role="main">
 
     <div class="grid-row">
-            <a href="processdecision.html" class="link-back">Back</a>
+
+        <a href="accesstoehic.html" class="link-back">Back</a>
+        <div class="column-one-half">
+            <br>
+            <br>
+            <div class="grid-row highlight 1">
+                <br>
             <h2 class="heading-large">Who are you applying for?</h2>
 
             <form>
@@ -25,7 +41,7 @@
             </form>
 
             <div></div>
-            <a class="button" href="ehicwith.html" role="button">Next</a>
+            <a class="button" href="personsearch.html" role="button">Next</a>
 
         </div>
 

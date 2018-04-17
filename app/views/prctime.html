@@ -1,0 +1,81 @@
+{% extends "layout_bsa_internal.html" %} {% block page_title %} Single User View {% endblock %} {% block after_header %} {% endblock %} {% block content %}
+<style>
+.highlight {
+    min-height: 40%;
+}
+    .link-back{
+        position: absolute;
+        
+    }
+    .form-control {
+    width: 60%;
+}
+</style>
+
+
+<main id="content" role="main">
+
+    <div class="grid-row">
+
+        <a href="accesstoehic.html" class="link-back">Back</a>
+        <div class="column-one-half">
+            <br>
+            <br>
+            <div class="grid-row highlight 1">
+                <br>
+            
+            <h2 class="heading-large">PRC Time span</h2>
+            <fieldset>
+                        <!--     <legend class="form-label-bold">Date of birth</legend> -->
+                        <!-- <p>We only use this to check if your age entitles you to any help.</p> -->
+                        
+
+                        <div class="form-date">
+                            <h1> Treatment start date</h1>
+                            <br>
+                            <div class="form-group form-group-day">
+                                <label class="form-label" for="dob-day">Day</label>
+                                <input class="form-control" id="dobday" name="dobday" type="text" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+                            </div>
+                            <div class="form-group form-group-month">
+                                <label class="form-label" for="dob-month">Month</label>
+                                <input class="form-control" id="dobmonth" name="dobmonth" type="text" pattern="[0-9]*" min="0" max="12">
+                            </div>
+
+                            <div class="form-group form-group-year">
+                                <label class="form-label" for="dob-year">Year</label>
+                                <input class="form-control" id="dobyear" name="dobyear" type="text" pattern="[0-9]*" min="0" max="2016">
+                            </div>
+                        </div>
+                    </fieldset>
+                <br>
+            <fieldset>
+                        <!--     <legend class="form-label-bold">Date of birth</legend> -->
+                        <!-- <p>We only use this to check if your age entitles you to any help.</p> -->
+                        
+
+                        <div class="form-date">
+                            <h1> Treatment end date</h1>
+                            <br>
+                            <div class="form-group form-group-day">
+                                <label class="form-label" for="dob-day">Day</label>
+                                <input class="form-control" id="dobday" name="dobday" type="text" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+                            </div>
+                            <div class="form-group form-group-month">
+                                <label class="form-label" for="dob-month">Month</label>
+                                <input class="form-control" id="dobmonth" name="dobmonth" type="text" pattern="[0-9]*" min="0" max="12">
+                            </div>
+
+                            <div class="form-group form-group-year">
+                                <label class="form-label" for="dob-year">Year</label>
+                                <input class="form-control" id="dobyear" name="dobyear" type="text" pattern="[0-9]*" min="0" max="2016">
+                            </div>
+                        </div>
+                    </fieldset>
+                <br> 
+            <a class="button" href="done.html" role="button">Next</a>
+        </div>
+    </div>
+    </div>
+</main>
+{% endblock %}

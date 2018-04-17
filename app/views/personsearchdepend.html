@@ -1,0 +1,69 @@
+{% extends "layout_bsa_internal.html" %} {% block page_title %} Single User View {% endblock %} {% block after_header %} {% endblock %} {% block content %}
+<main id="content" role="main">
+
+    <div class="grid-row">
+       
+            <h2 class="heading-large">Patient search</h2>
+
+            <div class="form-group">
+                <label class="form-label" for="firstname">First name</label>
+                <input class="form-control" id="firstname" name="firstname" type="firstname">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="lastname">Last name</label>
+                <input class="form-control" id="lastname" name="lastname" type="lastname">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="birthdate">Date of birth</label>
+                <input class="form-control" id="birthdate" name="birthdate" type="birthdate">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="nino">National insurance number</label>
+                <input class="form-control" id="nino" name="nino" type="nino">
+            </div>
+            <p>
+                <a href="personsearch.html">Remove dependant</a>
+            </p>
+            <div class="form-group">
+                <label class="form-label" for="firstname">First name</label>
+                <input class="form-control" id="firstname" name="firstname" type="firstname">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="lastname">Last name</label>
+                <input class="form-control" id="lastname" name="lastname" type="lastname">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="birthdate">Date of birth</label>
+                <input class="form-control" id="birthdate" name="birthdate" type="birthdate">
+            </div>
+            <fieldset>
+
+                <legend>
+                    <h1 class="heading-medium">
+                        Is the dependant address the same as the previous address?
+                    </h1>
+                </legend>
+
+                <div class="multiple-choice" data-target="contact-by-email">
+                    <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+                    <label for="example-contact-by-email">Yes</label>
+                </div>
+
+                <div class="multiple-choice" data-target="contact-by-phone">
+                    <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
+                    <label for="example-contact-by-phone">No</label>
+                </div>
+                <div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
+                    <label class="form-label" for="contact-phone">Enter Address</label>
+                    <input class="form-control" name="contact-phone" type="text" id="contact-phone">
+                </div>
+
+            </fieldset>
+
+            <a class="button" href="processdecision.html" role="button">Search</a>
+
+        </div>
+        <br>
+
+</main>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "layout_bsa_internal.html" %} {% block page_title %} Single User View {% endblock %} {% block after_header %} {% endblock %} {% block content %}
+<style>
+
+table th, table td {
+    font-size: 18px;
+        
+    }
+    table tr{
+        border-bottom: 1px solid #bfc1c3;
+    }    
+
+</style>
+<main id="content" role="main">
+
+    <div class="grid-row">
+        <div class="column-one-half">
+            <div class="grid-row highlight 1">
+                <h2 class="heading-large">Person Summary</h2>
+                <table>
+                    <a href=""> Change</a>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Forename</th>
+                            <td class="numeric">John</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">Lastname</th>
+                            <td class="numeric">Smith</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Date of birth</th>
+                            <td class="numeric">06/02/1988</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">NINO</th>
+                            <td class="numeric">UD 72 43 18 D</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Address</th>
+                            <td class="numeric">5 Church Street<br>Newcastle<br> NE12 3AB</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">EHIC available</th>
+                            <td class="numeric"> 29/10/2019</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">EHIC number</th>
+                            <td class="numeric"> 90001 00001 001 001 001</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <a class="button" href="hospitaldetails.html" role="button">Run Check</a>
+            </div>
+            <br>
+        </div>
+    </div>
+</main>
+{% endblock %}
