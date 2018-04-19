@@ -1,0 +1,102 @@
+{% extends "layout_bsa_internal.html" %} 
+
+{% block page_title %} Single User View 
+{% endblock %} 
+
+{% block after_header %}
+  <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-half">
+          <ul class="visually-hidden">
+            <li><a class="menu-button selected" href="results">Search</a></li>
+          </ul>
+        </div>
+        <div class="column-half" id="logout">
+          <a href="login">Log out</a>
+        </div>
+      </div>
+    </div>
+  </div> 
+  {% endblock %} 
+  
+  {% block content %}
+
+<style>
+.highlight {
+    min-height: 40%;
+}
+    .link-back{
+        position: absolute;
+        
+    }
+	
+	
+}
+</style>
+
+<main id="content" role="main">
+
+    <div class="grid-row">
+	
+	        <a href="ehicwith" class="link-back">Back</a>
+		<br>
+		<br>
+		
+        <div class="column-two-thirds">
+            <h2 class="heading-large">Person Summary</h2>
+            
+            <table>
+                
+                
+                <tbody>
+                    <tr>
+                        <th scope="row">First name</th>
+                        <th class="numeric">Jon</th> 
+                        <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Last name</th>
+                        <th class="numeric">Smith</th>
+                        <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Date of birth</th>
+                        <th class="numeric">15/08/1986</td>
+                        <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
+                    </tr>
+                    <tr>
+                        <th scope="row">NINO</th>
+                        <th class="numeric">SR 12 34 56 A</td>
+                        <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
+                    </tr>
+                    <tr>
+                        <th scope="row">Address</th>
+                        <th class="numeric">5 Church Street<br>Newcastle<br>
+                        NE12 3AB</td>
+                        <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
+                    </tr>
+                    <tr>
+                        <th scope="row">S1 available</th>
+                        <th class="numeric"> 17/11/2001</td>
+                        <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
+                    <tr>
+                        <th scope="row">S1 registered</th>
+                        <th class="numeric"> 17/11/2001</th>
+                        <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            
+
+            <a class="button" href="s1accidentcountry.html" role="button">Next </a>
+            <p>
+                <a href="personsummary.html">Add dependant</a>
+            </p>
+        </div>
+        <br>
+
+    </div>
+</main>
+{% endblock %}
