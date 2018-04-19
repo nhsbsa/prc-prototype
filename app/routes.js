@@ -9,12 +9,14 @@ router.get('/', function (req, res) {
 // add your routes here
 
 router.get (/ehic-handler/, function (req, res){
+    console.log("Gor request for ehic handler, ehic = " + req.query.ehic);
     if (req.query.ehic === 'no'){
         res.redirect ('personsearch');
     } else {
         res.redirect ('ehicrejection');
 }
 });
+
 router.get (/country-handler/, function (req, res){
     if (req.query.s1 === 'no'){
         res.redirect ('prctime');
