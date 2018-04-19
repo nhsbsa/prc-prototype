@@ -65,8 +65,8 @@
         <!-- <p>
                 <a href="personsearchdepend.html">Add dependant</a>
             </p> -->
-        <div class="column-one-third">
-            <div class="grid-row highlight 1">
+                <div class="column-one-third">
+            <div class="grid-row highlight">
                 <h2 class="heading-large">Patient search </h2>
 
                 <div class="form-group">
@@ -83,10 +83,12 @@
                     <fieldset>
                         <!--     <legend class="form-label-bold">Date of birth</legend> -->
                         <!-- <p>We only use this to check if your age entitles you to any help.</p> -->
-                        <p class="form-hint" id="dob-hint" style="margin-bottom: 0px">For example, 31 07 1980</p>
-
+                        
                         <div class="form-date">
-                            <div class="form-group form-group-day">
+					
+                           <h2 class="form-label">Date of birth </h2>
+						   <div class="form-group form-group-day">
+						   
                                 <label class="form-label" for="dob-day">Day</label>
                                 <input class="form-control" id="dobday" name="dobday" type="text" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
                             </div>
@@ -104,9 +106,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label" for="nino">National insurance number</label>
-                    <input class="form-control" id="nino" name="nino" type="nino">
+                    <label class="form-label" for="nino">National Insurance number</label>
+                    						<p class="form-hint" id="dob-hint" style="margin-bottom: 0px">This is a 9 character reference. 2 letters followed by 6 numbers and 1 letter, like QQ123456A. You can find this on your payslip, P60 or tax return.</p>
+					<input class="form-control" id="nino" name="nino" type="nino">
                 </div>
+
 
 
                 <a class="button" href="personsearchlist.html" role="button">Search</a>
@@ -169,7 +173,7 @@
                     </tbody>
                 </table>
                 <br>
-                <a class="button" href="registerperson.html" role="button">No results</a>
+                <a class="button" href="registerperson.html" role="button">Register person</a>
             </div>
         </div>
     </div>
