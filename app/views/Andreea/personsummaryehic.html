@@ -1,4 +1,18 @@
 {% extends "layout_bsa_internal.html" %} {% block page_title %} Single User View {% endblock %} {% block after_header %} {% endblock %} {% block content %}
+<div id="menu">
+    <div id="menu-content">
+        <div class="grid-row">
+            <div class="column-half">
+                <ul class="visually-hidden">
+                    <li><a class="menu-button selected" href="results">Search</a></li>
+                </ul>
+            </div>
+            <div class="column-half" id="logout">
+                <a href="login">Log out</a>
+            </div>
+        </div>
+    </div>
+</div>
 <style>
 
 table th, table td {
@@ -10,43 +24,61 @@ table th, table td {
     }    
 
 </style>
+<style>
+.highlight {
+    min-height: 40%;
+}
+    .link-back{
+        position: absolute;
+        
+    }
+	
+	
+}
+</style>
+
 <main id="content" role="main">
 
     <div class="grid-row">
         <div class="column-one-half">
-            <div class="grid-row highlight 1">
                 <h2 class="heading-large">Person Summary</h2>
                 <table>
-                    <a href=""> Change</a>
                     <tbody>
                         <tr>
                             <th scope="row">Forename</th>
                             <td class="numeric">John</td>
+                            <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
 
                         </tr>
                         <tr>
                             <th scope="row">Lastname</th>
                             <td class="numeric">Smith</td>
+                            <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
                         </tr>
                         <tr>
                             <th scope="row">Date of birth</th>
                             <td class="numeric">06/02/1988</td>
+                            <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
                         </tr>
                         <tr>
                             <th scope="row">NINO</th>
                             <td class="numeric">UD 72 43 18 D</td>
+                            <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
                         </tr>
                         <tr>
                             <th scope="row">Address</th>
                             <td class="numeric">5 Church Street<br>Newcastle<br> NE12 3AB</td>
+                            <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
                         </tr>
                         <tr>
                             <th scope="row">EHIC available</th>
                             <td class="numeric"> 29/10/2019</td>
+                            <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
                         </tr>
                         <tr>
                             <th scope="row">EHIC number</th>
                             <td class="numeric"> 90001 00001 001 001 001</td>
+                            <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
                         </tr>
                     </tbody>
                 </table>
@@ -55,6 +87,5 @@ table th, table td {
             </div>
             <br>
         </div>
-    </div>
 </main>
 {% endblock %}
