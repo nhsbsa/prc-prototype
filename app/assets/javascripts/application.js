@@ -62,6 +62,23 @@ $(document).ready(function(){
 
 });
 
-    
+$(".button").click(function(){
+	$(".house-number").hide();
+	$(".postcode").hide();
+	$(".address").removeClass("visually-hidden");
+	$(".button").hide();
+	$(".button1").show();
+});
+
+$(".button2").click(function(){
+	$(".house-number2").hide();
+	$(".postcode2").hide();
+	$(".address2").removeClass("visually-hidden");
+	$(".button2").hide();
+});
+
+$(".button-dependent").click(function(){
+	$(".dependent").removeClass("visually-hidden");
+});
   
 })
