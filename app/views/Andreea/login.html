@@ -1,4 +1,23 @@
-{% extends "layout_bsa_internal.html" %} {% block page_title %} Single User View {% endblock %} {% block after_header %} {% endblock %} {% block content %}
+{% extends "layout_bsa_internal.html" %} 
+{% block page_title %} Single User View 
+{% endblock %} 
+{% block after_header %} 
+ <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-half">
+          <ul class="visually-hidden">
+            <li><a class="menu-button selected" href="results">Search</a></li>
+          </ul>
+        </div>
+        <div class="column-half" id="logout">
+          <a href="login">Log in</a>
+        </div>
+      </div>
+    </div>
+  </div> 
+{% endblock %}
+ {% block content %}
 <style>
     input.form-control{
         width:33.3%;

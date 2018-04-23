@@ -45,9 +45,9 @@
 		                <div class="column-full rpads">
                     <div class="container rpads">
                         <ul class="tabs rpads">
-                            <a href="personsearch"><li class="tab-link current" data-tab="tab-3">Applicant Search</li></a>
+                            <a href="personsearch"><li href="personsearch" class="tab-link current" data-tab="tab-3">Applicant Search</li></a>
                             <a href="personsearchrenew"><li class="tab-link" data-tab="tab-4">PRC renew</li></a>
-                        </ul>
+                        </ul></div>
             <div class="grid-row highlight">
                 <h2 class="heading-large">Applicant search </h2>
 
@@ -97,10 +97,76 @@
                 </div>
 
 
-                <a class="button" href="personsearchlist" role="button" style=" font-size: 19px;">Search</a>
+                <a class="button" href="personsearchlist" role="button">Search</a>
 				</div>
+            </div>
+        </div>
+		
+		</div>
+		 <div class="column-two-thirds">
+		 <br>
+				<br>
+            <div class="grid-row highlight 1">
+
+                <table>
+				
+                    <h2 class="heading-large">Search Results</h2>
+                    <thead>
+
+                        <tr>
+                            <th scope="col" style="width:30%">Name</th>
+                            <th scope="col">DoB</th>
+                            <th scope="col">NiNo</th>
+                            <!-- <th class="numeric" scope="col">Rate for vehicles</th>
+                        <th class="numeric" scope="col">Rate for bicycles</th> -->
+                            <th scope="col"> Address</th>
+                            <th scope="col">EHIC</th>
+                            <th scope="col"> S1</th>
+                            <th scope="col"> Select</th>
+                        </tr>
+
+                    </thead>
+                    <br>
+                    <tbody>
+                        <tr>
+                            <th scope="row">John Smith</th>
+                            <td>15/08/1986</td>
+                            <td>SR 12 34 56 A</td>
+                            <td>5 Church Street, <br>Newcastle,<br> NE12 3AB</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td> <a href="personsummarys1.html">Select</a></td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Jon Smith</th>
+                            <td>03/11/1996</td>
+                            <td>HT 56 78 81 D</td>
+                            <td>1 Church Street, <br>Newcastle,<br> NE12 3AB</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td> <a href="personsummaryehic.html">Select</a></td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <th scope="row">John Smithe</th>
+                            <td>21/01/1946</td>
+                            <td>CD 43 85 50 Q</td>
+                            <td>1 Front Street, <br>Newcastle,<br> NE12 4cd</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td> <a href="personsummaryehic.html">Select</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <a class="button" href="registerperson.html" role="button">Register a new applicant</a>
             </div>
         </div>
     </div>
 </main>
+
+
 {% endblock %}
+
+
