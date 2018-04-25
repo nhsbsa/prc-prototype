@@ -37,7 +37,7 @@ $(document).ready(function(){
 
 })
     
-    $(document).ready(function(){
+$(document).ready(function(){
 	
 	$('ul.tabs1 li').click(function(){
 		var tab_id = $(this).attr('data-tab1');
@@ -51,7 +51,7 @@ $(document).ready(function(){
 
 })
     
-    $(document).ready(function() {
+$(document).ready(function() {
 
     $('.internal-table tr').click(function() {
         var href = $(this).find("a").attr("href");
@@ -61,6 +61,41 @@ $(document).ready(function(){
     });
 
 });
+
+$(".selectbtn1").click(function() {
+	$(".table-1").removeClass("visually-hidden");
+	$(".sort-results").removeClass("visually-hidden");
+	if ($("div.table-2")[0].classList.length != 3) {
+		$(".table-2").addClass("visually-hidden");
+	}
+	if ($("div.table-3")[0].classList.length != 3) {
+		$(".table-3").addClass("visually-hidden");
+	}
+});
+
+$(".selectbtn2").click(function() {
+	$(".table-2").removeClass("visually-hidden");
+	$(".sort-results").removeClass("visually-hidden");	
+	if ($("div.table-1")[0].classList.length !== 3) {
+		$(".table-1").addClass("visually-hidden");
+	}
+	if ($("div.table-3")[0].classList.length !== 3) {
+		$(".table-3").addClass("visually-hidden");
+	}
+});
+
+$(".selectbtn3").click(function() {
+	$(".table-3").removeClass("visually-hidden");
+	$(".sort-results").removeClass("visually-hidden");
+	if ($("div.table-1")[0].classList.length != 3) {
+		$(".table-1").addClass("visually-hidden");
+	}
+	if ($("div.table-2")[0].classList.length != 3) {
+		$(".table-2").addClass("visually-hidden");
+	}
+});
+
+
 
 $(".button").click(function(){
 	$(".house-number").hide();
@@ -77,12 +112,23 @@ $(".button2").click(function(){
 	$(".button2").hide();
 });
 
-$(".button2").click(function(){
-	$(".house-number2").hide();
-	$(".postcode2").hide();
-	$(".address2").removeClass("visually-hidden");
-	$(".button2").hide();
-});
+//$(".selectbtn1").click(function(){
+//	$(".s1-notRegistered").removeClass("visually-hidden");
+//	$(".s1-registered").addClass("visually-hidden");
+//	$(".ehic-registered").addClass("visually-hidden");
+//});
+
+///$(".selectbtn2").click(function(){
+//	$(".s1-registered").removeClass("visually-hidden");
+//	$(".s1-notRegistered").addClass("visually-hidden");
+//	$(".ehic-registered").addClass("visually-hidden");
+//});
+
+//$(".selectbtn3").click(function(){
+//	$(".ehic-registered").removeClass("visually-hidden");
+//	$(".s1-notRegistered").addClass("visually-hidden");
+//	$(".s1-registered").addClass("visually-hidden");
+//});
 
 $(".button-dependent").click(function(){
 	$(".dependent").removeClass("visually-hidden");
