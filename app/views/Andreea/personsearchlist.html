@@ -136,7 +136,7 @@
                             <th>5 Church Street, <br>Newcastle,<br> NE12 3AB</th>
                             <th>No</th>
                             <th>Yes</th>
-                            <th class="selectbtn"> <a href="personsummarys1.html">Select</a></th>
+                            <th class="selectbtn1"> <a href="#">Select</a></th>
                         </tr>
 
                         <tr>
@@ -144,19 +144,19 @@
                             <th>03/11/1996</th>
                             <th>HT 56 78 81 D</th>
                             <th>1 Church Street, <br>Newcastle,<br> NE12 3AB</th>
-                            <th>Yes</th>
                             <th>No</th>
-                            <th> <a href="personsummaryehic.html">Select</a></th>
+                            <th>Yes</th>
+                            <th class="selectbtn2"> <a href="#">Select</a></th>
                         </tr>
                         <br>
                         <tr>
                             <th scope="row">John Smithe</th>
                             <th>21/01/1946</th>
                             <th>CD 43 85 50 Q</th>
-                            <th>1 Front Street, <br>Newcastle,<br> NE12 4cd</th>
+                            <th>1 Front Street, <br>Newcastle,<br> NE12 4CD</th>
                             <th>Yes</th>
                             <th>No</th>
-                            <th> <a href="personsummaryehic.html">Select</a></td>
+                            <th class="selectbtn3"> <a href="#">Select</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -166,90 +166,335 @@
         </div>
     </div>
 	<br><br>
-	                <div class="column-full rpads">
+	          <!-- S1 not registred CASE-->
+			  <div class="s1-notRegistered visually-hidden">  
+                <div class="column-full rpads">
                     <div class="container rpads">
                         <ul class="tabs rpads">
-                            <li class="tab-link current" data-tab="tab-3">Applicant</li>
-                            <li class="tab-link" data-tab="tab-4">Dependent</li>
+                            <li class="tab-link current" data-tab="tab-3">Applicant Summary</li>
+                            <li class="tab-link" data-tab="tab-4">Dependent (2)</li>
                         </ul>
-					<div class="grid-row highlight">
+
+
+                        <div id="tab-3" class="tab-content current">
+                            <div class="makeScrollable2">
+                          <table class="internal2-table">
+								
+								<div class="column-one-third lpads">
+								<h2 class="heading-small">Name</h2>
+								<p class="change-spacep">John Smith</p>
+								<p class="change-spacea"><br></p>
+								<h2 class="heading-small">Address</h2>
+								<p class="change-spacep">5 Church Street, Newcastle, NE12 3AB</p>
+								<p class="change-spacea"><a href="#">Change</a></p>
+								<p class="change-spacea"></p>
+								<a class="button" href="homepage.html" role="button" style="font-size: 19px;">Finish process</a>
+
+								                    </div>
+								<div class="column-one-third">
+								<h2 class="heading-small">Date of birth</h2>
+								<p class="change-spacep">15/08/1986</p>
+								<p class="change-spacea"><br></p>
+								<h2 class="heading-small">S1 country</h2>
+								<p class="change-spacep">Spain</p>
+								<p class="change-spacea"><br></p>
+						
+
+								</div>
+								<div class="column-one-third">
+								<h2 class="heading-small">NINO</h2>
+								<p class="change-spacep">SR 12 34 56 A</p>
+								<p class="change-spacea"><br></p>
+								<h2 class="heading-small">S1 status</h2>
+								<p class="change-spacep">Not registered <i class="icon icon-important"></i>
+								</p><p class="change-spacea"><br></p></div>
+	
+                            </table>
+                            </div>
+							
+                        </div>
                         <div id="tab-4" class="tab-content">
                             <div class="makeScrollable2">
                           <table class="internal-table">
-                                <thead>
-                                <tr>
-                                    <th>Reference</th>
-                                    <th>Name</th> 
-                                    <th>Address</th>
-                                    <th>Postcode</th>
-                                    <th>Status</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th><a href="pcn3">123456789</a></th>
-                                    <th>Joesph Bloggs</th> 
-                                    <th>75 Hart Road, Northallerton</th>
-                                    <th>DL6 3YA</th>
-                                    <th>Open</th>
-                                </tr>
-                                </tbody>
-                            </table>
+                           <!--First dependent s1 not registred-->     
+								<div class="column-one-third lpads">
+								<h2 class="heading-small">Name</h2>
+								<p class="change-spacep"><input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">Daniel Smith</p>
+								<p class="change-spacea"><br></p>
+								</div>
+								
+								<div class="column-one-third">
+								<h2 class="heading-small">Date of birth</h2>
+								<p class="change-spacep">18/03/2013</p>
+								<p class="change-spacea"><br></p>
+							
+						
+
+								</div>
+								<div class="column-one-third">
+								<h2 class="heading-small">Address</h2>
+								<p class="change-spacep">5 Church Street, Newcastle, NE12 3AB</p>
+								<p class="change-spacea"><a href="#">Change</a></p>
+								<p class="change-spacea"></p>
+								</table>
+                          <!--Second dependent s1 not registred--> 
+								<div class="column-one-third lpads">
+								
+								<h2 class="heading-small">Name</h2>
+								<p class="change-spacep"><input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">Helen Smith</p>
+								<p class="change-spacea"><br></p>
+								<a class="button" href="homepage.html" role="button" style="font-size: 19px;">Finish process</a>
+								</div>
+								
+								<div class="column-one-third">
+								<h2 class="heading-small">Date of birth</h2>
+								<p class="change-spacep">05/12/2015</p>
+								<p class="change-spacea"><br></p>
+							
+						
+
+								</div>
+								<div class="column-one-third">
+								<h2 class="heading-small">Address</h2>
+								<p class="change-spacep">5 Church Street, Newcastle, NE12 3AB</p>
+								<p class="change-spacea"><a href="#">Change</a></p>
+								<p class="change-spacea"></p>
+								
+                            
                             </div>
                         </div>
-						
-						
-						
-						
-						    <div class="column-one-third lpads">
-                        <h2 class="heading-small">Name</h2>
-                        <p class="change-spacep">John Smith</p>
-                        <p class="change-spacea"><br></p>
-                        <h2 class="heading-small">Address</h2>
-                        <p class="change-spacep">30 Forest Rd, Northallerton, DL6 1JZ5 Church Street, Newcastle, NE12 3AB</p>
-                        <p class="change-spacea"><a href="#">Change</a></p>
-						<p class="change-spacea"><br></p>
-						<a class="button" href="homepage.html" role="button" style="font-size: 19px;">Finish process</a>
-					
-
                     </div>
-                    <div class="column-one-third">
-						<h2 class="heading-small">Date of birth</h2>
-                        <p class="change-spacep">15/08/1986</p>
-                        <p class="change-spacea"><br></p>
-                     <h2 class="heading-small">S1 country</h2>
-                        <p class="change-spacep">Spain</p>
-                        <p class="change-spacea"><br></p>
-						
+                </div>
 
-                    </div>
-                        <div class="column-one-third">
-                     <h2 class="heading-small">NINO</h2>
-                        <p class="change-spacep">SR 12 34 56 A</p>
-                        <p class="change-spacea"><br></p>
-					<h2 class="heading-small">S1 status</h2>
-                        <p class="change-spacep">Not registered <i class="icon icon-important"></i>
-                        </p><p class="change-spacea"><br></p></div>
-						
-						</div>
-					
+
 				
+	</div>		   
+</div>
+</div>		   
+
+
+
+ <!-- S1  registred CASE-->
+			  <div class="s1-registered visually-hidden">  
+                <div class="column-full rpads">
+                    <div class="container rpads">
+                        <ul class="tabs rpads">
+                            <li class="tab-link current" data-tab="tab-3">Applicant Summary</li>
+                            <li class="tab-link" data-tab="tab-4">Dependent (2)</li>
+                        </ul>
+
+
+                        <div id="tab-3" class="tab-content current">
+                            <div class="makeScrollable2">
+                          <table class="internal2-table">
+								
+								<div class="column-one-third lpads">
+								<h2 class="heading-small">Name</h2>
+								<p class="change-spacep">Jon Smith</p>
+								<p class="change-spacea"><br></p>
+								<h2 class="heading-small">Address</h2>
+								<p class="change-spacep">1 Church Street, Newcastle, NE12 3AB</p>
+								<p class="change-spacea"><a href="#">Change</a></p>
+								<p class="change-spacea"></p>
+								<a class="button" href="homepage.html" role="button" style="font-size: 19px;">Finish process</a>
+
+								                    </div>
+								<div class="column-one-third">
+								<h2 class="heading-small">Date of birth</h2>
+								<p class="change-spacep">03/11/1996</p>
+								<p class="change-spacea"><br></p>
+								<h2 class="heading-small">S1 country</h2>
+								<p class="change-spacep">Spain</p>
+								<p class="change-spacea"><br></p>
 						
-						</div>
-						
-					
+
+								</div>
+								<div class="column-one-third">
+								<h2 class="heading-small">NINO</h2>
+								<p class="change-spacep">HT 56 78 81 D</p>
+								<p class="change-spacea"><br></p>
+								<h2 class="heading-small">S1 status</h2>
+								<p class="change-spacep">Registered 12/04/2017
+								</p><p class="change-spacea"><br></p></div>
 	
-                    </div>
-                </div>  </div>
+                            </table>
+                            </div>
+							
+                        </div>
+                        <div id="tab-4" class="tab-content">
+                            <div class="makeScrollable2">
+                          <table class="internal-table">
+                           <!--First dependent s1 not registred-->     
+								<div class="column-one-third lpads">
+								<h2 class="heading-small">Name</h2>
+								<p class="change-spacep"><input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">Daniel Smith</p>
+								<p class="change-spacea"><br></p>
+								</div>
+								
+								<div class="column-one-third">
+								<h2 class="heading-small">Date of birth</h2>
+								<p class="change-spacep">18/03/2013</p>
+								<p class="change-spacea"><br></p>
+							
 						
+
+								</div>
+								<div class="column-one-third">
+								<h2 class="heading-small">Address</h2>
+								<p class="change-spacep">5 Church Street, Newcastle, NE12 3AB</p>
+								<p class="change-spacea"><a href="#">Change</a></p>
+								<p class="change-spacea"></p>
+								</table>
+                          <!--Second dependent s1 not registred--> 
+								<div class="column-one-third lpads">
+								
+								<h2 class="heading-small">Name</h2>
+								<p class="change-spacep"><input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">Helen Smith</p>
+								<p class="change-spacea"><br></p>
+								<a class="button" href="homepage.html" role="button" style="font-size: 19px;">Finish process</a>
+								</div>
+								
+								<div class="column-one-third">
+								<h2 class="heading-small">Date of birth</h2>
+								<p class="change-spacep">05/12/2015</p>
+								<p class="change-spacea"><br></p>
+							
 						
+
+								</div>
+								<div class="column-one-third">
+								<h2 class="heading-small">Address</h2>
+								<p class="change-spacep">5 Church Street, Newcastle, NE12 3AB</p>
+								<p class="change-spacea"><a href="#">Change</a></p>
+								<p class="change-spacea"></p>
+								
+                            
+                            </div>
+                        </div>
                     </div>
-                </div> 
+                </div>
+
+
+				
+			   
+</div>
+</div>			
+	</div>
+	
+	
+	 <!-- EHIC registered CASE-->
+			  <div class="ehic-registered visually-hidden">  
+                <div class="column-full rpads">
+                    <div class="container rpads">
+                        <ul class="tabs rpads">
+                            <li class="tab-link current" data-tab="tab-3">Applicant Summary</li>
+                            <li class="tab-link" data-tab="tab-4">Dependent (2)</li>
+                        </ul>
+
+
+                        <div id="tab-3" class="tab-content current">
+                            <div class="makeScrollable2">
+                          <table class="internal2-table">
+								
+								<div class="column-one-third lpads">
+								<h2 class="heading-small">Name</h2>
+								<p class="change-spacep">John Smithe</p>
+								<p class="change-spacea"><br></p>
+								<h2 class="heading-small">Address</h2>
+								<p class="change-spacep">1 Front Street, Newcastle, NE12 4CD</p>
+								<p class="change-spacea"><a href="#">Change</a></p>
+								<p class="change-spacea"></p>
+								<a class="button" href="homepage.html" role="button" style="font-size: 19px;">Finish process</a>
+
+								                    </div>
+								<div class="column-one-third">
+								<h2 class="heading-small">Date of birth</h2>
+								<p class="change-spacep">21/01/1946</p>
+								<p class="change-spacea"><br></p>
+								<h2 class="heading-small">EHIC Status</h2>
+								<p class="change-spacep">Registered</p>
+								<p class="change-spacea"><br></p>
+						
+
+								</div>
+								<div class="column-one-third">
+								<h2 class="heading-small">NINO</h2>
+								<p class="change-spacep">CD 43 85 50 Q</p>
+								<p class="change-spacea"><br></p>
+	
+                            </table>
+                            </div>
+							
+                        </div>
+                        <div id="tab-4" class="tab-content">
+                            <div class="makeScrollable2">
+                          <table class="internal-table">
+                           <!--First dependent s1 not registred-->     
+								<div class="column-one-third lpads">
+								<h2 class="heading-small">Name</h2>
+								<p class="change-spacep"><input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">Daniel Smith</p>
+								<p class="change-spacea"><br></p>
+								</div>
+								
+								<div class="column-one-third">
+								<h2 class="heading-small">Date of birth</h2>
+								<p class="change-spacep">18/03/2013</p>
+								<p class="change-spacea"><br></p>
+							
+						
+
+								</div>
+								<div class="column-one-third">
+								<h2 class="heading-small">Address</h2>
+								<p class="change-spacep">5 Church Street, Newcastle, NE12 3AB</p>
+								<p class="change-spacea"><a href="#">Change</a></p>
+								<p class="change-spacea"></p>
+								</table>
+                          <!--Second dependent s1 not registred--> 
+								<div class="column-one-third lpads">
+								
+								<h2 class="heading-small">Name</h2>
+								<p class="change-spacep"><input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">Helen Smith</p>
+								<p class="change-spacea"><br></p>
+								<a class="button" href="homepage.html" role="button" style="font-size: 19px;">Finish process</a>
+								</div>
+								
+								<div class="column-one-third">
+								<h2 class="heading-small">Date of birth</h2>
+								<p class="change-spacep">05/12/2015</p>
+								<p class="change-spacea"><br></p>
+							
+						
+
+								</div>
+								<div class="column-one-third">
+								<h2 class="heading-small">Address</h2>
+								<p class="change-spacep">5 Church Street, Newcastle, NE12 3AB</p>
+								<p class="change-spacea"><a href="#">Change</a></p>
+								<p class="change-spacea"></p>
+								
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+				
+			   
+</div>
+</div>			
+	</div>
+	</div>
 	
 	
 </main>
 
+</div>
 
+			
+			
+			
 {% endblock %}
 
 
