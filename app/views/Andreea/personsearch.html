@@ -38,69 +38,66 @@
 
     <div class="grid-row">
 
-        <a href="ehicwith" class="link-back">Back</a>
+        <a href="homepage" class="link-back">Back</a>
 		<br>
 		<br>		
         <div class="column-one-third">
-		                <div class="column-full rpads">
-                    <div class="container rpads">
-                        <ul class="tabs rpads">
-                            <a href="personsearch"><li class="tab-link current" data-tab="tab-3">Applicant Search</li></a>
-                            <a href="personsearchrenew"><li class="tab-link" data-tab="tab-4">PRC renew</li></a>
-                        </ul>
-            <div class="grid-row highlight">
-                <h2 class="heading-large">Applicant search </h2>
-
-				
-				
-				<div class="applicant-search">
-                <div class="form-group">
-                    <label class="form-label" for="firstname">First name</label>
-                    <input class="form-control" id="firstname" name="firstname" type="firstname">
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="lastname">Last name</label>
-                    <input class="form-control" id="lastname" name="lastname" type="lastname">
-                </div>
+		    <div class="column-full rpads">
+                <div class="container rpads">
+                    <ul class="tabs rpads">
+                        <a href="personsearch"><li class="tab-link current" data-tab="tab-3">Applicant Search</li></a>
+                        <a href="personsearchrenew"><li class="tab-link" data-tab="tab-4">PRC renew</li></a>
+                    </ul>        
+					<h2 class="heading-large">Applicant search </h2>
+					<div class="applicant-search">
+						<div class="form-group">
+							<label class="form-label" for="firstname">First name</label>
+							<input class="form-control" id="firstname" name="firstname" type="firstname">
+						</div>
+						<div class="form-group">
+							<label class="form-label" for="lastname">Last name</label>
+							<input class="form-control" id="lastname" name="lastname" type="lastname">
+						</div>
 
 
-                <div class="form-group">
-                    <fieldset>
-                        <!--     <legend class="form-label-bold">Date of birth</legend> -->
-                        <!-- <p>We only use this to check if your age entitles you to any help.</p> -->
-                        
-                        <div class="form-date">
-					
-                           <h2 class="form-label">Date of birth </h2>
-						   <div class="form-group form-group-day">
-						   
-                                <label class="form-label" for="dob-day">Day</label>
-                                <input class="form-control" id="dobday" name="dobday" type="text" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
-                            </div>
-                            <div class="form-group form-group-month">
-                                <label class="form-label" for="dob-month">Month</label>
-                                <input class="form-control" id="dobmonth" name="dobmonth" type="text" pattern="[0-9]*" min="0" max="12">
-                            </div>
+						<div class="form-group">
+							<fieldset>
+								<!--     <legend class="form-label-bold">Date of birth</legend> -->
+								<!-- <p>We only use this to check if your age entitles you to any help.</p> -->
+								
+								<div class="form-date">
+							
+								   <h2 class="form-label">Date of birth </h2>
+								   <div class="form-group form-group-day">
+								   
+										<label class="form-label" for="dob-day">Day</label>
+										<input class="form-control" id="dobday" name="dobday" type="text" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+									</div>
+									<div class="form-group form-group-month">
+										<label class="form-label" for="dob-month">Month</label>
+										<input class="form-control" id="dobmonth" name="dobmonth" type="text" pattern="[0-9]*" min="0" max="12">
+									</div>
 
-                            <div class="form-group form-group-year">
-                                <label class="form-label" for="dob-year">Year</label>
-                                <input class="form-control" id="dobyear" name="dobyear" type="text" pattern="[0-9]*" min="0" max="2016">
-                            </div>
-                        </div>
-                    </fieldset>
-                </div>
+									<div class="form-group form-group-year">
+										<label class="form-label" for="dob-year">Year</label>
+										<input class="form-control" id="dobyear" name="dobyear" type="text" pattern="[0-9]*" min="0" max="2016">
+									</div>
+								</div>
+							</fieldset>
+						</div>
 
-                <div class="form-group">
-                    <label class="form-label" for="nino">National Insurance number/OHS number</label>
-                    						<p class="form-hint" id="dob-hint" style="margin-bottom: 0px">This is a 9 character reference. 2 letters followed by 6 numbers and 1 letter, like QQ123456A. You can find this on your payslip, P60 or tax return.</p>
-					<input class="form-control" id="nino" name="nino" type="nino">
-                </div>
+						<div class="form-group">
+									<label class="form-label" for="nino">National Insurance number</label>
+									<p class="form-hint" id="dob-hint" style="margin-bottom: 0px">This is a 9 character reference. 2 letters followed by 6 numbers and 1 letter, like QQ123456A.</p>
+									<input class="form-control" id="nino" name="nino" type="nino">
+						</div>
 
 
-                <a class="button" href="personsearchlist" role="button" style=" font-size: 19px;">Search</a>
+						<a class="button" href="personsearchlist" role="button" style=" font-size: 19px;">Search</a>
+					</div>
 				</div>
-            </div>
-        </div>
-    </div>
+			</div>
+		</div>
+	</div>
 </main>
 {% endblock %}

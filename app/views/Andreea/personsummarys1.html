@@ -30,74 +30,121 @@
         position: absolute;
         
     }
-	
-	
-}
+	.form-control {
+    width: 90%;}
 </style>
 
 <main id="content" role="main">
 
-    <div class="grid-row">
-	
-	        <a href="personsearchlist" class="link-back">Back</a>
-		<br>
-		<br>
-		
-        <div class="column-two-thirds">
-            <h2 class="heading-large">Applicant Summary</h2>
-            
-            <table>
-                
-                
-                <tbody>
-                    <tr>
-                        <th scope="row">First name</th>
-                        <th class="numeric">Jon</th> 
-                        <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
-                    </tr>
-                    <tr>
-                        <th scope="row">Last name</th>
-                        <th class="numeric">Smith</th>
-                        <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
-                    </tr>
-                    <tr>
-                        <th scope="row">Date of birth</th>
-                        <th class="numeric">15/08/1986</th>
-                        <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
-                    </tr>
-                    <tr>
-                        <th scope="row">NINO</th>
-                        <th class="numeric">SR 12 34 56 A</th>
-                        <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
-                    </tr>
-                    <tr>
-                        <th scope="row">Address</th>
-                        <th class="numeric">5 Church Street<br>Newcastle<br>
-                        NE12 3AB</th>
-                        <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
-                    </tr>
-                    <tr>
-                        <th scope="row">S1 available</th>
-                        <th class="numeric">17/11/2001</th>
-                        <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
-                    <tr>
-                        <th scope="row">S1 country</th>
-                        <th class="numeric">Spain</th>
-                        <th class="numeric"> <a href="personsummaryehic.html">Change</a></th>
-                    </tr>
-                </tbody>
-            </table>
-            <br>
-            <br>
-			  <p>
-                <a href="registerpersons1dep.html">+ Add dependent</a>
-            </p>
-            <br>
-            <a class="button" href="s1accidentcountry.html" role="button">Run residency check</a>
-          
-        </div>
-        <br>
+  
+  
 
-    </div>
+        <a href="personsearchlist" class="link-back">Back</a>
+		<br>
+		<br>		
+		<!-- S1 not registered CASE-->
+		<div class="column-full">  
+			<div class="column-full rpads">
+				<div class="container rpads">
+					<ul class="tabs rpads sort-results">
+						<li class="tab-link current" data-tab="tab-3">Applicant Summary</li>
+						<li class="tab-link" data-tab="tab-4">Dependent (2)</li>
+					</ul>
+
+
+					<div id="tab-3" class="tab-content current">
+						
+						<!-- guy 2 -->
+							<table class="internal2-table">
+								<div class="column-one-third lpads">
+									<h2 class="heading-small">Name</h2>
+									<p class="change-spacep"><input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">Jon Smith</p>
+									<p class="change-spacea"><br></p>
+									<h2 class="heading-small">Address</h2>
+									<p class="change-spacep">1 Church Street, Newcastle, NE12 3AB</p>
+									<p class="change-spacea"><a href="#">Change</a></p>
+									<p class="change-spacea"></p>
+									<br><a class="button" href="treatmentdetails" role="button" style="font-size: 19px; background-color: #005EB8;">Bypass residency check</a>
+									<p class="change-spacea"><br><a class="button" href="homepage" style="font-size: 19px; background-color: #00823B;">Finish process</a></p>
+								</div>
+								<div class="column-one-third">
+									<h2 class="heading-small">Date of birth</h2>
+									<p class="change-spacep">03/11/1996</p>
+									<p class="change-spacea"><br></p>
+									<h2 class="heading-small">S1 country</h2>
+									<p class="change-spacep">Spain</p>
+									<p class="change-spacea"><br></p>
+								</div>
+								<div class="column-one-third">
+									<h2 class="heading-small">NINO</h2>
+									<p class="change-spacep">HT 56 78 81 D</p>
+									<p class="change-spacea"><br></p>
+									<h2 class="heading-small">S1 status</h2>
+									<p class="change-spacep">Registered 12/04/2017</p>
+									<p class="change-spacea"><br></p>
+								</div>
+							</table>
+						</div>
+						<!-- end of guy jon -->
+						
+					
+					<div id="tab-4" class="tab-content">
+							<table class="internal-table">
+
+						<!-- jon's deps -->
+	
+							<table class="internal-table">
+								<!--First dependent s1 not registred-->     
+								<div class="column-one-third lpads">
+									<h2 class="heading-small">Name</h2>
+									<p class="change-spacep"><input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">Luise Adams</p>
+									<p class="change-spacea"><br></p>
+								</div>
+							
+								<div class="column-one-third">
+									<h2 class="heading-small">Date of birth</h2>
+									<p class="change-spacep">23/11/2017</p>
+									<p class="change-spacea"><br></p>
+								</div>
+								<div class="column-one-third">
+									<h2 class="heading-small">Address</h2>
+									<p class="change-spacep">1 Church Street, Newcastle, NE12 3AB</p>
+									<p class="change-spacea"><a href="#">Change</a></p>
+									<p class="change-spacea"></p>
+								</div>
+							
+								<!--Second dependent s1 not registred--> 
+								<div class="column-one-third lpads">					
+									<h2 class="heading-small">Name</h2>
+									<p class="change-spacep"><input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">Michael Adams</p>
+									<p class="change-spacea"><br></p>
+									<a class="button-dependent" href="registerpersons1dep" style="font-size: 16px;">+ Add dependent</a>
+									<br><br>
+									<br><a class="button" href="treatmentdetails" role="button" style="font-size: 19px; background-color: #005EB8;">Bypass residency check</a>
+									<p class="change-spacea"><br><a class="button" href="homepage" style="font-size: 19px; background-color: #00823B;">Finish process</a></p>
+								
+								</div>
+								<div class="column-one-third">
+									<h2 class="heading-small">Date of birth</h2>
+									<p class="change-spacep">05/12/2015</p>
+									<p class="change-spacea"><br></p>							
+								</div>
+								<div class="column-one-third">
+									<h2 class="heading-small">Address</h2>
+									<p class="change-spacep">5 Church Street, Newcastle, NE12 3AB</p>
+									<p class="change-spacea"><a href="#">Change</a></p>
+									<p class="change-spacea"></p>                            
+								</div>
+							</table>
+						</div>
+						<!-- end of jon -->
+					
+				</div>
+			</div>	
+		</div>		   
+		    
 </main>
+			
 {% endblock %}
+
+

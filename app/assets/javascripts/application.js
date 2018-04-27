@@ -132,6 +132,7 @@ $(".button2").click(function(){
 
 $(".button-dependent").click(function(){
 	$(".dependent").removeClass("visually-hidden");
+	$(".button-dependent").hide();
 });
   
 })

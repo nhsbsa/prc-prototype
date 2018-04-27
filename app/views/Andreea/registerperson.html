@@ -36,11 +36,11 @@
 <main id="content" role="main">
 
     <div class="grid-row">
-        <div class="column-two-thirds">
+        <div class="column-one-third">
             <a href="personsearch.html" class="link-back">Back</a>
             <h2 class="heading-large">Register an applicant</h2>
 
-                            <div class="form-group">
+                <div class="form-group">
                     <label class="form-label" for="firstname">First name</label>
                     <input class="form-control" id="firstname" name="firstname" type="firstname">
                 </div>
@@ -78,7 +78,7 @@
 
                 <div class="form-group">
                     <label class="form-label" for="nino">National Insurance number</label>
-                    						<p class="form-hint" id="dob-hint" style="margin-bottom: 0px">This is a 9 character reference. 2 letters followed by 6 numbers and 1 letter, like QQ123456A. You can find this on your payslip, P60 or tax return.</p>
+                    						<p class="form-hint" id="dob-hint" style="margin-bottom: 0px">This is a 9 character reference. 2 letters followed by 6 numbers and 1 letter, like QQ123456A.</p>
 					<input class="form-control" id="nino" name="nino" type="nino">
                 </div>
 				
@@ -101,82 +101,58 @@
 				</select>
             </div>
 			
-            <a class="button" href="#" role="button">Find address</a>
-            
+            <a class="button" href="#" role="button" style="font-size: 19px; background-color: #005EB8;">Find address</a> 
 			<br>
             <br>
-			  <p>
-                <a class="button-dependent" href="#">+ Add dependent</a>
-            </p>
-			
-			
-            <br>
-
-<!-- DEPENDENT!!!-->
-			 <div class="form-group dependent visually-hidden">
-                    <label class="form-label" for="firstname">First name</label>
-                    <input class="form-control" id="firstname" name="firstname" type="firstname">
-                </div>
-                <div class="form-group dependent visually-hidden">
-                    <label class="form-label" for="lastname">Last name</label>
-                    <input class="form-control" id="lastname" name="lastname" type="lastname">
-                </div>
-
-
-                <div class="form-group dependent visually-hidden">
-                    <fieldset>
-                        <!--     <legend class="form-label-bold">Date of birth</legend> -->
-                        <!-- <p>We only use this to check if your age entitles you to any help.</p> -->
-                        
-                        <div class="form-date">
-					
-                           <h2 class="form-label">Date of birth </h2>
-						   <div class="form-group form-group-day">
-						   
-                                <label class="form-label" for="dob-day">Day</label>
-                                <input class="form-control" id="dobday" name="dobday" type="text" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
-                            </div>
-                            <div class="form-group form-group-month">
-                                <label class="form-label" for="dob-month">Month</label>
-                                <input class="form-control" id="dobmonth" name="dobmonth" type="text" pattern="[0-9]*" min="0" max="12">
-                            </div>
-
-                            <div class="form-group form-group-year">
-                                <label class="form-label" for="dob-year">Year</label>
-                                <input class="form-control" id="dobyear" name="dobyear" type="text" pattern="[0-9]*" min="0" max="2016">
-                            </div>
-                        </div>
-                    </fieldset>
-                </div>
-
-                <div class="form-group dependent visually-hidden">
-                    <label class="form-label" for="nino">National Insurance number</label>
-                    						<p class="form-hint" id="dob-hint" style="margin-bottom: 0px">This is a 9 character reference. 2 letters followed by 6 numbers and 1 letter, like QQ123456A. You can find this on your payslip, P60 or tax return.</p>
-					<input class="form-control" id="nino" name="nino" type="nino">
-                </div>
+					<a class="button-dependent" href="#">+ Add dependent</a>
 				
-            <div class="form-group house-number2 dependent visually-hidden">
-                <label class="form-label" for="housenum">House Number</label>
-                <input class="form-control" id="housenum" name="housenum" type="housenum">
-            </div>
-            <div class="form-group postcode2 dependent visually-hidden">
-                <label class="form-label" for="postcode">Postcode</label>
-                <input class="form-control" id="postcode" name="postcode" type="postcode">
-            </div>
-			
-			<div class="form-group address2 visually-hidden">
-				<label class="form-label" for="select-box">Select your address</label>
-				<select class="form-control" id="select-box">
-					<option>1 Church Street, Newcastle, NE12 3AB</option>
-					<option>2 Church Street, Newcastle, NE12 3AB</option>
-					<option>4 Church Street, Newcastle, NE12 3AB</option>
-					<option>5 Church Street, Newcastle, NE12 3AB</option>
-				</select>
-            </div>
-			
-            <a class="button2 address2 visually-hidden" href="#" role="button">Find address</a>
+				<!-- DEPENDENT!!!-->
+				<h2 class="heading-medium dependent visually-hidden">Dependent 1</h2>
+				<div class="form-group dependent visually-hidden">
+				  
+					<label class="form-label" for="firstname">First name</label>
+					<input class="form-control" id="firstname" name="firstname" type="firstname">
+				</div>
+				<div class="form-group dependent visually-hidden">
+					<label class="form-label" for="lastname">Last name</label>
+					<input class="form-control" id="lastname" name="lastname" type="lastname">
+				</div>
 
-			<a class="button button1" href="personsummarydepend.html" role="button">Next </a>
+
+				<div class="form-group dependent visually-hidden">
+					<fieldset>
+							<!--     <legend class="form-label-bold">Date of birth</legend> -->
+							<!-- <p>We only use this to check if your age entitles you to any help.</p> -->
+							
+					<div class="form-date">
+						
+						<h2 class="form-label">Date of birth </h2>
+						<div class="form-group form-group-day">
+								   
+							<label class="form-label" for="dob-day">Day</label>
+							<input class="form-control" id="dobday" name="dobday" type="text" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+						</div>
+						<div class="form-group form-group-month">
+							<label class="form-label" for="dob-month">Month</label>
+							<input class="form-control" id="dobmonth" name="dobmonth" type="text" pattern="[0-9]*" min="0" max="12">
+						</div>
+
+						<div class="form-group form-group-year">
+							<label class="form-label" for="dob-year">Year</label>
+							<input class="form-control" id="dobyear" name="dobyear" type="text" pattern="[0-9]*" min="0" max="2016">
+						</div>
+					</div>
+					</fieldset>
+				</div>
+
+				
+
+			<!--end DEPENDENT!!!-->
+				<br>
+				<br>
+				<a class="button" href="personsummarynew" role="button">Next </a>
+			
+
 			
         </div>
         <br>
