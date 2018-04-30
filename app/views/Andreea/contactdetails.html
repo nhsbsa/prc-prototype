@@ -41,42 +41,76 @@
         <a href="ehicwith" class="link-back">Back</a>
 		<br>
 		<br>		
-        <div class="column-one-quarter"><br>
+        <div class="column-one-half"><br>
 			<div class="column-full rpads">
-				<div class="grid-row highlight">
+				<div class="highlight">
 					<h2 class="heading-large">Applicant(s) summary </h2>			
 
-					<!-- Applicants Summary-->
+				<!-- Applicants Summary-->
 
 					<h2 class="heading-small">John Smithe </h2>		
 					<h2 class="heading-small">Will Smithe </h2>	
 					<h2 class="heading-small">Jack Smithe </h2>				
 					
 				</div>
+			
+				<!--  Contact details -->		
+					
+				
+					<h2 class="heading-large">Applicant's contact details</h2>
+					
+					<div class="form-group">
+						<label class="form-label" for="hospitalname">Telephone number</label>
+						<input class="form-control" id="hospitalname" name="hospitalname" type="lastname">
+					</div>
+					
+					<div class="form-group">
+					  <fieldset>
+
+						<legend>
+						  <h1 class="heading-medium" style="margin-top:0;">
+							Would you like a confirmation email?
+						  </h1>
+						</legend>
+						
+						<div class="notice">
+							<i class="icon icon-information"></i>
+							<strong>We will send you a confirmation email once the PRC is delivered to the treatment facility.</strong>
+							<br>
+						</div>
+						
+						<div class="multiple-choice" data-target="contact-by-text">
+							<input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
+							<label for="example-contact-by-text">Yes</label>
+						</div>
+						<div class="panel panel-border-narrow js-hidden" id="contact-by-text">
+							<label class="form-label" for="contact-text-message">Email address</label>
+							<input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
+						</div>
+							
+						<div class="multiple-choice">
+							<input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
+							<label for="example-contact-by-text">No</label>
+						</div>
+				
+					  </fieldset>
+					</div>
+				
 			</div>		
 		</div>
-		
-				
 		<!--  PRC time span -->
 		
-		<div class="column-one-quarter">
+		<div class="column-one-half">
 
-				<h2 class="heading-large">PRC time span</h2>	
+				<h2 class="heading-large">PRC details</h2>	
 				<div class="form-group">
-					<label class="form-label" for="countrytreatment">Starting date</label>
-					<input class="form-control" id="country" name="countrytreatment" type="firstname">
+					<label class="form-label" for="countrytreatment">PRC starting date</label>
+					<input class="form-control" id="country" name="countrytreatment" type="firstname" style="width:50%;">
 				</div>
 				<div class="form-group">
-					<label class="form-label" for="hospitalname">Ending date</label>
-					<input class="form-control" id="hospitalname" name="hospitalname" type="lastname">
+					<label class="form-label" for="hospitalname">PRC ending date</label>
+					<input class="form-control" id="hospitalname" name="hospitalname" type="lastname" style="width:50%;">
 				</div>
-                <br>
-           
-        </div>
-<!-- Treatment facility section -->
-		<div class="column-one-quarter">
-           
-				<h2 class="heading-large">Treatment facility</h2>	
 				<div class="form-group">
 					<label class="form-label" for="countrytreatment">Country of the treatment</label>
 					<input class="form-control" id="country" name="countrytreatment" type="firstname">
@@ -85,15 +119,11 @@
 					<label class="form-label" for="hospitalname">Treatment facility name</label>
 					<input class="form-control" id="hospitalname" name="hospitalname" type="lastname">
 				</div>
-				
-				
-		
 				<div class="form-group">
 				  <fieldset>
-
 					<legend>
-					  <h1 class="heading-medium">
-						How do you want the PRC to be send across to the treatment facility?
+					  <h1 class="heading-medium" style="margin-top:0;">
+						How do you want the PRC to be sent across to the treatment facility?
 					  </h1>
 					</legend>
 					<div class="multiple-choice" data-target="contact-by-email">
@@ -109,63 +139,17 @@
 					  <label for="example-contact-by-phone">Phone</label>
 					</div>
 					<div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
-					  <label class="form-label" for="contact-phone">Phone number</label>
+					  <label class="form-label" for="contact-phone">Fax number</label>
 					  <input class="form-control" name="contact-phone" type="text" id="contact-phone">
 					</div>
-					
 				  </fieldset>
-				</div>
+				     <br>
+					 <a class="button" href="done" role="button" style=" font-size: 19px;">Generate PRC</a>
+				</div> 
+        </div>
+	
 
-                <br>
-            
-        </div>		
 
-<!--  Contact details -->		
-			<div class="column-one-quarter">	
-			
-				<h2 class="heading-large">Applicant's contact details</h2>
-				
-				<div class="form-group">
-					<label class="form-label" for="hospitalname">Telephone number</label>
-					<input class="form-control" id="hospitalname" name="hospitalname" type="lastname">
-				</div>
-				
-				<div class="form-group">
-				  <fieldset>
-
-					<legend>
-					  <h1 class="heading-medium">
-						Would you like a confirmation email?
-					  </h1>
-					</legend>
-					
-					<div class="notice">
-						<i class="icon icon-information"></i>
-						<strong>We will send you a confirmation email once the PRC is delivered to the treatment facility.</strong>
-						<br>
-					</div>
-					
-					<div class="multiple-choice" data-target="contact-by-text">
-						<input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
-						<label for="example-contact-by-text">Yes</label>
-					</div>
-					<div class="panel panel-border-narrow js-hidden" id="contact-by-text">
-						<label class="form-label" for="contact-text-message">Email address</label>
-						<input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
-					</div>
-						
-					<div class="multiple-choice">
-						<input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
-						<label for="example-contact-by-text">No</label>
-					</div>
-			
-				  </fieldset>
-				</div>
-				
-				<br>
-                <a class="button" href="done" role="button" style=" font-size: 19px;">Generate PRC</a>
-				
-			</div>
 			
 	</div>		
 </main>
