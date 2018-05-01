@@ -13,7 +13,7 @@
           </ul>
         </div>
         <div class="column-half" id="logout">
-          <a href="login">Log out</a>
+          <a href="Sign in">Sign out</a>
         </div>
       </div>
     </div>
@@ -41,68 +41,41 @@
         <a href="homepage" class="link-back">Back</a>
 		<br>
 		<br>		
-        <div class="column-one-third">
-			<div class="column-full rpads">
-				  <div class="container rpads">
-								<ul class="tabs rpads">
-									<a href="personsearch"><li class="tab-link" data-tab="tab-3">Applicant Search</li></a>
-									<a href="personsearchrenew"><li class="tab-link current" data-tab="tab-4">PRC renew</li></a>
-								</ul>
-						<h2 class="heading-large">PRC renew </h2>
 
-						<div class="form-group">
-								<label class="form-label" for="nino">PRC reference number</label>
-														<p class="form-hint" id="dob-hint" style="margin-bottom: 0px">This is a X character reference. For example, XXXXXXXX. </p>
-								<input class="form-control" id="nino" name="nino" type="nino">
-						 </div>	
+		
+		<div class="column-one-third">
+		    <div class="column-full rpads">
+                <div class="container rpads">
+                    <ul class="tabs rpads">
+                        <a href="personsearch"><li class="tab-link " data-tab="tab-3">Applicant Search</li></a>
+                        <a href="personsearchrenew"><li class="tab-link current" data-tab="tab-4">PRC renew</li></a>
+                    </ul>        
+					
+					<h2 class="heading-medium">Applicant search </h2>
+					<div class="applicant-search">
 						
-						<div class="applicant-search">
-							<div class="form-group">
-								<label class="form-label" for="firstname">First name</label>
-								<input class="form-control" id="firstname" name="firstname" type="firstname">
-							</div>
-							<div class="form-group">
-								<label class="form-label" for="lastname">Last name</label>
-								<input class="form-control" id="lastname" name="lastname" type="lastname">
-							</div>
+						<h2 class="heading-small">PRC reference number</h2>
+                        <input class="form-control" id="reference-number" name="first-name-2" type="text">
+						
+						<h2 class="heading-small">First name (initial)</h2>
+                        <input class="form-control" id="reference-number" name="first-name-2" type="text">
+						
+						<h2 class="heading-small">Last name</h2>
+                        <input class="form-control" id="reference-number" name="first-name-2" type="text">
+						
+						<h2 class="heading-small">Date of birth</h2>
+                        <input class="form-control" id="reference-number" name="first-name-2" type="text" style="width:50%;">
 
+						<h2 class="heading-small">National Insurance number</h2>
 
-							<div class="form-group">
-								<fieldset>
-									<!--     <legend class="form-label-bold">Date of birth</legend> -->
-									<!-- <p>We only use this to check if your age entitles you to any help.</p> -->
-									
-									<div class="form-date">
-								
-									   <h2 class="form-label">Date of birth </h2>
-									   <div class="form-group form-group-day">
-									   
-											<label class="form-label" for="dob-day">Day</label>
-											<input class="form-control" id="dobday" name="dobday" type="text" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
-										</div>
-										<div class="form-group form-group-month">
-											<label class="form-label" for="dob-month">Month</label>
-											<input class="form-control" id="dobmonth" name="dobmonth" type="text" pattern="[0-9]*" min="0" max="12">
-										</div>
-
-										<div class="form-group form-group-year">
-											<label class="form-label" for="dob-year">Year</label>
-											<input class="form-control" id="dobyear" name="dobyear" type="text" pattern="[0-9]*" min="0" max="2016">
-										</div>
-									</div>
-								</fieldset>
-							</div>
-
-							<div class="form-group">
-							<label class="form-label" for="nino">National Insurance number</label>
-													<p class="form-hint" id="dob-hint" style="margin-bottom: 0px">This is a 9 character reference. 2 letters followed by 6 numbers and 1 letter, like QQ123456A.</p>
-							<input class="form-control" id="nino" name="nino" type="nino">
-						</div>
-
-
+                        <input class="form-control" id="reference-number" name="first-name-2" type="text">						
+						<br>
+						<br>	
+						<p><a href="addNote" onClick="MyWindow=window.open('addNote','MyWindow','width=600,height=450'); return false;">+ Add note</a></p>
+						
 						<a class="button" href="personsearchlist" role="button" style=" font-size: 19px;">Search</a>
-						</div>
-				  </div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

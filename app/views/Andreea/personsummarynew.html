@@ -13,7 +13,7 @@
           </ul>
         </div>
         <div class="column-half" id="logout">
-          <a href="login">Log out</a>
+          <a href="Sign in">Sign out</a>
         </div>
       </div>
     </div>
@@ -43,60 +43,97 @@
 		<br>
 		<br>		
 		<!-- S1 not registered CASE-->
-		<div class="column-full">  
+		<div class="column-one-half">  
 			<div class="column-full rpads">
 				<div class="container rpads">
 					<ul class="tabs rpads sort-results">
-						<li class="tab-link current" data-tab="tab-3">Applicant Summary</li>
-						<li class="tab-link" data-tab="tab-4">Dependent (0)</li>
+						<li class="tab-link current" data-tab="tab-3">Applicant summary</li>
+						<li class="tab-link" data-tab="tab-4">Dependent summary (2)</li>
 					</ul>
 
-				
+
 					<div id="tab-3" class="tab-content current">
-						<!-- last one -->
-							<table class="internal2-table">
-								<div class="column-one-third lpads">
-									<h2 class="heading-small">Name</h2>
-									<p class="change-spacep">Danielle Stephenson</p>
-									<p class="change-spacea"><br></p>
-									<h2 class="heading-small">Address</h2>
-									<p class="change-spacep">1 River Street, Leeds, LE12 45CD</p>
-									<p class="change-spacea"><a href="#">Change</a></p>
-									<p class="change-spacea"></p>
-									<a class="button" href="contactdetails" role="button" style="font-size: 19px;">Submit</a>
-								</div>
-								<div class="column-one-third">
-									<h2 class="heading-small">Date of birth</h2>
-									<p class="change-spacep">28/02/1972</p>
-									<p class="change-spacea"><br></p>
-									
-								</div>
-								<div class="column-one-third">
-									<h2 class="heading-small">NINO</h2>
-									<p class="change-spacep">CD 43 85 50 Q</p>
-									<p class="change-spacea"><br></p>
-								</div>
-							</table>
+						
+						<h1 class="heading-medium">Applicant summary</h1>
+						<div class="column-one-third lpads">
+							<!-- First dependent s1 not registered-->
+							<h2 class="heading-small">First name</h2>
+							<p class="change-spacep"><input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">John</p>
+							<br>
+							<h2 class="heading-small">Address</h2>
+							<p class="change-spacep">1 Front Street, Newcastle, NE12 4CD</p>
+							<p class="change-spacea"><a href="#">Change</a>
+							</p>
+						
+							<p class="change-spacea"><br><a class="button" href="contactdetails" style="font-size: 19px; background-color: #00823B;">Submit</a></p>
+						</div>
+						<div class="column-one-third">
+							<h2 class="heading-small">Last name</h2>
+							<p class="change-spacep">Smithe</p>
+							<br>
+							<br>
+							
+						</div>
+						<div class="column-one-third">
+							<h2 class="heading-small">Date of birth</h2>
+							<p class="change-spacep">21/01/1946</p>
+							<br>
+						
+							
+						</div>
+							
+								
 					</div>
-						<!-- end of smithe -->
-					
-					<div id="tab-4" class="tab-content">		
-						<!-- deps -->     
-						<h2 class="heading-small">No dependents found</h2>
+				
+					<div id="tab-4" class="tab-content">
+							
+						<h1 class="heading-medium">Dependent summary</h1>
+							<div class="column-one-third lpads">
+								<!-- First dependent s1 not registered-->
+								<h2 class="heading-small">First name</h2>
+								<p class="change-spacep"><input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">Daniel</p>
 								<br>
-										<a class="button-dependent" href="registerpersons1dep" style="font-size: 16px;">+ Add dependent</a>
-										<br><br>
-										<input class="button" type="submit" value="Submit" style="font-size: 19px;" disabled="disabled" aria-disabled="true">
-										<p class="change-spacea"><br></p>
-					</div>
-						<!-- end of deps -->
-						</div>
-						</div>
-					</div>
+								<br>	
+							</div>
+							<div class="column-one-third">
+								<h2 class="heading-small">Last name</h2>
+								<p class="change-spacep">Smithe</p>
+								<br>
+							</div>
+							<div class="column-one-third">
+								<h2 class="heading-small">Date of birth</h2>
+								<p class="change-spacep">22/06/2012</p>
+								<br>
+								<br>
+							</div>
+							<div class="column-one-third lpads">
+									<!-- First dependent s1 not registered-->
+									<h2 class="heading-small">First name</h2>
+									<p class="change-spacep"> <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">Helen</p>
+									<br>
+									
+									<p class="change-spacea"><br><a class="button" href="contactdetails" style="font-size: 19px; background-color: #00823B;">Submit</a></p>									
+							</div>
+							<div class="column-one-third">
+								<h2 class="heading-small">Last name</h2>
+								<p class="change-spacep">Smithe</p>
+								<br>
+							</div>
+							<div class="column-one-third">
+								<h2 class="heading-small">Date of birth</h2>
+								<p class="change-spacep">13/06/2010</p>
+								<br>
+								<br>
+							</div>
+						
+		
+					</div>		
 				</div>	
-			</div>		   
-		</div>
-	</div>		    
+					
+			</div>
+			
+			
+		</div>		    
 </main>
 			
 {% endblock %}
