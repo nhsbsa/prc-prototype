@@ -97,12 +97,11 @@ $(".selectbtn3").click(function() {
 
 
 
-$(".button").click(function(){
+$(".buttonFind").click(function(){
 	$(".house-number").hide();
 	$(".postcode").hide();
 	$(".address").removeClass("visually-hidden");
-	$(".button").hide();
-	$(".button1").show();
+	$(".buttonFind").hide();
 });
 
 $(".button2").click(function(){
@@ -133,6 +132,7 @@ $(".button2").click(function(){
 $(".button-dependent").click(function(){
 	$(".dependent").removeClass("visually-hidden");
 	$(".button-dependent").hide();
+	$(".btnSubmit1").hide();
 });
   
 })

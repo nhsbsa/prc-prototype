@@ -33,100 +33,117 @@
 	.form-control {
     width: 90%;}
 </style>
+
 <main id="content" role="main">
 
     <div class="grid-row">
-        <div class="column-one-third">
-            <a href="personsearch.html" class="link-back">Back</a>
-            <h2 class="heading-medium">Register an applicant</h2>
-				
-				<h2 class="heading-small">First name</h2>
-                    <input class="form-control" id="reference-number" name="first-name-2" type="text">
-				<h2 class="heading-small">Last name</h2>
-                    <input class="form-control" id="reference-number" name="first-name-2" type="text">
-                <h2 class="heading-small">Date of birth</h2>
-                    <input class="form-control" id="reference-number" name="first-name-2" type="text" style="width:50%;">
-				<h2 class="heading-small">National Insurance number</h2>
-                    <input class="form-control" id="reference-number" name="first-name-2" type="text">
-             
-				<h2 class="heading-small house-number">House number</h2>
-                    <input class="form-control house-number" id="reference-number" name="first-name-2" type="text" style="width:50%;">
-			
-				<h2 class="heading-small postcode">Postcode</h2>
-                    <input class="form-control postcode" id="reference-number" name="first-name-2" type="text" style="width:50%;">
-				
-      
-			
-			<div class=" address visually-hidden">
-				<label class="form-label" for="select-box">Select your address</label>
-				<select class="form-control" id="select-box">
-					<option>1 Church Street, Newcastle, NE12 3AB</option>
-					<option>2 Church Street, Newcastle, NE12 3AB</option>
-					<option>4 Church Street, Newcastle, NE12 3AB</option>
-					<option>5 Church Street, Newcastle, NE12 3AB</option>
-				</select>
-            </div>
-			
-            <br>
-			<br>
-			<a class="button" href="#" role="button" style="font-size: 19px; background-color: #005EB8;">Find address</a> 
-			
-			<br>
-			<br>
-				<a class="button-dependent" href="#">+ Add dependent</a>
-				
-				<!-- DEPENDENT!!!-->
-				<h2 class="heading-medium dependent visually-hidden">Dependent 1</h2>
-				<div class="form-group dependent visually-hidden">
-				  
-					<label class="form-label" for="firstname">First name</label>
-					<input class="form-control" id="firstname" name="firstname" type="firstname">
-				</div>
-				<div class="form-group dependent visually-hidden">
-					<label class="form-label" for="lastname">Last name</label>
-					<input class="form-control" id="lastname" name="lastname" type="lastname">
-				</div>
 
-
-				<div class="form-group dependent visually-hidden">
-					<fieldset>
-							<!--     <legend class="form-label-bold">Date of birth</legend> -->
-							<!-- <p>We only use this to check if your age entitles you to any help.</p> -->
-							
-					<div class="form-date">
+        <a href="personsearchlist" class="link-back">Back</a>
+		<br>
+		<br>
+		<div class="column-full">
+			<div class="column-one-half lpads ">
+				<div style="padding: 0 2em 0 1em">
+					<div class="grid-row highlight">
+						<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register an applicant</h1>
 						
-						<h2 class="form-label">Date of birth </h2>
-						<div class="form-group form-group-day">
-								   
-							<label class="form-label" for="dob-day">Day</label>
-							<input class="form-control" id="dobday" name="dobday" type="text" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
-						</div>
-						<div class="form-group form-group-month">
-							<label class="form-label" for="dob-month">Month</label>
-							<input class="form-control" id="dobmonth" name="dobmonth" type="text" pattern="[0-9]*" min="0" max="12">
-						</div>
-
-						<div class="form-group form-group-year">
-							<label class="form-label" for="dob-year">Year</label>
-							<input class="form-control" id="dobyear" name="dobyear" type="text" pattern="[0-9]*" min="0" max="2016">
-						</div>
+							<div class="column-one-third lpads">	
+							<h2 class="heading-small">First name</h2>
+							<input class="form-control" id="reference-number" name="first-name-2" type="text">
+							<br>									
+							</div>
+							
+							<div class="column-one-third">	
+							<h2 class="heading-small"> Last name</h2>
+							<input class="form-control" id="reference-number" name="first-name-2" type="text">
+							<br>									
+							</div>
+							
+							<div class="column-one-third">	
+							<h2 class="heading-small">Date of birth</h2>
+							<input class="form-control" id="reference-number" name="first-name-2" type="text">
+							<br>									
+							</div>
+							
+							<div class="column-one-third lpads">	
+								<br>
+								<h2 class="heading-small house-number">House number</h2>
+								<input class="form-control house-number" id="reference-number" name="first-name-2" type="text">
+								<div class=" address visually-hidden">
+									<label class="form-label" for="select-box">Select the address</label>
+									<select class="form-control" id="select-box">
+										<option>1 Church Street, Newcastle, NE12 3AB</option>
+										<option>2 Church Street, Newcastle, NE12 3AB</option>
+										<option>4 Church Street, Newcastle, NE12 3AB</option>
+										<option>5 Church Street, Newcastle, NE12 3AB</option>
+									</select>
+								</div>
+							<br>	
+							<br>	
+								
+							<a class="button-dependent" href="#">+ Add dependent</a>
+							<br><br>
+							<a class="button btnSubmit1" href="done" role="button" style=" font-size: 19px;">Submit</a>
+							</div>
+							
+							<div class="column-one-third">	
+								<br>
+								<h2 class="heading-small postcode"> Postcode</h2>
+								<input class="form-control postcode" id="reference-number" name="first-name-2" type="text">
+								<br>									
+							</div>
+							
+							<div class="column-one-third">	
+								<br>
+								<br>
+								<a class="button buttonFind" href="#" role="button" style="font-size: 19px; background-color: #005EB8;">Find address</a> 
+								<br>									
+							</div>
+							
+							
 					</div>
-					</fieldset>
 				</div>
-
+			</div>
 				
+		
+		
+		<!--  PRC time span -->
+		
+            <div class="column-one-half dependent visually-hidden">
+				<div style="padding: 0 2em 0 2em">
+					<div class="grid-row highlight">
+					
+						<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Dependent details</h2>	
+					
+							<div class="column-one-third lpads">	
+								<h2 class="heading-small">First name</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text">
+								<br>	
+								<br><a class="button btnSubmit2" href="done" role="button" style=" font-size: 19px;">Submit</a>								
+							</div>
+							
+							<div class="column-one-third">	
+								<h2 class="heading-small"> Last name</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text">
+								<br>									
+							</div>
+							
+							<div class="column-one-third">	
+								<h2 class="heading-small">Date of birth</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text">
+							<br>									
+							</div>
+					
+					</div>
+				</div>
+			</div>	
 
-			<!--end DEPENDENT!!!-->
-				<br>
-				<br>
-				<a class="button button1" href="personsummarynew" role="button">Next </a>
-			
 
+	
 			
-        </div>
-    </div>
+	</div>		
 </main>
-<script>
-
-</script>
+			
 {% endblock %}
+
+
