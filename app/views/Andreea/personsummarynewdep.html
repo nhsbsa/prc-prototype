@@ -26,12 +26,17 @@
 .highlight {
     min-height: 40%;
 }
-    .link-back{
-        position: absolute;
-        
-    }
-	.form-control {
-    width: 90%;}
+.link-back{
+    position: absolute;     
+}
+.form-control {
+    width: 90%;
+}
+.inline-btn ul li {
+	float: left;
+	margin-right: 10px;
+	margin-left: 10px;
+}
 </style>
 
 <main id="content" role="main">
@@ -43,79 +48,97 @@
 		<br>
 		<br>		
 		<!-- S1 not registered CASE-->
-		<div class="column-one-half">  
+		<div class="column-full">  
 			<div class="column-full rpads">
 				<div class="container rpads">
 					<ul class="tabs rpads sort-results">
 						<li class="tab-link current" data-tab="tab-3">Applicant summary</li>
-						<li class="tab-link" data-tab="tab-4">Dependent summary (1)</li>
+						<li class="tab-link" data-tab="tab-4">Dependent summary (2)</li>
 					</ul>
 
 
 					<div id="tab-3" class="tab-content current">
 						
 						<h1 class="heading-medium">Applicant summary</h1>
-						<div class="column-one-third lpads">
-							<!-- Applicant-->
-							<h2 class="heading-small">First name</h2>
-							<p class="change-spacep">Louise</p>
-							<br>
-							<h2 class="heading-small">Address</h2>
-							<p class="change-spacep">48B Saville Street, Durham, DH12 89AB</p>
-							<p class="change-spacea"><a href="#">Change</a>
-							</p>
-						
-							<p class="change-spacea"><br><a class="button" href="contactdetails" style="font-size: 19px; background-color: #00823B;">Submit</a></p>
-						</div>
-						<div class="column-one-third">
-							<h2 class="heading-small">Last name</h2>
-							<p class="change-spacep">Wilkinson</p>
-							<br>
-							<h2 class="heading-small">EHIC status</h2>
-							<p class="change-spacep">Registered</p>		
-							<br>
-						</div>
-						<div class="column-one-third">
-							<h2 class="heading-small">Date of birth</h2>
-							<p class="change-spacep">21/02/1972</p>
-							<br>
-						
 							
-						</div>
-							
-								
+									<table>	
+										<thead>
+											<tr>
+												<th scope="col" style="font-size: 14px;">Name</th>
+												<th scope="col" style="font-size: 14px;">Date of birth</th>
+												<th scope="col" style="font-size: 14px;">NINO</th>
+												<th scope="col" style="font-size: 14px;">Address</th>
+												<th scope="col" style="font-size: 14px;">EHIC</th>
+												<th scope="col" style="font-size: 14px;">S1 country</th>
+												<th scope="col" style="font-size: 14px;">S1 status</th>
+											</tr>
+										</thead>
+										
+										<tbody>
+											<tr>
+												<th scope="row" style="font-size: 14px; font-weight: 300;">John Smith</th>
+												<th style="font-size: 14px; font-weight: 300;">15/08/1986</th>
+												<th style="font-size: 14px; font-weight: 300;">SR 12 34 56 A</th>
+												<th style="font-size: 14px; font-weight: 300;">5 Church Street, <br>Newcastle,<br> NE12 3AB</th>
+												<th style="font-size: 14px; font-weight: 300;">No</th>
+												<th style="font-size: 14px; font-weight: 300;">Spain</th>
+												<th style="font-size: 14px; font-weight: 300;">Not registered <i class="icon icon-important" style="width: 18px; height: 18px; background-size: 100%"></i></th>
+											</tr>
+									 </tbody>
+								</table>
+					
 					</div>
 				
 					<div id="tab-4" class="tab-content">
 							
 						<h1 class="heading-medium">Dependent summary</h1>
-							<div class="column-one-third lpads">
-								<!-- First dependent s1 not registered-->
-								<h2 class="heading-small">First name</h2>
-								<p class="change-spacep">Andrea</p>
-								<br>
-								<br>	
-							</div>
-							<div class="column-one-third">
-								<h2 class="heading-small">Last name</h2>
-								<p class="change-spacep">Wilkinson</p>
-								<br>
-							</div>
-							<div class="column-one-third">
-								<h2 class="heading-small">Date of birth</h2>
-								<p class="change-spacep">04/09/2017</p>
-								<br>
-								<br>
-							</div>			
-									<p class="change-spacea"><br><a class="button" href="contactdetails" style="font-size: 19px; background-color: #00823B;">Submit</a></p>									
-							</div>
-					</div>		
-				</div>	
-					
-			</div>
-			
-			
-		</div>		    
+									<table>	
+										<thead>
+											<tr>
+												<th scope="col" style="font-size: 14px;">Name</th>
+												<th scope="col" style="font-size: 14px;">Date of birth</th>
+												<th scope="col" style="font-size: 14px;">NINO</th>
+												<th scope="col" style="font-size: 14px;">          </th>
+												<th scope="col" style="font-size: 14px;"></th>
+												<th scope="col" style="font-size: 14px;"></th>
+												<th scope="col" style="font-size: 14px;"></th>
+											</tr>
+										</thead>
+										
+										<tbody>
+											<tr>
+												<th scope="row" style="font-size: 14px; font-weight: 300;">Daniel Smith</th>
+												<th style="font-size: 14px; font-weight: 300;">22/06/2012</th>
+												<th style="font-size: 14px; font-weight: 300;">SR 12 34 56 A</th>
+												<th style="font-size: 14px; font-weight: 300;"></th>
+												<th style="font-size: 14px; font-weight: 300;"></th>
+												<th style="font-size: 14px; font-weight: 300;"></th>
+												<th style="font-size: 14px; font-weight: 300;"> </th>
+											</tr>
+										</tbody>
+										
+								</table>	
+						
+		
+					</div>	
+						<br>
+
+					<div class="grid-row inline-btn">
+					  <ul>
+						<li>
+							<a class="button" href="contactdetails" style="background-color: #005EB8;" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">Bypass residency check</a>
+						</li>
+						<li>
+							<a class="button" style="background-color: #005EB8;" href="homepage">Finish process</a>
+						</li>
+						<li>
+							<a class="button" style="background-color: #005EB8;" href="contactdetails">Continue process</a>
+						</li>
+					  </ul>
+					</div>
+			</div>			
+		</div>		
+</div>		    
 </main>
 			
 {% endblock %}
