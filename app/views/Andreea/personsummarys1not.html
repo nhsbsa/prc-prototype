@@ -32,6 +32,11 @@
     }
 	.form-control {
     width: 90%;}
+	
+.inline-btn ul li {
+	float: left;
+	margin-right: 10px;
+}
 </style>
 
 <main id="content" role="main">
@@ -115,13 +120,25 @@
 								</table>	
 						
 		
-					</div>		
-				</div>	
-					
-			</div>
-			
-			
-		</div>		    
+					</div>	
+						<br>
+
+					<div class="grid-row inline-btn">
+					  <ul>
+						<li>
+							<a class="button" href="contactdetails" style="background-color: #005EB8;" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">Bypass residency check</a>
+						</li>
+						<li>
+							<a class="button" style="background-color: #005EB8;" href="homepage">Finish process</a>
+						</li>
+						<li>
+							<a class="button" style="background-color: #005EB8;" href="contactdetails">Continue process</a>
+						</li>
+					  </ul>
+					</div>
+			</div>			
+		</div>		
+</div>		    
 </main>
 			
 {% endblock %}
