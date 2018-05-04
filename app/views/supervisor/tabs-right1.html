@@ -1,0 +1,159 @@
+{% extends "layout_bsa_internal.html" %}
+
+{% block page_title %}
+  Single User View
+{% endblock %}
+
+{% block after_header %}
+  <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-half" id="logout">
+          <a href="#">Log out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+<style>
+.highlight{
+min-height:430px;
+}
+.makeScrollable{
+height:390px;
+}
+.closed-cases{
+color: red;
+}
+.link-back{
+    margin-left: 20px;    
+}
+.inline-btn ul li {
+	float: left;
+	margin-right: 10px;
+}
+</style>
+
+<main id="content" role="main">
+    <div class="grid-row">
+	<a href="results" class="link-back">Back</a>
+		<br>
+        <div class="column-full">
+            <div class="column-one-third lpads det-width">
+                <div class="grid-row highlight">
+                    
+                    <div class="column-one-half lpads">
+                        <h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">123456789</h1>
+						<h2 class="heading-small">Full name</h2>
+                        <p class="change-spacep">Will Andersons</p>
+                        <br>
+						<h2 class="heading-small">NINO</h2>
+                        <p class="change-spacep">PD123456B</p>
+                        <br>
+                         <h2 class="heading-small">Address</h2>
+                        <p class="change-spacep">5 Church Street, Newcastle, NE12 34AB</p>
+                        
+                    </div>
+                    <div class="column-one-half">
+					<p class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em; color: red;">✗ Closed</p>
+					
+                        <h2 class="heading-small">Date of birth</h2>
+                        <p class="change-spacep">20/03/1990</p>
+						<br>
+						<h2 class="heading-small">Email</h2>
+                        <p class="change-spacep">-</p>
+					
+                        <h2 class="heading-small">Telephone number</h2>
+                        <p class="change-spacep">07345678910</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column-one-third det-width">
+                <div class="grid-row highlight">
+                                   
+                    <h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Application details</h1>
+                    <div class="column-one-half lpads">
+                        <h2 class="heading-small">S1 status</h2>
+                        <p class="change-spacep">Not registered</p>
+						<br>
+                        <br>
+                        <h2 class="heading-small">S1 Address</h2>
+                        <p class="change-spacep">Valadouro 48, Laukiz, Biscay, 48111</p>
+                        
+                    </div>
+                    <div class="column-one-half">
+                        <h2 class="heading-small">S1 country</h2>
+                        <p class="change-spacep">Spain</p>
+						<br>
+						<br>
+						<h2 class="heading-small">Country of the treatment</h2>
+						<input class="form-control" id="reference-number" name="first-name-2" type="text">
+						<br>
+                    </div>
+                </div>
+            </div>
+            <div class="column-one-third rpads tab-area">
+                <br>
+                <div class="column-full rpads">
+                    <div class="container rpads">
+                        <ul class="tabs rpads">
+                           
+                            <li class="tab-link" data-tab="tab-2">Call history</li>
+                            
+                        </ul>
+					  <div class="makeScrollable">
+                        <div id="tab-2" class="tab-content current rpads">    
+							
+							<!-- History notes -->
+							<table class="internal-table">
+								<thead>
+									<tr>
+										<th>Date</th>
+										<th>Agent</th> 
+										<th>Comments</th>
+									</tr>
+								</thead>
+									
+									<tbody>
+										<div>
+								<tr>
+									<td>29/07/2017 13.00</td>
+									<td>Tim Gallagher</td> 
+									<td>Back office investigation. John Smithe should not receive a PRC. </td>
+								</tr>
+								<tr>
+									<td>28/07/2017 10:28</td>
+									<td>Michael Ferguson</td> 
+									<td>Applicant asked for update. Contact details updated. Telephone number: 07123456789</td>
+								</tr>
+																													<tr>
+									<td>27/07/2017 13:30</td>
+									<td>Joanne Williams</td> 
+									<td>Application sent to the back office. Residency check failed.</td>
+								</tr>
+											</div>
+									</tbody>
+										
+								</table>
+								</div>
+								<br>
+								
+								<br>
+					  </div>		
+					  <a href="addNote" onClick="MyWindow=window.open('addNote','MyWindow','width=600,height=450'); return false;">+ Add note</a>
+									
+					</div>
+                </div>
+			</div> 
+			
+
+        </div>
+    </div>
+</div>
+</main>
+
+{% endblock %}

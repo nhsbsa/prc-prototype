@@ -1,0 +1,90 @@
+{% extends "layout_bsa_internal.html" %}
+
+{% block page_title %}
+  Single User View
+{% endblock %}
+
+{% block after_header %}
+  <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-half">
+          <ul class="visually-hidden">
+            <li><a class="menu-button selected" href="results">Search</a></li>
+          </ul>
+        </div>
+        <div class="column-half" id="logout">
+          <a href="#">Log out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+<style>
+.link-back{
+    padding-left: 0px;
+}
+</style>
+<main id="content" role="main">
+<a href="homepage" class="link-back">Back</a>
+<br>
+<div class="column-two-thirds">
+		<h2 class="heading-medium">PRC Search</h2>
+		<div id="search">
+			<div class="grid-row">
+			   <div class="column-one-third">
+				   <span class="form-label">Reference number</span>
+				  <div class="form-group">
+					 <input class="form-control" id="reference-number" name="first-name-2" type="text">
+				  </div>
+				</div>
+				<div class="column-one-third">
+				   <span class="form-label">First name</span>
+				   <div class="form-group">
+						<input class="form-control" id="reference-number" name="first-name-2" type="text">
+					</div>
+				</div>
+				<div class="column-one-third">
+					<span class="form-label">Last name</span>
+					<div class="form-group">
+						<input class="form-control" id="reference-number" name="first-name-2" type="text">
+					</div>
+				</div>
+				<div class="column-one-third">
+					<span class="form-label">Date of birth</span>
+					<div class="form-group">
+						<input class="form-control" id="reference-number" name="first-name-2" type="text">
+					</div>
+				</div>
+				<div class="column-one-third">
+					<span class="form-label">NINO</span>
+					<div class="form-group">
+						<input class="form-control" id="reference-number" name="first-name-2" type="text">
+					</div>
+				</div>
+			</div>
+			<div class="grid-row">
+				<div class="column-one-third">
+					<div class="form-group">
+					<a class="button" id="search-button" href="results" role="button">Search</a>
+					</div>
+				</div>
+			</div>
+		</div>       
+
+</div> 
+<div class="column-one-third">
+	<h2 class="heading-medium">Next steps</h2>
+		<div class="row sidebar collapse">
+			<div class="columns small-12">
+				<ul><li>Search and select the right case</li>
+				</ul><br>
+			</div>
+		</div>
+</div>        
+ 
+</main>
+
+{% endblock %}
