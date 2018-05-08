@@ -20,31 +20,15 @@
     </div>
   </div>
 {% endblock %}
-
-{% block content %}
 <style>
-.highlight{
-min-height:430px;
-}
-.makeScrollable{
-height:390px;
-}
-.closed-cases{
-color: red;
-}
-.link-back{
-    margin-left: 20px;    
-}
-.inline-btn ul li {
-	float: left;
-	margin-right: 10px;
+.internal-table{
+width:25%;
 }
 </style>
+{% block content %}
 
 <main id="content" role="main">
-    <div class="grid-row">
-	<a href="results" class="link-back">Back</a>
-	<br>
+  
 	<div class="column-two-thirds">
 		<h2 class="heading-medium">PRC Search</h2>
 		<div id="search">
@@ -89,17 +73,56 @@ color: red;
 			</div>
 		</div>       
 
-	</div> 
-	<div class="column-one-third">
-		<h2 class="heading-medium">Next steps</h2>
-			<div class="row sidebar collapse">
-				<div class="columns small-12">
-					<ul><li>Search and select the right case</li>
-					</ul><br>
-				</div>
+</div> 
+<div class="column-one-third">
+	<h2 class="heading-medium">Next steps</h2>
+		<div class="row sidebar collapse">
+			<div class="columns small-12">
+				<ul><li>Search and select the right case</li>
+				</ul><br>
 			</div>
-	</div>        
-</div>	 
+		</div>
+</div> 
+
+
+  <div class="column-full">
+      <table class="internal-table">
+			<tr>
+				<th>Full Name</th>
+				<th>Date of birth</th>
+				<th>NINO</th>
+				<th>Address</th>
+				<th>Status</th>
+			</tr>
+			<tr>
+				<a href="tabs-right"><td>John Smith</td></a> 
+				<td>20/11/1988</td>
+				<td>SR123456A</td>
+				<td>1 Church Street, Newcastle, NE12 34A</td>
+				<td>Open</td>
+			</tr>
+			<tr>
+				<a href="tabs-right"><td>John John Smith</td></a>  
+				<td>03/11/1996</td>
+				<td>HT567881D</td>
+				<td>138C Beach Street, Leeds, LE12 34A</td>
+				<td>Open</td>
+			</tr>
+			<tr>
+				<a href="tabs-right"><td>Jon Smith</td></a>  
+				<td>24/02/1967</td>
+				<td>CD5678811</td>
+				<td>52A Front View Street, Leeds, LE12 34A</td>
+				<td>OPen</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+
+            
+        
+    
 </main>
 
 {% endblock %}
