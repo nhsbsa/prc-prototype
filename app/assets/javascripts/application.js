@@ -134,5 +134,10 @@ $(".button-dependent").click(function(){
 	$(".button-dependent").hide();
 	$(".btnSubmit1").hide();
 });
+ 
+$(".summary").click(function(){
+	$(".depend").removeClass("visually-hidden");
+});
+   
   
 })
