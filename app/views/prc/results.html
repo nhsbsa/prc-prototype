@@ -20,129 +20,139 @@
     </div>
   </div>
 {% endblock %}
-<style>
-.internal-table{
-width:25%;
-}
-</style>
+
 {% block content %}
+<style>
+.highlight{
+min-height:430px;
+}
+.makeScrollable{
+height:390px;
+}
+.closed-cases{
+color: red;
+}
+.link-back{
+    margin-left: 20px;    
+}
+.inline-btn ul li {
+	float: left;
+	margin-right: 10px;
+}
+.first{
+	margin-top: 1em;
+}
+.second{
+	padding-top: 20px;
+}
+.results{
+    padding-left: 30px;
+    padding-right: 30px;}
+</style>
 
 <main id="content" role="main">
-  
+    <div class="grid-row">
+	<a href="results" class="link-back">Back</a>
+	<br>
 	<div class="column-two-thirds">
-		<h2 class="heading-medium">PRC Search</h2>
-		<div id="search">
-			<div class="grid-row">
-			   <div class="column-one-third">
-				   <span class="form-label">Reference number</span>
-				  <div class="form-group">
-					 <input class="form-control" id="reference-number" name="first-name-2" type="text">
-				  </div>
-				</div>
-				<div class="column-one-third">
-				   <span class="form-label">First name</span>
-				   <div class="form-group">
-						<input class="form-control" id="reference-number" name="first-name-2" type="text">
+		
+		<div class="column-full rpads">
+			<div class="container rpads">
+				<ul class="tabs rpads">
+					<a href="search-form"><li class="tab-link current" data-tab="tab-3">Applicant Search</li></a>
+					<a href="search-form-renew"><li class="tab-link" data-tab="tab-4">PRC renew</li></a>
+				</ul> 
+				<h2 class="heading-medium first">Applicant Search</h2>
+				<div class="grid-row">
+				   <div class="column-one-third">
+					   <span class="form-label">Reference number</span>
+					  <div class="form-group">
+						 <input class="form-control" id="reference-number" name="first-name-2" type="text">
+					  </div>
+					</div>
+					<div class="column-one-third">
+					   <span class="form-label">First name</span>
+					   <div class="form-group">
+							<input class="form-control" id="reference-number" name="first-name-2" type="text">
+						</div>
+					</div>
+					<div class="column-one-third">
+						<span class="form-label">Last name</span>
+						<div class="form-group">
+							<input class="form-control" id="reference-number" name="first-name-2" type="text">
+						</div>
+					</div>
+					<div class="column-one-third">
+						<span class="form-label">Date of birth</span>
+						<div class="form-group">
+							<input class="form-control" id="reference-number" name="first-name-2" type="text">
+						</div>
+					</div>
+					<div class="column-one-third">
+						<span class="form-label">NINO</span>
+						<div class="form-group">
+							<input class="form-control" id="reference-number" name="first-name-2" type="text">
+						</div>
 					</div>
 				</div>
-				<div class="column-one-third">
-					<span class="form-label">Last name</span>
-					<div class="form-group">
-						<input class="form-control" id="reference-number" name="first-name-2" type="text">
+				<div class="grid-row">
+					<div class="column-one-third">
+						<div class="form-group">
+						<a class="button" id="search-button" href="results" role="button">Search</a>
+						</div>
 					</div>
 				</div>
-				<div class="column-one-third">
-					<span class="form-label">Date of birth</span>
-					<div class="form-group">
-						<input class="form-control" id="reference-number" name="first-name-2" type="text">
-					</div>
-				</div>
-				<div class="column-one-third">
-					<span class="form-label">NINO</span>
-					<div class="form-group">
-						<input class="form-control" id="reference-number" name="first-name-2" type="text">
-					</div>
-				</div>
-			</div>
-			<div class="grid-row">
-				<div class="column-one-third">
-					<div class="form-group">
-					<a class="button" id="search-button" href="results" role="button">Search</a>
-					</div>
-				</div>
-			</div>
-		</div>       
-
-</div> 
-<div class="column-one-third">
-	<h2 class="heading-medium">Next steps</h2>
-		<div class="row sidebar collapse">
-			<div class="columns small-12">
-				<ul><li>Search and select the right case</li>
-				</ul><br>
-			</div>
+			</div>   
 		</div>
-</div> 
+	</div>
+	<div class="column-one-third">
+		<aside class="govuk-related-items" role="complementary">
+			<h2 class="heading-medium second">Before you start</h2>
+				<div class="row sidebar collapse">
+					<div class="columns small-12">
+						<ul>
+						<span><li>Search and select the right case</li></span>
+						<li>Check the correct information is displayed</li>
+						<li>Check the status of the case</li>
+						</ul><br>
+					</div>
+				</div>
+		</aside>
+	</div> 
 
-
-  <div class="column-full">
-      <table class="internal-table">
+<div class="column-full results">
+    <table class="internal-table">
 			<tr>
 				<th>Full Name</th>
 				<th>Date of birth</th>
 				<th>NINO</th>
 				<th>Address</th>
-				<th>Dependent
 			</tr>
 			<tr>
-				<a href="tabs-right"><td>John Smith</td></a> 
+				<td><a href="tabs-right">John Smith</a></td>
 				<td>20/11/1988</td>
 				<td>SR123456A</td>
 				<td>1 Church Street, Newcastle, NE12 34A</td>
-				<td></td>
 			</tr>
 			<tr>
-				<a href="tabs-right"><td>John John Smith</td></a>  
+				<td><a href="tabs-right">John John Smith</a></td>  
 				<td>03/11/1996</td>
 				<td>HT567881D</td>
 				<td>138C Beach Street, Leeds, LE12 34A</td>
-				<td></td>
 			</tr>
 			<tr>
-				<a href="tabs-right"><td>Jon Smith</td></a>  
+				<td><a href="tabs-right">John Smith</a></td>
 				<td>24/02/1967</td>
 				<td>CD5678811</td>
 				<td>52A Front View Street, Leeds, LE12 34A</td>
-				<td></td>
 			</tr>
-			<tr>
-				<a href="tabs-right"><td>Louise Adams</td></a>  
-				<td>15/06/1983</td>
-				<td>AB5678811</td>
-				<td>43 Clock Street, Manchester, MN12 34A</td>
-				<td>			
-	    <details>
-          <summary>
-            <span class="summary">Dependent(s)</span>
-          </summary>
-          <div class="panel panel-border-narrow">
-			<tr class="depend visually-hidden">
-				<a href="tabs-right"><td>Jon Smith</td></a>  
-				<td>24/02/1967</td>
-				<td>CD5678811</td>
-				<td>52A Front View Street, Leeds, LE12 34A</td>
-				<td></td>
-			</tr>
-			<p>If you've forgotten your password, you should contact the Service Desk on 0870 010 3241.</p>
-          </div>
-        </details>
-				</td>
+	</table>
 	
-			</tr>
-		</table>
-	</div>
 </div>
-
+<div class="column-full results">
+	<br>
+	<a class="button" href="personsearchlist" role="button">Register new applicant</a>
+</div>
 
             
         
