@@ -1,0 +1,212 @@
+{% extends "layout_bsa_internal.html" %} 
+
+{% block page_title %} Single User View 
+{% endblock %} 
+
+{% block after_header %}
+  <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-half">
+          <ul class="visually-hidden">
+            <li><a class="menu-button selected" href="results">Search</a></li>
+          </ul>
+        </div>
+        <div class="column-half" id="logout">
+          <a href="login">Sign out</a>
+        </div>
+      </div>
+    </div>
+  </div> 
+  {% endblock %} 
+  
+  {% block content %}
+
+<style>
+.highlight {
+    min-height: 40%;
+}
+.link-back{
+    margin-left: 20px;     
+}
+.form-control {
+    width: 90%;
+}
+.questions{
+	padding: 0px 0 0 0;
+}
+.multiple-choice{
+    padding-top: 5px;
+    padding-bottom: 0px;
+	padding-right: 5px;
+	padding-left: 0px;
+	
+}
+.questions1{
+padding: 0 0 0 0;
+}
+</style>
+
+<main id="content" role="main">
+
+    <div class="grid-row">
+
+        <a href="personsearchlist" class="link-back">Back</a>
+		<br>
+		<br>
+		<div class="column-full">
+			<div class="column-one-third lpads ">
+				<div style="padding: 0 2em 0 1em">
+					<div class="grid-row highlight">
+						<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Definitory questions</h1>
+						
+						<div class="column-full questions">	
+							<!-- Who you applying for? -->
+							<div class="form-group">
+							  <fieldset class="inline">
+								<div class="column-one-third questions1">
+									<legend>
+									  <h1 class="heading-small">
+										Applying for?
+									  </h1>
+									</legend>
+								</div>
+								<div class="column-one-third questions1">
+									<div class="multiple-choice">
+									  <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+									  <label for="radio-inline-1">Myself</label>
+									</div>
+								</div>
+								<div class="column-one-third questions1">
+									<div class="multiple-choice">
+									  <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+									  <label for="radio-inline-2">Third party</label>
+									</div>
+								</div>	
+							  </fieldset>
+							</div>
+							<!-- reside in UK-->
+							<div class="form-group">
+							  <fieldset class="inline">
+								<div class="column-one-third questions1">
+									<legend>
+									  <h1 class="heading-small">
+										UK resident?
+									  </h1>
+									</legend>
+								</div>
+								<div class="column-one-third questions1">
+									<div class="multiple-choice">
+									  <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+									  <label for="radio-inline-1">Yes</label>
+									</div>
+								</div>
+								<div class="column-one-third questions1">
+									<div class="multiple-choice">
+									  <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+									  <label for="radio-inline-2">No</label>
+									</div>
+								</div>	
+							  </fieldset>
+							</div>
+							<!-- Do you have a S1? -->
+							<div class="form-group">
+							  <fieldset class="inline">
+								<div class="column-one-third questions1">
+									<legend>
+									  <h1 class="heading-small">
+										S1 registred?
+									  </h1>
+									</legend>
+								</div>
+								<div class="column-one-third questions1">
+									<div class="multiple-choice">
+									  <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+									  <label for="radio-inline-1">Yes</label>
+									</div>
+								</div>
+								<div class="column-one-third questions1">
+									<div class="multiple-choice">
+									  <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+									  <label for="radio-inline-2">No</label>
+									</div>
+								</div>	
+							  </fieldset>
+							</div>
+						</div>
+						<br><a class="button" href="done" role="button" style=" font-size: 19px;">Submit</a>
+					</div>			
+				</div>
+			</div>	
+			<div class="column-one-third">
+				<div class="grid-row highlight" style="padding: 0 2em 0 1em">
+					<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Applicant details</h1>
+					<div class="column-one-third lpads">	
+							<h2 class="heading-small">First name</h2>
+							<input class="form-control" id="reference-number" name="first-name-2" type="text">
+							<br>	
+							<br>
+							<h2 class="heading-small NINO-number">NINO<h2>
+							<input class="form-control NINO-number" id="reference-number" name="first-name-2" type="text">
+							<br>
+							<br>
+							<h2 class="heading-small house-number">House number</h2>
+							<input class="form-control house-number" id="reference-number" name="first-name-2" type="text">
+							<div class=" address visually-hidden">
+								<label class="form-label" for="select-box">Select the address</label>
+								<select class="form-control" id="select-box">
+									<option>1 Church Street, Newcastle, NE12 3AB</option>
+									<option>2 Church Street, Newcastle, NE12 3AB</option>
+									<option>4 Church Street, Newcastle, NE12 3AB</option>
+									<option>5 Church Street, Newcastle, NE12 3AB</option>
+								</select>
+							</div>
+						
+						</div>
+							
+							
+						<div class="column-one-third">	
+							<h2 class="heading-small">Last name</h2>
+							<input class="form-control" id="reference-number" name="first-name-2" type="text">
+							<br>
+							<br>
+							<h2 class="heading-small EHIC-number">EHIC number<h2>
+							<input class="form-control EHIC-number" id="reference-number" name="first-name-2" type="text">
+							<br>
+							<br>
+							<h2 class="heading-small postcode"> Postcode</h2>
+							<input class="form-control postcode" id="reference-number" name="first-name-2" type="text">
+							<br>							
+						</div>
+
+						<div class="column-one-third">	
+							<h2 class="heading-small">Date of birth</h2>
+							<input class="form-control dob" id="reference-number" name="first-name-2" type="text">
+							<br>									
+							<br>
+							<br>
+							<br>									
+							<br>
+							<br>
+							<br>
+							<a class="button buttonFind" href="#" role="button" style="font-size: 19px; background-color: #005EB8;">Find address</a> 
+							<br>									
+						</div>
+							<br>
+							<br>
+							<a class="button-dependent" href="#">+ Add dependent</a>
+							<br>
+							<br>
+							<a class="button btnSubmit1" href="contactdetails" role="button" style=" font-size: 19px;">Submit</a>
+							<br>
+							<br>
+				</div>
+				
+			</div>
+		</div>
+	</div>					
+</main>
+			
+{% endblock %}
+
+

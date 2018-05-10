@@ -1,0 +1,60 @@
+{% extends "layout_bsa_internal.html" %} 
+
+{% block page_title %} Single User View 
+{% endblock %} 
+
+{% block after_header %}
+  <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-half">
+          <ul class="visually-hidden">
+            <li><a class="menu-button selected" href="results">Search</a></li>
+          </ul>
+        </div>
+        <div class="column-half" id="logout">
+          <a href="login">Sign out</a>
+        </div>
+      </div>
+    </div>
+  </div> 
+  {% endblock %} 
+  
+  {% block content %}
+
+<style>
+.done-panel{
+    padding: 40px;
+	margin: 10px 0px;
+}  
+.heading-medium{
+margin-top: 0.8em;
+}  
+</style>
+
+<main id="content" role="main">
+
+
+    <div class="grid-row">
+       
+		<div class="column-two-thirds">
+        
+            <div class="done-panel">
+                <h1 class="heading-xlarge"><span id="done-tick"></span>Done</h1>
+                <h2 class="heading-large"><span class="heading-secondary" style="color:white">Reference number</span> K5G-V78</h2>
+            </div>
+
+			<h2 class="heading-medium">Treatment facility details:</h2>
+			<p> Fax: <a href="#">+44 236 461 000</a></p>
+            <a class="button" href="homepage" role="button" style=" background-color: #005EB8;">Preview PDF</a>
+
+
+            <h2 class="heading-medium">What happens next</h2>
+            <p>We are sending out the PRC and it will arrive at the hospital soon. If you provided an email address, a confirmation email will be available with you in the following minutes. </p>
+			<a class="button" href="homepage" role="button">Back to start</a>
+        </div>
+   
+    </div>
+</main>
+
+{% endblock %}
