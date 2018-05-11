@@ -111,6 +111,19 @@ $(".button2").click(function(){
 	$(".button2").hide();
 });
 
+$(".button-dependent").click(function(){
+	$(".dependent").removeClass("visually-hidden");
+	$(".button-dependent").hide();
+	$(".btnSubmit1").hide();
+});
+
+$(".button-manually").click(function(){
+	$(".address-manually").removeClass("visually-hidden");
+	$(".button-manually").hide();
+	$(".address").addClass("visually-hidden");
+});
+
+
 //$(".selectbtn1").click(function(){
 //	$(".s1-notRegistered").removeClass("visually-hidden");
 //	$(".s1-registered").addClass("visually-hidden");
@@ -129,11 +142,7 @@ $(".button2").click(function(){
 //	$(".s1-registered").addClass("visually-hidden");
 //});
 
-$(".button-dependent").click(function(){
-	$(".dependent").removeClass("visually-hidden");
-	$(".button-dependent").hide();
-	$(".btnSubmit1").hide();
-});
+
  
 $(".summary").click(function(){
 	$(".depend").removeClass("visually-hidden");
