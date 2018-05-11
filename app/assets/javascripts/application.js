@@ -113,8 +113,7 @@ $(".button2").click(function(){
 
 $(".button-dependent").click(function(){
 	$(".dependent").removeClass("visually-hidden");
-	$(".button-dependent").hide();
-	$(".btnSubmit1").hide();
+	$(".first-box-btn").hide();
 });
 
 $(".button-manually").click(function(){
