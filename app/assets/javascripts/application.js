@@ -98,10 +98,9 @@ $(".selectbtn3").click(function() {
 
 
 $(".buttonFind").click(function(){
-	$(".house-number").hide();
-	$(".postcode").hide();
 	$(".address").removeClass("visually-hidden");
-	$(".buttonFind").hide();
+	$(".house-postcode").addClass("visually-hidden");
+	
 });
 
 $(".button2").click(function(){
@@ -117,7 +116,7 @@ $(".button-dependent").click(function(){
 });
 
 $(".button-manually").click(function(){
-	$(".address-manually").removeClass("visually-hidden");
+	$(".manual-address").removeClass("visually-hidden");
 	$(".button-manually").hide();
 	$(".address").addClass("visually-hidden");
 });
