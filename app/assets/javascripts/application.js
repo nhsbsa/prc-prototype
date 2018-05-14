@@ -113,6 +113,12 @@ $(".button2").click(function(){
 $(".button-dependent").click(function(){
 	$(".dependent").removeClass("visually-hidden");
 	$(".first-box-btn").hide();
+	$(".button-submit2").removeClass("visually-hidden");
+});
+
+$(".button-dependent2").click(function(){
+	$(".dependent2").removeClass("visually-hidden");
+	$(".buttons").hide();
 });
 
 $(".button-manually").click(function(){
@@ -121,6 +127,8 @@ $(".button-manually").click(function(){
 	$(".address").addClass("visually-hidden");
 });
 
+
+$("input[type=radiobutton]" ).on("click", $(".acceptancecriteria").removeClass("visually-hidden"));
 
 //$(".selectbtn1").click(function(){
 //	$(".s1-notRegistered").removeClass("visually-hidden");

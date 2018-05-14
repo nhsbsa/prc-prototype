@@ -32,126 +32,140 @@
 .form-control {
     width: 90%;
 }
+#select-box {
+   background: white;
+   color: black;
+   border: none;
+   height: 30px; 
+   width: 66%;
+   margin-bottom: 3px; 
+   font-size: medium;
+   border: 2px solid grey;
+}
+.column-full{
+	padding-left: 0px;
+	font-size: 16px;
+	padding-left: 0px;
+}
+.building2{
+	padding-left:0px;
+}
+.first-box-btn{
+	padding-left:0px;
+}
+.newbox{
+	padding-left:0px;
+}
+.button-submit2{
+    margin-left: 20px;     
+}
+.form-group{	
+	margin-bottom: 15px;
+}
+.dob1234{
+	width:50px;
+}
 </style>
 
 <main id="content" role="main">
-
     <div class="grid-row">
-
-        <a href="definitoryquestions" class="link-back">Back</a>
+				<a href="definitoryquestions" class="link-back">Back</a>
 		<br>
 		<br>
 		<div class="column-full">
 			<div class="column-one-half lpads ">
 				<div style="padding: 0 2em 0 1em">
 					<div class="grid-row highlight">
-						<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register an applicant</h1>
-						
-						<div class="column-one-third lpads">	
-							<h2 class="heading-small">First name</h2>
-							<input class="form-control" id="reference-number" name="first-name-2" type="text">
-							<br>	
-							<br>
-							<h2 class="heading-small NINO-number">NINO<h2>
-							<input class="form-control NINO-number" id="reference-number" name="first-name-2" type="text">
-							<br>
-							<br>
-							<h2 class="heading-small house-number">House number</h2>
-							<input class="form-control house-number" id="reference-number" name="first-name-2" type="text">
-							<div class=" address visually-hidden">
-								<label class="form-label" for="select-box">Select the address</label>
-								<select class="form-control" id="select-box">
-									<option>1 Church Street, Newcastle, NE12 3AB</option>
-									<option>2 Church Street, Newcastle, NE12 3AB</option>
-									<option>4 Church Street, Newcastle, NE12 3AB</option>
-									<option>5 Church Street, Newcastle, NE12 3AB</option>
-								</select>
-							</div>
-							<br>
-							<br>
-							<a class="button-dependent" href="#">+ Add dependent</a>
-							<br>
-							<br>
-							<a class="button btnSubmit1" href="contactdetails" role="button" style=" font-size: 19px;">Submit</a>
-						</div>
+						<div class="column-full">	
+							<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register an applicant</h1>
 							
-							
-						<div class="column-one-third">	
-							<h2 class="heading-small">Last name</h2>
-							<input class="form-control" id="reference-number" name="first-name-2" type="text">
-							<br>
-							<br>
-							<h2 class="heading-small EHIC-number">EHIC number<h2>
-							<input class="form-control EHIC-number" id="reference-number" name="first-name-2" type="text">
-							<br>
-							<br>
-							<h2 class="heading-small postcode"> Postcode</h2>
-							<input class="form-control postcode" id="reference-number" name="first-name-2" type="text">
-							<br>							
-						</div>
-
-						<div class="column-one-third">	
-							<h2 class="heading-small">Date of birth</h2>
-							<input class="form-control dob" id="reference-number" name="first-name-2" type="text">
-							<br>									
-							<br>
-							<br>
-							<br>									
-							<br>
-							<br>
-							<br>
-							<a class="button buttonFind" href="#" role="button" style="font-size: 19px; background-color: #005EB8;">Find address</a> 
-							<br>									
-						</div>
-							
-							
-					</div>
-				</div>
-			</div>
-				
-		
-		
-		<!--  Dependent details -->
-		
-            <div class="column-one-half dependent visually-hidden">
-				<div style="padding: 0 2em 0 2em">
-					<div class="grid-row highlight">
-					
-						<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Dependent details</h2>	
-					
 							<div class="column-one-third lpads">	
 								<h2 class="heading-small">First name</h2>
 								<input class="form-control" id="reference-number" name="first-name-2" type="text">
-								<br>
-								<br>
-								<h2 class="heading-small ehic-no">NINO<h2>
-								<input class="form-control ehic-no" id="reference-number" name="first-name-2" type="text">
-								<br>
-								<br><a class="button btnSubmit2" href="contactdetails" role="button" style=" font-size: 19px;">Submit</a>								
+							</div>		
+							<div class="column-one-third lpads">	
+								<h2 class="heading-small">Last name</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text">	
 							</div>
-							
-							<div class="column-one-third">	
-								<h2 class="heading-small"> Last name</h2>
-								<input class="form-control" id="reference-number" name="first-name-2" type="text">
-								<br>						
-								<br>
-								<h2 class="heading-small ehic-no">EHIC number<h2>
-								<input class="form-control ehic-no" id="reference-number" name="first-name-2" type="text">
-								<br>	
-							</div>
-							
-							<div class="column-one-third">	
+							<div class="column-one-third lpads">	
 								<h2 class="heading-small">Date of birth</h2>
-								<input class="form-control" id="reference-number" name="first-name-2" type="text">
-							<br>									
+								<input class="form-control dob1234" id="reference-number" name="first-name-2" type="text">
 							</div>
+							<div class="column-one-third lpads">	
+								<br><h2 class="heading-small">NINO</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text">
+							</div>
+							<div class="column-one-third lpads">	
+								<br><h2 class="heading-small">S1 country</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text">
+							</div>
+							<div class="column-one-third lpads">	
+								<br><h2 class="heading-small">S1 registration date</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text">
+							</div>
+						</div>
+
+						<div class="column-full first-box-btn">
+							<div class="column-one-half newbox">
+								<br>
+								<a class="button-dependent" href="#">+ Add dependent</a>
+								<br>
+								<br>
+								<a class="button btnSubmit1" href="contactdetails" role="button" style=" font-size: 19px;">Save and submit</a>
+							</div>
+						</div>						
 					</div>
 				</div>
-			</div>	
-
-
+			</div>
+					
+		<!--  Dependent details -->
+		<div class="column-one-half dependent visually-hidden">
+			<div style="padding: 0 2em 0 2em">
+				<div class="grid-row highlight">
+				
+					<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Dependent details</h2>	
+					<!-- Dependent link-->
+						
+							<div class="form-group">
+							  <label class="form-label" for="select-box" style="width: 66%;">Dependent link with the main applicant</label>
+							  <select class="form-control" id="select-box">
+								<option>Father - Child</option>
+								<option>Mother - Child</option>
+								<option>Foster parent - Child</option>
+								<option>Grandmother - Child</option>
+								<option>Grandfather - Child</option>
+								<option>Guardian - Child</option>
+								<option>Husband - Wife?</option>
+								<option>Aunt - Child?</option>
+								<option>Uncle - Child?</option>
+								<option>Brother - Sister</option>
+							  </select>
+							</div>					
+					
+						<div class="column-one-third lpads">	
+								<h2 class="heading-small">First name</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text">
+						</div>		
+						<div class="column-one-third lpads">	
+								<h2 class="heading-small">Last name</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text">	
+						</div>
+						<div class="column-one-third lpads">	
+								<h2 class="heading-small">Date of birth</h2>
+								<input class="form-control dob1234" id="reference-number" name="first-name-2" type="text">
+						</div>
+						<div class="column-one-third lpads">	
+								<br><h2 class="heading-small">NINO</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text">
+						</div>
+						
+				</div>
+			</div>
 	
-			
+		</div>	
+		<div class="column-full lpads button-submit2 visually-hidden">	
+				<br><a class="button" href="contactdetails" role="button" style=" font-size: 19px;">Save and submit</a>
+		</div>	
 	</div>		
 </main>
 			

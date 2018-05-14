@@ -36,21 +36,51 @@
 .questions{
 	padding: 0px 0 0 0;
 }
-.multiple-choice{
-    padding-top: 5px;
+.multiple-choice {
+    padding-top: 0px;
     padding-bottom: 0px;
-	padding-right: 5px;
-	padding-left: 0px;
-	
+    padding-right: 0px;
+    padding-left: 0px;
 }
 .column-one-third{
-padding: 0 0 0 0;
+	padding: 0 0 0 0;
 }
 .multiple-choice [type=radio] + label::after {
     left: 17px;
-    top: 15px;
-    border: 7px solid;
+    top: 20px;
 }
+.multiple-choice [type=radio] + label::before {
+{
+    margin-left: -40px;
+    margin-top: -4px;
+}
+.multiple-choice label {
+    float: left;
+    margin-left: 50px;
+    padding-right: 5px;
+    padding-top: 0px;
+	padding-bottom: 35px;
+}
+#select-box2 {
+    background: white;
+    color: black;
+    border: none;
+    height: 30px;
+    width: 66%;
+    margin-bottom: 3px;
+    font-size: medium;
+    border: 2px solid grey;
+}
+.inline .multiple-choice label {
+    padding-bottom: 5px;
+}
+.radio-inline-6 {
+    padding-bottom: 15px;
+}
+.form-control {
+    width: 90%;
+}
+
 </style>
 
 <main id="content" role="main">
@@ -64,7 +94,7 @@ padding: 0 0 0 0;
 			<div class="column-one-half lpads ">
 				<div style="padding: 0 2em 0 1em">
 					<div class="grid-row highlight">
-						<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Definitory questions</h1>
+						<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Definitive questions</h1>
 						
 						<div class="column-full questions">	
 						<!-- Who you applying for? -->
@@ -119,7 +149,7 @@ padding: 0 0 0 0;
 							</div> 
 						-->
 							<!-- Do you have a S1? -->
-						<form action="registration" method="get" class="form">	
+						<form id="myForm" action="registration" method="get" class="form">	
 							<div class="form-group">
 							  <fieldset class="inline">
 								<div class="column-one-third">
@@ -142,13 +172,26 @@ padding: 0 0 0 0;
 									</div>
 								</div>	
 							  </fieldset>
-							</div>
-						</div>
+							</div>			
+								
+						<div class="form-group visually-hidden">
+							    <label class="form-label" for="select-box2" style="width: 66%;"><h1 class="heading-small">
+										Acceptance criteria
+									  </h1>
+								</label>
+							  <select class="form-control" id="select-box2" style="font-size: medium;">
+								<option>S1 not recognised by the treatment facility</option>
+								<option>Country of the accident different from S1</option>
+								<option>Reason 3</option>
+							  </select>
+						</div>	
 						<br>
-						<!--<a class="button" href="#" role="button" style=" font-size: 19px;">Submit</a>-->
 						<input class="button" type="submit" value="Next" style=" font-size: 19px;" />
 						</form>
-					</div>			
+						
+					
+					</div>
+				</div>			
 	</div>		
 </main>
 			

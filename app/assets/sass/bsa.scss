@@ -467,7 +467,8 @@ table {
   margin-bottom: 15px;
   min-height: 37px;
   &:first-child {
-    margin-top: 10px;
+    margin-top: 20px;
+	margin-left: -40px;
   }
   &:hover {
     border :1px solid black;
@@ -490,6 +491,7 @@ table {
     float: left;
     margin-left: 48px;
     padding-right: 5px;
+	padding-top: 10px;
   }
 }
 

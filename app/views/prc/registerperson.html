@@ -27,7 +27,7 @@
     min-height: 40%;
 }
 .link-back{
-    margin-left: 20px;     
+    margin-left: 10px;     
 }
 .form-control {
     width: 90%;
@@ -56,13 +56,46 @@
 .newbox{
 	padding-left:0px;
 }
+.button-submit2{
+    margin-left: 20px;     
+}
+.form-group{	
+	margin-bottom: 15px;
+}
+#test1234{
+	float: right;
+    text-align: right;
+}
+.multiple-choice{
+	transform: scale(0.70);
+    background-color: transparent;
+    border: transparent;
+}
+.first-multiple-choice{
+	margin-left: -36px;
+    margin-top: -15px;
+}
+
+
+.hello:first-child {
+    margin-top: 20px;
+    margin-left: -40px;
+    margin-top: 20px;
+    margin-left: -24px;
+}
 </style>
 
 <main id="content" role="main">
-
     <div class="grid-row">
+		<div class="column-full full">
+			<div class="column-one-half">
+				<a href="definitoryquestions" class="link-back">Back</a>
+			</div>
+			<div class="column-half" id="test1234">
+				<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">End process</a>
+			</div>
+		</div>	
 
-        <a href="definitoryquestions" class="link-back">Back</a>
 		<br>
 		<br>
 		<div class="column-full">
@@ -85,30 +118,44 @@
 								<input class="form-control" id="reference-number" name="first-name-2" type="text">
 							</div>
 							<div class="column-one-third lpads">	
-								<h2 class="heading-small">NINO</h2>
+								<br><h2 class="heading-small">NINO</h2>
 								<input class="form-control" id="reference-number" name="first-name-2" type="text">
 							</div>
 							<div class="column-one-third lpads">	
-								<h2 class="heading-small">EHIC number</h2>
+								<br><h2 class="heading-small">EHIC number</h2>
 								<input class="form-control" id="reference-number" name="first-name-2" type="text">
+							</div>
+							<div class="column-one-third lpads">	
+								<br><h2 class="heading-small">EHIC expiry date</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text">
+							</div>
+						</div>
+						<div class="column-full">
+							<div class="multiple-choice hello">
+								  <input id="bypassresidency" name="bypassresidency" type="checkbox" value="true">
+								  <label for="checkbox-telephone-number">UK resident?</label>
 							</div>
 						</div>
 						<div class="column-full house-postcode">
 							<div class="column-one-third lpads">	
+								<br>
+								
 								<h2 class="heading-small house-number">House number</h2>
 								<input class="form-control house-number" id="reference-number" name="first-name-2" type="text">
 							</div>
 							<div class="column-one-third lpads">	
+								<br>
 								<h2 class="heading-small postcode"> Postcode</h2>
 								<input class="form-control postcode" id="reference-number" name="first-name-2" type="text">		
 							</div>
 							<div class="column-one-third lpads">	
-								<br><a class="button buttonFind" href="#" role="button" style="font-size: 19px; background-color: #005EB8;">Find address</a> 
-								<br>									
+								<br>
+								<br><a class="button buttonFind" href="#" role="button" style="font-size: 16px; background-color: #005EB8;">Find address</a> 
+																	
 							</div>
 						</div>
 						<div class="column-full address visually-hidden">
-							<label class="form-label" for="select-box" style="width: 66%;">Select the address</label>
+							<br><label class="form-label" for="select-box" style="width: 66%;">Select the address</label>
 							<select class="form-control" id="select-box">
 								<option>1 Church Street, Newcastle, NE12 3AB</option>
 								<option>2 Church Street, Newcastle, NE12 3AB</option>
@@ -119,8 +166,9 @@
 							<a class="button-manually" href="#">Enter address manually</a>
 						</div>
 						<div class="column-full manual-address visually-hidden">
+							
 							<div class="column-one-third lpads">
-								<h2 class="heading-small">Building and street</h2>
+								<br><h2 class="heading-small">Building and street</h2>
 								<input class="form-control" id="reference-number" name="first-name-2" type="text">
 								<input class="form-control" id="reference-number" name="first-name-2" type="text">
 							</div>	
@@ -141,10 +189,16 @@
 								<a class="button-dependent" href="#">+ Add dependent</a>
 								<br>
 								<br>
-								<a class="button btnSubmit1" href="contactdetails" role="button" style=" font-size: 19px;">Submit</a>
+								<div class="multiple-choice first-multiple-choice">
+									<input id="bypassresidency1" name="bypassresidency1" type="checkbox" value="true">
+									<label for="checkbox-telephone-number">Bypass residency check</label>
+								</div>	
+								<br>
+								<br>
+								<a class="button btnSubmit1" href="contactdetails" role="button" style=" font-size: 16px;">Save and bypass residency check</a>
 							</div>
-						</div>	
 							
+						</div>						
 					</div>
 				</div>
 			</div>
@@ -186,18 +240,31 @@
 								<input class="form-control" id="reference-number" name="first-name-2" type="text">
 						</div>
 						<div class="column-one-third lpads">	
-								<h2 class="heading-small">NINO</h2>
+								<br><h2 class="heading-small">NINO</h2>
 								<input class="form-control" id="reference-number" name="first-name-2" type="text">
 						</div>
 						<div class="column-one-third lpads">	
-								<h2 class="heading-small">EHIC number</h2>
+								<br><h2 class="heading-small">EHIC number</h2>
 								<input class="form-control" id="reference-number" name="first-name-2" type="text">
 						</div>
-						<div class="column-full">	
-							<br><a class="button btnSubmit2" href="contactdetails" role="button" style=" font-size: 19px;">Submit</a>
+						<div class="column-one-third lpads">	
+								<br><h2 class="heading-small">EHIC expiry date</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text">
 						</div>
+						
 				</div>
 			</div>
+	
+		</div>	
+		<div class="column-full button-submit2 visually-hidden">
+			<div class="multiple-choice">
+			  <input id="bypassresidency2" name="bypassresidency2" type="checkbox" value="true">
+			  <label for="checkbox-telephone-number">Bypass residency check</label>
+			</div>	
+			<br>	
+			<br>	
+			<br>			
+			<br><a class="button" href="contactdetails" role="button" style=" font-size: 16px; margin-left: -4px;">Save and submit</a>
 		</div>	
 	</div>		
 </main>
