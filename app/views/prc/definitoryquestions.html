@@ -28,7 +28,7 @@
 	margin-left: 0px;
 }
 .link-back{
-    margin-left: 20px;     
+    margin-left: 8px;     
 }
 .form-control {
     width: 90%;
@@ -71,8 +71,9 @@
     font-size: medium;
     border: 2px solid grey;
 }
-.inline .multiple-choice label {
-    padding-bottom: 5px;
+.multiple-choice {
+    padding-bottom: 10px
+	padding-top:10px;
 }
 .radio-inline-6 {
     padding-bottom: 15px;
@@ -80,14 +81,25 @@
 .form-control {
     width: 90%;
 }
-
+#test1234{
+	float: right;
+    text-align: right;
+}
 </style>
 
 <main id="content" role="main">
 
     <div class="grid-row">
 
-        <a href="homepage" class="link-back">Back</a>
+        <div class="column-full full">
+			<div class="column-one-half">
+				<a href="definitoryquestions" class="link-back">Back</a>
+			</div>
+			<div class="column-half" id="test1234" style="float: right;
+    text-align: right;">
+				<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">End process</a>
+			</div>
+		</div>	
 		<br>
 		<br>
 		<div class="column-full">
@@ -108,7 +120,7 @@
 									  </h1>
 									</legend>
 								</div>
-								<div class="column-one-third">
+								<div class="column-one-third lpads">
 									<div class="multiple-choice">
 									  <input id="radio-inline-1" type="radio" name="myself" value="myself">
 									  <label for="radio-inline-1">Myself</label>
@@ -122,77 +134,51 @@
 								</div>	
 							  </fieldset>
 							</div>
-						
-						<!-- reside in UK should be used when removing S1 case
-							<div class="form-group group2">
-							  <fieldset class="inline">
-								<div class="column-one-third">
-									<legend>
-									  <h1 class="heading-small">
-										UK resident?
-									  </h1>
-									</legend>
-								</div>
-								<div class="column-one-third">
-									<div class="multiple-choice">
-									  <input id="radio-inline-3" type="radio" name="radio-inline-group2" value="Yes" />
-									  <label for="radio-inline-3">Yes</label>
-									</div>
-								</div>
-								<div class="column-one-third">
-									<div class="multiple-choice">
-									  <input id="radio-inline-4" type="radio" name="radio-inline-group2" value="No">
-									  <label for="radio-inline-4">No</label>
-									</div>
-								</div>	
-							  </fieldset>
-							</div> 
-						-->
 							<!-- Do you have a S1? -->
-						<form id="myForm" action="registration" method="get" class="form">	
-							<div class="form-group">
-							  <fieldset class="inline">
-								<div class="column-one-third">
-									<legend>
-									  <h1 class="heading-small">
-										S1 registred?
-									  </h1>
-									</legend>
-								</div>
-								<div class="column-one-third">
-									<div class="multiple-choice">
-									  <input id="radio-inline-group5" type="radio" name="registred" value="Yes">
-									  <label for="radio-inline-5">Yes</label>
+							<form id="myForm" action="registration" method="get" class="form">	
+								<div class="form-group">
+								  <fieldset class="inline">
+									<div class="column-one-third">
+										<legend>
+										  <h1 class="heading-small">
+											S1 registred?
+										  </h1>
+										</legend>
 									</div>
-								</div>
-								<div class="column-one-third">
-									<div class="multiple-choice">
-									  <input id="radio-inline-6" type="radio" name="registred" value="No">
-									  <label for="radio-inline-6">No</label>
+									<div class="column-one-third">
+										<div class="multiple-choice">
+										  <input id="radio-inline-group5" type="radio" name="registred" value="Yes">
+										  <label for="radio-inline-5">Yes</label>
+										</div>
 									</div>
+									<div class="column-one-third">
+										<div class="multiple-choice">
+										  <input id="radio-inline-6" type="radio" name="registred" value="No">
+										  <label for="radio-inline-6">No</label>
+										</div>
+									</div>	
+								  </fieldset>
+								</div>			
+								<div class="form-group visually-hidden">
+									<label class="form-label" for="select-box2" style="width: 66%;"><h1 class="heading-small">
+											Acceptance criteria
+										  </h1>
+									</label>
+								  <select class="form-control" id="select-box2" style="font-size: medium;">
+									<option>S1 not recognised by the treatment facility</option>
+									<option>Country of the accident different from S1</option>
+									<option>Reason 3</option>
+								  </select>
 								</div>	
-							  </fieldset>
-							</div>			
-								
-						<div class="form-group visually-hidden">
-							    <label class="form-label" for="select-box2" style="width: 66%;"><h1 class="heading-small">
-										Acceptance criteria
-									  </h1>
-								</label>
-							  <select class="form-control" id="select-box2" style="font-size: medium;">
-								<option>S1 not recognised by the treatment facility</option>
-								<option>Country of the accident different from S1</option>
-								<option>Reason 3</option>
-							  </select>
-						</div>	
-						<br>
-						<input class="button" type="submit" value="Next" style=" font-size: 19px;" />
-						</form>
-						
-					
+							<br>
+							<input class="button" type="submit" value="Next" style=" font-size: 19px;" />
+							</form>
+						</div>
 					</div>
-				</div>			
-	</div>		
+				</div>
+			</div>
+		</div>
+	</div>
 </main>
 			
 {% endblock %}
