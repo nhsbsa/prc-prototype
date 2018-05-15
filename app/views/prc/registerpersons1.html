@@ -27,7 +27,7 @@
     min-height: 40%;
 }
 .link-back{
-    margin-left: 20px;     
+    margin-left: 10px;     
 }
 .form-control {
     width: 90%;
@@ -62,12 +62,30 @@
 .form-group{	
 	margin-bottom: 15px;
 }
-.dob1234{
-	width:50px;
-}
 #test1234{
 	float: right;
     text-align: right;
+}
+.multiple-choice{
+	transform: scale(0.70);
+    background-color: transparent;
+    border: transparent;
+}
+.first-multiple-choice{
+	margin-left: -36px;
+    margin-top: -15px;
+}
+.hello:first-child {
+    margin-top: 20px;
+    margin-left: -40px;
+    margin-top: 20px;
+    margin-left: -24px;
+}
+.multiple-choice label{
+	float: left;
+	margin-left: 48px;
+	padding-right: 5px;
+	padding-top: 0px;
 }
 </style>
 
@@ -122,6 +140,12 @@
 								<a class="button-dependent" href="#">+ Add dependent</a>
 								<br>
 								<br>
+								<div class="multiple-choice first-multiple-choice">
+									<input id="bypassresidency1" name="bypassresidency1" type="checkbox" value="true">
+									<label for="bypass-checkbox">Bypass residency check</label>
+								</div>	
+								<br>
+								<br>
 								<a class="button btnSubmit1" href="contactdetails" role="button" style=" font-size: 19px;">Save and submit</a>
 							</div>
 						</div>						
@@ -174,12 +198,17 @@
 			</div>
 	
 		</div>	
-		<div class="column-full lpads button-submit2 visually-hidden">	
-				<br><a class="button" href="contactdetails" role="button" style=" font-size: 19px;">Save and submit</a>
+				<div class="column-full button-submit2 visually-hidden">
+			<div class="multiple-choice">
+			  <input id="bypassresidency2" name="bypassresidency2" type="checkbox" value="true">
+			  <label for="bypass-checkbox">Bypass residency check</label>
+			</div>	
+			<br>	
+			<br>	
+			<br>			
+			<br><a class="button" href="contactdetails" role="button" style=" font-size: 16px; margin-left: -4px;">Save and submit</a>
 		</div>	
 	</div>		
 </main>
 			
 {% endblock %}
-
-
