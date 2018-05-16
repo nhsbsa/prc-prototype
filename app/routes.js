@@ -26,7 +26,7 @@ router.get (/country-handler/, function (req, res){
 });
 
 router.get (/registration/, function (req, res){
-	if (req.query.registred === 'Yes'){
+	if (req.query.registred2 === 'Yes'){
 		res.redirect ('registerpersons1');
     } else {
         res.redirect ('registerperson');
