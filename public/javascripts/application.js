@@ -20,10 +20,9 @@ $(document).ready(function () {
   showHideContent.init()
     
     $('.header').click(function(){
-     $(this).toggleClass('expand').nextUntil('tr.header').slideToggle(100);
-});
+		$(this).toggleClass('expand').nextUntil('tr.header').slideToggle(100);
+	});
     
-$(document).ready(function(){
 	
 	$('ul.tabs li').click(function(){
 		var tab_id = $(this).attr('data-tab');
@@ -34,10 +33,7 @@ $(document).ready(function(){
 		$(this).addClass('current');
 		$("#"+tab_id).addClass('current');
 	})
-
-})
     
-$(document).ready(function(){
 	
 	$('ul.tabs1 li').click(function(){
 		var tab_id = $(this).attr('data-tab1');
@@ -49,16 +45,17 @@ $(document).ready(function(){
 		$("#"+tab_id).addClass('current1');
 	})
 
-})
-    
-$(document).ready(function() {
 
     $('.internal-table tr').click(function() {
         var href = $(this).find("a").attr("href");
         if(href) {
             window.location = href;
         }
-    });
+    })
+	
+	$(".summary").click(function(){
+		$(".depend").removeClass("visually-hidden");
+	});
 
 });
 
@@ -128,7 +125,6 @@ $(".button-manually").click(function(){
 });
 
 
-$("input[type=radiobutton]" ).on("click", $(".acceptancecriteria").removeClass("visually-hidden"));
 
 //$(".selectbtn1").click(function(){
 //	$(".s1-notRegistered").removeClass("visually-hidden");
@@ -149,10 +145,11 @@ $("input[type=radiobutton]" ).on("click", $(".acceptancecriteria").removeClass("
 //});
 
 
- 
-$(".summary").click(function(){
-	$(".depend").removeClass("visually-hidden");
+$("#radio-inline-5").change(function() {
+	$(".acceptanceCriteria").removeClass("visually-hidden");
 });
-   
-  
-})
+
+$("#radio-inline-6").change(function() {
+	$(".acceptanceCriteria").addClass("visually-hidden");
+});
+
