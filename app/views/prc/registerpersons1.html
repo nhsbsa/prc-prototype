@@ -76,16 +76,22 @@
     margin-top: -15px;
 }
 .hello:first-child {
-    margin-top: 20px;
-    margin-left: -40px;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: -24px;
+	margin-bottom: -20px;
 }
 .multiple-choice label{
 	float: left;
 	margin-left: 48px;
 	padding-right: 5px;
 	padding-top: 0px;
+}
+.checkbox4.multiple-choice:first-child {
+    margin-top: 10px;
+    margin-left: -40px;
+}
+.button-submit2 {
+    margin-left: 50px;
 }
 </style>
 
@@ -132,6 +138,21 @@
 								<br><h2 class="heading-small">S1 registration date</h2>
 								<input class="form-control" id="reference-number" name="first-name-2" type="text">
 							</div>
+							<div class="column-one-third lpads">
+								<br><h2 class="heading-small">Building and street</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text">
+								<input class="form-control" id="reference-number" name="first-name-2" type="text">
+							</div>	
+							<div class="column-one-third lpads">
+								<br>
+								<h2 class="heading-small EHIC-number">Town and city<h2>
+								<input class="form-control EHIC-number" id="reference-number" name="first-name-2" type="text">
+							</div>
+							<div class="column-one-third lpads">
+								<br>
+								<h2 class="heading-small postcode2"> Postcode</h2>
+								<input class="form-control postcode2" id="reference-number" name="first-name-2" type="text">
+							</div>
 						</div>
 
 						<div class="column-full first-box-btn">
@@ -146,69 +167,50 @@
 								</div>	
 								<br>
 								<br>
-								<a class="button btnSubmit1" href="contactdetails" role="button" style=" font-size: 16px;">Save and submit</a>
+								<a class="button btnSubmit1" href="contactdetails" role="button" style=" font-size: 16px;     margin-top: -10px;">Save and submit</a>
 							</div>
 						</div>						
 					</div>
 				</div>
 			</div>
-					
-		<!--  Dependent details -->
-		<div class="column-one-half dependent visually-hidden">
-			<div style="padding: 0 2em 0 2em">
-				<div class="grid-row highlight">
-				
-					<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Dependent details</h2>	
-					<!-- Dependent link-->
 						
-							<div class="form-group">
-							  <label class="form-label" for="select-box" style="width: 66%;">Dependent link with the main applicant</label>
-							  <select class="form-control" id="select-box">
-								<option>Father - Child</option>
-								<option>Mother - Child</option>
-								<option>Foster parent - Child</option>
-								<option>Grandmother - Child</option>
-								<option>Grandfather - Child</option>
-								<option>Guardian - Child</option>
-								<option>Husband - Wife?</option>
-								<option>Aunt - Child?</option>
-								<option>Uncle - Child?</option>
-								<option>Brother - Sister</option>
-							  </select>
-							</div>					
+			<!--  Dependent details -->
+			<div class="column-one-half dependent visually-hidden">
+				<div style="padding: 0 2em 0 2em">
+					<div class="grid-row highlight">
 					
-						<div class="column-one-third lpads">	
-								<h2 class="heading-small">First name</h2>
-								<input class="form-control" id="reference-number" name="first-name-2" type="text">
-						</div>		
-						<div class="column-one-third lpads">	
-								<h2 class="heading-small">Last name</h2>
-								<input class="form-control" id="reference-number" name="first-name-2" type="text">	
-						</div>
-						<div class="column-one-third lpads">	
-								<h2 class="heading-small">Date of birth</h2>
-								<input class="form-control dob1234" id="reference-number" name="first-name-2" type="text">
-						</div>
-						<div class="column-one-third lpads">	
-								<br><h2 class="heading-small">NINO</h2>
-								<input class="form-control" id="reference-number" name="first-name-2" type="text">
-						</div>
-						
+						<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Dependent details</h2>	
+						<!-- Dependent link-->				
+							<div class="column-one-third lpads">	
+									<h2 class="heading-small">First name</h2>
+									<input class="form-control" id="reference-number" name="first-name-2" type="text">
+							</div>		
+							<div class="column-one-third lpads">	
+									<h2 class="heading-small">Last name</h2>
+									<input class="form-control" id="reference-number" name="first-name-2" type="text">	
+							</div>
+							<div class="column-one-third lpads">	
+									<h2 class="heading-small">Date of birth</h2>
+									<input class="form-control dob1234" id="reference-number" name="first-name-2" type="text">
+							</div>
+							<div class="column-one-third lpads">	
+									<br><h2 class="heading-small">NINO</h2>
+									<input class="form-control" id="reference-number" name="first-name-2" type="text">
+							</div>						
+					</div>
 				</div>
-			</div>
-	
-		</div>	
-				<div class="column-full button-submit2 visually-hidden">
-			<div class="multiple-choice">
-			  <input id="bypassresidency2" name="bypassresidency2" type="checkbox" value="true">
-			  <label for="bypass-checkbox">Bypass residency check</label>
 			</div>	
-			<br>	
-			<br>	
-			<br>			
-			<br><a class="button" href="contactdetails" role="button" style=" font-size: 16px; margin-left: -4px;">Save and submit</a>
-		</div>	
-	</div>		
+			<div class="column-full button-submit2 visually-hidden">
+				<div class="multiple-choice checkbox4">
+				  <input id="bypassresidency2" name="bypassresidency2" type="checkbox" value="true">
+				  <label for="bypass-checkbox">Bypass residency check</label>
+				</div>	
+				<br>	
+				<br>	
+				<br>			
+				<br><a class="button" href="contactdetails" role="button" style=" font-size: 16px; margin-left: -4px; margin-top: -30px;">Save and submit</a>
+			</div>	
+		</div>		
 </main>
 			
 {% endblock %}
