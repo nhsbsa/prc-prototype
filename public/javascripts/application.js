@@ -132,7 +132,7 @@ $(".button-manually").click(function(){
 //	$(".ehic-registered").addClass("visually-hidden");
 //});
 
-///$(".selectbtn2").click(function(){
+//$(".selectbtn2").click(function(){
 //	$(".s1-registered").removeClass("visually-hidden");
 //	$(".s1-notRegistered").addClass("visually-hidden");
 //	$(".ehic-registered").addClass("visually-hidden");

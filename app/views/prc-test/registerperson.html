@@ -121,23 +121,11 @@
 						<div class="column-one-third lpads">	
 							<h2 class="heading-small">Last name</h2>
 							<input class="form-control" id="reference-number" name="first-name-2" type="text">	
-						</div>						
-						<div class="column-one-third lpads">						
-							<div class="form-group error">
-								<h2 class="heading-small" style="    padding-bottom: 10px;">Date of birth</h2>
-									<span class="form-hint" style="font-size:16px;">
-										<div class="notice">
-											<i class="icon icon-important" style="background-size:20px;">
-												<span class="visually-hidden">Warning</span>
-											</i>
-											<strong class="bold-small" style="font-size:12px; color: black;    padding-left: 40px; margin-right: -20px;     padding-bottom: 15px;">
-											16-18 years. Parent or guardian?
-											</strong>
-										</div>
-									</span>								
-								<input class="form-control" id="reference-number" name="first-name-2" type="text">
-							</div>
-						</div>												
+						</div>
+						<div class="column-one-third lpads">	
+							<h2 class="heading-small">Date of birth</h2>
+							<input class="form-control" id="reference-number" name="first-name-2" type="text">
+						</div>
 						<div class="column-one-third lpads">	
 							<br><h2 class="heading-small">NINO</h2>
 							<input class="form-control" id="reference-number" name="first-name-2" type="text">
@@ -167,7 +155,8 @@
 						</div>
 						<div class="column-one-third lpads">	
 							<br>
-							<br><a class="button buttonFind" href="#" role="button" style="font-size: 16px; background-color: #005EB8;">Find address</a> 										
+							<br><a class="button buttonFind" href="#" role="button" style="font-size: 16px; background-color: #005EB8;">Find address</a> 
+																
 						</div>
 					</div>
 					<div class="column-full address visually-hidden">
@@ -182,6 +171,7 @@
 						<a class="button-manually" href="#">Enter address manually</a>
 					</div>
 					<div class="column-full manual-address visually-hidden">
+						
 						<div class="column-one-third lpads">
 							<br><h2 class="heading-small">Building and street</h2>
 							<input class="form-control" id="reference-number" name="first-name-2" type="text">
@@ -189,7 +179,7 @@
 						</div>	
 						<div class="column-one-third lpads">
 							<br>
-							<h2 class="heading-small EHIC-number">Town and city<h2>
+							<h2 class="heading-small EHIC-number">Town or city<h2>
 							<input class="form-control EHIC-number" id="reference-number" name="first-name-2" type="text">
 						</div>
 						<div class="column-one-third lpads">
@@ -198,21 +188,23 @@
 							<input class="form-control postcode2" id="reference-number" name="first-name-2" type="text">
 						</div>
 					</div>
-					<div class="column-full">
-						<div class="multiple-choice hello">
-							  <input id="bypassresidency" name="bypassresidency" type="checkbox" value="true">
-							  <label for="bypass-checkbox">UK resident?</label>
+					<form id="myForm" class="form">
+						<div class="column-full">
+							<div class="multiple-choice hello" style="margin-left: -35px;">
+								  <input id="ukResident" name="ukResident" type="checkbox">
+								  <label for="ukResident">Tick if not UK resident</label>
+							</div>
 						</div>
-					</div>
-					<div class="column-full first-box-btn">
-						<div class="column-one-half newbox">
-							<br>
-							<a class="button-dependent" href="#">+ Add dependant</a>
-							<br>
-							<br>
-							<a class="button btnSubmit1" href="contactdetails" role="button" style=" font-size: 16px; margin-top: -10px;">Save and submit</a>
-						</div>
-					</div>						
+						<div class="column-full first-box-btn">
+							<div class="column-one-half newbox">
+								<br>
+								<a class="button-dependent" href="#">+ Add dependant</a>
+								<br>
+								<br>
+								<input class="button buttonSubmit2" type="button" onclick="formSubmit()" value="Submit" style=" font-size: 16px;" />
+							</div>
+						</div>	
+					</form>
 				</div>
 			</div>			
 			<!--  Dependant details -->
@@ -249,12 +241,31 @@
 				</div>
 			</div>	
 			<div class="column-full button-submit2 visually-hidden">			
-				<br><br><a class="button" href="contactdetails" role="button" style=" font-size: 16px;">Save and submit</a>
+				<br><br><input class="button buttonSubmit2" type="button" onclick="formSubmit()" value="Submit" style=" font-size: 16px;" />
 			</div>	
 		</div>
 	</div>		
 </main>
-			
+	
+	<script>
+		var isCheckedValue = false;
+		document.getElementById("ukResident").onclick = function(){
+			if(this.checked == true){
+				isCheckedValue = true;
+				console.log(isCheckedValue);
+			}
+		}		
+		function formSubmit () {
+		console.log("testtest");
+		if (document.getElementById("ukResident").checked == true){
+			window.location="/prc-test/notukresident";
+			}
+		else
+			{
+			window.location="/prc-test/contactdetails";
+			}	
+		}		
+	</script>	
 {% endblock %}
 
 
