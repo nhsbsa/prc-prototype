@@ -117,7 +117,10 @@ p, td, internal-table td, li {
 .column-half, .column-one-half {
   padding: 0 0 0 15px;
 }
-
+header{
+	height: auto;
+	background: #fff;
+}
 #global-header {
   height: auto;
   background: white;
@@ -1104,6 +1107,9 @@ table, tr, td, th
 {
 
     border-collapse:collapse;
+}
+.full{
+	background-color: white;
 }
 tr.header
 {
