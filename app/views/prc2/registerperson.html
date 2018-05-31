@@ -95,6 +95,11 @@
     margin-left: 20px;
     margin-top: -20px;
 }
+.multiple-choice [type=checkbox] + label::before {
+    content: "";
+    border: 2px solid;
+    background: white;
+}
 </style>
 
 <main id="content" role="main">
@@ -182,7 +187,7 @@
 			<!--  Dependant details -->
 			<div class="column-one-half dependent visually-hidden">
 				<div style="padding: 0 2em 0 2em">
-					<div class="grid-row highlight">
+					<div class="grid-row highlight" style="margin-right: -30px;">
 						<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register a dependant</h2>	
 						<!-- Dependant link-->					
 						<div class="column-one-third lpads">	
@@ -203,11 +208,11 @@
 						</div>
 						<div class="column-one-third lpads">	
 								<br><h2 class="heading-small">EHIC number</h2>
-								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="((card holder only))">
+								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(card holder only)">
 						</div>
 						<div class="column-one-third lpads">	
 								<br><h2 class="heading-small">EHIC expiry date</h2>
-								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="((card holder only))">
+								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(card holder only)">
 						</div>					
 					</div>
 				</div>
