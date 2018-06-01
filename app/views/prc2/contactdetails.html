@@ -1,91 +1,92 @@
-{% extends "layout_bsa_internal.html" %} 
+{% extends "layout_bsa_internal.html" %}
 
-{% block page_title %} Single User View 
-{% endblock %} 
+{% block page_title %} Single User View
+{% endblock %}
 
 {% block after_header %}
-  <div id="menu">
-    <div id="menu-content">
-      <div class="grid-row">
-        <div class="column-half">
-          <ul class="visually-hidden">
-            <li><a class="menu-button selected" href="results">Search</a></li>
-          </ul>
-        </div>
-        <div class="column-half" id="logout">
-          <a href="login">Sign out</a>
-        </div>
-      </div>
-    </div>
-  </div> 
-  {% endblock %} 
-  
-  {% block content %}
+<div id="menu">
+	<div id="menu-content">
+		<div class="grid-row">
+			<div class="column-half">
+				<ul class="visually-hidden">
+					<li><a class="menu-button selected" href="results">Search</a></li>
+				</ul>
+			</div>
+			<div class="column-half" id="logout">
+				<a href="login">Sign out</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block content %}
 
 <style>
-.highlight {
-    min-height: 40%;
-}
-.link-back{
-    margin-left: 5px;    
-}
-.form-control {
-    width: 90%;
-	font-size: 16px;
-}
-.heading-small{
-	padding: 0 0 0 0px;
-}
-#reference-number{
-	width: 90%;
-}
-.column-one-half{
-	padding: 0 0 0 0;
-}
-.form-group{	
-	margin-bottom: 15px;
-}
-#test1234{
-	float: right;
-    text-align: right;
-}
-.form-group{	
-	margin-bottom: 15px;
-}
-#select-box {
-   background: white;
-   color: black;
-   border: none;
-   height: 30px; 
-   width: 66%;
-   margin-bottom: 3px; 
-   font-size: medium;
-   border: 2px solid grey;
-}
+	.highlight {
+		min-height: 40%;
+	}
+	.link-back{
+		margin-left: 5px;
+	}
+	.form-control {
+		width: 90%;
+		font-size: 16px;
+	}
+	.heading-small{
+		padding: 0 0 0 0px;
+	}
+	#reference-number{
+		width: 90%;
+	}
+	.column-one-half{
+		padding: 0 0 0 0;
+	}
+	.form-group{
+		margin-bottom: 15px;
+	}
+	#test1234{
+		float: right;
+		text-align: right;
+	}
+	.form-group{
+		margin-bottom: 15px;
+	}
+	#select-box {
+		background: white;
+		color: black;
+		border: none;
+		height: 30px;
+		width: 66%;
+		margin-bottom: 3px;
+		font-size: medium;
+		border: 2px solid grey;
+	}
 
 
 </style>
 
 <main id="content" role="main">
 
-    <div class="grid-row">
+	<div class="grid-row">
 
-       	<div class="column-full full" style="background-color: white;">
+		<div class="column-full full" style="background-color: white;">
 			<div class="column-one-half">
 				<a href="definitoryquestions" class="link-back">Back</a>
 			</div>
 			<div class="column-half" id="test1234">
 				<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">End process</a>
 			</div>
-		</div>	
+		</div>
 		<br>
-		<div class="column-full"style="background-color: white;">
-			<div class="column-one-half lpads ">
-				<div style="padding: 0 2em 0 0">
-					<div class="grid-row highlight">
-						<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Main applicant's contact details</h1>
-						
-							<div class="column-one-half lpads">	
+		<form autocomplete="off">
+			<div class="column-full"style="background-color: white;">
+				<div class="column-one-half lpads ">
+					<div style="padding: 0 2em 0 0">
+						<div class="grid-row highlight">
+							<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Main applicant's contact details</h1>
+
+							<div class="column-one-half lpads">
 								<h2 class="heading-small">Full name</h2>
 								<p class="change-spacep">John Smithe</p>
 								<br>
@@ -95,7 +96,7 @@
 								<h2 class="heading-small">Address</h2>
 								<p class="change-spacep">5 Church Street, Newcastle, NE12 34AB</p>
 							</div>
-							<div class="column-one-half">	
+							<div class="column-one-half">
 								<h2 class="heading-small">Date of birth</h2>
 								<p class="change-spacep">20/11/1988</p>
 								<br>
@@ -104,48 +105,55 @@
 								<br>
 								<h2 class="heading-small">Telephone number</h2>
 								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)">
-							</div>						
-							<br>						
+							</div>
+							<br>
+						</div>
 					</div>
 				</div>
-			</div>
-			<!--  PRC time span -->		
-			<div class="column-one-half">
-				<div style="padding: 0 2em 0 0em">
-					<div class="grid-row highlight" style="margin-right: -30px;">
-						<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Treatment details</h2>	
-						<div class="column-one-half">
-							<h2 class="heading-small">PRC starting date</h2>
-							<input class="form-control" id="reference-number" name="first-name-2" type="text" style="width:50%;">
+				<!--  PRC time span -->
+				<div class="column-one-half">
+					<div style="padding: 0 2em 0 0em">
+						<div class="grid-row highlight" style="margin-right: -30px;">
+							<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Treatment details</h2>
+							<div class="column-one-half">
+								<h2 class="heading-small">PRC starting date</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="width:50%;">
 
-							<h2 class="heading-small">PRC ending date</h2>
-							<input class="form-control" id="reference-number" name="first-name-2" type="text" style="width:50%;">
-						   
-							<h2 class="heading-small">Country of treatment</h2>
-							<input class="form-control" id="reference-number" name="first-name-2" type="text">
-							<br>						
+								<h2 class="heading-small">PRC ending date</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="width:50%;">
+
+								<div class="autocomplete">
+									<h2 class="heading-small">Country of treatment</h2>
+									<input class="form-control" id="country-of-treatment" name="first-name-2" type="text">
+								</div>
+								<br>
+							</div>
+							<div class="column-one-half">
+								<h2 class="heading-small">Treatment facility name</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text">
+
+								<h2 class="heading-small">Email</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(preferred)">
+
+								<h2 class="heading-small">Fax number</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional if email available)">
+							</div>
+							<br>
 						</div>
-						<div class="column-one-half">						
-							<h2 class="heading-small">Treatment facility name</h2>
-							<input class="form-control" id="reference-number" name="first-name-2" type="text">
-							
-							<h2 class="heading-small">Email</h2>
-							<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(preferred)">
-							
-							<h2 class="heading-small">Fax number</h2>
-							<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional if email available)">
-						</div>
-						<br>
-					</div>			
+					</div>
 				</div>
-			</div>	
-			<div class="column-full" style="padding: 0 2em 0 0em">
-			
-				<br><a class="button" href="done" role="button" style=" font-size: 16px;">Submit and generate PRC</a>
-			</div>		
-	</div>		
+				<div class="column-full" style="padding: 0 2em 0 0em">
+					<br><a class="button" href="done" role="button" style=" font-size: 16px;">Submit and generate PRC</a>
+				</div>
+			</div>
+		</form>
+	</div>
 </main>
-			
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/public/javascripts/autocomplete.js"></script>
+<script>
+	autocomplete(document.getElementById("country-of-treatment"), countries);
+</script>
+
 {% endblock %}
-
-
