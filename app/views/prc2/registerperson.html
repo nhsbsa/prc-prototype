@@ -1,9 +1,76 @@
-{% extends "layout_bsa_internal.html" %} 
 
-{% block page_title %} Single User View 
-{% endblock %} 
 
-{% block after_header %}
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="lte-ie8 unbranded" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="unbranded" lang="en"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <title> Single User View 
+</title>
+
+    <!--[if gt IE 8]><!--><link href="/public/stylesheets/govuk-template.css?0.18.3" media="screen" rel="stylesheet" /><!--<![endif]-->
+    <!--[if IE 6]><link href="/public/stylesheets/govuk-template-ie6.css?0.18.3" media="screen" rel="stylesheet" /><![endif]-->
+    <!--[if IE 7]><link href="/public/stylesheets/govuk-template-ie7.css?0.18.3" media="screen" rel="stylesheet" /><![endif]-->
+    <!--[if IE 8]><link href="/public/stylesheets/govuk-template-ie8.css?0.18.3" media="screen" rel="stylesheet" /><![endif]-->
+    <link href="/public/stylesheets/govuk-template-print.css?0.18.3" media="print" rel="stylesheet" />
+
+    <!--[if IE 8]><link href="/public/stylesheets/fonts-ie8.css?0.18.3" media="all" rel="stylesheet" /><![endif]-->
+    <!--[if gte IE 9]><!--><link href="/public/stylesheets/fonts.css?0.18.3" media="all" rel="stylesheet" /><!--<![endif]-->
+    <!--[if lt IE 9]><script src="/public/javascripts/ie.js?0.18.3"></script><![endif]-->
+
+    <link rel="shortcut icon" href="/public/images/favicon.ico?0.18.3" type="image/x-icon" />
+    <link rel="mask-icon" href="/public/images/gov.uk_logotype_crown.svg?0.18.3" color="#0b0c0c">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/images/apple-touch-icon-152x152.png?0.18.3">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/images/apple-touch-icon-120x120.png?0.18.3">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/images/apple-touch-icon-76x76.png?0.18.3">
+    <link rel="apple-touch-icon-precomposed" href="/public/images/apple-touch-icon-60x60.png?0.18.3">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="/public/images/opengraph-image.png?0.18.3">
+
+    
+  <link href="/public/stylesheets/bsa.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/autocomplete.css" media="screen" rel="stylesheet" type="text/css" />
+
+  </head>
+
+  <body class=""><script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.23.6'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    
+
+    <div id="skiplink-container">
+      <div>
+        <a href="#content" class="skiplink">Skip to main content</a>
+      </div>
+    </div>
+
+    <div id="global-cookie-message">
+
+        
+
+    </div>
+    <!--end global-cookie-message-->
+
+
+    <header role="banner" id="global-header" class="">
+        
+  <div id="header-logo">
+  <div class="header-wrapper">
+    <a id="bsa-logo" href="/index">
+      <img src="/public/images/bsa/bsa_logo.svg">
+    </a>
+  </div>
+</div>
+
+    </header>
+    <!--end header-->
+
+
+    
   <div id="menu">
     <div id="menu-content">
       <div class="grid-row">
@@ -18,9 +85,9 @@
       </div>
     </div>
   </div> 
-  {% endblock %} 
   
-  {% block content %}
+
+    
 
 <style>
 .highlight {
@@ -130,7 +197,7 @@
 						</div>
 						<div class="column-one-third lpads">	
 							<h2 class="heading-small">Date of birth</h2>
-							<input class="form-control" id="reference-number" name="first-name-2" type="text" autocomplete="off" />
+							<input class="form-control" id="reference-number" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
 						</div>
 						<div class="column-one-third lpads">	
 							<br><h2 class="heading-small">NINO</h2>
@@ -166,12 +233,19 @@
 						</div>
 					</div>
 					<form id="myForm" class="form">
-						<div class="column-full">
-							<br>
-							<h2>Check Indesser portal. Tick this box if the result is ‘NONE’. Ignore this step for students aged 16 to 18</h2>
+						<div class="column-full hello1">
+							
+							<i class="icon icon-important">
+								<span class="visually-hidden">Warning</span>
+							</i>
+							<strong class="bold-small">
+							Check Indesser portal. Tick this box if the result is 'NONE'. <br>Ignore this step for students aged 16 to 18.
+							</strong>
+						</div>
+						<div class="column-full">	
 							<div class="multiple-choice hello" style="margin-left: -35px;">
 								  <input id="ukResident" name="ukResident" type="checkbox" />
-								  <label for="ukResident">Tick if not UK resident</label>
+								  <label for="ukResident" style="font-size:18px;">Tick if not UK resident</label>
 							</div>
 						</div>
 						<div class="column-full first-box-btn">
@@ -202,7 +276,7 @@
 						</div>
 						<div class="column-one-third lpads">	
 								<h2 class="heading-small">Date of birth</h2>
-								<input class="form-control" id="reference-number" name="first-name-2" type="text" autocomplete="off" />
+								<input class="form-control" id="reference-number" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
 						</div>
 						<div class="column-one-third lpads">	
 								<br><h2 class="heading-small">NINO</h2>
@@ -245,6 +319,33 @@
 			}	
 		}		
 	</script>	
-{% endblock %}
 
 
+    <footer class="group js-footer" id="footer" role="contentinfo">
+      
+    </footer>
+
+    <!--end footer-->
+
+    <div id="global-app-error" class="app-error hidden"></div>
+
+    <script src="/public/javascripts/govuk-template.js?0.18.3" type="text/javascript"></script>
+
+    
+  <!-- Javascript -->
+<!--[if lte IE 8]><script src="/public/javascripts/bind.js"></script><![endif]-->
+<script src="/public/javascripts/details.polyfill.js"></script>
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/public/javascripts/govuk/shim-links-with-button-role.js"></script>
+<script src="/public/javascripts/govuk/show-hide-content.js"></script>
+<script src="/public/javascripts/application.js"></script>
+
+
+  <script src="/public/javascripts/auto-store-data.js"></script>
+
+
+
+
+    <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
+  </body>
+</html>
