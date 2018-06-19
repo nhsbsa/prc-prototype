@@ -4,146 +4,151 @@
 {% endblock %} 
 
 {% block after_header %}
-  <div id="menu">
-    <div id="menu-content">
-      <div class="grid-row">
-        <div class="column-half">
-          <ul class="visually-hidden">
-            <li><a class="menu-button selected" href="results">Search</a></li>
-          </ul>
-        </div>
-        <div class="column-half" id="logout">
-          <a href="login">Sign out</a>
-        </div>
-      </div>
-    </div>
-  </div> 
-  {% endblock %} 
-  
-  {% block content %}
+<div id="menu">
+	<div id="menu-content">
+		<div class="grid-row">
+			<div class="column-half">
+				<ul class="visually-hidden">
+					<li><a class="menu-button selected" href="results">Search</a></li>
+				</ul>
+			</div>
+			<div class="column-half" id="logout">
+				<a href="login">Sign out</a>
+			</div>
+		</div>
+	</div>
+</div> 
+{% endblock %} 
+
+{% block content %}
 
 <style>
-.highlight {
-    min-height: 40%;
-}
-.link-back{
-    margin-left: 20px;
-}
-.form-control {
-    width: 90%;
-}
-.multiple-choice [type=radio] + label::before {
-    margin-left: -38px;
-    margin-top: -5px;
-}
-.multiple-choice [type=radio] + label::after {
-    left: 17px;
-    top: 19px;
-}
-.inline .multiple-choice label {
-    line-height: 120%;
-}
-.test{
-    padding-left: 30px;
-}
-.heading-medium{
-	margin-top: 15px;
-    margin-bottom: -5px;
-}
-.s1reg{
-	margin-top: -30px;
-}
-.buttonSubmit{
-	margin-top: -15px;
-}
-.acceptanceCriteria{
-	margin-top: -25px;
-}
+	.highlight {
+		min-height: 40%;
+	}
+	.link-back{
+		margin-left: 20px;
+	}
+	.form-control {
+		width: 90%;
+	}
+	.multiple-choice [type=radio] + label::before {
+		margin-left: -38px;
+		margin-top: -5px;
+	}
+	.multiple-choice [type=radio] + label::after {
+		left: 17px;
+		top: 19px;
+	}
+	.inline .multiple-choice label {
+		line-height: 120%;
+	}
+	.test{
+		padding-left: 30px;
+	}
+	.heading-medium{
+		margin-top: 15px;
+		margin-bottom: -5px;
+	}
+	.s1reg{
+		margin-top: -30px;
+	}
+	.buttonSubmit{
+		margin-top: -15px;
+	}
+	.acceptanceCriteria{
+		margin-top: -25px;
+	}
+	[hidden], .display-none {
+		display: none;
+	}
 </style>
 
 <main id="content" role="main">
-
-    <div class="grid-row">
-
-        <div class="column-full full" style="background-color: white;">
+	
+	<div class="grid-row">		
+		<div class="column-full full" style="background-color: white;">
 			<div class="column-one-half">
 				<a href="definitoryquestions" class="link-back">Back</a>
 			</div>
-			<div class="column-half" id="test1234" style="float: right;
-    text-align: right;">
+			<div class="column-half" id="test1234" style="float: right; text-align: right;">
 				<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">End process</a>
 			</div>
-		<br>
-		<br>	
-		<div class="column-full">
-		
-			<div class="column-one-third">
-				<div class="column-full highlight rpads">
-					<h1 class="heading-medium">Questions </h1>				
-					<form>
-						<div class="form-group">
-							<fieldset class="inline">
-							  <legend class="visually-hidden">Applying for?</legend>
-							<div class="column-one-third lpads">
-								<br><h1 class="heading-small">Applying for? </h1>
-							</div>
-							<div class="column-one-third test">
-								  <div class="multiple-choice">
-									<input id="radio-inline-1" type="radio" name="radio-inline-group" value="myself">
-									<label for="radio-inline-1">Myself or dependant</label>
-								  </div>
-							</div>
-							<div class="column-one-third test">
-								  <div class="multiple-choice">
-									<input id="radio-inline-2" type="radio" name="radio-inline-group" value="third">
-									<label for="radio-inline-2">Someone else</label>
-								  </div>
-							</div>
-							</fieldset>
+			<br>
+			<br>	
+			<div class="column-full">
+				<div class="column-one-third">
+					<div class="column-full highlight rpads">
+						<h1 class="heading-medium">Questions </h1>
+						<!-- errors and validation -->
+						<div class="error-summary display-none" id="abc" role="group" aria-labelledby="finance-login-message-heading" style="margin-right: 15px;">
+							<ul class="error-summary-list">
+								<li><a href="#radio-inline-1" id="login-error-list1" class="error1 display-none">Select myself if the applicant is the patient</a></li>
+								<li><a href="#radio-inline-5" id="login-error-list2" class="error2 display-none">Select yes if the patient is S1 registred</a></li>
+							</ul>
 						</div>
-					</form>
-					<!-- Second question-->
-					<form id="myForm" action="registration2" method="get" class="form">
-						<div class="form-group">
-							<fieldset class="inline s1reg">
-							<legend class="visually-hidden">S1 registered?</legend>
-							<div class="column-one-third lpads">
-								<br><h1 class="heading-small">S1 registered? </h1>
+						<form action="registerperson" id="questions-form" class="form form-to-validate" method="get" novalidate="novalidate" autocomplete="off">
+							<div class="form-group">
+								<fieldset class="inline">
+									<legend class="visually-hidden">Applying for?</legend>
+									<div class="column-one-third lpads">
+										<br><h1 class="heading-small">Applying for? </h1>
+									</div>
+									<div class="column-one-third test">
+										<div class="multiple-choice">
+											<input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+											<label for="radio-inline-1">Myself or dependant</label>
+										</div>
+									</div>
+									<div class="column-one-third test">
+										<div class="multiple-choice">
+											<input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+											<label for="radio-inline-2">Someone else</label>
+										</div>
+									</div>
+								</fieldset>
 							</div>
-							<div class="column-one-third test">
-								  <div class="multiple-choice">
-									<input id="radio-inline-5" type="radio" name="registred2" value="Yes">
-									<label for="radio-inline-5">Yes</label>
-								  </div>
+							<!-- Second question-->
+							<div class="form-group">
+								<fieldset class="inline s1reg">
+									<legend class="visually-hidden">S1 registered?</legend>
+									<div class="column-one-third lpads">
+										<br><h1 class="heading-small">S1 registered? </h1>
+									</div>
+									<div class="column-one-third test">
+										<div class="multiple-choice">
+											<input id="radio-inline-5" class="validate-radio-input" type="radio" name="registred2" value="Yes">
+											<label for="radio-inline-5">Yes</label>
+										</div>
+									</div>
+									<div class="column-one-third test">
+										<div class="multiple-choice">
+											<input id="radio-inline-6" class="validate-radio-input" type="radio" name="registred2" value="No">
+											<label for="radio-inline-6">No</label>
+										</div>
+									</div>
+								</fieldset>
 							</div>
-							<div class="column-one-third test">
-								  <div class="multiple-choice">
-									<input id="radio-inline-6" type="radio" name="registred2" value="No">
-									<label for="radio-inline-6">No</label>
-								  </div>
+							<div id="ac" class="form-group acceptanceCriteria visually-hidden">
+								<label class="form-label" for="select-box2" style="width: 66%;">
+									<h1 class="heading-small">Reasons for proceeding</h1>
+								</label>
+								<select class="form-control" id="select-box2" style="font-size: medium;">
+									<option disabled selected hidden>Select one reason that applies</option>
+									<option>Not accepted</option>
+									<option>Registered in different country</option>
+									<option>Unregistered</option>
+								</select>
 							</div>
-							</fieldset>
-						</div>
-						<div id="ac" class="form-group acceptanceCriteria visually-hidden">
-							<label class="form-label" for="select-box2" style="width: 66%;">
-								<h1 class="heading-small">Reasons for proceeding</h1>
-							</label>
-							<select class="form-control" id="select-box2" style="font-size: medium;">
-								<option>Select one reason that applies</option>
-								<option>Not accepted</option>
-								<option>Registered in different country</option>
-								<option>Unregistered</option>
-							</select>
-						</div>
-						<input class="button buttonSubmit" type="submit" value="Submit" style=" font-size: 16px;" />
-					</form>
-					
+							<input class="button buttonSubmit" type="submit" value="Submit" style="font-size: 16px;" />
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </main>
-			
+
 {% endblock %}
 
 
