@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
     
     // GOVUK.toggle.init();
     
@@ -27,7 +27,6 @@ $(document).ready(function(){
         }
     }
 
-    // chris function //
     function removePageErrors(errorMessageClassName) {
         if (errorMessageClassName) {
             $('.'+errorMessageClassName).addClass('display-none');
