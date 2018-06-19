@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
 // add your routes here
 
 router.get (/ehic-handler/, function (req, res){
-    console.log("Gor request for ehic handler, ehic = " + req.query.ehic);
+    console.log("Got request for ehic handler, ehic = " + req.query.ehic);
     if (req.query.ehic === 'no'){
         res.redirect ('personsearch');
     } else {
@@ -30,6 +30,16 @@ router.get (/registration/, function (req, res){
 		res.redirect ('registerpersons1');
     } else {
         res.redirect ('registerperson');
+}
+});
+
+router.get (/provideTest/, function (req, res){
+	if (req.query.provided2 === 'Yes'){
+		res.redirect ('contactdetails');
+		console.log("1");
+    } else {
+        res.redirect ('notukresident');
+		console.log("2");
 }
 });
 
