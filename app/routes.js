@@ -33,6 +33,14 @@ router.get (/registration/, function (req, res){
 }
 });
 
+router.get (/indesserResults/, function (req, res){
+	if (req.query.indesser1 === 'Fail'){
+		res.redirect ('contactdetails');
+    } else {
+        res.redirect ('registerpersons1');
+}
+});
+
 router.get (/provideTest/, function (req, res){
 	if (req.query.provided2 === 'Yes'){
 		res.redirect ('contactdetails');

@@ -65,7 +65,32 @@
 .hello1{
 	margin-top: 20px;
 }
+.column-full {
+    padding: 0 0px;
+}
+.link-back {
+    margin-left: 0px;
+}
+#uk-resident {
+    margin: -30px 0 10px 49px;
+}
+.align-radio {
+    margin-left: 0px;
+	padding-right: 0px;
+}
 
+.inline .multiple-choice label {
+    line-height: 120%;
+    font-size: 16px;
+}
+
+.unbranded * {
+    margin-bottom: 0px;
+}
+
+#reference-number, #reference-number-1, #reference-number-2, #reference-number-3, #reference-number-4, #reference-number-5, #reference-number-6, #reference-number-7, #country-of-treatment {
+    font-size: 16px;
+}
 </style>
 
 <main id="content" role="main">
@@ -149,37 +174,41 @@
 									Check Indesser portal for UK residents 18 and over.<br>
 								</strong>
 							</div>
-							<div class="column-half hello1 lpads">
-								<div class="form-group">
-									<fieldset class="inline">
-										<legend class="visually-hidden">UK resident?</legend>
-										<div class="column-one-third lpads">
-											<br><h1 class="heading-small">Indesser result?</h1>
-										</div>
-										<div class="column-one-third">
-											  <div class="multiple-choice">
-												<input id="radio-inline-Indesser" type="radio" name="registred2" value="Pass"/>
-												<label for="radio-inline-Indesser">Pass</label>
-											  </div>
-										</div>
-										<div class="column-one-third">
-											  <div class="multiple-choice">
-												<input id="radio-inline-Indesser" type="radio" name="registred2" value="Fail"/>
-												<label for="radio-inline-Indess">Fail</label>
-											  </div>
-										</div>
-									</fieldset>
+							<form action="indesser" id="questions-form" class="form form-to-validate" method="get" novalidate="novalidate" autocomplete="off">
+								<div class="column-full hello1 lpads" style="padding-left:50px;">
+									<div class="form-group">
+										<fieldset class="inline">
+											<legend class="visually-hidden">UK resident?</legend>
+											<div class="column-one-third lpads">
+												<br><h1 class="heading-small">Indesser result?</h1>
+											</div>
+											<div class="column-one-third lpads">
+												  <div class="multiple-choice">
+													<input id="radio-inline-Indesser1" type="radio" name="indesser1" value="Pass"/>
+													<label for="radio-inline-Indesser1">Pass</label>
+												  </div>
+											</div>
+											<div class="column-one-third align-radio">
+												  <div class="multiple-choice">
+													<input id="radio-inline-Indesser2" type="radio" name="indesser1" value="Fail"/>
+													<label for="radio-inline-Indesser2">Fail</label>
+												  </div>
+											</div>
+										</fieldset>
+									</div>
 								</div>
-							</div>
-							<div class="column-full first-box-btn lpads">
-								<div class="newbox" style="font-size:16px;">
-									<br>
-									<a class="button-dependent" href="#">+ Add dependant</a>
-									<br>
-									<br>
-									<input class="button buttonSubmit2" type="submit" value="Submit" style=" font-size: 16px;" />
-								</div>
-							</div>	
+								
+								<div class="column-full first-box-btn lpads">
+									<div class="newbox" style="font-size:16px;">
+										<br>
+										<a class="button-dependent" href="#">+ Add dependant</a>
+										<br>
+										<br>
+										
+									</div>
+								</div>	
+								<input class="button buttonSubmit" type="submit" value="Submit" style="font-size: 16px;" />
+							</form>
 						</div>
 					</div>
 				</div>			
@@ -236,23 +265,25 @@
 </main>
 
 <script>
-	var isCheckedValue = false;
-	document.getElementById("ukResident").onclick = function(){
-		if(this.checked == true){
-			isCheckedValue = true;
-			console.log(isCheckedValue);
-		}
-	}		
-	function formSubmit () {
-	console.log("testtest");
-	if (document.getElementById("ukResident").checked == true){
-		window.location="/prc2/residencywhy";
-		}
-	else
-		{
-		window.location="/prc2/contactdetails";
-		}	
-	}		
+	<!-- var isCheckedValue = false; -->
+	<!-- document.getElementById("ukResident").onclick = function(){ -->
+		<!-- if(this.checked == true){ -->
+			<!-- isCheckedValue = true; -->
+			<!-- console.log(isCheckedValue); -->
+		<!-- } -->
+	<!-- }		 -->
+	<!-- function formSubmit () { -->
+	<!-- console.log("testtest"); -->
+	<!-- if (document.getElementById("ukResident").checked == true){ -->
+		<!-- window.location="/prc2/residencywhy"; -->
+		<!-- } -->
+	<!-- else -->
+		<!-- { -->
+		<!-- window.location="/prc2/contactdetails"; -->
+		<!-- }	 -->
+	<!-- }		 -->
+	
+	
 </script>	
 			
 {% endblock %}
