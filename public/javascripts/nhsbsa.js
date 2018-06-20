@@ -49,17 +49,18 @@ $(document).ready(function() {
     if($('.add-search').length > 0){
         $('.phase-banner').append($('<a href="login" class="log-out-link">Search again</a>'));
     }
+    
     if($('.add-log-out').length > 0){
         $('.service-header').prepend($('<a href="login" class="log-out-link" id="logout-link">Logout</a>'));
     }
-    
+
     // for cleaner urls after using form navigation
     var $jumpForm = $('.jump-form');
     $jumpForm.on('submit', function (evt) {
         evt.preventDefault();
         location.assign($jumpForm.attr('action'));
     });
-    
+
     // radio type input fields
     var $formWithRadioButtons = $('.demo-validation-radio');
     if($formWithRadioButtons.length > 0){
@@ -72,7 +73,7 @@ $(document).ready(function() {
             }
         });
     }
-    
+
     // text type input fields
     var $demoValidationInputsForm = $('.demo-validation-input');
     if($demoValidationInputsForm.length > 0){
@@ -102,7 +103,6 @@ $(document).ready(function() {
     if($formToValidated.length > 0){
         $formToValidated.on('submit', function (evt) {
             evt.preventDefault();
-            
             // clears error displays, resets error flag
             clearFormErrors($formToValidated);
             var isValid = true;
@@ -127,6 +127,7 @@ $(document).ready(function() {
             $('.validate-radio-input', $formToValidated).each(function() {
                 var radioGroupName = $(this).attr('data-validate-radio-input');
                 var radioGroupValue = $("input[name='" + radioGroupName + "']:checked").val();
+
                 if(radioGroupValue == undefined){
                     displayFieldError($(this));
                     isValid = false;
@@ -137,7 +138,7 @@ $(document).ready(function() {
             if ($formToValidated.attr('id') == 'login-form'){
                 // change location based on input
                 var loginEmail = $('#username', $formToValidated).val();
-                if (loginEmail == 'a') {
+                if (loginEmail == 'test@nhs.net') {
                     location.assign('homepage');
                     return false;
                 }
@@ -345,6 +346,7 @@ $(document).ready(function() {
                 }
                 submitFormIfValid();
             }
+
             else {
                 submitFormIfValid();
             }
