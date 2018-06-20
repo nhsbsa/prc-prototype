@@ -138,7 +138,7 @@ $(document).ready(function() {
             if ($formToValidated.attr('id') == 'login-form'){
                 // change location based on input
                 var loginEmail = $('#username', $formToValidated).val();
-                if (loginEmail == 'test@nhs.net') {
+                if (loginEmail == 'bsa') {
                     location.assign('homepage');
                     return false;
                 }
