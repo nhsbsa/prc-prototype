@@ -218,14 +218,6 @@ $(document).ready(function() {
                     removePageErrors("error4");
                 }
 
-                if (appS1Country == false) {
-                    errSumm1.removeClass("display-none").addClass("error-summary");
-                    displayPageErrors("error8");
-                }
-                if (appS1Country != false) {
-                    removePageErrors("error8");
-                }
-
                 if (dependant.hasClass("visually-hidden") == false && depFirstName == false) {
                     errSumm2.removeClass("display-none").addClass("error-summary");
                     displayPageErrors("error5");
@@ -253,7 +245,7 @@ $(document).ready(function() {
                     removePageErrors("error7");
                 }
 
-                if (!document.location.href.includes("registerpersons1")) {
+                if (window.location.href.indexOf("registerpersons1") == -1) {                    
                     // removes error-summary with no errors //
                     if (dependant.hasClass("visually-hidden") == false &&
                         appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false) {
@@ -287,7 +279,15 @@ $(document).ready(function() {
                     }
                     submitFormIfValid();
 
-                } else if (document.location.href.includes("registerpersons1")) {
+                } else if (window.location.href.indexOf("registerpersons1") != -1) {
+                    if (appS1Country == false) {
+                        errSumm1.removeClass("display-none").addClass("error-summary");
+                        displayPageErrors("error8");
+                    }
+                    if (appS1Country != false) {
+                        removePageErrors("error8");
+                    }
+
                     // removes error-summary with no errors //
                     if (dependant.hasClass("visually-hidden") == false 
                         && appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false && appS1Country != false) {
