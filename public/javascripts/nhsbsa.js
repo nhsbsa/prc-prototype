@@ -29,8 +29,8 @@ function displayFieldError($inputField) {
     if ($radioField = $($inputField)) { // [array]
         for (i = 0; i < $radioField.length; i++){
             $radioField.addClass('form-control-error'); // FIC amends for radio error-styles
-        };
-    };
+        }
+    }
     $('.error-message', $errorLayer).removeClass('display-none');
     $($inputField[0].parentElement.parentElement.previousElementSibling).removeClass('js-hidden');
 }
@@ -146,7 +146,6 @@ $(document).ready(function() {
             
             // definitoryquestions - prc //
             if ($formToValidated.attr('id') == 'questions-form') {
-                var isValid;
                 var applyingFor = $("input[name='radio-inline-group']:checked").val() || false; // false if undefined
                 var s1Registered = $("input[name='registred2']:checked").val() || false; // false if undefined
 
@@ -173,7 +172,6 @@ $(document).ready(function() {
 
             // registerperson - prc //
             else if ($formToValidated.attr('id') == 'register1-form') {
-                var isValid;
                 var appFirstName = $('#reference-number-1', $formToValidated).val() || false;
                 var appLastName = $('#reference-number-2', $formToValidated).val() || false;
                 var appDateOfBirth = $('#reference-number-3', $formToValidated).val() || false;
@@ -256,18 +254,18 @@ $(document).ready(function() {
 
                 if (!document.location.href.includes("registerpersons1")) {
                     // removes error-summary with no errors //
-                    if (dependant.hasClass("visually-hidden") == false 
-                        && appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false) {
+                    if (dependant.hasClass("visually-hidden") == false &&
+                        appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false) {
                             errSumm1.addClass("display-none").removeClass("error-summary");
                     }
-                    if (dependant.hasClass("visually-hidden") == false 
-                        && depFirstName != false && depLastName != false && depDateOfBirth != false) {
+                    if (dependant.hasClass("visually-hidden") == false &&
+                        depFirstName != false && depLastName != false && depDateOfBirth != false) {
                             errSumm2.addClass("display-none").removeClass("error-summary");
                     }
                     // end //
 
-                    if (appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false
-                        && dependant.hasClass("visually-hidden") == true) {
+                    if (appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false &&
+                        dependant.hasClass("visually-hidden") == true) {
                             if (tickboxed == 'Yes') {
                                 $("#register1-form").attr("action", "/prc2/notukresident");
                             } else {
