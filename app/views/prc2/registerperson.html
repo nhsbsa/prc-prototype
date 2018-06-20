@@ -1,76 +1,9 @@
+{% extends "layout_bsa_internal.html" %} 
 
+{% block page_title %} Single User View 
+{% endblock %} 
 
-<!DOCTYPE html>
-<!--[if lt IE 9]><html class="lte-ie8 unbranded" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--><html class="unbranded" lang="en"><!--<![endif]-->
-  <head>
-    <meta charset="utf-8" />
-    <title> Single User View 
-</title>
-
-    <!--[if gt IE 8]><!--><link href="/public/stylesheets/govuk-template.css?0.18.3" media="screen" rel="stylesheet" /><!--<![endif]-->
-    <!--[if IE 6]><link href="/public/stylesheets/govuk-template-ie6.css?0.18.3" media="screen" rel="stylesheet" /><![endif]-->
-    <!--[if IE 7]><link href="/public/stylesheets/govuk-template-ie7.css?0.18.3" media="screen" rel="stylesheet" /><![endif]-->
-    <!--[if IE 8]><link href="/public/stylesheets/govuk-template-ie8.css?0.18.3" media="screen" rel="stylesheet" /><![endif]-->
-    <link href="/public/stylesheets/govuk-template-print.css?0.18.3" media="print" rel="stylesheet" />
-
-    <!--[if IE 8]><link href="/public/stylesheets/fonts-ie8.css?0.18.3" media="all" rel="stylesheet" /><![endif]-->
-    <!--[if gte IE 9]><!--><link href="/public/stylesheets/fonts.css?0.18.3" media="all" rel="stylesheet" /><!--<![endif]-->
-    <!--[if lt IE 9]><script src="/public/javascripts/ie.js?0.18.3"></script><![endif]-->
-
-    <link rel="shortcut icon" href="/public/images/favicon.ico?0.18.3" type="image/x-icon" />
-    <link rel="mask-icon" href="/public/images/gov.uk_logotype_crown.svg?0.18.3" color="#0b0c0c">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/images/apple-touch-icon-152x152.png?0.18.3">
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/images/apple-touch-icon-120x120.png?0.18.3">
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/images/apple-touch-icon-76x76.png?0.18.3">
-    <link rel="apple-touch-icon-precomposed" href="/public/images/apple-touch-icon-60x60.png?0.18.3">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image" content="/public/images/opengraph-image.png?0.18.3">
-
-    
-  <link href="/public/stylesheets/bsa.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="/public/stylesheets/autocomplete.css" media="screen" rel="stylesheet" type="text/css" />
-
-  </head>
-
-  <body class=""><script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.23.6'><\/script>".replace("HOST", location.hostname));
-//]]></script>
-
-    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
-
-    
-
-    <div id="skiplink-container">
-      <div>
-        <a href="#content" class="skiplink">Skip to main content</a>
-      </div>
-    </div>
-
-    <div id="global-cookie-message">
-
-        
-
-    </div>
-    <!--end global-cookie-message-->
-
-
-    <header role="banner" id="global-header" class="">
-        
-  <div id="header-logo">
-  <div class="header-wrapper">
-    <a id="bsa-logo" href="/index">
-      <img src="/public/images/bsa/bsa_logo.svg">
-    </a>
-  </div>
-</div>
-
-    </header>
-    <!--end header-->
-
-
-    
+{% block after_header %}
   <div id="menu">
     <div id="menu-content">
       <div class="grid-row">
@@ -85,102 +18,63 @@
       </div>
     </div>
   </div> 
+  {% endblock %} 
   
-
-    
+  {% block content %}
 
 <style>
 .highlight {
     min-height: 40%;
 }
 .link-back{
-    margin-left: 10px;     
+    margin-left: 20px;
 }
 .form-control {
     width: 90%;
-	font-size: 16px;
 }
-#select-box {
-   background: white;
-   color: black;
-   border: none;
-   height: 30px; 
-   width: 66%;
-   margin-bottom: 3px; 
-   font-size: medium;
-   border: 2px solid grey;
+.multiple-choice [type=radio] + label::before {
+    margin-left: -38px;
+    margin-top: -5px;
 }
-.column-full{
-	padding-left: 0px;
-	font-size: 16px;
-	padding-left: 0px;
+.multiple-choice [type=radio] + label::after {
+    left: 17px;
+    top: 19px;
 }
-.building2{
-	padding-left:0px;
+.inline .multiple-choice label {
+    line-height: 120%;
 }
-.first-box-btn{
-	padding-left:0px;
+.test{
+    padding-left: 30px;
 }
-.newbox{
-	padding-left:0px;
+.heading-medium{
+	margin-top: 15px;
+    margin-bottom: -5px;
 }
-.button-submit2{
-    margin-left: 20px;     
+.s1reg{
+	margin-top: -30px;
 }
-.form-group{	
-	margin-bottom: 15px;
+.buttonSubmit{
+	margin-top: -15px;
 }
-#test1234{
-	float: right;
-    text-align: right;
-}
-.multiple-choice{
-	transform: scale(0.70);
-    background-color: transparent;
-    border: transparent;
-}
-.first-multiple-choice{
-	margin-left: -36px;
-    margin-top: -15px;
-}
-.hello:first-child {
-    margin-top: 10px;
-    margin-left: -24px;
-	margin-bottom: -20px;
-}
-.multiple-choice label{
-	float: left;
-	margin-left: 48px;
-	padding-right: 5px;
-	padding-top: 0px;
-}
-.checkbox4.multiple-choice:first-child {
-    margin-top: 10px;
-    margin-left: -40px;
-}
-.button-submit2 {
-    margin-left: 20px;
-    margin-top: -20px;
-}
-.multiple-choice [type=checkbox] + label::before {
-    content: "";
-    border: 2px solid;
-    background: white;
+.acceptanceCriteria{
+	margin-top: -25px;
 }
 </style>
 
 <main id="content" role="main">
+
     <div class="grid-row">
-		<div class="column-full full">
+
+        <div class="column-full full" style="background-color: white;">
 			<div class="column-one-half">
 				<a href="definitoryquestions" class="link-back">Back</a>
 			</div>
-			<div class="column-half" id="test1234">
+			<div class="column-half" id="test1234" style="float: right;
+    text-align: right;">
 				<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">End process</a>
 			</div>
-		</div>	
 		<br>
-		<br>
+		<br>	
 		<div class="column-full">
 			<div class="column-one-half lpads" style="padding: 0 2em 0 1em">
 				<div class="grid-row highlight">
@@ -231,25 +125,41 @@
 							<h2 class="heading-small postcode2"> Postcode</h2>
 							<input class="form-control postcode2" id="reference-number" name="first-name-2" type="text" autocomplete="off" />
 						</div>
-					</div>
-					<form id="myForm" class="form">
+					</div>					
 						<div class="column-full hello1">
 							
 							<i class="icon icon-important">
 								<span class="visually-hidden">Warning</span>
 							</i>
-							<strong class="bold-small">
-							Check Indesser portal. Tick the box below if the result is 'NONE'. <br>Ignore this step if applicant is 18 or under.
+							<strong class="bold-smaller">
+							Check Indesser portal for applicants over 18 and UK resident. <br>
 							</strong>
 						</div>
-						<div class="column-full">	
-							<div class="multiple-choice hello" style="margin-left: -35px;">
-								  <input id="ukResident" name="ukResident" type="checkbox"/>
-								  <label for="ukResident" style="font-size:18px;">Tick if not UK resident</label>
+							<div class="column-half hello1">
+								<div class="form-group">
+									<fieldset class="inline">
+										<legend class="visually-hidden">UK resident?</legend>
+										<div class="column-one-third lpads">
+											<br><h1 class="heading-small">Indesser result?</h1>
+										</div>
+										<div class="column-one-third">
+											  <div class="multiple-choice">
+												<input id="radio-inline-Indesser" type="radio" name="registred2" value="Pass"/>
+												<label for="radio-inline-Indesser">Pass</label>
+											  </div>
+										</div>
+										<div class="column-one-third">
+											  <div class="multiple-choice">
+												<input id="radio-inline-Indesser" type="radio" name="registred2" value="Fail"/>
+												<label for="radio-inline-Indess">Fail</label>
+											  </div>
+										</div>
+									</fieldset>
+								</div>
 							</div>
-						</div>
+						<!-- test -->
 						<div class="column-full first-box-btn">
-							<div class="column-one-half newbox">
+							<div class="newbox" style="font-size: 16px;">
 								<br>
 								<a class="button-dependent" href="#">+ Add dependant</a>
 								<br>
@@ -257,7 +167,6 @@
 								<input class="button buttonSubmit2" type="button" onclick="formSubmit()" value="Submit" style=" font-size: 16px;" />
 							</div>
 						</div>	
-					</form>
 				</div>
 			</div>			
 			<!--  Dependant details -->
@@ -297,55 +206,30 @@
 				<br><br><input class="button buttonSubmit2" type="button" onclick="formSubmit()" value="Submit" style=" font-size: 16px;" />
 			</div>	
 		</div>
-	</div>		
+		</div>
+	</div>
 </main>
-	
-	<script>
-		var isCheckedValue = false;
-		document.getElementById("ukResident").onclick = function(){
-			if(this.checked == true){
-				isCheckedValue = true;
-				console.log(isCheckedValue);
-			}
-		}		
-		function formSubmit () {
-		console.log("testtest");
-		if (document.getElementById("ukResident").checked == true){
-			window.location="/prc2/residencywhy";
-			}
-		else
-			{
-			window.location="/prc2/contactdetails";
-			}	
-		}		
-	</script>	
+
+<script>
+	var isCheckedValue = false;
+	document.getElementById("ukResident").onclick = function(){
+		if(this.checked == true){
+			isCheckedValue = true;
+			console.log(isCheckedValue);
+		}
+	}		
+	function formSubmit () {
+	console.log("testtest");
+	if (document.getElementById("ukResident").checked == true){
+		window.location="/prc2/residencywhy";
+		}
+	else
+		{
+		window.location="/prc2/contactdetails";
+		}	
+	}		
+</script>	
+			
+{% endblock %}
 
 
-    <footer class="group js-footer" id="footer" role="contentinfo">
-      
-    </footer>
-
-    <!--end footer-->
-
-    <div id="global-app-error" class="app-error hidden"></div>
-
-    <script src="/public/javascripts/govuk-template.js?0.18.3" type="text/javascript"></script>
-
-    
-  <!-- Javascript -->
-<!--[if lte IE 8]><script src="/public/javascripts/bind.js"></script><![endif]-->
-<script src="/public/javascripts/details.polyfill.js"></script>
-<script src="/public/javascripts/jquery-1.11.3.js"></script>
-<script src="/public/javascripts/govuk/shim-links-with-button-role.js"></script>
-<script src="/public/javascripts/govuk/show-hide-content.js"></script>
-<script src="/public/javascripts/application.js"></script>
-
-
-  <script src="/public/javascripts/auto-store-data.js"></script>
-
-
-
-
-    <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
-  </body>
-</html>
