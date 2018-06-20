@@ -95,6 +95,9 @@
     margin-left: 20px;
     margin-top: -20px;
 }
+[hidden], .display-none {
+	display: none;
+}
 </style>
 
 <main id="content" role="main">
@@ -110,78 +113,104 @@
 		<br>
 		<br>
 		<div class="column-full" style="background-color: white;">
-			<div class="column-one-half lpads ">
-				<div style="padding: 0 2em 0 1em">
-					<div class="grid-row highlight">
-						<div class="column-full">	
-							<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register main applicant</h1>
-							
-							<div class="column-one-third lpads">	
-								<h2 class="heading-small">First name</h2>
-								<input class="form-control" id="reference-number" name="first-name-2" type="text" autocomplete="off"/>
-							</div>		
-							<div class="column-one-third lpads">	
-								<h2 class="heading-small">Last name</h2>
-								<input class="form-control" id="reference-number" name="first-name-2" type="text" autocomplete="off" />	
+			<form action="contactdetails" id="register1-form" class="form form-to-validate" method="get" novalidate="novalidate" autocomplete="off">
+				<div class="column-one-half lpads ">
+					<div style="padding: 0 2em 0 1em">
+						<div class="grid-row highlight">
+							<div class="column-full">	
+								<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register main applicant</h1>
+								<!-- errors and validation -->
+								<div class="error-summary display-none" id="bcd" role="group" aria-labelledby="finance-login-message-heading" style="margin-right: 15px;">
+									<ul class="error-summary-list">
+										<li><a href="#reference-number-1" id="login-error-list1" class="error1 display-none">Enter applicant's first name</a></li>
+										<li><a href="#reference-number-2" id="login-error-list2" class="error2 display-none">Enter applicant's last name</a></li>
+										<li><a href="#reference-number-3" id="login-error-list3" class="error3 display-none">Enter applicant's date of birth</a></li>
+										<li><a href="#reference-number-4" id="login-error-list4" class="error4 display-none">Enter applicant's postcode</a></li>
+										<li><a href="#country-of-treatment" id="login-error-list8" class="error8 display-none">Enter applicant's S1 country</a></li>
+									</ul>
+								</div>
+								<div class="column-one-third lpads">	
+									<h2 class="heading-small">First name</h2>
+									<input class="form-control validate-text-input" id="reference-number-1" name="first-name-2" type="text" autocomplete="off" />
+								</div>		
+								<div class="column-one-third lpads">	
+									<h2 class="heading-small">Last name</h2>
+									<input class="form-control validate-text-input" id="reference-number-2" name="first-name-2" type="text" autocomplete="off" />	
+								</div>
+								<div class="column-one-third lpads">	
+									<h2 class="heading-small">Date of birth</h2>
+									<input class="form-control dob1234 validate-text-input" id="reference-number-3" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
+								</div>
+								<div class="column-one-third lpads">	
+									<br><h2 class="heading-small">NINO</h2>
+									<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
+								</div>
+								<div class="column-one-third lpads autocomplete">	
+									<br><h2 class="heading-small">S1 country</h2>
+									<input class="form-control validate-text-input" id="country-of-treatment" name="first-name-2" type="text" style="font-size: 16px;" autocomplete="off" />
+								</div>
 							</div>
-							<div class="column-one-third lpads">	
-								<h2 class="heading-small">Date of birth</h2>
-								<input class="form-control dob1234" id="reference-number" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
-							</div>
-							<div class="column-one-third lpads">	
-								<br><h2 class="heading-small">NINO</h2>
-								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
-							</div>
-							<div class="column-one-third lpads">	
-								<br>
-								<h2 class="heading-small">S1 country</h2>
-								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" />
-							</div>
+
+							<div class="column-full first-box-btn">
+								<div class="column-one-half newbox">
+									<br>
+									<a class="button-dependent" href="#">+ Add dependant</a>
+									<br>
+									<br>
+									<!-- <a class="button btnSubmit1" href="contactdetails" role="button" style=" font-size: 16px;     margin-top: -10px;">Submit</a> -->
+									<input class="button buttonSubmit1" type="submit" value="Submit" style=" font-size: 16px;" />
+								</div>
+							</div>						
 						</div>
-						<div class="column-full first-box-btn">
-							<div class="column-one-half newbox">
-								<br>
-								<a class="button-dependent" href="#">+ Add dependant</a>
-								<br>
-								<br>
-								<a class="button btnSubmit1" href="contactdetails" role="button" style=" font-size: 16px;     margin-top: -10px;">Submit</a>
-							</div>
-						</div>						
 					</div>
 				</div>
-			</div>
-						
-			<!--  Dependant details -->
-			<div class="column-one-half dependent visually-hidden">
-				<div style="padding: 0 2em 0 2em">
-					<div class="grid-row highlight" style="margin-right: -30px;">
-					
-						<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register a dependant</h2>	
-						<!-- Dependant link-->				
+							
+				<!--  Dependant details -->
+				<div class="column-one-half dependent visually-hidden">
+					<div style="padding: 0 2em 0 2em">
+						<div class="grid-row highlight" style="margin-right: -30px;">
+							<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register a dependant</h2>	
+							<!-- errors and validation -->
+							<div class="error-summary2 display-none" id="cde" role="group" aria-labelledby="finance-login-message-heading" style="margin-right: 15px;">
+								<ul class="error-summary-list">
+									<li><a href="#reference-number-5" id="login-error-list5" class="error5 display-none">Enter applicant's first name</a></li>
+									<li><a href="#reference-number-6" id="login-error-list6" class="error6 display-none">Enter applicant's last name</a></li>
+									<li><a href="#reference-number-7" id="login-error-list7" class="error7 display-none">Enter applicant's date of birth</a></li>
+								</ul>
+							</div>
+							<!-- Dependant link-->				
 							<div class="column-one-third lpads">	
 									<h2 class="heading-small">First name</h2>
-									<input class="form-control" id="reference-number" name="first-name-2" type="text" autocomplete="off" />
+									<input class="form-control validate-text-input" id="reference-number-5" name="first-name-2" type="text" autocomplete="off" />
 							</div>		
 							<div class="column-one-third lpads">	
 									<h2 class="heading-small">Last name</h2>
-									<input class="form-control" id="reference-number" name="first-name-2" type="text" autocomplete="off" />	
+									<input class="form-control validate-text-input" id="reference-number-6" name="first-name-2" type="text" autocomplete="off" />	
 							</div>
 							<div class="column-one-third lpads">	
 									<h2 class="heading-small">Date of birth</h2>
-									<input class="form-control dob1234" id="reference-number" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
+									<input class="form-control dob1234 validate-text-input" id="reference-number-7" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
 							</div>
 							<div class="column-one-third lpads">	
 									<br><h2 class="heading-small">NINO</h2>
 									<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
 							</div>						
+						</div>
 					</div>
+				</div>	
+				<div class="column-full button-submit2 visually-hidden">	
+					<br>			
+					<br>
+					<!-- <a class="button" href="contactdetails" role="button" style=" font-size: 16px; ">Submit</a> -->
+					<input class="button buttonSubmit2" type="submit" value="Submit" style="font-size: 16px;" />
 				</div>
-			</div>	
-			<div class="column-full button-submit2 visually-hidden">	
-				<br>			
-				<br><a class="button" href="contactdetails" role="button" style=" font-size: 16px; ">Submit</a>
-			</div>	
+			</form>
 		</div>		
 </main>
-			
+
+<script src="/public/javascripts/autocomplete.js"></script>
+<script>
+	autocomplete(document.getElementById("country-of-treatment"), countries);
+</script>
+
 {% endblock %}
