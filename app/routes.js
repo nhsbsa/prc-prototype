@@ -34,10 +34,10 @@ router.get (/registration/, function (req, res){
 });
 
 router.get (/indesserResults/, function (req, res){
-	if (req.query.indesser1 === 'Fail'){
+	if (req.query.indesser1 === 'Pass'){
 		res.redirect ('contactdetails');
     } else {
-        res.redirect ('registerpersons1');
+        res.redirect ('notukresident');
 }
 });
 

@@ -15,6 +15,17 @@ function displayPageErrors(errorMessageClass) {
     }
 }
 
+function displayRegPageErrors(errorSummary, errorMessageClass) {
+    errorSummary.removeClass('display-none');
+    if(errorMessageClass){
+        // $('.'+errorMessageClass).removeClass('display-none').parents('.form-group').addClass('error');
+        $('.'+errorMessageClass).removeClass('display-none');
+    } else {
+        $errMessage.removeClass('display-none');
+        // $errorLayer.addClass('error');
+    }
+}
+
 function removePageErrors(errorMessageClassName) {
     if (errorMessageClassName) {
         $('.'+errorMessageClassName).addClass('display-none');
@@ -185,10 +196,11 @@ $(document).ready(function() {
                 var depFirstName = $('#reference-number-5', $formToValidated).val() || false;
                 var depLastName = $('#reference-number-6', $formToValidated).val() || false;
                 var depDateOfBirth = $('#reference-number-7', $formToValidated).val() || false;
+                var indesser = $("input[name='indesser1']:checked").val() || false;
 
                 if (appFirstName == false) {
                     errSumm1.removeClass("display-none").addClass("error-summary");
-                    displayPageErrors("error1");
+                    displayRegPageErrors(errSumm1, "error1");
                 }
                 if (appFirstName != false) {
                     removePageErrors("error1");
@@ -196,7 +208,7 @@ $(document).ready(function() {
 
                 if (appLastName == false) {
                     errSumm1.removeClass("display-none").addClass("error-summary");
-                    displayPageErrors("error2");
+                    displayRegPageErrors(errSumm1, "error2");
                 }
                 if (appLastName != false) {
                     removePageErrors("error2");
@@ -204,23 +216,15 @@ $(document).ready(function() {
 
                 if (appDateOfBirth == false) {
                     errSumm1.removeClass("display-none").addClass("error-summary");
-                    displayPageErrors("error3");
+                    displayRegPageErrors(errSumm1, "error3");
                 }
                 if (appDateOfBirth != false) {
                     removePageErrors("error3");
                 }
 
-                if (appPostcode == false) {
-                    errSumm1.removeClass("display-none").addClass("error-summary");
-                    displayPageErrors("error4");
-                }
-                if (appPostcode != false) {
-                    removePageErrors("error4");
-                }
-
                 if (dependant.hasClass("visually-hidden") == false && depFirstName == false) {
                     errSumm2.removeClass("display-none").addClass("error-summary");
-                    displayPageErrors("error5");
+                    displayRegPageErrors(errSumm2, "error5");
                 }
                 if (dependant.hasClass("visually-hidden") == false && depFirstName != false) {
                     // errSumm2.removeClass("display-none").addClass("error-summary");
@@ -229,7 +233,7 @@ $(document).ready(function() {
 
                 if (dependant.hasClass("visually-hidden") == false && depLastName == false) {
                     errSumm2.removeClass("display-none").addClass("error-summary");
-                    displayPageErrors("error6");
+                    displayRegPageErrors(errSumm2, "error6");
                 }
                 if (dependant.hasClass("visually-hidden") == false && depLastName != false) {
                     // errSumm2.removeClass("display-none").addClass("error-summary");
@@ -238,7 +242,7 @@ $(document).ready(function() {
 
                 if (dependant.hasClass("visually-hidden") == false && depDateOfBirth == false) {
                     errSumm2.removeClass("display-none").addClass("error-summary");
-                    displayPageErrors("error7");
+                    displayRegPageErrors(errSumm2, "error7");
                 }
                 if (dependant.hasClass("visually-hidden") == false && depDateOfBirth != false) {
                     // errSumm2.removeClass("display-none").addClass("error-summary");
@@ -246,9 +250,24 @@ $(document).ready(function() {
                 }
 
                 if (window.location.href.indexOf("registerpersons1") == -1) {
+                    if (appPostcode == false) {
+                        errSumm1.removeClass("display-none").addClass("error-summary");
+                        displayRegPageErrors(errSumm1, "error4");
+                    }
+                    if (appPostcode != false) {
+                        removePageErrors("error4");
+                    }
+
+                    if (indesser == false) {
+                        displayPageErrors("error8");
+                    }
+                    if (indesser != false) {
+                        removePageErrors("error8");
+                    }
+
                     // removes error-summary with no errors //
                     if (dependant.hasClass("visually-hidden") == false &&
-                        appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false) {
+                        appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false && indesser != false) {
                             errSumm1.addClass("display-none").removeClass("error-summary");
                     }
                     if (dependant.hasClass("visually-hidden") == false &&
@@ -257,18 +276,18 @@ $(document).ready(function() {
                     }
                     // end //
 
-                    if (appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false &&
+                    if (appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false && indesser != false &&
                         dependant.hasClass("visually-hidden") == true) {
-                            if (tickboxed == 'Yes') {
+                            if (indesser == 'Fail') {
                                 $("#register1-form").attr("action", "/prc2/notukresident");
                             } else {
                                 location.assign($formToValidated.attr('action'));
                             }
                             isValid = true;
-                    } else if (appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false
-                        && dependant.hasClass("visually-hidden") == false
-                        && depFirstName != false && depLastName != false && depDateOfBirth != false) {
-                            if (tickboxed == 'Yes') {
+                    } else if (appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false && indesser != false &&
+                        dependant.hasClass("visually-hidden") == false &&
+                        depFirstName != false && depLastName != false && depDateOfBirth != false) {
+                            if (indesser == 'Fail') {
                                 $("#register1-form").attr("action", "/prc2/notukresident");
                             } else {
                                 location.assign($formToValidated.attr('action'));
@@ -282,7 +301,7 @@ $(document).ready(function() {
                 } else if (window.location.href.indexOf("registerpersons1") != -1) {
                     if (appS1Country == false) {
                         errSumm1.removeClass("display-none").addClass("error-summary");
-                        displayPageErrors("error8");
+                        displayRegPageErrors(errSumm1, "error8");
                     }
                     if (appS1Country != false) {
                         removePageErrors("error8");
@@ -299,10 +318,10 @@ $(document).ready(function() {
                     }
                     // end //
 
-                    if (appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false && appS1Country != false
+                    if (appFirstName != false && appLastName != false && appDateOfBirth != false && appS1Country != false
                         && dependant.hasClass("visually-hidden") == true) {
                             isValid = true;
-                    } else if (appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false && appS1Country != false
+                    } else if (appFirstName != false && appLastName != false && appDateOfBirth != false && appS1Country != false
                         && dependant.hasClass("visually-hidden") == false
                         && depFirstName != false && depLastName != false && depDateOfBirth != false) {
                             isValid = true;

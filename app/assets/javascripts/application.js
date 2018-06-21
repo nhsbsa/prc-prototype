@@ -107,7 +107,7 @@ $(".button2").click(function(){
 
 $(".button-dependent").click(function(){
 	$(".dependent").removeClass("visually-hidden");
-	$(".first-box-btn").hide();
+	$(".first-box-btn, .buttonSubmit").hide();
 	$(".button-submit2").removeClass("visually-hidden");
 });
 

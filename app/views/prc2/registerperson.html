@@ -91,12 +91,20 @@
 #reference-number, #reference-number-1, #reference-number-2, #reference-number-3, #reference-number-4, #reference-number-5, #reference-number-6, #reference-number-7, #country-of-treatment {
     font-size: 16px;
 }
+
+.newbox {
+	margin-bottom: 15px;
+}
+.button.buttonSubmit2 {
+	margin-left: 15px;
+}
+.error-summary {
+	margin-bottom: 30px;
+}
 </style>
 
 <main id="content" role="main">
-
     <div class="grid-row">
-
         <div class="column-full full" style="background-color: white;">
 			<div class="column-one-half">
 				<a href="definitoryquestions" class="link-back">Back</a>
@@ -105,8 +113,9 @@
     text-align: right;">
 				<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">End process</a>
 			</div>
+		</div>
 		<br>
-		<br>	
+		<br>
 		<div class="column-full">
 			<form action="contactdetails" id="register1-form" class="form form-to-validate" method="get" novalidate="novalidate" autocomplete="off">
 				<div class="column-one-half lpads" style="padding: 0 2em 0 1em">
@@ -120,6 +129,7 @@
 									<li><a href="#reference-number-2" id="login-error-list2" class="error2 display-none">Enter applicant's last name</a></li>
 									<li><a href="#reference-number-3" id="login-error-list3" class="error3 display-none">Enter applicant's date of birth</a></li>
 									<li><a href="#reference-number-4" id="login-error-list4" class="error4 display-none">Enter applicant's postcode</a></li>
+									<li><a href="#reference-number-8" id="login-error-list8" class="error8 display-none">Select Indesser result</a></li>
 								</ul>
 							</div>
 							<div class="column-one-third lpads">
@@ -171,44 +181,40 @@
 									<span class="visually-hidden">Warning</span>
 								</i>
 								<strong class="bold-small" style="font-size:16px;">
-									Check Indesser portal for UK residents 18 and over.<br>
+									Check Indesser portal for UK residents over 18.
 								</strong>
 							</div>
-							<form action="indesser" id="questions-form" class="form form-to-validate" method="get" novalidate="novalidate" autocomplete="off">
-								<div class="column-full hello1 lpads" style="padding-left:50px;">
-									<div class="form-group">
-										<fieldset class="inline">
-											<legend class="visually-hidden">UK resident?</legend>
-											<div class="column-one-third lpads">
-												<br><h1 class="heading-small">Indesser result?</h1>
-											</div>
-											<div class="column-one-third lpads">
-												  <div class="multiple-choice">
-													<input id="radio-inline-Indesser1" type="radio" name="indesser1" value="Pass"/>
-													<label for="radio-inline-Indesser1">Pass</label>
-												  </div>
-											</div>
-											<div class="column-one-third align-radio">
-												  <div class="multiple-choice">
-													<input id="radio-inline-Indesser2" type="radio" name="indesser1" value="Fail"/>
-													<label for="radio-inline-Indesser2">Fail</label>
-												  </div>
-											</div>
-										</fieldset>
-									</div>
+							<div class="column-full hello1 lpads" style="padding-left:50px;">
+								<div class="form-group">
+									<fieldset class="inline">
+										<legend class="visually-hidden">UK resident?</legend>
+										<div class="column-one-third lpads">
+											<br><h1 class="heading-small">Indesser result</h1>
+										</div>
+										<div class="column-one-third lpads">
+												<div class="multiple-choice">
+												<input id="reference-number-8" type="radio" name="indesser1" value="Pass"/>
+												<label for="reference-number-8">Pass</label>
+												</div>
+										</div>
+										<div class="column-one-third align-radio">
+												<div class="multiple-choice">
+												<input id="reference-number-9" type="radio" name="indesser1" value="Fail"/>
+												<label for="reference-number-9">Fail</label>
+												</div>
+										</div>
+									</fieldset>
 								</div>
-								
-								<div class="column-full first-box-btn lpads">
-									<div class="newbox" style="font-size:16px;">
-										<br>
-										<a class="button-dependent" href="#">+ Add dependant</a>
-										<br>
-										<br>
-										
-									</div>
-								</div>	
-								<input class="button buttonSubmit" type="submit" value="Submit" style="font-size: 16px;" />
-							</form>
+							</div>
+							<div class="column-full first-box-btn lpads">
+								<div class="newbox" style="font-size:16px;">
+									<br>
+									<a class="button-dependent" href="#">+ Add dependant</a>
+									<br>
+									<br>
+								</div>
+							</div>	
+							<input class="button buttonSubmit" type="submit" value="Submit" style="font-size: 16px;" />
 						</div>
 					</div>
 				</div>			
@@ -227,28 +233,28 @@
 							</div>
 							<!-- Dependant link -->
 							<div class="column-one-third lpads">
-									<h2 class="heading-small">First name</h2>
-									<input class="form-control validate-text-input" id="reference-number-5" name="first-name-2" type="text" autocomplete="off" />
+								<h2 class="heading-small">First name</h2>
+								<input class="form-control validate-text-input" id="reference-number-5" name="first-name-2" type="text" autocomplete="off" />
 							</div>		
 							<div class="column-one-third lpads">	
-									<h2 class="heading-small">Last name</h2>
-									<input class="form-control validate-text-input" id="reference-number-6" name="first-name-2" type="text" autocomplete="off" />	
+								<h2 class="heading-small">Last name</h2>
+								<input class="form-control validate-text-input" id="reference-number-6" name="first-name-2" type="text" autocomplete="off" />	
 							</div>
 							<div class="column-one-third lpads">	
-									<h2 class="heading-small">Date of birth</h2>
-									<input class="form-control validate-text-input" id="reference-number-7" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
+								<h2 class="heading-small">Date of birth</h2>
+								<input class="form-control validate-text-input" id="reference-number-7" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
 							</div>
 							<div class="column-one-third lpads">	
-									<br><h2 class="heading-small">NINO</h2>
-									<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
+								<br><h2 class="heading-small">NINO</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
 							</div>
 							<div class="column-one-third lpads">	
-									<br><h2 class="heading-small">EHIC issue number</h2>
-									<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(cardholder only)" autocomplete="off" />
+								<br><h2 class="heading-small">EHIC issue number</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(cardholder only)" autocomplete="off" />
 							</div>
 							<div class="column-one-third lpads">	
-									<br><h2 class="heading-small">EHIC expiry date</h2>
-									<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(cardholder only)" autocomplete="off" />
+								<br><h2 class="heading-small">EHIC expiry date</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(cardholder only)" autocomplete="off" />
 							</div>
 						</div>
 					</div>
@@ -263,27 +269,5 @@
 		</div>
 	</div>
 </main>
-
-<script>
-	<!-- var isCheckedValue = false; -->
-	<!-- document.getElementById("ukResident").onclick = function(){ -->
-		<!-- if(this.checked == true){ -->
-			<!-- isCheckedValue = true; -->
-			<!-- console.log(isCheckedValue); -->
-		<!-- } -->
-	<!-- }		 -->
-	<!-- function formSubmit () { -->
-	<!-- console.log("testtest"); -->
-	<!-- if (document.getElementById("ukResident").checked == true){ -->
-		<!-- window.location="/prc2/residencywhy"; -->
-		<!-- } -->
-	<!-- else -->
-		<!-- { -->
-		<!-- window.location="/prc2/contactdetails"; -->
-		<!-- }	 -->
-	<!-- }		 -->
-	
-	
-</script>	
 			
 {% endblock %}
