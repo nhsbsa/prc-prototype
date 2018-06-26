@@ -148,11 +148,15 @@ $(document).ready(function() {
             // login - prc //
             if ($formToValidated.attr('id') == 'login-form'){
                 // change location based on input
-                var loginEmail = $('#username', $formToValidated).val();
-                if (loginEmail == 'bsa@nhs.net') {
-                    location.assign('homepage');
-                    return false;
-                }
+                var loginEmail = $('#username', $formToValidated).val() || false;
+				var loginPass = $('#password', $formToValidated).val() || false;
+
+				if (loginEmail == 'bsa' && loginPass == 'bsa') {
+					location.assign('homepage');
+					isValid = true;
+				} else {
+					isValid = false;
+				}
                 submitFormIfValid();
             }
             
@@ -160,7 +164,7 @@ $(document).ready(function() {
             if ($formToValidated.attr('id') == 'questions-form') {
                 var applyingFor = $("input[name='radio-inline-group']:checked").val() || false; // false if undefined
                 var s1Registered = $("input[name='registred2']:checked").val() || false; // false if undefined
-
+				
                 if (applyingFor == false) {
                     displayPageErrors("error1");
                 }
