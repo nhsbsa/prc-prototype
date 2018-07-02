@@ -1,0 +1,81 @@
+{% extends "layout_bsa_internal.html" %}
+
+{% block page_title %}
+  Single User View
+{% endblock %}
+
+{% block after_header %}
+  <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-half" id="logout">
+          <a href="#">Sign out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+<style>
+.highlight{
+min-height:430px;
+}
+.makeScrollable{
+height:390px;
+}
+.closed-cases{
+color: red;
+}
+.link-back{
+    margin-left: 20px;    
+}
+.inline-btn ul li {
+	float: left;
+	margin-right: 10px;
+}
+p.email-text {
+    padding-left: 2em;
+    background-image: url(/public/images/bsa/icon_email.png);
+    background-repeat: no-repeat;
+    background-position: 0px;
+}
+
+.email-pass{
+	padding-left: 2em;
+    background-image: url(/public/images/bsa/icon_email_pass.png);
+    background-repeat: no-repeat;
+    background-position: 0px;
+}
+.email-fail{
+	padding-left: 2em;
+    background-image: url(/public/images/bsa/icon_email_fail.png);
+    background-repeat: no-repeat;
+    background-position: 0px;
+}
+</style>
+
+<main id="content" role="main">
+    <div class="grid-row">
+		<br>
+<div class="column-two-thirds">
+
+  <h1 class="heading-xlarge">Email failed to send</h1>
+
+  <p class="test email-fail">The PRC has <span style="font-weight:700" id="emailAddress">not</span> been sent to <span style="font-weight:700" id="emailAddress">hospital@infantaleonor.com</span></p>
+  <p class="test email-pass">The PRC has been emailed to <span style="font-weight:700" id="emailAddress">hospital@infantaleonor.com</span></p>
+	<h1 class="heading-large">Next steps</h1>
+  <p>You should contact the Service Desk on 671 8017 or 0870 010 3241.</p>
+  <p><span style="font-weight:700" id="emailAddress">Error: </span> Connection timed out</p>
+  
+					<div class="form-group" style="margin-top: 20px;">
+						<a class="button" href="homepage" role="button">Back to start</a>
+					</div>
+    </div>
+    </div>
+</div>
+</main>
+
+{% endblock %}

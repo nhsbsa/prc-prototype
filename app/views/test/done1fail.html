@@ -65,32 +65,39 @@ outline: 5px solid rgba(11, 12, 12, 0.1);
 	padding-bottom: 20px;
     padding-top: 20px;
 }
-.email-pass{
-	padding-left: 2em;
-    background-image: url(/public/images/bsa/icon_email_pass.png);
-    background-repeat: no-repeat;
-    background-position: 0px;
-}
 </style>
 
 <main id="content" role="main">
     <div class="grid-row">    
 		<div class="column-two-thirds">        
-            <div class="done-panel">
-                <h1 class="heading-xlarge"><span id="done-tick"></span>Done</h1>
-            </div>			
+			
 			<!--tab 1-->
 			<div id="certificate" class="details-block">
-				<div class="column-two-thirds">
-					<h1 class="heading-large">Next steps</h1>
-					 <div class="callout-box">
-					   <p>We have sent a copy of your PRC to the treatment facility. If you provided your personal email address, you will receive a confirmation email soon.</p>
-					 </div>
-				</div>
+
 				<div class="column-full">
+					<div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-2" tabindex="-1" style="margin-top: 0px; ">
+					  <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">
+						There has been an error
+					  </h2>
 				
-				<p class="test email-pass">The PRC has been emailed to <span style="font-weight:700" id="emailAddress">hospital@infantaleonor.com</span></p>
-					<article style="padding-top: 5px;">
+
+					</div>
+					</div>
+					<div class="column-full form-group">
+					<h1 class="heading-large">Next steps</h1>
+						  <p>
+						The PRC has not been sent to <span style="font-weight:700" id="emailAddress">hospital@infantaleonor.com</span>
+					  </p>
+										  <p>
+						You should contact the Service Desk on 671 8017 or 0870 010 3241.
+					  </p>
+
+				</div>
+					<div class="emailTo" style="padding-bottom: 3px;">	
+						<p class="test email-text">The PRC has been emailed to <span style="font-weight:700;" id="emailAddress">john.smithe@gmail.com</span></p>
+					</div>
+				
+					<article>
 						<div class="govspeak">
 							<section class="">
 								<div class="attachment-details">
