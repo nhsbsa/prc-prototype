@@ -53,6 +53,26 @@
 .highlight {
     min-height: 280px;
 }
+
+.internal-table-results td:nth-child(1) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(2) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(3) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(4) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(5) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(6) {
+    width: 5%;
+}
+
 </style>
 
 <main id="content" role="main">
@@ -107,6 +127,21 @@
 					</div>
 				</div>
 	</div> 
+	<div class="column-full" style="padding-left:20px; padding-top:20px;">
+		<table class="internal-table-results">
+			<tr>
+				<th>Reference number</th>
+				<th>Name</th> 
+				<th>Date of birth</th>
+				<th>NINO</th>
+				<th>Address</th>
+				<th>Latest update</th>
+			</tr>
 
+			
+		</table>
+		<br>
+		<h1>0 results found</h1>
+	</div>
 </main>
 {% endblock %}

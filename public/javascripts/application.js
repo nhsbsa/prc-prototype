@@ -151,3 +151,10 @@ $("#radio-inline-6").change(function() {
 	$(".acceptanceCriteria").addClass("visually-hidden");
 });
 
+$("#radio-inline-someone").change(function() {
+	$(".3rdPartyDet").removeClass("visually-hidden");
+});
+
+$("#radio-inline-myself").change(function() {
+	$(".3rdPartyDet").addClass("visually-hidden");
+});

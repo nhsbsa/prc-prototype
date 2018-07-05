@@ -101,19 +101,37 @@
 									</div>
 									<div class="column-one-third test">
 										<div class="multiple-choice">
-											<input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
-											<label for="radio-inline-1">Myself or dependant</label>
+											<input id="radio-inline-myself" type="radio" name="radio-inline-group" value="Yes">
+											<label for="radio-inline-myself">Myself or dependant</label>
 										</div>
 									</div>
 									<div class="column-one-third test">
 										<div class="multiple-choice">
-											<input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
-											<label for="radio-inline-2">Someone else</label>
+											<input id="radio-inline-someone" type="radio" name="radio-inline-group" value="No">
+											<label for="radio-inline-someone">Someone else</label>
 										</div>
 									</div>
 								</fieldset>
 							</div>
-							<!-- Second question-->
+							<!-- hidden section - 3rd party details-->
+							<div id="3rdParty" class="form-group 3rdPartyDet visually-hidden">
+									<h1 class="heading-medium">Caller's details</h1>
+								
+									<div class="column-one-third lpads">
+										<h2 class="heading-small">First name</h2>
+										<input class="form-control validate-text-input" id="reference-number-1" name="first-name-2" type="text" autocomplete="off" />
+									</div>		
+									<div class="column-one-third lpads">	
+										<h2 class="heading-small">Last name</h2>
+										<input class="form-control" id="reference-number-2" name="first-name-2" type="text" autocomplete="off" />	
+									</div>
+									<div class="column-one-third lpads">	
+										<h2 class="heading-small">Date of birth</h2>
+										<input class="form-control" id="reference-number-3" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
+									</div>
+									<br>
+							</div>
+							<!-- 
 							<div class="form-group">
 								<fieldset class="inline s1reg">
 									<legend class="visually-hidden">S1 registered?</legend>
@@ -145,6 +163,7 @@
 									<option>Registered in UK only</option>
 								</select>
 							</div>
+							-->
 							<input class="button buttonSubmit" type="submit" value="Submit" style="font-size: 16px;" />
 						</form>
 					</div>

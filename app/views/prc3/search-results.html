@@ -53,6 +53,26 @@
 .highlight {
     min-height: 280px;
 }
+
+.internal-table-results td:nth-child(1) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(2) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(3) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(4) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(5) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(6) {
+    width: 5%;
+}
+
 </style>
 
 <main id="content" role="main">
@@ -103,10 +123,73 @@
 						<span><li>Search and select the right case</li></span>
 						<li>Check the correct information is displayed</li>
 						<li>Check the status of the case</li>
+						<li>If you cannot find the right person, you can 'Register applicant' below</li>
+							<div class="column-full">
+		<a class="button" href="search-results" role="button" style=" font-size: 16px; margin-top: 20px; background-color: #005EB8;">Register applicant</a>		
+	</div>
 						</ul><br>
 					</div>
 				</div>
 	</div> 
-
+	<div class="column-full" style="padding-left:20px; padding-top:20px;">
+		<table class="internal-table-results">
+			<tr>
+				<th>Reference number</th>
+				<th>Name</th> 
+				<th>Date of birth</th>
+				<th>NINO</th>
+				<th>Address</th>
+				<th>Latest update</th>
+			</tr>
+			<tr>
+				<td><a href="pcn5">623456789</a></td>
+				<td>Gordon Robinson</td> 
+				<td>02/03/1975</td>		
+				<td>SR123456A</td>	
+				<td>43 Saxby Dr, Syston, Leicester, LE7 2HH</td>
+				<td>04/05/2008</td>
+			</tr>
+			<tr>
+				<td><a href="pcn4">523456789</a></td>
+				<td>Sam A Robinson</td> 
+				<td>02/03/1975</td>	
+				<td>SR654321A</td>					
+				<td>138 Munich Street, Tyne and Wear, Newcastle, NE31 4BN</td>
+				<td>14/06/2011</td>
+			</tr>
+			<tr>
+				<td><a href="pcn3">423456789</a></td>
+				<td>Georgia H Howe</td> 
+				<td>02/03/1975</td>	
+				<td>SR123456B</td>					
+				<td>66 Scotswood Road, HOOTON PAGNELL, TF6 8QJ</td>
+				<td>03/11/2016</td>
+			</tr>
+			<tr>
+				<td><a href="pcn2">323456789</a></td>
+				<td>Rebecca S Harper</td> 
+				<td>02/03/1975</td>	
+				<td>SR654321A</td>	
+				<td>Areley Centre, Abberley Avenue, Stourport-On-Severn, DY13 </td>
+				<td>26/02/2018</td>
+			</tr>
+			<tr>
+				<td><a href="pcn1">223456789</a></td>
+				<td>Emma Z Black</td> 
+				<td>02/03/1975</td>	
+				<td>SR123654A</td>	
+				<td>20a, Manor Gardens, Gateshead, NE10 8UZ</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td><a href="pcn">123456789</a></td>
+				<td>Courtney N Barnett</td> 
+				<td>02/03/1975</td>	
+				<td>SR654123A</td>	
+				<td>43 Saxby Dr, Syston, Leicester, LE7 2HH</td>
+				<td>26/10/2017</td>
+			</tr>
+		</table>
+	</div>
 </main>
 {% endblock %}
