@@ -151,7 +151,7 @@ $(document).ready(function() {
                 var loginEmail = $('#username', $formToValidated).val() || false;
 				var loginPass = $('#password', $formToValidated).val() || false;
 
-				if (loginEmail == 'bsa' && loginPass == 'bsa') {
+				if (loginEmail == 'bsa1' && loginPass == 'bsa1') {
 					location.assign('homepage');
 					isValid = true;
 				} else {
