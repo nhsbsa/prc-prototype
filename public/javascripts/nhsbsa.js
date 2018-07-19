@@ -1,378 +1,379 @@
 /* global $ */
+if(document.location.href.includes("prc2")){
+	var $errorLayer = $('.form-group'),
+	$errSummary = $('.error-summary'),
+	$errMessage = $('.error-message');
 
-var $errorLayer = $('.form-group'),
-$errSummary = $('.error-summary'),
-$errMessage = $('.error-message');
+	function displayPageErrors(errorMessageClass) {
+		$errSummary.removeClass('display-none');
+		if(errorMessageClass){
+			// $('.'+errorMessageClass).removeClass('display-none').parents('.form-group').addClass('error');
+			$('.'+errorMessageClass).removeClass('display-none');
+		} else {
+			$errMessage.removeClass('display-none');
+			// $errorLayer.addClass('error');
+		}
+	}
 
-function displayPageErrors(errorMessageClass) {
-    $errSummary.removeClass('display-none');
-    if(errorMessageClass){
-        // $('.'+errorMessageClass).removeClass('display-none').parents('.form-group').addClass('error');
-        $('.'+errorMessageClass).removeClass('display-none');
-    } else {
-        $errMessage.removeClass('display-none');
-        // $errorLayer.addClass('error');
-    }
-}
+	function displayRegPageErrors(errorSummary, errorMessageClass) {
+		errorSummary.removeClass('display-none');
+		if(errorMessageClass){
+			// $('.'+errorMessageClass).removeClass('display-none').parents('.form-group').addClass('error');
+			$('.'+errorMessageClass).removeClass('display-none');
+		} else {
+			$errMessage.removeClass('display-none');
+			// $errorLayer.addClass('error');
+		}
+	}
 
-function displayRegPageErrors(errorSummary, errorMessageClass) {
-    errorSummary.removeClass('display-none');
-    if(errorMessageClass){
-        // $('.'+errorMessageClass).removeClass('display-none').parents('.form-group').addClass('error');
-        $('.'+errorMessageClass).removeClass('display-none');
-    } else {
-        $errMessage.removeClass('display-none');
-        // $errorLayer.addClass('error');
-    }
-}
+	function removePageErrors(errorMessageClassName) {
+		if (errorMessageClassName) {
+			$('.'+errorMessageClassName).addClass('display-none');
+		}
+	}
 
-function removePageErrors(errorMessageClassName) {
-    if (errorMessageClassName) {
-        $('.'+errorMessageClassName).addClass('display-none');
-    }
-}
+	function displayFieldError($inputField) {
+		var i;
+		var $errorLayer = $inputField.parents('.form-group');
+		var $radioField;
+		$errorLayer.addClass('error');
+		if ($radioField = $($inputField)) { // [array]
+			for (i = 0; i < $radioField.length; i++){
+				$radioField.addClass('form-control-error'); // FIC amends for radio error-styles
+			}
+		}
+		$('.error-message', $errorLayer).removeClass('display-none');
+		$($inputField[0].parentElement.parentElement.previousElementSibling).removeClass('js-hidden');
+	}
 
-function displayFieldError($inputField) {
-    var i;
-    var $errorLayer = $inputField.parents('.form-group');
-    var $radioField;
-    $errorLayer.addClass('error');
-    if ($radioField = $($inputField)) { // [array]
-        for (i = 0; i < $radioField.length; i++){
-            $radioField.addClass('form-control-error'); // FIC amends for radio error-styles
-        }
-    }
-    $('.error-message', $errorLayer).removeClass('display-none');
-    $($inputField[0].parentElement.parentElement.previousElementSibling).removeClass('js-hidden');
-}
+	function clearFormErrors($form){
+		$('.form-group', $form).removeClass('error');
+		$('.form-control-error').removeClass('form-control-error'); // FIC amends for input error-styles
+		$('.error-message', $form).addClass('display-none');
+		$('.error-summary').addClass('display-none');
+	}
 
-function clearFormErrors($form){
-    $('.form-group', $form).removeClass('error');
-    $('.form-control-error').removeClass('form-control-error'); // FIC amends for input error-styles
-    $('.error-message', $form).addClass('display-none');
-    $('.error-summary').addClass('display-none');
-}
+	$(document).ready(function() {
+		// GOVUK.toggle.init();
+		// The following JavaScript code is just for demo purposes.
+		// Not For Production, please remove when developing the real thing.
+		if($('.add-search').length > 0){
+			$('.phase-banner').append($('<a href="login" class="log-out-link">Search again</a>'));
+		}
+		
+		if($('.add-log-out').length > 0){
+			$('.service-header').prepend($('<a href="login" class="log-out-link" id="logout-link">Logout</a>'));
+		}
 
-$(document).ready(function() {
-    // GOVUK.toggle.init();
-    // The following JavaScript code is just for demo purposes.
-    // Not For Production, please remove when developing the real thing.
-    if($('.add-search').length > 0){
-        $('.phase-banner').append($('<a href="login" class="log-out-link">Search again</a>'));
-    }
-    
-    if($('.add-log-out').length > 0){
-        $('.service-header').prepend($('<a href="login" class="log-out-link" id="logout-link">Logout</a>'));
-    }
+		// for cleaner urls after using form navigation
+		var $jumpForm = $('.jump-form');
+		$jumpForm.on('submit', function (evt) {
+			evt.preventDefault();
+			location.assign($jumpForm.attr('action'));
+		});
 
-    // for cleaner urls after using form navigation
-    var $jumpForm = $('.jump-form');
-    $jumpForm.on('submit', function (evt) {
-        evt.preventDefault();
-        location.assign($jumpForm.attr('action'));
-    });
-
-    // radio type input fields
-    var $formWithRadioButtons = $('.demo-validation-radio');
-    if($formWithRadioButtons.length > 0){
-        $formWithRadioButtons.on('submit', function (evt) {
-            evt.preventDefault();
-            if($('input:checked').length < 1){
-                displayPageErrors();
-            } else {
-                location.assign($formWithRadioButtons.attr('action'));
-            }
-        });
-    }
-
-    // text type input fields
-    var $demoValidationInputsForm = $('.demo-validation-input');
-    if($demoValidationInputsForm.length > 0){
-        $demoValidationInputsForm.on('submit', function (evt) {
-            evt.preventDefault();
-            var isValid = true;
-            $('input', $demoValidationInputsForm).each(function() {
-                if($(this).val() == ""){
-                    isValid = false;
-                }
-            });
-            if(isValid){
-                location.assign($demoValidationInputsForm.attr('action'));
-            } else {
-                displayPageErrors();
-            }
-        });
-    }
-    
-    // general and used for multiple forms
-    var $formToValidated = $('.form-to-validate');
-    var messages = {
-        "exists" : "An account using this email address already exists.",
-        "unmatched" : "We could not match the information you provided."
-    };
-    
-    if($formToValidated.length > 0){
-        $formToValidated.on('submit', function (evt) {
-            evt.preventDefault();
-            // clears error displays, resets error flag
-            clearFormErrors($formToValidated);
-            var isValid = true;
-            var submitFormIfValid = function(){
-                if(isValid){
-                    location.assign($formToValidated.attr('action'));
-                } else {
-                    $('.error-summary').removeClass('display-none');
-                    $('html, body').animate({ scrollTop: 0 }, 'fast');
-                }
-            };
-            
-            // validates text input fields
-            $('.validate-text-input', $formToValidated).each(function() {
-                if($.trim($(this).val()) == ""){
-                    displayFieldError($(this));
-                    isValid = false;
-                }
-            });
-            
-            // validates radio button via group name
-            $('.validate-radio-input', $formToValidated).each(function() {
-                var radioGroupName = $(this).attr('data-validate-radio-input');
-                var radioGroupValue = $("input[name='" + radioGroupName + "']:checked").val();
-
-                if(radioGroupValue == undefined){
-                    displayFieldError($(this));
-                    isValid = false;
-                }
-            });
-
-            // login - prc //
-            if ($formToValidated.attr('id') == 'login-form'){
-                // change location based on input
-                var loginEmail = $('#username', $formToValidated).val() || false;
-				var loginPass = $('#password', $formToValidated).val() || false;
-
-				if (loginEmail == 'bsa1' && loginPass == 'bsa1') {
-					location.assign('homepage');
-					isValid = true;
+		// radio type input fields
+		var $formWithRadioButtons = $('.demo-validation-radio');
+		if($formWithRadioButtons.length > 0){
+			$formWithRadioButtons.on('submit', function (evt) {
+				evt.preventDefault();
+				if($('input:checked').length < 1){
+					displayPageErrors();
 				} else {
-					isValid = false;
+					location.assign($formWithRadioButtons.attr('action'));
 				}
-                submitFormIfValid();
-            }
-            
-            // definitoryquestions - prc //
-            if ($formToValidated.attr('id') == 'questions-form') {
-                var applyingFor = $("input[name='radio-inline-group']:checked").val() || false; // false if undefined
-                var s1Registered = $("input[name='registred2']:checked").val() || false; // false if undefined
+			});
+		}
+
+		// text type input fields
+		var $demoValidationInputsForm = $('.demo-validation-input');
+		if($demoValidationInputsForm.length > 0){
+			$demoValidationInputsForm.on('submit', function (evt) {
+				evt.preventDefault();
+				var isValid = true;
+				$('input', $demoValidationInputsForm).each(function() {
+					if($(this).val() == ""){
+						isValid = false;
+					}
+				});
+				if(isValid){
+					location.assign($demoValidationInputsForm.attr('action'));
+				} else {
+					displayPageErrors();
+				}
+			});
+		}
+		
+		// general and used for multiple forms
+		var $formToValidated = $('.form-to-validate');
+		var messages = {
+			"exists" : "An account using this email address already exists.",
+			"unmatched" : "We could not match the information you provided."
+		};
+		
+		if($formToValidated.length > 0){
+			$formToValidated.on('submit', function (evt) {
+				evt.preventDefault();
+				// clears error displays, resets error flag
+				clearFormErrors($formToValidated);
+				var isValid = true;
+				var submitFormIfValid = function(){
+					if(isValid){
+						location.assign($formToValidated.attr('action'));
+					} else {
+						$('.error-summary').removeClass('display-none');
+						$('html, body').animate({ scrollTop: 0 }, 'fast');
+					}
+				};
 				
-                if (applyingFor == false) {
-                    displayPageErrors("error1");
-                }
-                if (applyingFor != false) {
-                    removePageErrors("error1");
-                }
-                if (s1Registered == false) {
-                    displayPageErrors("error2");
-                }
-                if (s1Registered != false) {
-                    removePageErrors("error2");
-                }
-                if (applyingFor != false && s1Registered != false) {
-                    if (s1Registered == 'Yes') {
-                        $("#questions-form").attr("action", "/prc2/registerpersons1");
-                    }
-                    isValid = true;
-                }
-                submitFormIfValid();
-            }
+				// validates text input fields
+				$('.validate-text-input', $formToValidated).each(function() {
+					if($.trim($(this).val()) == ""){
+						displayFieldError($(this));
+						isValid = false;
+					}
+				});
+				
+				// validates radio button via group name
+				$('.validate-radio-input', $formToValidated).each(function() {
+					var radioGroupName = $(this).attr('data-validate-radio-input');
+					var radioGroupValue = $("input[name='" + radioGroupName + "']:checked").val();
 
-            // registerperson - prc //
-            else if ($formToValidated.attr('id') == 'register1-form') {
-                var appFirstName = $('#reference-number-1', $formToValidated).val() || false;
-                var appLastName = $('#reference-number-2', $formToValidated).val() || false;
-                var appDateOfBirth = $('#reference-number-3', $formToValidated).val() || false;
-                var appPostcode = $('#reference-number-4', $formToValidated).val() || false;
-                var appS1Country = $('#country-of-treatment', $formToValidated).val() || false;
-                var tickboxed = $("input[name='ukResident']:checked").val();
-                var dependant = $(".dependent");
-                var errSumm1 = $("#bcd");
-                var errSumm2 = $("#cde");
-                var depFirstName = $('#reference-number-5', $formToValidated).val() || false;
-                var depLastName = $('#reference-number-6', $formToValidated).val() || false;
-                var depDateOfBirth = $('#reference-number-7', $formToValidated).val() || false;
-                var indesser = $("input[name='indesser1']:checked").val() || false;
+					if(radioGroupValue == undefined){
+						displayFieldError($(this));
+						isValid = false;
+					}
+				});
 
-                if (appFirstName == false) {
-                    errSumm1.removeClass("display-none").addClass("error-summary");
-                    displayRegPageErrors(errSumm1, "error1");
-                }
-                if (appFirstName != false) {
-                    removePageErrors("error1");
-                }
+				// login - prc //
+				if ($formToValidated.attr('id') == 'login-form'){
+					// change location based on input
+					var loginEmail = $('#username', $formToValidated).val() || false;
+					var loginPass = $('#password', $formToValidated).val() || false;
 
-                if (appLastName == false) {
-                    errSumm1.removeClass("display-none").addClass("error-summary");
-                    displayRegPageErrors(errSumm1, "error2");
-                }
-                if (appLastName != false) {
-                    removePageErrors("error2");
-                }
+					if (loginEmail == 'bsa1' && loginPass == 'bsa1') {
+						location.assign('homepage');
+						isValid = true;
+					} else {
+						isValid = false;
+					}
+					submitFormIfValid();
+				}
+				
+				// definitoryquestions - prc //
+				if ($formToValidated.attr('id') == 'questions-form') {
+					var applyingFor = $("input[name='radio-inline-group']:checked").val() || false; // false if undefined
+					var s1Registered = $("input[name='registred2']:checked").val() || false; // false if undefined
+					
+					if (applyingFor == false) {
+						displayPageErrors("error1");
+					}
+					if (applyingFor != false) {
+						removePageErrors("error1");
+					}
+					if (s1Registered == false) {
+						displayPageErrors("error2");
+					}
+					if (s1Registered != false) {
+						removePageErrors("error2");
+					}
+					if (applyingFor != false && s1Registered != false) {
+						if (s1Registered == 'Yes') {
+							$("#questions-form").attr("action", "/prc2/registerpersons1");
+						}
+						isValid = true;
+					}
+					submitFormIfValid();
+				}
 
-                if (appDateOfBirth == false) {
-                    errSumm1.removeClass("display-none").addClass("error-summary");
-                    displayRegPageErrors(errSumm1, "error3");
-                }
-                if (appDateOfBirth != false) {
-                    removePageErrors("error3");
-                }
+				// registerperson - prc //
+				else if ($formToValidated.attr('id') == 'register1-form') {
+					var appFirstName = $('#reference-number-1', $formToValidated).val() || false;
+					var appLastName = $('#reference-number-2', $formToValidated).val() || false;
+					var appDateOfBirth = $('#reference-number-3', $formToValidated).val() || false;
+					var appPostcode = $('#reference-number-4', $formToValidated).val() || false;
+					var appS1Country = $('#country-of-treatment', $formToValidated).val() || false;
+					var tickboxed = $("input[name='ukResident']:checked").val();
+					var dependant = $(".dependent");
+					var errSumm1 = $("#bcd");
+					var errSumm2 = $("#cde");
+					var depFirstName = $('#reference-number-5', $formToValidated).val() || false;
+					var depLastName = $('#reference-number-6', $formToValidated).val() || false;
+					var depDateOfBirth = $('#reference-number-7', $formToValidated).val() || false;
+					var indesser = $("input[name='indesser1']:checked").val() || false;
 
-                if (dependant.hasClass("visually-hidden") == false && depFirstName == false) {
-                    errSumm2.removeClass("display-none").addClass("error-summary");
-                    displayRegPageErrors(errSumm2, "error5");
-                }
-                if (dependant.hasClass("visually-hidden") == false && depFirstName != false) {
-                    // errSumm2.removeClass("display-none").addClass("error-summary");
-                    removePageErrors("error5");
-                }
+					if (appFirstName == false) {
+						errSumm1.removeClass("display-none").addClass("error-summary");
+						displayRegPageErrors(errSumm1, "error1");
+					}
+					if (appFirstName != false) {
+						removePageErrors("error1");
+					}
 
-                if (dependant.hasClass("visually-hidden") == false && depLastName == false) {
-                    errSumm2.removeClass("display-none").addClass("error-summary");
-                    displayRegPageErrors(errSumm2, "error6");
-                }
-                if (dependant.hasClass("visually-hidden") == false && depLastName != false) {
-                    // errSumm2.removeClass("display-none").addClass("error-summary");
-                    removePageErrors("error6");
-                }
+					if (appLastName == false) {
+						errSumm1.removeClass("display-none").addClass("error-summary");
+						displayRegPageErrors(errSumm1, "error2");
+					}
+					if (appLastName != false) {
+						removePageErrors("error2");
+					}
 
-                if (dependant.hasClass("visually-hidden") == false && depDateOfBirth == false) {
-                    errSumm2.removeClass("display-none").addClass("error-summary");
-                    displayRegPageErrors(errSumm2, "error7");
-                }
-                if (dependant.hasClass("visually-hidden") == false && depDateOfBirth != false) {
-                    // errSumm2.removeClass("display-none").addClass("error-summary");
-                    removePageErrors("error7");
-                }
+					if (appDateOfBirth == false) {
+						errSumm1.removeClass("display-none").addClass("error-summary");
+						displayRegPageErrors(errSumm1, "error3");
+					}
+					if (appDateOfBirth != false) {
+						removePageErrors("error3");
+					}
 
-                if (window.location.href.indexOf("registerpersons1") == -1) {
-                    if (appPostcode == false) {
-                        errSumm1.removeClass("display-none").addClass("error-summary");
-                        displayRegPageErrors(errSumm1, "error4");
-                    }
-                    if (appPostcode != false) {
-                        removePageErrors("error4");
-                    }
+					if (dependant.hasClass("visually-hidden") == false && depFirstName == false) {
+						errSumm2.removeClass("display-none").addClass("error-summary");
+						displayRegPageErrors(errSumm2, "error5");
+					}
+					if (dependant.hasClass("visually-hidden") == false && depFirstName != false) {
+						// errSumm2.removeClass("display-none").addClass("error-summary");
+						removePageErrors("error5");
+					}
 
-                    if (indesser == false) {
-                        displayPageErrors("error8");
-                    }
-                    if (indesser != false) {
-                        removePageErrors("error8");
-                    }
+					if (dependant.hasClass("visually-hidden") == false && depLastName == false) {
+						errSumm2.removeClass("display-none").addClass("error-summary");
+						displayRegPageErrors(errSumm2, "error6");
+					}
+					if (dependant.hasClass("visually-hidden") == false && depLastName != false) {
+						// errSumm2.removeClass("display-none").addClass("error-summary");
+						removePageErrors("error6");
+					}
 
-                    // removes error-summary with no errors //
-                    if (dependant.hasClass("visually-hidden") == false &&
-                        appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false && indesser != false) {
-                            errSumm1.addClass("display-none").removeClass("error-summary");
-                    }
-                    if (dependant.hasClass("visually-hidden") == false &&
-                        depFirstName != false && depLastName != false && depDateOfBirth != false) {
-                            errSumm2.addClass("display-none").removeClass("error-summary");
-                    }
-                    // end //
+					if (dependant.hasClass("visually-hidden") == false && depDateOfBirth == false) {
+						errSumm2.removeClass("display-none").addClass("error-summary");
+						displayRegPageErrors(errSumm2, "error7");
+					}
+					if (dependant.hasClass("visually-hidden") == false && depDateOfBirth != false) {
+						// errSumm2.removeClass("display-none").addClass("error-summary");
+						removePageErrors("error7");
+					}
 
-                    if (appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false && indesser != false &&
-                        dependant.hasClass("visually-hidden") == true) {
-                            if (indesser == 'Fail') {
-                                $("#register1-form").attr("action", "/prc2/notukresident");
-                            } else {
-                                location.assign($formToValidated.attr('action'));
-                            }
-                            isValid = true;
-                    } else if (appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false && indesser != false &&
-                        dependant.hasClass("visually-hidden") == false &&
-                        depFirstName != false && depLastName != false && depDateOfBirth != false) {
-                            if (indesser == 'Fail') {
-                                $("#register1-form").attr("action", "/prc2/notukresident");
-                            } else {
-                                location.assign($formToValidated.attr('action'));
-                            }
-                            isValid = true;
-                    } else {
-                        return false;
-                    }
-                    submitFormIfValid();
+					if (window.location.href.indexOf("registerpersons1") == -1) {
+						if (appPostcode == false) {
+							errSumm1.removeClass("display-none").addClass("error-summary");
+							displayRegPageErrors(errSumm1, "error4");
+						}
+						if (appPostcode != false) {
+							removePageErrors("error4");
+						}
 
-                } else if (window.location.href.indexOf("registerpersons1") != -1) {
-                    if (appS1Country == false) {
-                        errSumm1.removeClass("display-none").addClass("error-summary");
-                        displayRegPageErrors(errSumm1, "error8");
-                    }
-                    if (appS1Country != false) {
-                        removePageErrors("error8");
-                    }
+						if (indesser == false) {
+							displayPageErrors("error8");
+						}
+						if (indesser != false) {
+							removePageErrors("error8");
+						}
 
-                    // removes error-summary with no errors //
-                    if (dependant.hasClass("visually-hidden") == false 
-                        && appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false && appS1Country != false) {
-                            errSumm1.addClass("display-none").removeClass("error-summary");
-                    }
-                    if (dependant.hasClass("visually-hidden") == false 
-                        && depFirstName != false && depLastName != false && depDateOfBirth != false) {
-                            errSumm2.addClass("display-none").removeClass("error-summary");
-                    }
-                    // end //
+						// removes error-summary with no errors //
+						if (dependant.hasClass("visually-hidden") == false &&
+							appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false && indesser != false) {
+								errSumm1.addClass("display-none").removeClass("error-summary");
+						}
+						if (dependant.hasClass("visually-hidden") == false &&
+							depFirstName != false && depLastName != false && depDateOfBirth != false) {
+								errSumm2.addClass("display-none").removeClass("error-summary");
+						}
+						// end //
 
-                    if (appFirstName != false && appLastName != false && appDateOfBirth != false && appS1Country != false
-                        && dependant.hasClass("visually-hidden") == true) {
-                            isValid = true;
-                    } else if (appFirstName != false && appLastName != false && appDateOfBirth != false && appS1Country != false
-                        && dependant.hasClass("visually-hidden") == false
-                        && depFirstName != false && depLastName != false && depDateOfBirth != false) {
-                            isValid = true;
-                    } else {
-                        return false;
-                    }
-                    submitFormIfValid();
+						if (appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false && indesser != false &&
+							dependant.hasClass("visually-hidden") == true) {
+								if (indesser == 'Fail') {
+									$("#register1-form").attr("action", "/prc2/notukresident");
+								} else {
+									location.assign($formToValidated.attr('action'));
+								}
+								isValid = true;
+						} else if (appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false && indesser != false &&
+							dependant.hasClass("visually-hidden") == false &&
+							depFirstName != false && depLastName != false && depDateOfBirth != false) {
+								if (indesser == 'Fail') {
+									$("#register1-form").attr("action", "/prc2/notukresident");
+								} else {
+									location.assign($formToValidated.attr('action'));
+								}
+								isValid = true;
+						} else {
+							return false;
+						}
+						submitFormIfValid();
 
-                } else {
-                    return false();
-                }
-            }
+					} else if (window.location.href.indexOf("registerpersons1") != -1) {
+						if (appS1Country == false) {
+							errSumm1.removeClass("display-none").addClass("error-summary");
+							displayRegPageErrors(errSumm1, "error8");
+						}
+						if (appS1Country != false) {
+							removePageErrors("error8");
+						}
 
-            // contactdetails - prc //
-            else if ($formToValidated.attr('id') == 'contactdetails-form') {
-                var isValid;
-                var startDate = $('#reference-number-1', $formToValidated).val() || false;
-                var endDate = $('#reference-number-2', $formToValidated).val() || false;
-                var email = $('#reference-number-3', $formToValidated).val() || false;
-                var fax = $('#reference-number-4', $formToValidated).val() || false;
+						// removes error-summary with no errors //
+						if (dependant.hasClass("visually-hidden") == false 
+							&& appFirstName != false && appLastName != false && appDateOfBirth != false && appPostcode != false && appS1Country != false) {
+								errSumm1.addClass("display-none").removeClass("error-summary");
+						}
+						if (dependant.hasClass("visually-hidden") == false 
+							&& depFirstName != false && depLastName != false && depDateOfBirth != false) {
+								errSumm2.addClass("display-none").removeClass("error-summary");
+						}
+						// end //
 
-                if (startDate == false) {
-                    displayPageErrors("error1");
-                }
-                if (startDate != false) {
-                    removePageErrors("error1");
-                }
-                if (endDate == false) {
-                    displayPageErrors("error2");
-                }
-                if (endDate != false) {
-                    removePageErrors("error2");
-                }
-                if (startDate != false && endDate != false) {
-                    if (email == false && fax != false) {
-                        $("#contactdetails-form").attr("action", "/prc2/donefax");
-                    } else {
-                        location.assign($formToValidated.attr('action'));
-                    }
-                    isValid = true;
-                }
-                submitFormIfValid();
-            }
+						if (appFirstName != false && appLastName != false && appDateOfBirth != false && appS1Country != false
+							&& dependant.hasClass("visually-hidden") == true) {
+								isValid = true;
+						} else if (appFirstName != false && appLastName != false && appDateOfBirth != false && appS1Country != false
+							&& dependant.hasClass("visually-hidden") == false
+							&& depFirstName != false && depLastName != false && depDateOfBirth != false) {
+								isValid = true;
+						} else {
+							return false;
+						}
+						submitFormIfValid();
 
-            else {
-                submitFormIfValid();
-            }
-        });
-    }
-});
+					} else {
+						return false();
+					}
+				}
+
+				// contactdetails - prc //
+				else if ($formToValidated.attr('id') == 'contactdetails-form') {
+					var isValid;
+					var startDate = $('#reference-number-1', $formToValidated).val() || false;
+					var endDate = $('#reference-number-2', $formToValidated).val() || false;
+					var email = $('#reference-number-3', $formToValidated).val() || false;
+					var fax = $('#reference-number-4', $formToValidated).val() || false;
+
+					if (startDate == false) {
+						displayPageErrors("error1");
+					}
+					if (startDate != false) {
+						removePageErrors("error1");
+					}
+					if (endDate == false) {
+						displayPageErrors("error2");
+					}
+					if (endDate != false) {
+						removePageErrors("error2");
+					}
+					if (startDate != false && endDate != false) {
+						if (email == false && fax != false) {
+							$("#contactdetails-form").attr("action", "/prc2/donefax");
+						} else {
+							location.assign($formToValidated.attr('action'));
+						}
+						isValid = true;
+					}
+					submitFormIfValid();
+				}
+
+				else {
+					submitFormIfValid();
+				}
+			});
+		}
+	});
+}

@@ -129,7 +129,6 @@
 									<li><a href="#reference-number-2" id="login-error-list2" class="error2 display-none">Enter applicant's last name</a></li>
 									<li><a href="#reference-number-3" id="login-error-list3" class="error3 display-none">Enter applicant's date of birth</a></li>
 									<li><a href="#reference-number-4" id="login-error-list4" class="error4 display-none">Enter applicant's postcode</a></li>
-									<li><a href="#reference-number-8" id="login-error-list8" class="error8 display-none">Select Indesser result</a></li>
 								</ul>
 							</div>
 							<div class="column-one-third lpads">
@@ -176,36 +175,6 @@
 									<input class="form-control postcode2 validate-text-input" id="reference-number-4" name="first-name-2" type="text" autocomplete="off" />
 								</div>
 							</div>
-							<div class="column-full hello1 lpads">
-								<i class="icon icon-important">
-									<span class="visually-hidden">Warning</span>
-								</i>
-								<strong class="bold-small" style="font-size:16px;">
-									Check Indesser portal for UK residents over 18.
-								</strong>
-							</div>
-							<div class="column-full hello1 lpads" style="padding-left:50px;">
-								<div class="form-group">
-									<fieldset class="inline">
-										<legend class="visually-hidden">UK resident?</legend>
-										<div class="column-one-third lpads">
-											<br><h1 class="heading-small">Indesser result</h1>
-										</div>
-										<div class="column-one-third lpads">
-												<div class="multiple-choice">
-												<input id="reference-number-8" type="radio" name="indesser1" value="Pass"/>
-												<label for="reference-number-8">Pass</label>
-												</div>
-										</div>
-										<div class="column-one-third align-radio">
-												<div class="multiple-choice">
-												<input id="reference-number-9" type="radio" name="indesser1" value="Fail"/>
-												<label for="reference-number-9">Fail</label>
-												</div>
-										</div>
-									</fieldset>
-								</div>
-							</div>
 							<div class="column-full first-box-btn lpads">
 								<div class="newbox" style="font-size:16px;">
 									<br>
@@ -214,7 +183,14 @@
 									<br>
 								</div>
 							</div>	
-							<input class="button buttonSubmit" type="submit" value="Submit" style="font-size: 16px;" />
+							<a class="button buttonSubmit" href="residencystatus-pass" role="button" style="font-size: 16px; margin-left: 0px; margin-bottom:10px; margin-top:-5px;">Submit for residency check</a>
+							
+							<br>
+							<br>
+							<a class="buttonSubmit" style="font-size: 16px;" href="addBypass" onClick="MyWindow=window.open('addBypass','MyWindow','width=600,height=450'); return false;">Bypass residency check</a>
+
+							
+							<!--  <a class="button-dependent" href="contactdetails" style="font-size:16px;">Bypass residency check</a> -->
 						</div>
 					</div>
 				</div>			
@@ -222,7 +198,8 @@
 				<div class="column-one-half dependent visually-hidden">
 					<div style="padding: 0 2em 0 2em">
 						<div class="grid-row highlight" style="margin-right: -30px;">
-							<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register a dependant</h2>	
+							<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register a dependant</h2><a class="button-dependent" href="#" style="margin-right;float: right; margin: -43px; padding-right: 60px;">Remove dependant</a>
+														
 							<!-- errors and validation -->
 							<div class="error-summary2 display-none" id="cde" role="group" aria-labelledby="finance-login-message-heading" style="margin-right: 15px;">
 								<ul class="error-summary-list">
@@ -259,10 +236,11 @@
 						</div>
 					</div>
 				</div>	
-				<div class="column-full button-submit2 visually-hidden">			
+				<div class="column-full button-submit2 visually-hidden" style="padding-left:17px; padding-top:25px;">			
+					<a class="button buttonSubmit2" href="residencystatus-pass" role="button" style="font-size: 16px; margin-left: 0px; margin-bottom:10px; margin-top:-5px;">Submit for residency check</a>				
 					<br>
 					<br>
-					<input class="button buttonSubmit2" type="submit" value="Submit" style="font-size: 16px;" />
+					<a class="buttonSubmit2" style="font-size: 16px;" href="addBypass" onClick="MyWindow=window.open('addBypass','MyWindow','width=600,height=450'); return false;">Bypass residency check</a>
 				</div>
 			</form>
 		</div>

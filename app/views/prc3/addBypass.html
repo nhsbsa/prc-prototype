@@ -1,0 +1,78 @@
+{% extends "layout_bsa_popup.html" %}
+
+{% block page_title %}
+  Single User View
+{% endblock %}
+
+
+
+{% block after_header %}
+
+
+{% endblock %}
+
+{% block content %}
+<style>
+.multiple-choice{
+     width: 40em;
+    height: 0.5em;
+	padding-top: 5px;
+	padding-bottom: 2px;
+}
+.titleCreate{
+margin-bottom:0px;
+margin-top:4px;
+}
+.multiple-choice [type=radio] + label::after {
+    left: 17px;
+    top: 17px;
+    border: 7px solid;
+}
+.multiple-choice [type=radio] + label::before {
+    margin-top: -5px;
+}
+</style>
+<main id="content" role="main">
+    <div class="grid-row">
+        
+        <div class="column-full highlight1">
+
+            <h1 class="heading-medium titleCreate">Bypass residency check</h1> 
+			<form action="tabs-below" method="get" class="form">
+
+		   <div class="form-group">
+			  <fieldset>
+					<legend>
+						<h1 class="heading-small">Why do you want to bypass the residency check?</h1>
+					</legend>
+				<div class="multiple-choice">
+				  <input id="radio-2" type="radio" name="radio-group" value="reason2">
+				  <label for="radio-2">Reason 1 (Applicant under 19)</label>
+				</div>
+				<div class="multiple-choice">
+				  <input id="radio-3" type="radio" name="radio-group" value="reason3">
+				  <label for="radio-3">Reason 2 (16-18 students?)</label>
+				</div>
+				<div class="multiple-choice">
+				  <input id="radio-3" type="radio" name="radio-group" value="reason3">
+				  <label for="radio-3">Reason 3 (Something else)</label>
+				</div>
+				<div class="multiple-choice">
+				  <input id="radio-1" type="radio" name="radio-group" value="reason1">
+				  <label for="radio-1txt">Reason 4 (Result fail, but reason: prisoner, travelor, just move house)</label>
+				</div>
+			  </fieldset>
+			</div>
+	
+      
+                
+		<a class="button" role="button" style=" font-size: 16px;" onclick=" window.opener.location.replace('/prc3/contactdetails'); window.close();">Submit</a>
+
+        <p class="navigation"><a class="cancel" href="JavaScript:window.close()">Cancel</a></p>
+      </form>     
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}

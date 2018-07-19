@@ -1,0 +1,223 @@
+{% extends "layout_bsa_internal.html" %} 
+
+{% block page_title %} Single User View 
+{% endblock %} 
+
+{% block after_header %}
+  <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-half">
+          <ul class="visually-hidden">
+            <li><a class="menu-button selected" href="results">Search</a></li>
+          </ul>
+        </div>
+        <div class="column-half" id="logout">
+          <a href="login">Sign out</a>
+        </div>
+      </div>
+    </div>
+  </div> 
+  {% endblock %} 
+  
+  {% block content %}
+
+<style>
+.highlight {
+    min-height: 40%;
+}
+.link-back{
+    margin-left: 20px;
+}
+.form-control {
+    width: 90%;
+}
+.multiple-choice [type=radio] + label::before {
+    margin-left: -38px;
+    margin-top: -5px;
+}
+.multiple-choice [type=radio] + label::after {
+    left: 17px;
+    top: 19px;
+}
+.inline .multiple-choice label {
+    line-height: 120%;
+}
+.test{
+    padding-left: 30px;
+}
+.heading-medium{
+	margin-top: 15px;
+    margin-bottom: -5px;
+}
+.s1reg{
+	margin-top: -30px;
+}
+.buttonSubmit{
+	margin-top: -15px;
+}
+.acceptanceCriteria{
+	margin-top: -25px;
+}
+[hidden], .display-none {
+	display: none;
+}
+.hello1{
+	margin-top: 20px;
+}
+.column-full {
+    padding: 0 0px;
+}
+.link-back {
+    margin-left: 0px;
+}
+#uk-resident {
+    margin: -30px 0 10px 49px;
+}
+.align-radio {
+    margin-left: 0px;
+	padding-right: 0px;
+}
+
+.inline .multiple-choice label {
+    line-height: 120%;
+    font-size: 16px;
+}
+
+.unbranded * {
+    margin-bottom: 0px;
+}
+
+#reference-number, #reference-number-1, #reference-number-2, #reference-number-3, #reference-number-4, #reference-number-5, #reference-number-6, #reference-number-7, #country-of-treatment {
+    font-size: 16px;
+}
+
+.newbox {
+	margin-bottom: 15px;
+}
+.button.buttonSubmit2 {
+	margin-left: 15px;
+}
+.error-summary {
+	margin-bottom: 30px;
+}
+#done-tick{
+	background-color: transparent;
+	background-image: url(/public/images/bsa/tick-sign.png);
+	margin-bottom: -10px;
+}
+</style>
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-full full" style="background-color: white;">
+			<div class="column-one-half">
+				<a href="registerperson" class="link-back">Back</a>
+			</div>
+			<div class="column-half" id="test1234" style="float: right; text-align: right;">
+				<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;" disabled="disabled">End process</a>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div class="column-full">
+			<form action="contactdetails" id="register1-form" class="form form-to-validate" method="get" novalidate="novalidate" autocomplete="off">
+				<div class="column-one-half lpads" style="padding: 0 2em 0 1em">
+					<div class="grid-row highlight">
+						<div class="column-full">
+							<strong>
+								<br>						
+								<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em; display: inline;">Residency check result</h1><br> 
+								<font style="color: #B10E1E; font-size:24px; float: right; margin: -43px; padding-right: 60px; padding-top: 10px;">✗ Fail</font>
+								<br>
+								<br>
+							<div class="column-full">
+								<h1 class="heading-small" style="margin-top: 0.83333em;">Applicant's details</h1>
+								<table class="check-your-answers">
+									<thead>
+									  <tr width="40%"></tr>
+									  <tr></tr>
+									  <tr></tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td width="40%">Full name</td>
+											<td width="30%"><b>John Smithe</b></td>						
+											<td class="change-answer" width="30%">
+												<a href="manual-reg">Change <span class="visuallyhidden">fullName</span></a>
+											</td>
+										</tr>      
+										<tr>
+											<td width="40%">Date of birth</td>
+											<td width="30%"><b>11/11/1987</b></td>													
+											<td class="change-answer" width="30%">
+												<a href="manual-reg">Change <span class="visuallyhidden">DoB</span></a>
+											</td>
+										</tr>
+										<tr>
+											<td width="40%"> Address</td>
+											<td width="30%">
+												<b>
+													<span class="newLineAddress">5 Church Street,</span><br>
+													<span class="newLineAddress">Newcastle,</span><br>
+													<span class="newLineAddress">NE12 34AB</span><br>
+												</b>
+											</td>													
+											<td class="change-answer" width="30%">
+												<a href="manual-reg">Change <span class="visuallyhidden">Address</span></a>
+											</td>
+										</tr>          
+									</tbody>
+								</table>
+							</div>	
+							
+							<div class="column-full">	
+							<br><br>
+								<details>
+									<summary>
+										<span class="summary" style="font-size: 16px">More details</span>
+									</summary>	
+								<table class="check-your-answers">
+									<thead>
+									  <tr width="40%"></tr>
+									  <tr width="10%"></tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td width="40%">Residency activity</td>
+											<td width="30%" style="color: #B10E1E;">None</td>						
+										</tr>      
+										<tr>
+											<td width="40%">Non-residency indicator</td>
+											<td width="30%" style="color: #B10E1E">None</td>													
+										</tr>
+										<tr>
+											<td width="40%">Activity last month</td>
+											<td width="30%"><b>0</b></td>													
+										</tr>
+										<tr>
+											<td width="40%">Activity last 3 month</td>
+											<td width="30%"><b>0</b></td>													
+										</tr>
+									  </tr>          
+									</tbody>
+								</table>										
+								</details>
+								<br>
+							</div>	
+							<a class="button buttonSubmit2" href="homepage" role="button" style="font-size: 16px; margin-left: 0px; margin-bottom:10px; margin-top:15px;">Back to start</a>	
+							
+							<br>
+							<br>
+							<br>
+							<a class="buttonSubmit" style="font-size: 16px;" href="addBypass" onClick="MyWindow=window.open('addBypass','MyWindow','width=600,height=450'); return false;">Bypass residency check</a>
+						</div>
+					</div>
+				</div>			
+			</form>
+		</div>
+		</div>
+	</div>
+</main>
+			
+{% endblock %}
