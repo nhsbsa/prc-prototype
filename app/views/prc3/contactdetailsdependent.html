@@ -14,6 +14,7 @@
 	</div>
 	<div class="column-half" id="logout">
 	  <a href="login">Sign out</a>
+	  <span style="float: right; margin: 7px 0;">nhsbsa |</span>
 	</div>
   </div>
 </div>
@@ -29,7 +30,7 @@
     margin-left: -10px;    
 }
 .form-control {
-    width: 90%
+    width: 90%;
 	font-size: 16px;
 }
 </style>
@@ -38,7 +39,7 @@
     <div class="grid-row">
         <div class="column-full full" style="background-color: white;">
 			<div class="column-one-half">
-				<a href="definitoryquestions" class="link-back">Back</a>
+				<a href="javascript:history.go(-1)" class="link-back">Back</a>
 			</div>
 			<div class="column-half" id="test1234" style="float: right; text-align: right;">
 				<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">End process</a>

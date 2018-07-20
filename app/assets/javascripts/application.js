@@ -3,25 +3,24 @@
 
 // Warn about using the kit in production
 if (window.console && window.console.info) {
-  window.console.info('GOV.UK Prototype Kit - do not use for production')
-}    
+	window.console.info('GOV.UK Prototype Kit - do not use for production')
+}
 
 $(document).ready(function () {
-  // Use GOV.UK shim-links-with-button-role.js to trigger a link styled to look like a button,
-  // with role="button" when the space key is pressed.
-  GOVUK.shimLinksWithButtonRole.init()
+	// Use GOV.UK shim-links-with-button-role.js to trigger a link styled to look like a button,
+	// with role="button" when the space key is pressed.
+	GOVUK.shimLinksWithButtonRole.init()
 
-  // Show and hide toggled content
-  // Where .multiple-choice uses the data-target attribute
-  // to toggle hidden content
-  var showHideContent = new GOVUK.ShowHideContent()
-  showHideContent.init()
-    
-    $('.header').click(function(){
+	// Show and hide toggled content
+	// Where .multiple-choice uses the data-target attribute
+	// to toggle hidden content
+	var showHideContent = new GOVUK.ShowHideContent()
+	showHideContent.init()
+
+	$('.header').click(function(){
 		$(this).toggleClass('expand').nextUntil('tr.header').slideToggle(100);
 	});
-    
-	
+
 	$('ul.tabs li').click(function(){
 		var tab_id = $(this).attr('data-tab');
 
@@ -31,8 +30,7 @@ $(document).ready(function () {
 		$(this).addClass('current');
 		$("#"+tab_id).addClass('current');
 	})
-    
-	
+
 	$('ul.tabs1 li').click(function(){
 		var tab_id = $(this).attr('data-tab1');
 
@@ -43,23 +41,22 @@ $(document).ready(function () {
 		$("#"+tab_id).addClass('current1');
 	})
 
+	$('.internal-table tr').click(function() {
+		var href = $(this).find("a").attr("href");
+		if(href) {
+			window.location = href;
+		}
+	})
 
-    $('.internal-table tr').click(function() {
-        var href = $(this).find("a").attr("href");
-        if(href) {
-            window.location = href;
-        }
-    })
-	
 	$(".summary").click(function(){
 		$(".depend").removeClass("visually-hidden");
 	});
-
 });
 
 $(".selectbtn1").click(function() {
 	$(".table-1").removeClass("visually-hidden");
 	$(".sort-results").removeClass("visually-hidden");
+
 	if ($("div.table-2")[0].classList.length != 3) {
 		$(".table-2").addClass("visually-hidden");
 	}
@@ -70,7 +67,8 @@ $(".selectbtn1").click(function() {
 
 $(".selectbtn2").click(function() {
 	$(".table-2").removeClass("visually-hidden");
-	$(".sort-results").removeClass("visually-hidden");	
+	$(".sort-results").removeClass("visually-hidden");
+
 	if ($("div.table-1")[0].classList.length !== 3) {
 		$(".table-1").addClass("visually-hidden");
 	}
@@ -82,6 +80,7 @@ $(".selectbtn2").click(function() {
 $(".selectbtn3").click(function() {
 	$(".table-3").removeClass("visually-hidden");
 	$(".sort-results").removeClass("visually-hidden");
+
 	if ($("div.table-1")[0].classList.length != 3) {
 		$(".table-1").addClass("visually-hidden");
 	}
@@ -90,12 +89,9 @@ $(".selectbtn3").click(function() {
 	}
 });
 
-
-
 $(".buttonFind").click(function(){
 	$(".address").removeClass("visually-hidden");
 	$(".house-postcode").addClass("visually-hidden");
-	
 });
 
 $(".button2").click(function(){
@@ -104,11 +100,17 @@ $(".button2").click(function(){
 	$(".address2").removeClass("visually-hidden");
 	$(".button2").hide();
 });
-
-$(".button-dependent").click(function(){
+	
+$("#add").click(function() { // .button-dependent //
 	$(".dependent").removeClass("visually-hidden");
 	$(".first-box-btn, .buttonSubmit").hide();
 	$(".button-submit2").removeClass("visually-hidden");
+});
+
+$("#remove").click(function() {
+	$(".dependent").addClass("visually-hidden");
+	$(".first-box-btn, .buttonSubmit").show();
+	$(".button-submit2").addClass("visually-hidden");
 });
 
 $(".button-dependent2").click(function(){
@@ -121,8 +123,6 @@ $(".button-manually").click(function(){
 	$(".button-manually").hide();
 	$(".address").addClass("visually-hidden");
 });
-
-
 
 //$(".selectbtn1").click(function(){
 //	$(".s1-notRegistered").removeClass("visually-hidden");
@@ -142,7 +142,6 @@ $(".button-manually").click(function(){
 //	$(".s1-registered").addClass("visually-hidden");
 //});
 
-
 $("#radio-inline-5").change(function() {
 	$(".acceptanceCriteria").removeClass("visually-hidden");
 });
@@ -152,9 +151,9 @@ $("#radio-inline-6").change(function() {
 });
 
 $("#radio-inline-someone").change(function() {
-	$(".3rdPartyDet").removeClass("visually-hidden");
+	$(".thirdPartyDetails").removeClass("visually-hidden");
 });
 
 $("#radio-inline-myself").change(function() {
-	$(".3rdPartyDet").addClass("visually-hidden");
+	$(".thirdPartyDetails").addClass("visually-hidden");
 });
