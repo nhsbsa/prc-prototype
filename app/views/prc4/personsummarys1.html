@@ -1,0 +1,296 @@
+{% extends "layout_bsa_internal.html" %} 
+
+{% block page_title %} Single User View 
+{% endblock %} 
+
+{% block after_header %}
+  <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-half">
+          <ul class="visually-hidden">
+            <li><a class="menu-button selected" href="results">Search</a></li>
+          </ul>
+        </div>
+        <div class="column-half" id="logout">
+					<a href="login">Sign out</a>
+					<span style="float: right; margin: 7px 0;">nhsbsa |</span>
+        </div>
+      </div>
+    </div>
+  </div> 
+{% endblock %}  
+{% block content %}
+<style>
+.highlight {
+    min-height: 40%;
+}
+.link-back{
+	margin-left: -10px;
+}
+.form-control {
+    width: 90%;
+}
+.internal-table-results td:nth-child(1) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(2) {
+    width: 10%;
+}
+.internal-table-results td:nth-child(3) {
+    width: 20%;
+}
+.highlight {
+    border: 1px solid #bfc1c3;
+    background-color: #F8F8F8;
+    padding: 15px;
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-left: 1px;
+}
+span.status-tag-disabled {
+    background-color: #6f777b;
+    color: #fff;
+    margin-left: 2px;
+    vertical-align: baseline;
+    padding: 2px 12px 1px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    top: -0.05em;
+}
+span.status-tag-medium {
+    background-color: #F47738;
+    color: #fff;
+    margin-left: 2px;
+    vertical-align: baseline;
+    padding: 2px 9px 1px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    top: -0.05em;
+}
+</style>
+<main id="content" role="main">
+	<div class="column-full full" style="background-color: white;">
+		<div class="column-one-half">
+				<a href="javascript:history.go(-1)" class="link-back">Back</a>
+		</div>
+		<div class="column-half" id="test1234" style="float: right; text-align: right;">
+			<a class="button" role="button" style="font-size: 16px; background-color: #005EB8; margin-right: -20px;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">End process</a>
+		</div>
+	</div>		
+	<!-- S1 not registered CASE-->
+	<div class="column-full rpads">
+		<ul class="tabs rpads sort-results">
+			<li class="tab-link current" data-tab="tab-3">Main applicant</li>
+			<li class="tab-link" data-tab="tab-4">Dependant (2)</li>
+			<li class="tab-link" data-tab="tab-5">Call history (4)</li>
+		</ul>
+		<div class="grid-row highlight">
+			<div id="tab-3" class="tab-content current column-two-thirds tabcontentActive">	
+				<h1 class="heading-medium">Main applicant</h1>
+				<table class="check-your-answers">
+				<tbody>
+				  <tr>
+					<td>First name</td>
+					<td>John</td>
+						<td class="numeric">
+							<a href="">Change <span class="visuallyhidden">first name</span></a>
+						</td>
+				  </tr>
+				  <tr>
+					<td>Last name</td>
+					<td>Richards</td>
+					<td class="numeric">
+						<a href="">Change <span class="visuallyhidden">surname</span></a>
+					</td>
+				  </tr>    
+				  <tr>
+					<td>Date of birth</td>
+					<td>15 March 1944</td>
+						<td class="numeric">
+							<a href="">Change <span class="visuallyhidden">date of birth</span></a>
+						</td>
+				  </tr>
+				  <tr>
+					<td>National Insurance number</td>
+					<td>AB 11 22 33 C</td>
+						<td class="numeric">
+							<a href="">Change <span class="visuallyhidden">National Insurance number</span></a>
+						</td>
+				  </tr>
+				  <tr>
+					<td>Mobile number</td>
+					<td>07890 123 456</td>
+						<td class="numeric">
+							<a href="">Change <span class="visuallyhidden">mobile number</span></a>
+						</td>
+				  </tr>
+				  <tr>
+					<td>Email address</td>
+					<td>johnrichards@gmail.com</td>
+						<td class="numeric">
+							<a href="">Change <span class="visuallyhidden">  johnrichards@gmail.com</span></a>
+						</td>
+				  </tr>
+				 
+				  <tr>
+					<td>Address</td>
+					<td>Calle Aduana 90, Labastida, Álava, 01330, Spain</td>
+						<td class="numeric">
+							<a href="">Change <span class="visuallyhidden">address</span></a>
+						</td>
+				  </tr>
+				  </tbody>
+				  </table>
+				  <br>
+					<a class="button" role="button" style="font-size: 16px; margin-right: -20px;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">Submit details</a>
+			</div>
+			<!-- end of guy jon -->
+			<div id="tab-4" class="tab-content column-two-thirds">
+				<!--<p class="change-spacep"><input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">Luise Adams</p> -->
+				<h1 class="heading-medium">Dependant 1</h1>
+				<table class="check-your-answers">
+				<tbody>
+				  <tr>
+					<td>First name</td>
+					<td>Helen</td><td class="numeric"><a href="">Change <span class="visuallyhidden">first name</span></a></td></tr>
+				  <tr>
+					<td>Last name</td>
+					<td>Richards</td>
+					<td class="numeric"><a href="">Change <span class="visuallyhidden">surname</span></a></td>
+				  </tr>    
+				  <tr>
+					<td>Date of birth</td>
+					<td>14 April 2013</td>
+						<td class="numeric"><a href="">Change <span class="visuallyhidden">date of birth</span></a></td>
+				  </tr>
+				  <tr>
+					<td>National Insurance number</td>
+					<td>-</td>
+						<td class="numeric"><a href="">Change <span class="visuallyhidden">National Insurance number</span></a></td>
+				  </tr>
+				  <tr>
+					<td>Mobile number</td>
+					<td>-</td>
+						<td class="numeric"><a href="">Change <span class="visuallyhidden">mobile number</span></a></td>
+				  </tr>
+				  <tr>
+					<td>Email address</td>
+					<td>-</td>
+						<td class="numeric"><a href="">Change <span class="visuallyhidden">  johnrichards@gmail.com</span></a></td>
+				  </tr>
+				 
+				  <tr>
+					<td>Address</td>
+					<td>Calle Aduana 90, Labastida, Álava, 01330, Spain</td>
+						<td class="numeric"><a href="">Change <span class="visuallyhidden">address</span></a></td>
+				  </tr>
+				  </tbody>
+				  </table>
+				  
+				  <!-- Second dependant-->
+				  <h1 class="heading-medium">Dependant 2</h1>
+				  <table class="check-your-answers">
+				<tbody>
+				  <tr>
+					<td>First name</td>
+					<td>Jonny</td>
+						<td class="numeric"><a href="">Change <span class="visuallyhidden">first name</span></a></td>
+				  </tr>
+				  <tr>
+					<td>Last name</td>
+					<td>Richards</td>
+					<td class="numeric"><a href="">Change <span class="visuallyhidden">surname</span></a></td>
+				  </tr>    
+				  <tr>
+					<td>Date of birth</td>
+					<td>23 July 2016</td>
+						<td class="numeric"><a href="">Change <span class="visuallyhidden">date of birth</span></a></td>
+				  </tr>
+				  <tr>
+					<td>National Insurance number</td>
+					<td>-</td>
+						<td class="numeric"><a href="">Change <span class="visuallyhidden">National Insurance number</span></a></td>
+				  </tr>
+				  <tr>
+					<td>Mobile number</td>
+					<td>-</td>
+						<td class="numeric"><a href="">Change <span class="visuallyhidden">mobile number</span></a></td>
+				  </tr>
+				  <tr>
+					<td>Email address</td>
+					<td>-</td>
+						<td class="numeric"><a href="">Change <span class="visuallyhidden">  johnrichards@gmail.com</span></a></td>
+				  </tr>
+				 
+				  <tr>
+					<td>Address</td>
+					<td>Calle Aduana 90, Labastida, Álava, 01330, Spain</td>
+						<td class="numeric"><a href="">Change <span class="visuallyhidden">address</span></a></td>
+				  </tr>
+				  </tbody>
+				  </table>
+				  <br>
+				  <br><a href="#">+ Add dependant</a>
+				  <br><br>
+				  <a class="button" role="button" style="font-size: 16px; margin-right: -20px;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">Submit details</a>
+			</div>
+			<!-- end of jon -->
+			<div id="tab-5" class="tab-content column-two-thirds">	
+				<!-- History notes -->
+				<h1 class="heading-medium">Call history</h1>
+				<table class="internal-table">
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Notes</th> 
+							<th>Status</th> 
+							<th>Agent</th>
+						</tr>
+					</thead>							
+					<tbody>
+						<tr>
+							<td>29/07/2017 13:00</td>
+							<td>Policy team - total fail - no PRC should be available for the applicant. </td>
+							<td><span class="status-tag-medium font-xsmall" style="margin-left:2px">User</span></td>
+							<td>Tim Gallagher</td> 
+							
+						</tr>
+						<tr>
+							<td>28/07/2017 10:28</td>
+							<td>Info repeated as above. Applicant required an update</td>
+							<td><span class="status-tag-medium font-xsmall" style="margin-left:2px">User</span></td>
+							<td>Michael Ferguson</td> 
+							
+						</tr>
+						<tr>
+							<td>27/07/2017 15:21</td>
+							<td>OHS decision to discuss with the Policy team. Case bypass to Policy team</td>
+							<td><span class="status-tag-medium font-xsmall" style="margin-left:2px">User</span></td>
+							<td>Mary Johnson</td> 
+						</tr>
+						<tr>
+							<td>27/07/2017 13:30</td>
+							<td>Residency check failed. Case with the OHS team</td>
+							<td><span class="status-tag-disabled font-xsmall" style="margin-left:2px">System</span></td>
+							<td>Joanne Williams</td> 							
+						</tr>
+					</tbody>					
+				</table>
+				<br><a href="addNote" onClick="MyWindow=window.open('addNote','MyWindow','width=600,height=450'); return false;">+ Add note</a>
+				<br><br><a class="button" role="button" style="font-size: 16px; margin-right: -20px;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">Re-issue PRC</a>
+			</div>
+			<br>
+		</div>
+	</div>		    
+</main>
+			
+{% endblock %}
+
+

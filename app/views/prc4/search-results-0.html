@@ -1,0 +1,153 @@
+{% extends "layout_bsa_internal.html" %}
+
+{% block page_title %}
+  Single User View
+{% endblock %}
+
+{% block after_header %}
+<div id="menu">
+	<div id="menu-content">
+		<div class="grid-row">
+			<div class="column-half">
+				<ul class="visually-hidden">
+					<li>
+						<a class="menu-button selected" href="results">Search</a>
+					</li>
+				</ul>
+			</div>
+			<div class="column-half" id="logout">
+				<a href="#">Log out</a>
+				<span style="float: right; margin: 7px 0;">nhsbsa |</span>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block content %}
+<style>
+.highlight{
+	min-height:430px;
+}
+.makeScrollable{
+	height:390px;
+}
+.closed-cases{
+	color: red;
+}
+.link-back{
+    margin-left: 20px;    
+}
+.inline-btn ul li {
+	float: left;
+	margin-right: 10px;
+}
+.first{
+	margin-top: 1em;
+}
+.second{
+	padding-top: 20px;
+}
+.column-full {
+    padding: 0;
+}
+.highlight {
+    min-height: 280px;
+}
+
+.internal-table-results td:nth-child(1) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(2) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(3) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(4) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(5) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(6) {
+    width: 5%;
+}
+
+</style>
+
+<main id="content" role="main">
+
+	<div class="column-full full" style="background-color: white;">
+		<div class="column-one-half">
+				<a href="javascript:history.go(-1)" class="link-back">Back</a>
+		</div>
+		<div class="column-half" id="test1234" style="float: right; text-align: right;">
+			<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">End process</a>
+		</div>
+	</div>
+	<br>
+	<div class="column-two-thirds">
+		<div class="grid-row highlight">
+			<div class="column-full">	
+				<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Search</h1>
+				<div class="column-one-third lpads">
+					<h2 class="heading-small">First name</h2>
+					<input class="form-control validate-text-input" id="reference-number-1" name="first-name-2" type="text" style="font-size: 16px;" autocomplete="off" />
+				</div>		
+				<div class="column-one-third lpads">	
+					<h2 class="heading-small">Last name</h2>
+					<input class="form-control" id="reference-number-2" name="first-name-2" type="text" style="font-size: 16px;" autocomplete="off" />	
+				</div>
+				<div class="column-one-third lpads">	
+					<h2 class="heading-small">Date of birth</h2>
+					<input class="form-control" id="reference-number-3" name="first-name-2" type="text" style="font-size: 16px;" placeholder="dd/mm/yyyy" autocomplete="off" />
+				</div>
+				<div class="column-one-third lpads">	
+					<br><h2 class="heading-small">NINO</h2>
+					<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
+				</div>
+				<div class="column-one-third lpads">	
+					<br><h2 class="heading-small">Reference number</h2>
+					<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
+				</div>				
+			</div>
+			<br>
+			<a class="button" href="search-results" role="button" style=" font-size: 16px; margin-top: 20px;">Search</a>			
+		</div>
+	</div>	
+	<div class="column-one-third" style="padding-left:50px; margin-top:-25px;">		
+		<h2 class="heading-medium second">Before you start</h2>
+		<div class="row sidebar collapse">
+			<div class="columns small-12">
+				<ul>
+					<span>
+						<li>Search and select the right case</li>
+					</span>
+					<li>Check the correct information is displayed</li>
+					<li>Check the status of the case</li>
+					<li>If you cannot find the right person, you can 'Register applicant' below</li>
+					<div class="column-full">
+						<a class="button" href="registerperson" role="button" style=" font-size: 16px; margin-top: 20px; background-color: #005EB8;">Register applicant</a>		
+					</div>
+				</ul>
+				<br>
+			</div>
+		</div>
+	</div> 
+	<div class="column-full" style="padding-left:20px; padding-top:20px;">
+		<table class="internal-table-results">
+			<tr>
+				<th>Reference number</th>
+				<th>Name</th> 
+				<th>Date of birth</th>
+				<th>NINO</th>
+				<th>Address</th>
+				<th>Latest update</th>
+			</tr>
+		</table>
+		<br>
+		<h1>0 results found</h1>
+	</div>
+</main>
+{% endblock %}

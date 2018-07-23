@@ -54,7 +54,7 @@ function clearFormErrors($form){
 }
 
 $(document).ready(function() {
-    if (!document.location.href.includes("/prc3")) {
+    if ((!document.location.href.includes("/prc3")) && (!document.location.href.includes("/prc4"))) {
         // GOVUK.toggle.init();
         // The following JavaScript code is just for demo purposes.
         // Not For Production, please remove when developing the real thing.

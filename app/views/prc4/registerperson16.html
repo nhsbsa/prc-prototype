@@ -1,0 +1,256 @@
+{% extends "layout_bsa_internal.html" %} 
+
+{% block page_title %} Single User View 
+{% endblock %} 
+
+{% block after_header %}
+  <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-half">
+          <ul class="visually-hidden">
+            <li><a class="menu-button selected" href="results">Search</a></li>
+          </ul>
+        </div>
+        <div class="column-half" id="logout">
+		  <a href="login">Sign out</a>
+		  <span style="float: right; margin: 7px 0;">nhsbsa |</span>
+        </div>
+      </div>
+    </div>
+  </div> 
+  {% endblock %} 
+  
+  {% block content %}
+
+<style>
+.highlight {
+    min-height: 40%;
+}
+.link-back{
+    margin-left: 10px;     
+}
+.form-control {
+    width: 90%;
+	font-size: 16px;
+}
+#select-box {
+   background: white;
+   color: black;
+   border: none;
+   height: 30px; 
+   width: 66%;
+   margin-bottom: 3px; 
+   font-size: medium;
+   border: 2px solid grey;
+}
+.column-full{
+	padding-left: 0px;
+	font-size: 16px;
+	padding-left: 0px;
+}
+.building2{
+	padding-left:0px;
+}
+.first-box-btn{
+	padding-left:0px;
+}
+.newbox{
+	padding-left:0px;
+}
+.button-submit2{
+    margin-left: 20px;     
+}
+.form-group{	
+	margin-bottom: 15px;
+}
+#test1234{
+	float: right;
+    text-align: right;
+}
+.multiple-choice{
+	transform: scale(0.70);
+    background-color: transparent;
+    border: transparent;
+}
+.first-multiple-choice{
+	margin-left: -36px;
+    margin-top: -15px;
+}
+.hello:first-child {
+    margin-top: 10px;
+    margin-left: -24px;
+	margin-bottom: -20px;
+}
+.multiple-choice label{
+	float: left;
+	margin-left: 48px;
+	padding-right: 5px;
+	padding-top: 0px;
+}
+.checkbox4.multiple-choice:first-child {
+    margin-top: 10px;
+    margin-left: -40px;
+}
+.button-submit2 {
+    margin-left: 20px;
+    margin-top: -20px;
+}
+</style>
+
+<main id="content" role="main">
+    <div class="grid-row">
+		<div class="column-full full">
+			<div class="column-one-half">
+				<a href="javascript:history.go(-1)" class="link-back">Back</a>
+			</div>
+			<div class="column-half" id="test1234">
+				<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">End process</a>
+			</div>
+		</div>	
+		<br>
+		<br>
+		<div class="column-full">
+			<div class="column-one-half lpads" style="padding: 0 2em 0 1em">
+				<div class="grid-row highlight">
+					<div class="column-full">	
+						<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register main applicant</h1>
+						
+						<div class="column-one-third lpads">	
+							<h2 class="heading-small">First name</h2>
+							<input class="form-control" id="reference-number" name="first-name-2" type="text" autocomplete="off" />
+						</div>		
+						<div class="column-one-third lpads">	
+							<h2 class="heading-small">Last name</h2>
+							<input class="form-control" id="reference-number" name="first-name-2" type="text" autocomplete="off" />	
+						</div>						
+						<div class="column-one-third lpads">						
+							<div class="form-group error">
+								<h2 class="heading-small" style="    padding-bottom: 10px;">Date of birth</h2>
+									<span class="form-hint" style="font-size:16px;">
+										<div class="notice">
+											<i class="icon icon-important" style="background-size:20px;">
+												<span class="visually-hidden">Warning</span>
+											</i>
+											<strong class="bold-small" style="font-size:12px; color: black;    padding-left: 40px; margin-right: -20px;     padding-bottom: 15px;">
+											16-18 years. Parent or guardian?
+											</strong>
+										</div>
+									</span>								
+								<input class="form-control" id="reference-number" name="first-name-2" type="text">
+							</div>
+						</div>												
+						<div class="column-one-third lpads">	
+							<br><h2 class="heading-small">NINO</h2>
+							<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
+						</div>
+						<div class="column-one-third lpads">	
+							<br><h2 class="heading-small">EHIC PIN</h2>
+							<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
+						</div>
+						<div class="column-one-third lpads">	
+							<br><h2 class="heading-small">EHIC expiry date</h2>
+							<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
+						</div>
+					</div>
+					<div class="column-full">
+								<h1 class="heading-small" style="margin-bottom: -20px;">Current UK address<h1>
+					</div>
+					<div class="column-full manual-address">
+						<div class="column-one-third lpads">
+							<br><h2 class="heading-small">Building and street</h2>
+							<input class="form-control" id="reference-number" name="first-name-2" type="text" autocomplete="off" />
+							<input class="form-control" id="reference-number" name="first-name-2" type="text" autocomplete="off" />
+						</div>	
+						<div class="column-one-third lpads">
+							<br>
+							<h2 class="heading-small EHIC-number">Town and city<h2>
+							<input class="form-control EHIC-number" id="reference-number" name="first-name-2" type="text" autocomplete="off" />
+						</div>
+						<div class="column-one-third lpads">
+							<br>
+							<h2 class="heading-small postcode2"> Postcode</h2>
+							<input class="form-control postcode2" id="reference-number" name="first-name-2" type="text" autocomplete="off" />
+						</div>
+					</div>
+					<form id="myForm" class="form">
+						<div class="column-full">
+							<div class="multiple-choice hello" style="margin-left: -35px;">
+								  <input id="ukResident" name="ukResident" type="checkbox">
+								  <label for="ukResident">Tick if not UK resident</label>
+							</div>
+						</div>
+						<div class="column-full first-box-btn">
+							<div class="column-one-half newbox">
+								<br>
+								<a class="button-dependent" href="#">+ Add dependant</a>
+								<br>
+								<br>
+								<input class="button buttonSubmit2" type="button" onclick="formSubmit()" value="Submit" style=" font-size: 16px;" />
+							</div>
+						</div>	
+					</form>
+				</div>
+			</div>			
+			<!--  Dependant details -->
+			<div class="column-one-half dependent visually-hidden">
+				<div style="padding: 0 2em 0 2em">
+					<div class="grid-row highlight" style="margin-right: -30px;">
+						<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register a dependant</h2>	
+						<!-- Dependant link-->					
+						<div class="column-one-third lpads">	
+								<h2 class="heading-small">First name</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text" autocomplete="off" />
+						</div>		
+						<div class="column-one-third lpads">	
+								<h2 class="heading-small">Last name</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text" autocomplete="off" />	
+						</div>
+						<div class="column-one-third lpads">	
+								<h2 class="heading-small">Date of birth</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text" autocomplete="off" />
+						</div>
+						<div class="column-one-third lpads">	
+								<br><h2 class="heading-small">NINO</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
+						</div>
+						<div class="column-one-third lpads">	
+								<br><h2 class="heading-small">EHIC PIN</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
+						</div>
+						<div class="column-one-third lpads">	
+								<br><h2 class="heading-small">EHIC expiry date</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
+						</div>					
+					</div>
+				</div>
+			</div>	
+			<div class="column-full button-submit2 visually-hidden">			
+				<br><br><input class="button buttonSubmit2" type="button" onclick="formSubmit()" value="Submit" style=" font-size: 16px;" />
+			</div>	
+		</div>
+	</div>		
+</main>
+	
+	<script>
+		var isCheckedValue = false;
+		document.getElementById("ukResident").onclick = function(){
+			if(this.checked == true){
+				isCheckedValue = true;
+				console.log(isCheckedValue);
+			}
+		}		
+		function formSubmit () {
+		console.log("testtest");
+		if (document.getElementById("ukResident").checked == true){
+			window.location="/prc-test/notukresident";
+			}
+		else
+			{
+			window.location="/prc-test/contactdetails";
+			}	
+		}		
+	</script>	
+{% endblock %}
+
+

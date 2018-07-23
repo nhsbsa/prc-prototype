@@ -1,0 +1,121 @@
+{% extends "layout_bsa_internal.html" %} 
+
+{% block page_title %} Single User View 
+{% endblock %} 
+
+{% block after_header %}
+  <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-half">
+          <ul class="visually-hidden">
+            <li><a class="menu-button selected" href="results">Search</a></li>
+          </ul>
+        </div>
+        <div class="column-half" id="logout">
+					<a href="login">Sign out</a>
+					<span style="float: right; margin: 7px 0;">nhsbsa |</span>
+        </div>
+      </div>
+    </div>
+  </div> 
+  {% endblock %} 
+  
+  {% block content %}
+
+<style>
+.highlight {
+    min-height: 40%;
+}
+.link-back{
+    margin-left: 20px;
+}
+.form-control {
+    width: 90%;
+}
+.multiple-choice [type=radio] + label::before {
+    margin-left: -38px;
+    margin-top: -5px;
+}
+.multiple-choice [type=radio] + label::after {
+    left: 17px;
+    top: 19px;
+}
+.inline .multiple-choice label {
+    line-height: 120%;
+}
+.test{
+    padding-left: 30px;
+}
+.heading-medium{
+	margin-top: 15px;
+    margin-bottom: -5px;
+}
+.s1reg{
+	margin-top: -30px;
+}
+.buttonSubmit{
+	margin-top: -15px;
+}
+.acceptanceCriteria{
+	margin-top: -25px;
+}
+</style>
+
+<main id="content" role="main">
+
+    <div class="grid-row">
+
+        <div class="column-full full" style="background-color: white;">
+			<div class="column-one-half">
+				<a href="javascript:history.go(-1)" class="link-back">Back</a>
+			</div>
+			<div class="column-half" id="test1234" style="float: right;
+    text-align: right;">
+				<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">End process</a>
+			</div>
+		<br>
+		<br>	
+		<div class="column-full">
+		
+			<div class="column-one-third">
+				<div class="column-full highlight rpads">
+					<h1 class="heading-medium">Non UK resident decision</h1>
+							<div class="column-full hello1" style="margin-left: -15px; padding-top: 20px; padding-bottom: 30px;">
+								<i class="icon icon-important">
+									<span class="visually-hidden">Warning</span>
+								</i>
+									<strong class="bold-small">You need to understand why we cannot find an UK footprint for the main applicant</strong>
+							</div>									
+					<form id="myForm" action="provideTest" method="get" class="form">
+						<div class="form-group">
+							<fieldset class="inline s1reg">
+								<legend class="visually-hidden">Provide PRC?</legend>
+								<div class="column-one-third lpads">
+									<br><h1 class="heading-small">Provide PRC?</h1>
+								</div>
+								<div class="column-one-third test">
+									  <div class="multiple-choice">
+										<input id="radio-inline-7" type="radio" name="provided2" value="Yes" />
+										<label for="radio-inline-7">Yes</label>
+									  </div>
+								</div>
+								<div class="column-one-third test">
+									  <div class="multiple-choice">
+										<input id="radio-inline-8" type="radio" name="provided2" value="No" />
+										<label for="radio-inline-8">No</label>
+									  </div>
+								</div>
+							</fieldset>
+						</div>
+						<input class="button buttonSubmit3" type="submit" value="Submit" style=" font-size: 16px;" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+			
+{% endblock %}
+
+

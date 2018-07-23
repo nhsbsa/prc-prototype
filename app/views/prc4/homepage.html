@@ -1,0 +1,74 @@
+{% extends "layout_bsa_internal.html" %}
+
+{% block page_title %}
+  Single User View
+{% endblock %}
+
+{% block after_header %}
+  <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-half">
+          <ul class="visually-hidden">
+            <li><a class="menu-button selected" href="results">Search</a></li>
+          </ul>
+        </div>
+        <div class="column-half" id="logout">
+					<a href="login">Sign out</a>
+					<span style="float: right; margin: 7px 0;">nhsbsa |</span>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+<style>
+.link-back{
+    margin-left: 20px;    
+}
+.heading-medium{
+	padding-left: 45px;  	
+}
+.heading-small{
+	padding-top: 100px;
+}
+</style>
+<main id="content" role="main">
+  <div class="grid-row">   
+		<h2 class="heading-medium">Home page</h2>
+		<div class="column-full">
+			<a href="definitoryquestions">
+				<div class="column-one-quarter">
+					<div class="grid-row highlight1">
+						<center><h2 class="heading-small">PRC - Temporary visitor</h2></center>
+					</div>						
+				</div>			
+			</a>      
+			<div class="column-one-quarter">
+				<div class="grid-row highlight1">
+					<center><h2 class="heading-small">EHIC - Temporary visitor</h2></center>
+				</div>	
+			</div>
+			<div class="column-one-quarter">
+				<div class="grid-row highlight1">
+					<center><h2 class="heading-small">S2 - Planned treatment (referral) </h2></center>
+				</div>    
+			</div>		
+			<div class="column-one-quarter">
+				<div class="grid-row highlight1">
+					<center><h2 class="heading-small"> S1 - Retiring to another member state (pensioner)</h2></center>
+				</div>    
+			</div>		  
+		</div> 			
+		<div class="column-full">
+			<div class="column-one-quarter">
+				<div class="grid-row highlight1">
+				<center><h2 class="heading-small">S1 - Working in another member state (employee)</h2></center>
+				</div>						
+			</div>  
+		</div> 
+	</div> 
+</main>
+
+{% endblock %}

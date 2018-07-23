@@ -1,0 +1,133 @@
+{% extends "layout_bsa_internal.html" %} 
+
+{% block page_title %} Single User View 
+{% endblock %} 
+
+{% block after_header %}
+  <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-half">
+          <ul class="visually-hidden">
+            <li><a class="menu-button selected" href="results">Search</a></li>
+          </ul>
+        </div>
+        <div class="column-half" id="logout">
+					<a href="login">Sign out</a>
+					<span style="float: right; margin: 7px 0;">nhsbsa |</span>
+        </div>
+      </div>
+    </div>
+  </div> 
+  {% endblock %} 
+  
+  {% block content %}
+
+<style>
+.done-panel{
+    background-color: #005EB8;
+    text-align: center;
+    color: white;
+    padding: 5px 0;
+    margin: 5px 0;
+	margin-left: 15px;
+}  
+.heading-medium{
+	margin-top: 0.8em;
+}  
+.heading-large{
+    margin-top: 10px;
+}
+.column-half{
+padding: 0 0 0 0px;
+}
+img.fax-text {
+    padding-left: 0;
+	weight:5px;
+	height:25px;
+	background-size: 10px;
+    background-repeat: no-repeat;
+    background-position: 0px;
+}
+.attachment .attachment-thumb img {
+    display: block;
+    width: 99px;
+	height: 140px;
+    background: white;
+    outline: 5px solid rgba(11, 12, 12, 0.1);
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+.img-prc {
+height:140px;
+box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+outline: 5px solid rgba(11, 12, 12, 0.1);
+}
+.done-panel h1{
+	padding-bottom: 20px;
+    padding-top: 20px;
+}
+</style>
+
+<main id="content" role="main">
+    <div class="grid-row">
+		<div class="column-two-thirds">      
+            <div class="done-panel">
+                <h1 class="heading-xlarge"><span id="done-tick"></span>Done</h1>
+            </div>
+			<!--tab 1-->
+			<div id="certificate" class="details-block">
+				<div class="column-two-thirds">
+				<h1 class="heading-large">Next steps</h1>
+
+				 <div class="callout-box">
+				   <p>We have sent a copy of your PRC to the treatment facility. If you provided your personal email address, you will receive a confirmation email soon.</p>
+				 </div>
+				</div>
+				<div class="column-two-thirds">
+					 <p class="test"><img class="fax-text" alt="" src="/public/images/bsa/faxfaxfax.png"> The PRC needs sending to fax number: <span style="font-weight:700" id="emailAddress">+44 236 451 739</span></p>
+				<article>
+					  <div class="govspeak">
+					<section class="">
+						<div class="attachment-details">
+							<div class="column-one-quarter lpads">
+								<img class="img-prc" alt="" src="/public/images/bsa/workplease.PNG">
+							</div>
+							<div class="column-two-quarters">
+								<p class="links"><span class="download"></span></p>
+
+								<p class="links"> <span class="download"><a href="/public/images/bsa/workplease.PNG">
+								<strong>Preview PDF</strong>
+								9.97KB</a></span></p>
+							</div>
+						</div>
+					</section>
+				  </div>
+				</article>
+				<br>
+				<br>
+				<br>
+				<br>
+				<div class="form-group">
+					<a class="button" href="homepage" role="button">Back to start</a>
+				</div>
+				</div>		  
+			</div>	
+			<!--<h2 class="heading-medium">What happens next</h2>
+			 <p>We will send the PRC file to the treatment facility using the details provided. If you provided your personal email address, a confirmation email should be available with you in the following minutes.</p>
+			<div class="column-half rpads">
+				<p> Fax: <a href="#">+44 236 461 000</a></p>
+				<a class="button" href="homepage" role="button" style=" background-color: #005EB8;">Preview PDF</a>
+				<br><br>
+				<a class="button" href="homepage" role="button">Back to start</a>
+			</div>
+			<div class="column-half">
+				<p class="change-spacea"><a href="#">Change</a></p>
+			</div>
+			-->       
+        </div>
+    </div>
+</main>
+
+{% endblock %}

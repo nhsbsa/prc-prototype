@@ -1,0 +1,218 @@
+{% extends "layout_bsa_internal.html" %} 
+
+{% block page_title %} Single User View 
+{% endblock %} 
+
+{% block after_header %}
+  <div id="menu">
+    <div id="menu-content">
+      <div class="grid-row">
+        <div class="column-half">
+          <ul class="visually-hidden">
+            <li><a class="menu-button selected" href="results">Search</a></li>
+          </ul>
+        </div>
+        <div class="column-half" id="logout">
+		  <a href="login">Sign out</a>
+		  <span style="float: right; margin: 7px 0;">nhsbsa |</span>
+        </div>
+      </div>
+    </div>
+  </div> 
+  {% endblock %} 
+  
+  {% block content %}
+
+<style>
+.highlight {
+    min-height: 40%;
+}
+.link-back{
+    margin-left: 10px;     
+}
+.form-control {
+    width: 90%;
+	font-size: 16px;
+}
+#select-box {
+   background: white;
+   color: black;
+   border: none;
+   height: 30px; 
+   width: 66%;
+   margin-bottom: 3px; 
+   font-size: medium;
+   border: 2px solid grey;
+}
+.column-full{
+	padding-left: 0px;
+	font-size: 16px;
+	padding-left: 0px;
+}
+.building2{
+	padding-left:0px;
+}
+.first-box-btn{
+	padding-left:0px;
+}
+.newbox{
+	padding-left:0px;
+}
+.button-submit2{
+    margin-left: 20px;     
+}
+.form-group{	
+	margin-bottom: 15px;
+}
+#test1234{
+	float: right;
+    text-align: right;
+}
+.multiple-choice{
+	transform: scale(0.70);
+    background-color: transparent;
+    border: transparent;
+}
+.first-multiple-choice{
+	margin-left: -36px;
+    margin-top: -15px;
+}
+.hello:first-child {
+    margin-top: 10px;
+    margin-left: -24px;
+	margin-bottom: -20px;
+}
+.multiple-choice label{
+	float: left;
+	margin-left: 48px;
+	padding-right: 5px;
+	padding-top: 0px;
+}
+.checkbox4.multiple-choice:first-child {
+    margin-top: 10px;
+    margin-left: -40px;
+}
+.button-submit2 {
+    margin-left: 20px;
+    margin-top: -20px;
+}
+[hidden], .display-none {
+	display: none;
+}
+</style>
+
+<main id="content" role="main">
+    <div class="grid-row">
+		<div class="column-full full" style="background-color: white;">
+			<div class="column-one-half">
+				<a href="javascript:history.go(-1)" class="link-back">Back</a>
+			</div>
+			<div class="column-half" id="test1234">
+				<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">End process</a>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div class="column-full" style="background-color: white;">
+			<form action="contactdetails" id="register1-form" class="form form-to-validate" method="get" novalidate="novalidate" autocomplete="off">
+				<div class="column-one-half lpads">
+					<div style="padding: 0 2em 0 1em">
+						<div class="grid-row highlight">
+							<div class="column-full">	
+								<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register main applicant</h1>
+								<!-- errors and validation -->
+								<div class="error-summary display-none" id="bcd" role="group" aria-labelledby="finance-login-message-heading" style="margin-right: 15px;">
+									<ul class="error-summary-list">
+										<li><a href="#reference-number-1" id="login-error-list1" class="error1 display-none">Enter applicant's first name</a></li>
+										<li><a href="#reference-number-2" id="login-error-list2" class="error2 display-none">Enter applicant's last name</a></li>
+										<li><a href="#reference-number-3" id="login-error-list3" class="error3 display-none">Enter applicant's date of birth</a></li>
+										<li><a href="#reference-number-4" id="login-error-list4" class="error4 display-none">Enter applicant's postcode</a></li>
+										<li><a href="#country-of-treatment" id="login-error-list8" class="error8 display-none">Enter applicant's S1 country</a></li>
+									</ul>
+								</div>
+								<div class="column-one-third lpads">	
+									<h2 class="heading-small">First name</h2>
+									<input class="form-control validate-text-input" id="reference-number-1" name="first-name-2" type="text" autocomplete="off" />
+								</div>		
+								<div class="column-one-third lpads">	
+									<h2 class="heading-small">Last name</h2>
+									<input class="form-control validate-text-input" id="reference-number-2" name="first-name-2" type="text" autocomplete="off" />	
+								</div>
+								<div class="column-one-third lpads">	
+									<h2 class="heading-small">Date of birth</h2>
+									<input class="form-control dob1234 validate-text-input" id="reference-number-3" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
+								</div>
+								<div class="column-one-third lpads">	
+									<br><h2 class="heading-small">NINO</h2>
+									<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
+								</div>
+								<div class="column-one-third lpads autocomplete">	
+									<br><h2 class="heading-small">S1 country</h2>
+									<input class="form-control validate-text-input" id="country-of-treatment" name="first-name-2" type="text" style="font-size: 16px;" autocomplete="off" />
+								</div>
+							</div>
+
+							<div class="column-full first-box-btn">
+								<div class="column-one-half newbox">
+									<br>
+									<a id="add" class="button-dependent" href="#">+ Add dependant</a>
+									<br>
+									<br>
+									<!-- <a class="button btnSubmit1" href="contactdetails" role="button" style=" font-size: 16px;     margin-top: -10px;">Submit</a> -->
+									<input class="button buttonSubmit1" type="submit" value="Submit" style=" font-size: 16px;" />
+								</div>
+							</div>						
+						</div>
+					</div>
+				</div>
+							
+				<!--  Dependant details -->
+				<div class="column-one-half dependent visually-hidden">
+					<div style="padding: 0 2em 0 2em">
+						<div class="grid-row highlight" style="margin-right: -30px;">
+							<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register a dependant</h2>
+							<a id="remove" class="button-dependent" href="#" style="float: right; margin-top: -43px; padding-right: 15px;">Remove dependant</a>
+							<!-- errors and validation -->
+							<div class="error-summary2 display-none" id="cde" role="group" aria-labelledby="finance-login-message-heading" style="margin-right: 15px;">
+								<ul class="error-summary-list">
+									<li><a href="#reference-number-5" id="login-error-list5" class="error5 display-none">Enter applicant's first name</a></li>
+									<li><a href="#reference-number-6" id="login-error-list6" class="error6 display-none">Enter applicant's last name</a></li>
+									<li><a href="#reference-number-7" id="login-error-list7" class="error7 display-none">Enter applicant's date of birth</a></li>
+								</ul>
+							</div>
+							<!-- Dependant link-->				
+							<div class="column-one-third lpads">	
+									<h2 class="heading-small">First name</h2>
+									<input class="form-control validate-text-input" id="reference-number-5" name="first-name-2" type="text" autocomplete="off" />
+							</div>		
+							<div class="column-one-third lpads">	
+									<h2 class="heading-small">Last name</h2>
+									<input class="form-control validate-text-input" id="reference-number-6" name="first-name-2" type="text" autocomplete="off" />	
+							</div>
+							<div class="column-one-third lpads">	
+									<h2 class="heading-small">Date of birth</h2>
+									<input class="form-control dob1234 validate-text-input" id="reference-number-7" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
+							</div>
+							<div class="column-one-third lpads">	
+									<br><h2 class="heading-small">NINO</h2>
+									<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
+							</div>						
+						</div>
+					</div>
+				</div>	
+				<div class="column-full button-submit2 visually-hidden">	
+					<br>			
+					<br>
+					<!-- <a class="button" href="contactdetails" role="button" style=" font-size: 16px; ">Submit</a> -->
+					<input class="button buttonSubmit2" type="submit" value="Submit" style="font-size: 16px;" />
+				</div>
+			</form>
+		</div>		
+</main>
+
+<script src="/public/javascripts/autocomplete.js"></script>
+<script>
+	autocomplete(document.getElementById("country-of-treatment"), countries);
+</script>
+
+{% endblock %}
