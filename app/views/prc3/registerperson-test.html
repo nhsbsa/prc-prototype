@@ -1,0 +1,695 @@
+{% extends "layout_bsa_internal.html" %} 
+
+{% block page_title %} Single User View 
+{% endblock %} 
+
+{% block after_header %}
+<div id="menu">
+	<div id="menu-content">
+		<div class="grid-row">
+			<div class="column-half">
+				<ul class="visually-hidden">
+					<li><a class="menu-button selected" href="results">Search</a></li>
+				</ul>
+			</div>
+			<div class="column-half" id="logout">
+				<a href="login">Sign out</a>
+				<span style="float: right; margin: 7px 0;">nhsbsa |</span>
+			</div>
+		</div>
+	</div>
+</div> 
+{% endblock %} 
+
+{% block content %}
+
+<style>
+	.highlight {
+		min-height: 40%;
+	}
+	.link-back{
+		margin-left: 20px;
+	}
+	.form-control {
+		width: 90%;
+	}
+	.multiple-choice [type=radio] + label::before {
+		margin-left: -38px;
+		margin-top: -5px;
+	}
+	.multiple-choice [type=radio] + label::after {
+		left: 17px;
+		top: 19px;
+	}
+	.inline .multiple-choice label {
+		line-height: 120%;
+	}
+	.test{
+		padding-left: 30px;
+	}
+	.heading-medium{
+		margin-top: 15px;
+		margin-bottom: -5px;
+	}
+	.s1reg{
+		margin-top: -30px;
+	}
+	.buttonSubmit{
+		margin-top: -15px;
+	}
+	.acceptanceCriteria{
+		margin-top: -25px;
+	}
+	[hidden], .display-none {
+		display: none;
+	}
+	.hello1{
+		margin-top: 20px;
+	}
+	.column-full {
+		padding: 0 0px;
+	}
+	.link-back {
+		margin-left: 0px;
+	}
+	#uk-resident {
+		margin: -30px 0 10px 49px;
+	}
+	.align-radio {
+		margin-left: 0px;
+		padding-right: 0px;
+	}
+	.inline .multiple-choice label {
+		line-height: 120%;
+		font-size: 16px;
+	}
+	/*.unbranded * {
+		margin-bottom: 0px;
+	}*/
+	#reference-number,
+	#reference-number-1,
+	#reference-number-2,
+	#reference-number-3,
+	#reference-number-4,
+	#reference-number-5,
+	#reference-number-6,
+	#reference-number-7,
+	#reference-number-8,
+	#reference-number-9,
+	#reference-number-10,
+	#reference-number-11,
+	#reference-number-12,
+	#reference-number-13,
+	#reference-number-14,
+	#reference-number-15,
+	#reference-number-16,
+	#country-of-treatment {
+		font-size: 16px;
+	}
+	.newbox {
+		margin-bottom: 15px;
+	}
+	.button.buttonSubmit2 {
+		margin-left: 15px;
+	}
+	.error-summary {
+		margin-bottom: 30px;
+	}
+
+
+
+	.dialog{
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+		background-color:rgba(0,0,0,0.5);
+		height:100%;
+		padding:15px;
+		position:fixed;
+		left:0;
+		top:0;
+		right:0;
+		bottom:0;
+		text-align:center;
+		width:100%;
+		z-index:0
+	}
+	.dialog[aria-hidden="true"]{
+		opacity:0;
+		visibility:hidden
+	}
+	.dialog[aria-hidden="false"]{
+		opacity:1;
+		visibility:visible;
+		z-index:11
+	}
+	@media (min-width: 641px){
+		.dialog{
+			padding:30px
+		}
+	}
+	@media (min-width: 1020px){
+		.dialog{
+			padding:0
+		}
+	}
+	.dialog:before{
+		content:'';
+		display:inline-block;
+		height:100%;
+		margin-right:-.25em;
+		vertical-align:middle
+	}
+	.dialog-holder{
+		background-color:#fff;
+		border:10px solid #fff;
+		display:inline-block;
+		margin:auto;
+		max-width:530px;
+		position:relative;
+		vertical-align:middle
+	}
+	.dialog-heading{
+		font-family:"nta",Arial,sans-serif;
+		font-size:36px;
+		line-height:1.11111;
+		font-weight:700;
+		text-transform:none;
+		margin-top:.625em;
+		margin-bottom:.41667em
+	}
+	@media (max-width: 640px){
+		.dialog-heading{
+			font-size:24px;
+			line-height:1.04167
+		}
+	}
+	@media (min-width: 641px){
+		.dialog-heading{
+			margin-top:.41667em;
+			margin-bottom:.55556em
+		}
+	}
+	.dialog-content{
+		outline:none;
+		padding:1em;
+		text-align:left
+	}
+	.dialog .form-group{
+		float:none
+	}
+	.dialog .form-control,.dialog .form-control-textarea{
+		width:100%
+	}
+	.dialog-close{
+		text-indent:-119988px;
+		overflow:hidden;
+		text-align:left;
+		text-transform:capitalize;
+		background-color:transparent;
+		border:0 none;
+		cursor:pointer;
+		height:22px;
+		margin:auto;
+		padding:0;
+		position:absolute;
+		top:5px;
+		right:5px;
+		width:22px
+	}
+	.dialog-close span{
+		cursor:pointer
+	}
+	.dialog-cancel{
+		display:inline-block;
+		font-size:1em;
+		line-height:1.25;
+		margin-right:.78947em;
+		padding:.52632em .78947em .26316em
+	}
+	.dialog-cancel:focus,.dialog-cancel:active{
+		outline:none
+	}
+	.dialog-actions .button{
+		width:auto
+	}
+	
+	.error{
+		margin-right:15px
+	}
+	.error .error-message{
+		color:#b10e1e;
+		font-weight:bold
+	}
+	.error .form-control,.error .form-control-textarea{
+		border:4px solid #b10e1e
+	}
+	.error .form-hint{
+		margin-bottom:0
+	}
+	.error,.error-summary{
+		border-left:4px solid #b10e1e;
+		padding-left:10px
+	}
+	@media (min-width: 641px){
+		.error,.error-summary{
+			border-left:5px solid #b10e1e;
+			padding-left:15px
+		}
+	}
+	.error-message{
+		font-family:"nta",Arial,sans-serif;
+		font-size:19px;
+		line-height:1.31579;
+		font-weight:400;
+		text-transform:none;
+		display:block;
+		clear:both;
+		margin:0;
+		padding:5px 0 7px 0
+	}
+	@media (max-width: 640px){
+		.error-message{
+			font-size:16px;
+			line-height:1.25
+		}
+	}
+	.error-summary{
+		border:4px solid #b10e1e;
+		margin-top:15px;
+		margin-bottom:15px;
+		padding:15px 10px
+	}
+	@media (min-width: 641px){
+		.error-summary{
+			border:5px solid #b10e1e;
+			margin-top:30px;
+			margin-bottom:30px;
+			padding:20px 15px 15px 15px
+		}
+	}
+	.error-summary:focus{
+		outline:3px solid #ffbf47
+	}
+	.error-summary .error-summary-heading{
+		margin-top:0
+	}
+	.error-summary p{
+		margin-bottom:10px
+	}
+	.error-summary .error-summary-list{
+		padding-left:0
+	}
+	@media (min-width: 641px){
+		.error-summary .error-summary-list li{
+			margin-bottom:5px
+		}
+	}
+	.error-summary .error-summary-list a{
+		color:#b10e1e;
+		font-weight:bold;
+		text-decoration:underline
+	}
+	
+	.icon{
+		background-size:100%;
+		background-repeat:no-repeat;
+		cursor:default;
+		display:block;
+		height:22px;
+		text-align:center;
+		vertical-align:middle;
+		width:22px
+		}
+		.icon-close{
+		background-image:url("/public/images/bsa/icon-close.png");
+		display:block
+	}
+	
+	@media (min-width: 641px) {
+		.form-group {
+			margin-bottom: 30px;
+		}
+	}
+	
+	@media (min-width: 641px) {
+		p {
+			margin-top: .26316em;
+			margin-bottom: 1.05263em;
+		}
+	}
+	
+	.modals {
+		margin-top: 1em;
+		margin-left: 1em;
+	}
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full full" style="background-color: white;">
+			<div class="column-one-half">
+				<a href="javascript:history.go(-1)" class="link-back">Back</a>
+			</div>
+			<div class="column-half" id="test1234" style="float: right; text-align: right;">
+				<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">End process</a>
+			</div>
+		</div>
+		<br><br>
+		<div class="column-full">
+			<form action="contactdetails" id="register1-form" class="form form-to-validate" method="get" novalidate="novalidate" autocomplete="off">
+				<div class="column-one-half lpads" style="padding: 0 2em 0 1em">
+					<div class="grid-row highlight">
+						<div class="column-full">	
+							<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register main applicant</h1>
+							<!-- errors and validation -->
+							<div class="error-summary display-none" id="bcd" role="group" aria-labelledby="finance-login-message-heading" style="margin-right: 15px;">
+								<ul class="error-summary-list">
+									<li><a href="#reference-number-1" id="login-error-list1" class="error1 display-none">Enter applicant's first name</a></li>
+									<li><a href="#reference-number-2" id="login-error-list2" class="error2 display-none">Enter applicant's last name</a></li>
+									<li><a href="#reference-number-3" id="login-error-list3" class="error3 display-none">Enter applicant's date of birth</a></li>
+									<li><a href="#reference-number-4" id="login-error-list4" class="error4 display-none">Enter applicant's postcode</a></li>
+								</ul>
+							</div>
+							<div class="column-one-third lpads">
+								<h2 class="heading-small">First name</h2>
+								<input class="form-control validate-text-input" id="reference-number-1" name="first-name-2" type="text" autocomplete="off" />
+							</div>		
+							<div class="column-one-third lpads">	
+								<h2 class="heading-small">Last name</h2>
+								<input class="form-control" id="reference-number-2" name="first-name-2" type="text" autocomplete="off" />	
+							</div>
+							<div class="column-one-third lpads">	
+								<h2 class="heading-small">Date of birth</h2>
+								<input class="form-control" id="reference-number-3" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
+							</div>
+							<div class="column-one-third lpads">	
+								<br><h2 class="heading-small">NINO</h2>
+								<input class="form-control" id="reference-number-4" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
+							</div>
+							<div class="column-one-third lpads">	
+								<br><h2 class="heading-small">EHIC issue number</h2>
+								<input class="form-control" id="reference-number-5" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(cardholder only)" autocomplete="off" />
+							</div>
+							<div class="column-one-third lpads">	
+								<br><h2 class="heading-small">EHIC expiry date</h2>
+								<input class="form-control" id="reference-number-6" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(cardholder only)" autocomplete="off" />
+							</div>
+							<div class="column-full lpads">
+								<h1 class="heading-small" style="margin-bottom: -10px;">Current UK address<h1>
+								</div>
+								<div class="column-full manual-address lpads">
+									<div class="column-one-third lpads">
+										<br><h2 class="heading-small">Building and street</h2>
+										<input class="form-control" id="reference-number-7" name="first-name-2" type="text" autocomplete="off" />
+										<input class="form-control" id="reference-number-8" name="first-name-2" type="text" placeholder="(optional)" autocomplete="off" />
+									</div>	
+									<div class="column-one-third lpads">
+										<br>
+										<h2 class="heading-small EHIC-number">Town or city<h2>
+											<input class="form-control EHIC-number" id="reference-number-9" name="first-name-2" type="text" autocomplete="off" />
+										</div>
+										<div class="column-one-third lpads">
+											<br>
+											<h2 class="heading-small postcode2">Postcode</h2>
+											<input class="form-control postcode2 validate-text-input" id="reference-number-10" name="first-name-2" type="text" autocomplete="off" />
+										</div>
+									</div>
+									<div class="column-full first-box-btn lpads">
+										<div class="newbox" style="font-size:16px; margin: 2em 0;">
+											<a id="add" class="button-dependent" href="#">+ Add dependant</a>
+										</div>
+									</div>	
+									<div class="form-group" style="margin-top: -10px; margin-bottom: 5px;">
+										<a class="button buttonSubmit" href="residencystatus-pass" role="button" style="font-size: 16px; margin: -5px 0 10px 0;">Submit</a>
+										<br><br><a class="buttonSubmit" style="font-size:16px; padding-top: -10px; margin-bottom: 5px;" href="#" data-toggle="dialog" data-target="dialog-4">Bypass residency check</a>
+									</div>
+									<div class="form-group">
+										
+										<!--  <a class="button-dependent" href="contactdetails" style="font-size:16px;">Bypass residency check</a> -->									
+											<div class="dialog" id="dialog-4" aria-hidden="true">
+												<div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
+												  <div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
+													<h1 class="dialog-heading" id="dialog-title-4">Bypass residency</h1>
+													<form class="form">
+														<div class="form-group">
+															<fieldset>
+																<legend>
+																	<h1 class="heading-small">Why do you want to bypass the residency check?</h1>
+																</legend>
+																<div class="multiple-choice">
+																	<input id="radio-2" type="radio" name="radio-group" value="reason2">
+																	<label for="radio-2">18 or under</label>
+																</div>
+																<div class="multiple-choice">
+																	<input id="radio-3" type="radio" name="radio-group" value="reason3">
+																	<label for="radio-3">Student aged 16 to 18</label>
+																</div>
+																<div class="multiple-choice">
+																	<input id="radio-3" type="radio" name="radio-group" value="reason3">
+																	<label for="radio-3">Reason 3 (Something else)</label>
+																</div>
+																<div class="multiple-choice">
+																	<input id="radio-1" type="radio" name="radio-group" value="reason1">
+																	<label for="radio-1txt">Exceptional reason for failing check</label>
+																</div>
+															</fieldset>
+														</div>
+														<div class="dialog-actions">
+															<button class="button" href="contactdetails" type="submit">Submit</button><br><br>
+															<a class="dialog-cancel" href="#" style="margin-left: -10px;">Cancel</a>
+														</div>
+														<button class="dialog-close" aria-label="close" type="button">
+															<span class="icon icon-close">x</span>
+														</button>
+													</form>
+												  </div>
+												</div>
+											</div>									
+									</div>
+						</div>
+					</div>
+				</div>
+					<!-- All the modals are in there!!!!!!!						
+					<div class="modals">
+						<ul class="list-bullet">
+							<li><a href="#" data-toggle="dialog" data-target="dialog-1">Sign out</a></li>
+							<li><a href="#" data-toggle="dialog" data-target="dialog-2">Lock customers account</a></li>
+							<li><a href="#" data-toggle="dialog" data-target="dialog-3">Duplicate found</a></li>
+							<li><a href="#" data-toggle="dialog" data-target="dialog-4">Provide feedback</a></li>
+							<li><a href="#" data-toggle="dialog" data-target="dialog-5">Change owner</a></li>
+							<li><a href="#" data-toggle="dialog" data-target="dialog-6">Warning</a></li>
+							<li><a href="#" data-toggle="dialog" data-target="dialog-7">Remove a person</a></li>
+							<li><a href="#" data-toggle="dialog" data-target="dialog-8">Archive customer record</a></li>
+						</ul>
+					</div>
+
+					<div class="dialog" id="dialog-1" aria-hidden="true">
+						<div class="dialog-holder" aria-labelledby="dialog-title-1" aria-describedby="dialog-content-1" role="alertdialog">
+						  <div class="dialog-content" id="dialog-content-1" role="document" tabindex="0">
+							<h1 class="dialog-heading" id="dialog-title-1">Sign out</h1>
+							<form class="form">
+							  <p>This will end your session. Are you sure you want to sign out?</p>
+							  <div class="dialog-actions">
+								<button class="button" type="submit">Yes</button>
+								<a class="dialog-cancel" href="/">No</a>
+							  </div>
+							  <button class="dialog-close" aria-label="close" type="button">
+								<span class="icon icon-close">x</span>
+							  </button>
+							</form>
+						  </div>
+						</div>
+					</div>
+
+					<div class="dialog" id="dialog-2" aria-hidden="true">
+						<div class="dialog-holder" aria-labelledby="dialog-title-2" aria-describedby="dialog-content-2" role="alertdialog">
+						  <div class="dialog-content" id="dialog-content-2" role="document" tabindex="0">
+							<h1 class="dialog-heading" id="dialog-title-2">Lock customer's account</h1>
+							<form class="form">
+							  <div class="form-group">
+								<label class="form-label" for="reason">Give a reason for locking this customer's account</label>
+								<textarea class="form-control form-control-textarea" id="reason" rows="3" cols="50"></textarea>
+							  </div>
+							  <div class="dialog-actions">
+								<button class="button" type="submit">Lock customer's account</button>
+								<a class="dialog-cancel" href="#">Cancel</a>
+							  </div>
+							  <button class="dialog-close" aria-label="close" type="button">
+								<span class="icon icon-close">x</span>
+							  </button>
+							</form>
+						  </div>
+						</div>
+					</div>
+
+					<div class="dialog" id="dialog-3" aria-hidden="true">
+						<div class="dialog-holder" aria-labelledby="dialog-title-3" aria-describedby="dialog-content-3" role="alertdialog">
+						  <div class="dialog-content" id="dialog-content-3" role="document" tabindex="0">
+							<h1 class="dialog-heading" id="dialog-title-3">Duplicate found</h1>
+							<form class="form">
+							  <p>The firm of agents <b>Dan Firm</b> already exists with the same landline number. Are you sure you want to continue to create this new firm of agents?</p>
+							  <div class="dialog-actions">
+								<button class="button" type="submit">Yes</button>
+								<a class="dialog-cancel" href="#">No</a>
+							  </div>
+							  <button class="dialog-close" aria-label="close" type="button">
+								<span class="icon icon-close">x</span>
+							  </button>
+							</form>
+						  </div>
+						</div>
+					</div>
+
+					<div class="dialog" id="dialog-4" aria-hidden="true">
+						<div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
+						  <div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
+							<h1 class="dialog-heading" id="dialog-title-4">Provide feedback</h1>
+							<form class="form">
+							  <div class="form-group error">
+								<label class="form-label" for="comments">
+								  Comments
+								  <span class="form-hint">Don't leave any sensitive details, such as phone numbers</span>
+								  <span class="error-message" id="error-message-full-name">You need to enter a comment</span>
+								</label>
+								<textarea class="form-control form-control-textarea" id="comments" rows="3" cols="50"></textarea>
+							  </div>
+							  <div class="dialog-actions">
+								<button class="button" type="submit">Submit</button>
+								<a class="dialog-cancel" href="#">Cancel</a>
+							  </div>
+							  <button class="dialog-close" aria-label="close" type="button">
+								<span class="icon icon-close">x</span>
+							  </button>
+							</form>
+						  </div>
+						</div>
+					</div>
+
+					<div class="dialog" id="dialog-5" aria-hidden="true">
+						<div class="dialog-holder" aria-labelledby="dialog-title-5" aria-describedby="dialog-content-5" role="alertdialog">
+						  <div class="dialog-content" id="dialog-content-5" role="document" tabindex="0">
+							<h1 class="dialog-heading" id="dialog-title-5">Change owner</h1>
+							<form class="form">
+							  <p>Are you sure you want to assign this case to <b>Connor Senior?</b></p>
+							  <div class="dialog-actions">
+								<button class="button" type="submit">Yes</button>
+								<a class="dialog-cancel" href="#">No</a>
+							  </div>
+							  <button class="dialog-close" aria-label="close" type="button">
+								<span class="icon icon-close">x</span>
+							  </button>
+							</form>
+						  </div>
+						</div>
+					</div>
+
+					<div class="dialog" id="dialog-6" aria-hidden="true">
+						<div class="dialog-holder" aria-labelledby="dialog-title-6" aria-describedby="dialog-content-6" role="alertdialog">
+						  <div class="dialog-content" id="dialog-content-6" role="document" tabindex="0">
+							<h1 class="dialog-heading" id="dialog-title-6">Change owner</h1>
+							<form class="form">
+							  <p>The total landuse area you have entered is <b>4.90<abbr title="Hectare">ha</abbr></b>, which is less than the parcel size. Are you sure you want to continue?</p>
+							  <div class="dialog-actions">
+								<button class="button" type="submit">Yes</button>
+								<a class="dialog-cancel" href="#">No</a>
+							  </div>
+							  <button class="dialog-close" aria-label="close" type="button">
+								<span class="icon icon-close">x</span>
+							  </button>
+							</form>
+						  </div>
+						</div>
+					</div>
+
+					<div class="dialog" id="dialog-7" aria-hidden="true">
+						<div class="dialog-holder" aria-labelledby="dialog-title-7" aria-describedby="dialog-content-7" role="alertdialog">
+						  <div class="dialog-content" id="dialog-content-7" role="document" tabindex="0">
+							<h1 class="dialog-heading" id="dialog-title-7">Remove a person</h1>
+							<form class="form">
+							  <p>Are you sure you want to remove <b>Connor Senior</b> from this business? This person will no longer be able to access this business online.</p>
+							  <div class="dialog-actions">
+								<button class="button" type="submit">Yes</button>
+								<a class="dialog-cancel" href="#">No</a>
+							  </div>
+							  <button class="dialog-close" aria-label="close" type="button">
+								<span class="icon icon-close">x</span>
+							  </button>
+							</form>
+						  </div>
+						</div>
+					</div>
+
+					<div class="dialog" id="dialog-8" aria-hidden="true">
+						<div class="dialog-holder" aria-labelledby="dialog-title-8" aria-describedby="dialog-content-8" role="alertdialog">
+						  <div class="dialog-content" id="dialog-content-8" role="document" tabindex="0">
+							<h1 class="dialog-heading" id="dialog-title-8">Archive customer record</h1>
+							<form class="form">
+							  <p>Are you sure you would like to archive xxx?</p>
+							  <div class="dialog-actions">
+								<button class="button" type="submit">Yes</button>
+								<a class="dialog-cancel" href="#">No</a>
+							  </div>
+							  <button class="dialog-close" aria-label="close" type="button">
+								<span class="icon icon-close">x</span>
+							  </button>
+							</form>
+						  </div>
+						</div>
+					</div>
+
+					-->
+					<!-- Link to open the modal -->
+					<!--<p><a href="#ex1" rel="modal:open">Open Modal</a></p>-->					
+						<!-- dependant details -->
+						<div class="column-one-half dependent visually-hidden">
+							<div style="padding: 0 2em 0 2em">
+								<div class="grid-row highlight" style="margin-right: -30px;">
+									<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register a dependant</h2>
+									<a id="remove" class="button-dependent" href="#" style="float: right; margin-top: -43px; padding-right: 15px;">Remove dependant</a>
+									<!-- errors and validation -->
+									<div class="error-summary2 display-none" id="cde" role="group" aria-labelledby="finance-login-message-heading" style="margin-right: 15px;">
+										<ul class="error-summary-list">
+											<li><a href="#reference-number-5" id="login-error-list5" class="error5 display-none">Enter applicant's first name</a></li>
+											<li><a href="#reference-number-6" id="login-error-list6" class="error6 display-none">Enter applicant's last name</a></li>
+											<li><a href="#reference-number-7" id="login-error-list7" class="error7 display-none">Enter applicant's date of birth</a></li>
+										</ul>
+									</div>	
+									<!-- dependant link -->
+									<div class="column-one-third lpads">
+										<h2 class="heading-small">First name</h2>
+										<input class="form-control validate-text-input" id="reference-number-11" name="first-name-2" type="text" autocomplete="off" />
+									</div>		
+									<div class="column-one-third lpads">	
+										<h2 class="heading-small">Last name</h2>
+										<input class="form-control validate-text-input" id="reference-number-12" name="first-name-2" type="text" autocomplete="off" />	
+									</div>
+									<div class="column-one-third lpads">	
+										<h2 class="heading-small">Date of birth</h2>
+										<input class="form-control validate-text-input" id="reference-number-13" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
+									</div>
+									<div class="column-one-third lpads">	
+										<br><h2 class="heading-small">NINO</h2>
+										<input class="form-control" id="reference-number-14" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
+									</div>
+									<div class="column-one-third lpads">	
+										<br><h2 class="heading-small">EHIC issue number</h2>
+										<input class="form-control" id="reference-number-15" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(cardholder only)" autocomplete="off" />
+									</div>
+									<div class="column-one-third lpads">	
+										<br><h2 class="heading-small">EHIC expiry date</h2>
+										<input class="form-control" id="reference-number-16" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(cardholder only)" autocomplete="off" />
+									</div>
+								</div>
+							</div>
+						</div>	
+						<div class="column-full button-submit2 visually-hidden" style="padding: 25px 0 0 17px;">			
+							<a class="button buttonSubmit2" href="residencystatus-pass" role="button" style="font-size: 16px; margin: -5px 0 10px 0;">Submit for residency check</a>				
+							<a class="buttonSubmit2" href="addBypass" onClick="MyWindow=window.open('addBypass','MyWindow','width=600,height=450'); return false;" style="font-size: 16px; display: block; margin: 1em 0;">Bypass residency check</a>
+						</div>
+			</form>
+	</div>
+</main>
+	
+	{% endblock %}
+	
