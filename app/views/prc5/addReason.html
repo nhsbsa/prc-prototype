@@ -1,0 +1,74 @@
+{% extends "layout_bsa_popup.html" %}
+
+{% block page_title %}
+Single User View
+{% endblock %}
+
+
+
+{% block after_header %}
+
+
+{% endblock %}
+
+{% block content %}
+<style>
+	.multiple-choice{
+		width: 40em;
+		height: 0.5em;
+		padding-top: 5px;
+		padding-bottom: 2px;
+	}
+	.titleCreate{
+		margin-bottom:0px;
+		margin-top:4px;
+	}
+	.multiple-choice [type=radio] + label::after {
+		left: 17px;
+		top: 17px;
+		border: 7px solid;
+	}
+	.multiple-choice [type=radio] + label::before {
+		margin-top: -5px;
+	}
+</style>
+<main id="content" role="main">
+	<div class="grid-row">
+		
+		<div class="column-full highlight1">
+			
+			<h1 class="heading-medium titleCreate">End the process</h1> 
+			<form action="tabs-below" method="get" class="form">
+				
+				<div class="form-group">
+					<fieldset>
+						<legend>
+							<h1 class="heading-small">Why do you want to end the process?</h1>
+						</legend>
+						<div class="multiple-choice">
+							<input id="radio-1" type="radio" name="radio-group" value="reason1">
+							<label for="radio-1txt">Phone connection dropped</label>
+						</div>
+						<div class="multiple-choice">
+							<input id="radio-2" type="radio" name="radio-group" value="reason2">
+							<label for="radio-2">Residency check failed</label>
+						</div>
+						<div class="multiple-choice">
+							<input id="radio-3" type="radio" name="radio-group" value="reason3">
+							<label for="radio-3">Country is not part of the European Economic Area (EEA) or Switzerland</label>
+						</div>
+					</fieldset>
+				</div>
+				
+				
+				
+				<a class="button" role="button" style=" font-size: 16px;" onclick=" window.opener.location.replace('/prc3/definitoryquestions'); window.close();">Submit</a>
+				
+				<p class="navigation"><a class="cancel" href="JavaScript:window.close()">Cancel</a></p>
+			</form>     
+			
+		</div>
+	</div>
+</main>
+
+{% endblock %}

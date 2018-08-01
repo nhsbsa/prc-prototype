@@ -54,7 +54,7 @@ function clearFormErrors($form){
 }
 
 $(document).ready(function() {
-    if ((!document.location.href.includes("/prc3")) && (!document.location.href.includes("/prc4"))) {
+    if ((!document.location.href.includes("/prc3")) && (!document.location.href.includes("/prc4")) && (!document.location.href.includes("/prc5"))) {
         // GOVUK.toggle.init();
         // The following JavaScript code is just for demo purposes.
         // Not For Production, please remove when developing the real thing.
@@ -188,7 +188,7 @@ $(document).ready(function() {
                 }
 
                 // registerperson - prc //
-                else if ($formToValidated.attr('id') == 'register1-form') {
+                if ($formToValidated.attr('id') == 'register1-form') {
                     var appFirstName = $('#reference-number-1', $formToValidated).val() || false;
                     var appLastName = $('#reference-number-2', $formToValidated).val() || false;
                     var appDateOfBirth = $('#reference-number-3', $formToValidated).val() || false;
@@ -341,7 +341,7 @@ $(document).ready(function() {
                 }
 
                 // contactdetails - prc //
-                else if ($formToValidated.attr('id') == 'contactdetails-form') {
+                if ($formToValidated.attr('id') == 'contactdetails-form') {
                     var isValid;
                     var startDate = $('#reference-number-1', $formToValidated).val() || false;
                     var endDate = $('#reference-number-2', $formToValidated).val() || false;
