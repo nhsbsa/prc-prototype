@@ -1,7 +1,7 @@
-{% extends "layout_bsa_internal.html" %} 
+{% extends "layout_bsa_internal.html" %}
 
-{% block page_title %} Single User View 
-{% endblock %} 
+{% block page_title %} Single User View
+{% endblock %}
 
 {% block after_header %}
 <div id="menu">
@@ -18,8 +18,8 @@
 			</div>
 		</div>
 	</div>
-</div> 
-{% endblock %} 
+</div>
+{% endblock %}
 
 {% block content %}
 
@@ -132,7 +132,7 @@
 			<form action="contactdetails" id="register1-form" class="form form-to-validate" method="get" novalidate="novalidate" autocomplete="off">
 				<div class="column-one-half lpads" style="padding: 0 2em 0 1em">
 					<div class="grid-row highlight">
-						<div class="column-full">	
+						<div class="column-full">
 							<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register main applicant</h1>
 							<!-- errors and validation -->
 							<div class="error-summary display-none" id="bcd" role="group" aria-labelledby="finance-login-message-heading" style="margin-right: 15px;">
@@ -146,24 +146,24 @@
 							<div class="column-one-third lpads">
 								<h2 class="heading-small">First name</h2>
 								<input class="form-control validate-text-input" id="reference-number-1" name="first-name-2" type="text" autocomplete="off" />
-							</div>		
-							<div class="column-one-third lpads">	
-								<h2 class="heading-small">Last name</h2>
-								<input class="form-control" id="reference-number-2" name="first-name-2" type="text" autocomplete="off" />	
 							</div>
-							<div class="column-one-third lpads">	
+							<div class="column-one-third lpads">
+								<h2 class="heading-small">Last name</h2>
+								<input class="form-control" id="reference-number-2" name="first-name-2" type="text" autocomplete="off" />
+							</div>
+							<div class="column-one-third lpads">
 								<h2 class="heading-small">Date of birth</h2>
 								<input class="form-control" id="reference-number-3" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
 							</div>
-							<div class="column-one-third lpads">	
+							<div class="column-one-third lpads">
 								<br><h2 class="heading-small">NINO</h2>
 								<input class="form-control" id="reference-number-4" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
 							</div>
-							<div class="column-one-third lpads">	
+							<div class="column-one-third lpads">
 								<br><h2 class="heading-small">EHIC issue number</h2>
 								<input class="form-control" id="reference-number-5" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(cardholder only)" autocomplete="off" />
 							</div>
-							<div class="column-one-third lpads">	
+							<div class="column-one-third lpads">
 								<br><h2 class="heading-small">EHIC expiry date</h2>
 								<input class="form-control" id="reference-number-6" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(cardholder only)" autocomplete="off" />
 							</div>
@@ -175,84 +175,77 @@
 										<br><h2 class="heading-small">Building and street</h2>
 										<input class="form-control" id="reference-number-7" name="first-name-2" type="text" autocomplete="off" />
 										<input class="form-control" id="reference-number-8" name="first-name-2" type="text" placeholder="(optional)" autocomplete="off" />
-									</div>	
+									</div>
 									<div class="column-one-third lpads">
-										<br>
-										<h2 class="heading-small EHIC-number">Town or city<h2>
-											<input class="form-control EHIC-number" id="reference-number-9" name="first-name-2" type="text" autocomplete="off" />
-										</div>
-										<div class="column-one-third lpads">
-											<br>
-											<h2 class="heading-small postcode2">Postcode</h2>
-											<input class="form-control postcode2 validate-text-input" id="reference-number-10" name="first-name-2" type="text" autocomplete="off" />
-										</div>
+										<br><h2 class="heading-small EHIC-number">Town or city<h2>
+										<input class="form-control EHIC-number" id="reference-number-9" name="first-name-2" type="text" autocomplete="off" />
 									</div>
-									<div class="column-full first-box-btn lpads">
-										<div class="newbox" style="font-size:16px; margin: 2em 0;">
-											<a id="add" class="button-dependent" href="#">+ Add dependant</a>
-										</div>
-									</div>	
-									<div class="form-group">
-										<a class="button buttonSubmit" href="residencystatus-pass" role="button" style="font-size: 16px; margin: -5px 0 10px 0;">Submit for residency check</a>
-									</div>
-									<div class="form-group">
-										<a class="buttonSubmit" href="addBypass" onClick="MyWindow=window.open('addBypass','MyWindow','width=600,height=450'); return false;" style="font-size: 16px; display: block; margin: 1em 0;">Bypass residency check</a>
-										<!--  <a class="button-dependent" href="contactdetails" style="font-size:16px;">Bypass residency check</a> -->
+									<div class="column-one-third lpads">
+										<br><h2 class="heading-small postcode2">Postcode</h2>
+										<input class="form-control postcode2 validate-text-input" id="reference-number-10" name="first-name-2" type="text" autocomplete="off" />
 									</div>
 								</div>
-							</div>
-						</div>			
-						<!-- dependant details -->
-						<div class="column-one-half dependent visually-hidden">
-							<div style="padding: 0 2em 0 2em">
-								<div class="grid-row highlight" style="margin-right: -30px;">
-									<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register a dependant</h2>
-									<a id="remove" class="button-dependent" href="#" style="float: right; margin-top: -43px; padding-right: 15px;">Remove dependant</a>
-									<!-- errors and validation -->
-									<div class="error-summary2 display-none" id="cde" role="group" aria-labelledby="finance-login-message-heading" style="margin-right: 15px;">
-										<ul class="error-summary-list">
-											<li><a href="#reference-number-5" id="login-error-list5" class="error5 display-none">Enter applicant's first name</a></li>
-											<li><a href="#reference-number-6" id="login-error-list6" class="error6 display-none">Enter applicant's last name</a></li>
-											<li><a href="#reference-number-7" id="login-error-list7" class="error7 display-none">Enter applicant's date of birth</a></li>
-										</ul>
-									</div>
-									<!-- dependant link -->
-									<div class="column-one-third lpads">
-										<h2 class="heading-small">First name</h2>
-										<input class="form-control validate-text-input" id="reference-number-11" name="first-name-2" type="text" autocomplete="off" />
-									</div>		
-									<div class="column-one-third lpads">	
-										<h2 class="heading-small">Last name</h2>
-										<input class="form-control validate-text-input" id="reference-number-12" name="first-name-2" type="text" autocomplete="off" />	
-									</div>
-									<div class="column-one-third lpads">	
-										<h2 class="heading-small">Date of birth</h2>
-										<input class="form-control validate-text-input" id="reference-number-13" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
-									</div>
-									<div class="column-one-third lpads">	
-										<br><h2 class="heading-small">NINO</h2>
-										<input class="form-control" id="reference-number-14" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
-									</div>
-									<div class="column-one-third lpads">	
-										<br><h2 class="heading-small">EHIC issue number</h2>
-										<input class="form-control" id="reference-number-15" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(cardholder only)" autocomplete="off" />
-									</div>
-									<div class="column-one-third lpads">	
-										<br><h2 class="heading-small">EHIC expiry date</h2>
-										<input class="form-control" id="reference-number-16" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(cardholder only)" autocomplete="off" />
+								<div class="column-full first-box-btn lpads">
+									<div class="newbox" style="font-size:16px; margin: 2em 0;">
+										<a id="add" class="button-dependent" href="#">+ Add dependant</a>
 									</div>
 								</div>
+								<div class="form-group">
+									<a class="button buttonSubmit" href="residencystatus-fail" role="button" style="font-size: 16px; margin: -5px 0 10px 0;">Submit</a>
+								</div>
 							</div>
-						</div>	
-						<div class="column-full button-submit2 visually-hidden" style="padding: 25px 0 0 17px;">			
-							<a class="button buttonSubmit2" href="residencystatus-pass" role="button" style="font-size: 16px; margin: -5px 0 10px 0;">Submit for residency check</a>				
-							<a class="buttonSubmit2" href="addBypass" onClick="MyWindow=window.open('addBypass','MyWindow','width=600,height=450'); return false;" style="font-size: 16px; display: block; margin: 1em 0;">Bypass residency check</a>
 						</div>
-					</form>
-				</div>
+					</div>
+					<!-- dependant details -->
+					<div class="column-one-half dependent visually-hidden">
+						<div style="padding: 0 2em 0 2em">
+							<div class="grid-row highlight" style="margin-right: -30px;">
+								<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register a dependant</h2>
+								<a id="remove" class="button-dependent" href="#" style="float: right; margin-top: -43px; padding-right: 15px;">Remove dependant</a>
+								<!-- errors and validation -->
+								<div class="error-summary2 display-none" id="cde" role="group" aria-labelledby="finance-login-message-heading" style="margin-right: 15px;">
+									<ul class="error-summary-list">
+										<li><a href="#reference-number-5" id="login-error-list5" class="error5 display-none">Enter applicant's first name</a></li>
+										<li><a href="#reference-number-6" id="login-error-list6" class="error6 display-none">Enter applicant's last name</a></li>
+										<li><a href="#reference-number-7" id="login-error-list7" class="error7 display-none">Enter applicant's date of birth</a></li>
+									</ul>
+								</div>
+								<!-- dependant link -->
+								<div class="column-one-third lpads">
+									<h2 class="heading-small">First name</h2>
+									<input class="form-control validate-text-input" id="reference-number-11" name="first-name-2" type="text" autocomplete="off" />
+								</div>
+								<div class="column-one-third lpads">
+									<h2 class="heading-small">Last name</h2>
+									<input class="form-control validate-text-input" id="reference-number-12" name="first-name-2" type="text" autocomplete="off" />
+								</div>
+								<div class="column-one-third lpads">
+									<h2 class="heading-small">Date of birth</h2>
+									<input class="form-control validate-text-input" id="reference-number-13" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
+								</div>
+								<div class="column-one-third lpads">
+									<br><h2 class="heading-small">NINO</h2>
+									<input class="form-control" id="reference-number-14" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
+								</div>
+								<div class="column-one-third lpads">
+									<br><h2 class="heading-small">EHIC issue number</h2>
+									<input class="form-control" id="reference-number-15" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(cardholder only)" autocomplete="off" />
+								</div>
+								<div class="column-one-third lpads">
+									<br><h2 class="heading-small">EHIC expiry date</h2>
+									<input class="form-control" id="reference-number-16" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(cardholder only)" autocomplete="off" />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="column-full button-submit2 visually-hidden" style="padding: 25px 0 0 17px;">
+						<a class="button buttonSubmit2" href="residencystatus-fail" role="button" style="font-size: 16px; margin: -5px 0 10px 0;">Submit for residency check</a>
+						<a class="buttonSubmit2" href="addBypass" onClick="MyWindow=window.open('addBypass','MyWindow','width=600,height=450'); return false;" style="font-size: 16px; display: block; margin: 1em 0;">Bypass residency check</a>
+					</div>
+				</form>
 			</div>
 		</div>
-	</main>
-	
-	{% endblock %}
-	
+	</div>
+</main>
+
+{% endblock %}

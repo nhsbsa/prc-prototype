@@ -107,26 +107,10 @@
 	margin-bottom: 30px;
 }
 #done-tick{
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background-image: url(/public/images/bsa/tick-sign.png);
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-top: -5px;
-    margin-bottom: -10px;
+	background-color: transparent;
+	background-image: url(/public/images/bsa/tick-sign.png);
+	margin-bottom: -10px;
 }
-
-#residency-result {
-    float: right;
-}
-
-#residency-result-text {
-    color: #00823B;
-    font-weight: normal;
-}
-
 </style>
 
 <main id="content" role="main">
@@ -146,11 +130,9 @@
 					<div class="grid-row highlight">
 						<div class="column-full">
 							<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">
-								UK residency check result
-								<div id="residency-result">
-									<span id="done-tick"></span>
-									<span id="residency-result-text">Pass</span>
-								</div>
+								Residency check result
+								<span id="done-tick" style="position: absolute; float: right; margin-top:-5px; margin-left: 230px;"></span>
+								<span style="color: #00823b; position: relative; float: right; font-weight: normal;">Pass</span>
 							</h1>
 							<div class="column-full">
 								<!-- <h1 class="heading-small" style="margin-top: 0.83333em;">Applicant's details</h1> -->
@@ -161,7 +143,7 @@
 									<tbody>
 										<tr>
 											<td>Full name</td>
-											<td style="font-weight: normal;">John Smith</td>
+											<td style="font-weight: normal;">John Smithe</td>
 											<td class="change-answer">
 												<a href="registerperson#reference-number-1">Change <span class="visuallyhidden">full name</span></a>
 											</td>
@@ -196,13 +178,13 @@
 									<table class="check-your-answers">
 										<tbody>
 											<tr>
-												<td>Evidence of UK residency</td>
-												<td style="color: #00823B;">Strong</td>
+												<td>Evidence that applicant lives in the UK</td>
+												<td style="color: #F47738;">Some</td>
 											</tr>
 											<tr>
-												<td>Evidence of non-UK residency</td>
-												<td style="color: #F47738">Some</td>
-											</tr>
+												<td>Evidence that applicant lives outside the UK</td>
+												<td style="color: #00823B">None</td>
+											</tr>				
 										</tbody>
 									</table>
 								</details>

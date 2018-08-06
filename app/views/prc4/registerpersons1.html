@@ -1,108 +1,108 @@
-{% extends "layout_bsa_internal.html" %} 
+{% extends "layout_bsa_internal.html" %}
 
-{% block page_title %} Single User View 
-{% endblock %} 
+{% block page_title %} Single User View
+{% endblock %}
 
 {% block after_header %}
-  <div id="menu">
-    <div id="menu-content">
-      <div class="grid-row">
-        <div class="column-half">
-          <ul class="visually-hidden">
-            <li><a class="menu-button selected" href="results">Search</a></li>
-          </ul>
-        </div>
-        <div class="column-half" id="logout">
-		  <a href="login">Sign out</a>
-		  <span style="float:right; margin: 8px 0.25em 0px 0.5em; font-size:14px;">|</span> <span style="float:right; margin: 9px 0.25em 0px 0.5em;  font-size:14px;">ed</span>
-        </div>
-      </div>
-    </div>
-  </div> 
-  {% endblock %} 
-  
-  {% block content %}
+<div id="menu">
+	<div id="menu-content">
+		<div class="grid-row">
+			<div class="column-half">
+				<ul class="visually-hidden">
+					<li><a class="menu-button selected" href="results">Search</a></li>
+				</ul>
+			</div>
+			<div class="column-half" id="logout">
+				<a href="login">Sign out</a>
+				<span style="float:right; margin: 8px 0.25em 0px 0.5em; font-size:14px;">|</span> <span style="float:right; margin: 9px 0.25em 0px 0.5em;  font-size:14px;">ed</span>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block content %}
 
 <style>
-.highlight {
-    min-height: 40%;
-}
-.link-back{
-    margin-left: 10px;     
-}
-.form-control {
-    width: 90%;
-	font-size: 16px;
-}
-#select-box {
-   background: white;
-   color: black;
-   border: none;
-   height: 30px; 
-   width: 66%;
-   margin-bottom: 3px; 
-   font-size: medium;
-   border: 2px solid grey;
-}
-.column-full{
-	padding-left: 0px;
-	font-size: 16px;
-	padding-left: 0px;
-}
-.building2{
-	padding-left:0px;
-}
-.first-box-btn{
-	padding-left:0px;
-}
-.newbox{
-	padding-left:0px;
-}
-.button-submit2{
-    margin-left: 20px;     
-}
-.form-group{	
-	margin-bottom: 15px;
-}
-#test1234{
-	float: right;
-    text-align: right;
-}
-.multiple-choice{
-	transform: scale(0.70);
-    background-color: transparent;
-    border: transparent;
-}
-.first-multiple-choice{
-	margin-left: -36px;
-    margin-top: -15px;
-}
-.hello:first-child {
-    margin-top: 10px;
-    margin-left: -24px;
-	margin-bottom: -20px;
-}
-.multiple-choice label{
-	float: left;
-	margin-left: 48px;
-	padding-right: 5px;
-	padding-top: 0px;
-}
-.checkbox4.multiple-choice:first-child {
-    margin-top: 10px;
-    margin-left: -40px;
-}
-.button-submit2 {
-    margin-left: 20px;
-    margin-top: -20px;
-}
-[hidden], .display-none {
-	display: none;
-}
+	.highlight {
+		min-height: 40%;
+	}
+	.link-back{
+		margin-left: 10px;
+	}
+	.form-control {
+		width: 90%;
+		font-size: 16px;
+	}
+	#select-box {
+		background: white;
+		color: black;
+		border: none;
+		height: 30px;
+		width: 66%;
+		margin-bottom: 3px;
+		font-size: medium;
+		border: 2px solid grey;
+	}
+	.column-full{
+		padding-left: 0px;
+		font-size: 16px;
+		padding-left: 0px;
+	}
+	.building2{
+		padding-left:0px;
+	}
+	.first-box-btn{
+		padding-left:0px;
+	}
+	.newbox{
+		padding-left:0px;
+	}
+	.button-submit2{
+		margin-left: 20px;
+	}
+	.form-group{
+		margin-bottom: 15px;
+	}
+	#test1234{
+		float: right;
+		text-align: right;
+	}
+	.multiple-choice{
+		transform: scale(0.70);
+		background-color: transparent;
+		border: transparent;
+	}
+	.first-multiple-choice{
+		margin-left: -36px;
+		margin-top: -15px;
+	}
+	.hello:first-child {
+		margin-top: 10px;
+		margin-left: -24px;
+		margin-bottom: -20px;
+	}
+	.multiple-choice label{
+		float: left;
+		margin-left: 48px;
+		padding-right: 5px;
+		padding-top: 0px;
+	}
+	.checkbox4.multiple-choice:first-child {
+		margin-top: 10px;
+		margin-left: -40px;
+	}
+	.button-submit2 {
+		margin-left: 20px;
+		margin-top: -20px;
+	}
+	[hidden], .display-none {
+		display: none;
+	}
 </style>
 
 <main id="content" role="main">
-    <div class="grid-row">
+	<div class="grid-row">
 		<div class="column-full full" style="background-color: white;">
 			<div class="column-one-half">
 				<a href="javascript:history.go(-1)" class="link-back">Back</a>
@@ -118,7 +118,7 @@
 				<div class="column-one-half lpads">
 					<div style="padding: 0 2em 0 1em">
 						<div class="grid-row highlight">
-							<div class="column-full">	
+							<div class="column-full">
 								<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Register main applicant</h1>
 								<!-- errors and validation -->
 								<div class="error-summary display-none" id="bcd" role="group" aria-labelledby="finance-login-message-heading" style="margin-right: 15px;">
@@ -130,23 +130,23 @@
 										<li><a href="#country-of-treatment" id="login-error-list8" class="error8 display-none">Enter applicant's S1 country</a></li>
 									</ul>
 								</div>
-								<div class="column-one-third lpads">	
+								<div class="column-one-third lpads">
 									<h2 class="heading-small">First name</h2>
 									<input class="form-control validate-text-input" id="reference-number-1" name="first-name-2" type="text" autocomplete="off" />
-								</div>		
-								<div class="column-one-third lpads">	
-									<h2 class="heading-small">Last name</h2>
-									<input class="form-control validate-text-input" id="reference-number-2" name="first-name-2" type="text" autocomplete="off" />	
 								</div>
-								<div class="column-one-third lpads">	
+								<div class="column-one-third lpads">
+									<h2 class="heading-small">Last name</h2>
+									<input class="form-control validate-text-input" id="reference-number-2" name="first-name-2" type="text" autocomplete="off" />
+								</div>
+								<div class="column-one-third lpads">
 									<h2 class="heading-small">Date of birth</h2>
 									<input class="form-control dob1234 validate-text-input" id="reference-number-3" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
 								</div>
-								<div class="column-one-third lpads">	
+								<div class="column-one-third lpads">
 									<br><h2 class="heading-small">NINO</h2>
 									<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
 								</div>
-								<div class="column-one-third lpads autocomplete">	
+								<div class="column-one-third lpads autocomplete">
 									<br><h2 class="heading-small">S1 country</h2>
 									<input class="form-control validate-text-input" id="country-of-treatment" name="first-name-2" type="text" style="font-size: 16px;" autocomplete="off" />
 								</div>
@@ -161,11 +161,11 @@
 									<!-- <a class="button btnSubmit1" href="contactdetails" role="button" style=" font-size: 16px;     margin-top: -10px;">Submit</a> -->
 									<input class="button buttonSubmit1" type="submit" value="Submit" style=" font-size: 16px;" />
 								</div>
-							</div>						
+							</div>
 						</div>
 					</div>
 				</div>
-							
+
 				<!--  Dependant details -->
 				<div class="column-one-half dependent visually-hidden">
 					<div style="padding: 0 2em 0 2em">
@@ -180,39 +180,39 @@
 									<li><a href="#reference-number-7" id="login-error-list7" class="error7 display-none">Enter applicant's date of birth</a></li>
 								</ul>
 							</div>
-							<!-- Dependant link-->				
-							<div class="column-one-third lpads">	
-									<h2 class="heading-small">First name</h2>
-									<input class="form-control validate-text-input" id="reference-number-5" name="first-name-2" type="text" autocomplete="off" />
-							</div>		
-							<div class="column-one-third lpads">	
-									<h2 class="heading-small">Last name</h2>
-									<input class="form-control validate-text-input" id="reference-number-6" name="first-name-2" type="text" autocomplete="off" />	
+							<!-- Dependant link-->
+							<div class="column-one-third lpads">
+								<h2 class="heading-small">First name</h2>
+								<input class="form-control validate-text-input" id="reference-number-5" name="first-name-2" type="text" autocomplete="off" />
 							</div>
-							<div class="column-one-third lpads">	
-									<h2 class="heading-small">Date of birth</h2>
-									<input class="form-control dob1234 validate-text-input" id="reference-number-7" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
+							<div class="column-one-third lpads">
+								<h2 class="heading-small">Last name</h2>
+								<input class="form-control validate-text-input" id="reference-number-6" name="first-name-2" type="text" autocomplete="off" />
 							</div>
-							<div class="column-one-third lpads">	
-									<br><h2 class="heading-small">NINO</h2>
-									<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
-							</div>						
+							<div class="column-one-third lpads">
+								<h2 class="heading-small">Date of birth</h2>
+								<input class="form-control dob1234 validate-text-input" id="reference-number-7" name="first-name-2" type="text" placeholder="dd/mm/yyyy" autocomplete="off" />
+							</div>
+							<div class="column-one-third lpads">
+								<br><h2 class="heading-small">NINO</h2>
+								<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
+							</div>
 						</div>
 					</div>
-				</div>	
-				<div class="column-full button-submit2 visually-hidden">	
-					<br>			
+				</div>
+				<div class="column-full button-submit2 visually-hidden">
+					<br>
 					<br>
 					<!-- <a class="button" href="contactdetails" role="button" style=" font-size: 16px; ">Submit</a> -->
 					<input class="button buttonSubmit2" type="submit" value="Submit" style="font-size: 16px;" />
 				</div>
 			</form>
-		</div>		
-</main>
+		</div>
+	</main>
 
-<script src="/public/javascripts/autocomplete.js"></script>
-<script>
-	autocomplete(document.getElementById("country-of-treatment"), countries);
-</script>
+	<script src="/public/javascripts/autocomplete.js"></script>
+	<script>
+		autocomplete(document.getElementById("country-of-treatment"), countries);
+	</script>
 
-{% endblock %}
+	{% endblock %}

@@ -111,6 +111,231 @@
 	background-image: url(/public/images/bsa/tick-sign.png);
 	margin-bottom: -10px;
 }
+
+.dialog{
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+		background-color:rgba(0,0,0,0.5);
+		height:100%;
+		padding:15px;
+		position:fixed;
+		left:0;
+		top:0;
+		right:0;
+		bottom:0;
+		text-align:center;
+		width:100%;
+		z-index:0
+	}
+	.dialog[aria-hidden="true"]{
+		opacity:0;
+		visibility:hidden
+	}
+	.dialog[aria-hidden="false"]{
+		opacity:1;
+		visibility:visible;
+		z-index:11
+	}
+	@media (min-width: 641px){
+		.dialog{
+			padding:30px
+		}
+	}
+	@media (min-width: 1020px){
+		.dialog{
+			padding:0
+		}
+	}
+	.dialog:before{
+		content:'';
+		display:inline-block;
+		height:100%;
+		margin-right:-.25em;
+		vertical-align:middle
+	}
+	.dialog-holder{
+		background-color:#fff;
+		border:10px solid #fff;
+		display:inline-block;
+		margin:auto;
+		max-width:530px;
+		position:relative;
+		vertical-align:middle
+	}
+	.dialog-heading{
+		font-family:"nta",Arial,sans-serif;
+		font-size:36px;
+		line-height:1.11111;
+		font-weight:700;
+		text-transform:none;
+		margin-top:.625em;
+		margin-bottom:.41667em
+	}
+	@media (max-width: 640px){
+		.dialog-heading{
+			font-size:24px;
+			line-height:1.04167
+		}
+	}
+	@media (min-width: 641px){
+		.dialog-heading{
+			margin-top:.41667em;
+			margin-bottom:.55556em
+		}
+	}
+	.dialog-content{
+		outline:none;
+		padding:1em;
+		text-align:left
+	}
+	.dialog .form-group{
+		float:none
+	}
+	.dialog .form-control,.dialog .form-control-textarea{
+		width:100%
+	}
+	.dialog-close{
+		text-indent:-119988px;
+		overflow:hidden;
+		text-align:left;
+		text-transform:capitalize;
+		background-color:transparent;
+		border:0 none;
+		cursor:pointer;
+		height:22px;
+		margin:auto;
+		padding:0;
+		position:absolute;
+		top:5px;
+		right:5px;
+		width:22px
+	}
+	.dialog-close span{
+		cursor:pointer
+	}
+	.dialog-cancel{
+		display:inline-block;
+		font-size:1em;
+		line-height:1.25;
+		margin-right:.78947em;
+		padding:.52632em .78947em .26316em
+	}
+	.dialog-cancel:focus,.dialog-cancel:active{
+		outline:none
+	}
+	.dialog-actions .button{
+		width:auto
+	}
+	
+	.error{
+		margin-right:15px
+	}
+	.error .error-message{
+		color:#b10e1e;
+		font-weight:bold
+	}
+	.error .form-control,.error .form-control-textarea{
+		border:4px solid #b10e1e
+	}
+	.error .form-hint{
+		margin-bottom:0
+	}
+	.error,.error-summary{
+		border-left:4px solid #b10e1e;
+		padding-left:10px
+	}
+	@media (min-width: 641px){
+		.error,.error-summary{
+			border-left:5px solid #b10e1e;
+			padding-left:15px
+		}
+	}
+	.error-message{
+		font-family:"nta",Arial,sans-serif;
+		font-size:19px;
+		line-height:1.31579;
+		font-weight:400;
+		text-transform:none;
+		display:block;
+		clear:both;
+		margin:0;
+		padding:5px 0 7px 0
+	}
+	@media (max-width: 640px){
+		.error-message{
+			font-size:16px;
+			line-height:1.25
+		}
+	}
+	.error-summary{
+		border:4px solid #b10e1e;
+		margin-top:15px;
+		margin-bottom:15px;
+		padding:15px 10px
+	}
+	@media (min-width: 641px){
+		.error-summary{
+			border:5px solid #b10e1e;
+			margin-top:30px;
+			margin-bottom:30px;
+			padding:20px 15px 15px 15px
+		}
+	}
+	.error-summary:focus{
+		outline:3px solid #ffbf47
+	}
+	.error-summary .error-summary-heading{
+		margin-top:0
+	}
+	.error-summary p{
+		margin-bottom:10px
+	}
+	.error-summary .error-summary-list{
+		padding-left:0
+	}
+	@media (min-width: 641px){
+		.error-summary .error-summary-list li{
+			margin-bottom:5px
+		}
+	}
+	.error-summary .error-summary-list a{
+		color:#b10e1e;
+		font-weight:bold;
+		text-decoration:underline
+	}
+	
+	.icon{
+		background-size:100%;
+		background-repeat:no-repeat;
+		cursor:default;
+		display:block;
+		height:22px;
+		text-align:center;
+		width:22px
+		}
+		.icon-close{
+		background-image:url("/public/images/bsa/icon-close.png");
+		display:block
+	}
+	
+	@media (min-width: 641px) {
+		.form-group {
+			margin-bottom: 30px;
+		}
+	}
+	
+	@media (min-width: 641px) {
+		p {
+			margin-top: .26316em;
+			margin-bottom: 1.05263em;
+		}
+	}
+	
+	.modals {
+		margin-top: 1em;
+		margin-left: 1em;
+	}
 </style>
 
 <main id="content" role="main">
@@ -120,7 +345,7 @@
 				<a href="javascript:history.go(-1)" class="link-back">Back</a>
 			</div>
 			<div class="column-half" id="test1234" style="float: right; text-align: right;">
-				<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;" disabled="disabled">End process</a>
+				<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="#" disabled="disabled">End process</a>
 			</div>
 		</div>
 		<br><br>
@@ -130,7 +355,7 @@
 					<div class="grid-row highlight">
 						<div class="column-full">
 							<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">
-								Residency check result
+								UK residency check result
 								<span style="position: absolute; float: right; margin-left: 230px;"> </span>
 								<span style="color: #B10E1E; position: relative; float: right; font-weight: normal;">✗ Fail</span>
 							</h1>
@@ -170,7 +395,7 @@
 								</table>
 							</div>
 
-							<div class="column-full" style="margin: 30px 0 15px 0;">
+							<div class="column-full" style="margin: 30px 0 15px 0; padding-bottom: 20px;">
 								<details>
 									<summary>
 										<span class="summary" style="font-size: 16px">More details</span>
@@ -178,27 +403,55 @@
 									<table class="check-your-answers">
 										<tbody>
 											<tr>
-												<td>Residency indicator</td>
+												<td>Evidence that applicant lives in the UK</td>
 												<td style="color: #B10E1E;">None</td>
 											</tr>
 											<tr>
-												<td>Non-residency indicator</td>
+												<td>Evidence that applicant lives outside the UK</td>
 												<td style="color: #B10E1E">None</td>
-											</tr>
-											<tr>
-												<td>Activity last month</td>
-												<td style="font-weight: normal;">0</td>
-											</tr>
-											<tr>
-												<td>Activity last 3 month</td>
-												<td style="font-weight: normal;">0</td>
 											</tr>
 										</tbody>
 									</table>
 								</details>
 							</div>
-							<a class="button buttonSubmit2" href="homepage" role="button" style="font-size: 16px; margin: 15px 0 10px 0;">Back to start</a>				
-							<a class="buttonSubmit2" href="addBypass" onClick="MyWindow=window.open('addBypass','MyWindow','width=600,height=450'); return false;" style="font-size: 16px; display: block; margin: 1em 0;">Bypass residency check</a>
+							<div class="form-group" style="margin-top: -10px; margin-bottom: 5px;">
+								<a class="button buttonSubmit" href="homepage" role="button" style="font-size: 16px; margin: -5px 0 10px 0;">Back to start</a>
+								<br><br>
+								<a class="buttonSubmit" style="font-size:16px; padding-top: -10px; margin-bottom: 5px;" href="#" data-toggle="dialog" data-target="dialog-4">Override result</a>
+							</div>
+							
+							<div class="dialog" id="dialog-4" aria-hidden="true">
+								<div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
+								  <div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
+									<h1 class="dialog-heading" id="dialog-title-4">Override result</h1>
+									<form class="form">
+										<div class="form-group">
+											<fieldset>
+												<legend>
+													<h1 class="heading-small">Why do you want to override the result?</h1>
+												</legend>
+												<div class="multiple-choice">
+													<input id="radio-2" type="radio" name="radio-group" value="reason2">
+													<label for="radio-2">Evidence provided</label>
+												</div>
+												<div class="multiple-choice">
+													<input id="radio-3" type="radio" name="radio-group" value="reason3">
+													<label for="radio-3">Manager’s decision</label>
+												</div>						
+											</fieldset>
+										</div>
+										<div class="dialog-actions">
+											<button class="button" href="contactdetails" type="submit" style="font-size:16px;">Submit</button><br><br>
+											<a class="dialog-cancel" href="#" style="margin-left: -10px; font-size:16px;">Cancel</a>
+										</div>
+										<button class="dialog-close" aria-label="close" type="button">
+											<span class="icon icon-close">x</span>
+										</button>
+									</form>
+								  </div>
+								</div>
+							</div>		
+							
 						</div>
 					</div>
 				</div>
