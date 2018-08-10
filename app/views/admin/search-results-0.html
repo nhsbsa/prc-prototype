@@ -54,6 +54,26 @@
 .highlight {
     min-height: 280px;
 }
+
+.internal-table-results td:nth-child(1) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(2) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(3) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(4) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(5) {
+    width: 15%;
+}
+.internal-table-results td:nth-child(6) {
+    width: 5%;
+}
+
 </style>
 
 <main id="content" role="main">
@@ -97,17 +117,37 @@
 		</div>
 	</div>	
 	<div class="column-one-third" style="padding-left:50px; margin-top:-25px;">		
-			<h2 class="heading-medium second">Nest steps?</h2>
-				<div class="row sidebar collapse">
-					<div class="columns small-12">
-						<ul>
-						<span><li>Search and select the right case</li></span>
-						<li>Check the correct information is displayed</li>
-						<li>Check the status of the case</li>
-						</ul><br>
+		<h2 class="heading-medium second">Before you start</h2>
+		<div class="row sidebar collapse">
+			<div class="columns small-12">
+				<ul>
+					<span>
+						<li>Search and select the right case</li>
+					</span>
+					<li>Check the correct information is displayed</li>
+					<li>Check the status of the case</li>
+					<li>If you cannot find the right person, you can 'Register applicant' below</li>
+					<div class="column-full">
+						<a class="button" href="registerperson" role="button" style=" font-size: 16px; margin-top: 20px; background-color: #005EB8;">Register applicant</a>		
 					</div>
-				</div>
+				</ul>
+				<br>
+			</div>
+		</div>
 	</div> 
-
+	<div class="column-full" style="padding-left:20px; padding-top:20px;">
+		<table class="internal-table-results">
+			<tr>
+				<th>Reference number</th>
+				<th>Name</th> 
+				<th>Date of birth</th>
+				<th>NINO</th>
+				<th>Address</th>
+				<th>Latest update</th>
+			</tr>
+		</table>
+		<br>
+		<h1>0 results found</h1>
+	</div>
 </main>
 {% endblock %}
