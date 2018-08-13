@@ -428,58 +428,68 @@
 								
 								<a class="button buttonSubmit" href="#" role="button" style="font-size: 16px; margin: -5px 0 10px 0;" data-toggle="dialog" data-target="dialog-4">Submit decision</a>
 							</div>
+						
 							<div class="dialog" id="dialog-4" aria-hidden="true">
 								<div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
 								  <div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
 									<h1 class="dialog-heading" id="dialog-title-4">Override result</h1>
-									<form class="form">
+									<!-- <form action="123" id="123" class="form"> -->
 										<div class="form-group">
 											<fieldset>
 												<legend>
 													<h1 class="heading-small">Why do you want to override the result?</h1>
 												</legend>
 												<div class="multiple-choice">
-													<input id="radio-2" type="radio" name="radio-group" value="reason2">
+													<input id="radio-2" type="radio" name="radio-group-modal" value="reason1">
 													<label for="radio-2">Evidence provided</label>
 												</div>
 												<div class="multiple-choice">
-													<input id="radio-3" type="radio" name="radio-group" value="reason3">
+													<input id="radio-3" type="radio" name="radio-group-modal" value="reason2">
 													<label for="radio-3">No evidence provided, but accepted</label>
 												</div>	
 												<div class="multiple-choice">
-													<input id="radio-3" type="radio" name="radio-group" value="reason3">
+													<input id="radio-3" type="radio" name="radio-group-modal" value="reason3">
 													<label for="radio-3">Failed</label>
 												</div>													
 											</fieldset>
 										</div>
 										<div class="dialog-actions">
-											<button class="button" href="contactdetails" type="submit" style="font-size:16px;">Submit</button><br><br>
+											<input id="submit-btn" class="button buttonSubmit" type="submit" value="Submit" style="font-size: 16px;" />
+											<br><br>
 											<a class="dialog-cancel" href="#" style="margin-left: -10px; font-size:16px;">Cancel</a>
 										</div>
 										<button class="dialog-close" aria-label="close" type="button">
 											<span class="icon icon-close">x</span>
 										</button>
-									</form>
+									<!-- </form> -->
 								  </div>
 								</div>
 							</div>	
-					
 						</div>
 					</div>
 				</div>
 				<div class="column-one-third" style="padding-left:50px;">		
 					<h2 class="heading-medium second">Next steps?</h2>
-						<div class="row sidebar collapse">
-							<div class="columns small-12">
-								<ul>
-								<span><li>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
-								</ul><br>
-							</div>
+					<div class="row sidebar collapse">
+						<div class="columns small-12">
+							<ul>
+							<span><li>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+							</ul><br>
 						</div>
-			</div> 
+					</div>
+				</div>
 			</form>
 		</div>
 	</div>
 </main>
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script>
+	$("#submit-btn").on("click", function() {
+		var modalAnswer = $("input[name='radio-group-modal']:checked").val() || false; // false if undefined
 
+		if (modalAnswer != false && modalAnswer == 'reason3') {
+			$("#register1-form").attr("action", "/admin/definitoryquestions");
+		}
+	});
+</script>
 {% endblock %}
