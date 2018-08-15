@@ -1,4 +1,4 @@
-$(document).ready(function () {
+﻿$(document).ready(function () {
 	// grab tables summary attribute
 	var tableSummary = $("#simpleTable").attr("summary");
 
