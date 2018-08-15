@@ -74,6 +74,41 @@
     width: 5%;
 }
 
+/* search results */
+#example caption {
+    background:#F8F8F8;
+    padding:5px;
+    text-align:center;    
+}
+#example th {
+    background: #bbb;
+    font-weight:bold;
+}
+#example th,
+#example td {
+    border: 1px solid #fff;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+#example tbody th{
+    background:transparent;
+}
+#example table#simpleTable thead th {
+	background: #DEE0E2 url(/public/images/bg.gif) no-repeat center right;
+}
+#example table#simpleTable thead th a {
+	background:transparent;
+	display:block;
+}
+#example table#simpleTable th.headerSortUp {
+	background-image: url(/public/images/asc.gif);
+}
+#example table#simpleTable th.headerSortDown {
+	background-image: url(/public/images/desc.gif);
+}
+#example .hide {
+	display:none;
+}
 </style>
 
 <main id="content" role="main">
@@ -132,34 +167,53 @@
 				<br>
 			</div>
 		</div>
-	</div> 
-	<div class="column-full" style="padding-left:20px; padding-top:20px;">
+	</div>	
+	<div id="example" class="column-full" style="padding-left:20px; padding-top:20px;">
+	<!-- <div class="column-full" style="padding-left:20px; padding-top:20px;"> -->
 		<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Search result</h1>
-		<table class="internal-table-results">
-			<tr>
-				<th>OHS number</th>
-				<th>Full name</th> 
-				<th>Date of birth</th>
-				<th>Postcode</th>
-				<th>Start date</th>
-				<th>End date</th>
-			</tr>
-			<tr>
-				<td><a href="residencystatus-fail">62345678</a></td>
-				<td>Gordon Robinson</td> 
-				<td>02/03/1975</td>		
-				<td>NE123A</td>	
-				<td>01/05/2018</td>
-				<td>04/05/2018</td>
-			</tr>
-			<tr>
-				<td><a href="residencystatus-fail">12345678</a></td>
-				<td>Gordon Robinson</td> 
-				<td>02/03/1975</td>	
-				<td>SR346A</td>					
-				<td>14/06/2016</td>
-				<td>16/06/2016</td>
-			</tr>
+		<table id="simpleTable" class="internal-table-results">
+		<!-- <table class="internal-table-results"> -->
+			<caption id="caption" role="alert" aria-live="polite">Search results not sorted</caption>
+			<thead>
+				<tr>
+					<th role="columnheader" aria-sort="none" scope="col">
+						<a href="#1" id="OHS number|asc" title="Sort Make ascending">OHS number</a>
+					</th>
+					<th role="columnheader" aria-sort="none" scope="col">
+						<a href="#2" id="Full name|asc" title="Sort Model ascending">Full name</a>
+					</th>
+					<th role="columnheader" aria-sort="none" scope="col">
+						<a href="#3" id="Date of birth|asc" title="Sort Year ascending">Date of birth</a>
+					</th>
+					<th role="columnheader" aria-sort="none" scope="col">
+						<a href="#4" id="Postcode|asc" title="Sort 4 ascending">Postcode</a>
+					</th>
+					<th role="columnheader" aria-sort="none" scope="col">
+						<a href="#5" id="Start date|asc" title="Sort 5 ascending">Start date</a>
+					</th>
+					<th role="columnheader" aria-sort="none" scope="col">
+						<a href="#6" id="End date|asc" title="Sort 6 ascending">End date</a>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><a href="residencystatus-fail">62345678</a></td>
+					<td>Gordon Robinson</td> 
+					<td>02/03/1975</td>		
+					<td>NE123A</td>	
+					<td>01/05/2018</td>
+					<td>04/05/2018</td>
+				</tr>
+				<tr>
+					<td><a href="residencystatus-fail">12345678</a></td>
+					<td>Gordon Robinson</td> 
+					<td>02/03/1975</td>	
+					<td>SR346A</td>					
+					<td>14/06/2016</td>
+					<td>16/06/2016</td>
+				</tr>
+			</tbody>
 		</table>
 	</div>
 </main>
