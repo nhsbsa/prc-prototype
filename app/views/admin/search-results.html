@@ -109,6 +109,10 @@
 #example .hide {
 	display:none;
 }
+
+.internal-table-results tbody tr:hover {
+	background-color: #F8F8F8;
+}
 </style>
 
 <main id="content" role="main">
@@ -127,14 +131,17 @@
 			<div class="column-full">	
 				<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Search</h1>
 				<div class="column-one-third lpads">	
-					<h2 class="heading-small">Reference number</h2>
-					<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
+					<h2 class="heading-small">OHS number</h2>
+					<input class="form-control" id="reference-number" name="first-name-2" type="text" style="font-size: 16px;" autocomplete="off" />
 				</div>	
+			</div>
+			<div class="column-full">
+				<p class="form-block" style="margin: 1em 0;">or</p>
 			</div>
 			<div class="column-full">
 				<div class="column-one-third lpads">
 					<h2 class="heading-small">First name</h2>
-					<input class="form-control validate-text-input" id="reference-number-1" name="first-name-2" type="text" style="font-size: 16px;" autocomplete="off" />
+					<input class="form-control validate-text-input" id="reference-number-1" name="first-name-2" type="text" style="font-size: 16px;" placeholder="(optional)" autocomplete="off" />
 				</div>		
 				<div class="column-one-third">	
 					<h2 class="heading-small">Last name</h2>
@@ -146,7 +153,7 @@
 				</div>			
 			</div>
 			<br>
-			<a class="button" href="search-results" role="button" style=" font-size: 16px; margin-top: 20px;">Submit</a>			
+			<a class="button" href="search-results" role="button" style=" font-size: 16px; margin-top: 20px;">Next</a>			
 		</div>
 	</div>
 	<div class="column-one-third" style="padding-left:50px; margin-top:-25px;">		
@@ -170,7 +177,7 @@
 	</div>	
 	<div id="example" class="column-full" style="padding-left:20px; padding-top:20px;">
 	<!-- <div class="column-full" style="padding-left:20px; padding-top:20px;"> -->
-		<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Search result</h1>
+		<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Search results</h1>
 		<table id="simpleTable" class="internal-table-results">
 		<!-- <table class="internal-table-results"> -->
 			<caption id="caption" role="alert" aria-live="polite">Search results not sorted</caption>
