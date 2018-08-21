@@ -377,4 +377,17 @@ $(document).ready(function() {
             });
         }
     }
+
+    // pagination
+    $('#one').on('click', function() {
+        $('#previous').addClass('visually-hidden');
+        $('#next').removeClass('visually-hidden');
+        return false;
+    });
+
+    $('#two').on('click', function() {
+        $('#previous').removeClass('visually-hidden');
+        $('#next').addClass('visually-hidden');
+        return false;
+    });
 });

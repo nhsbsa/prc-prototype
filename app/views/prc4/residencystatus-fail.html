@@ -4,115 +4,115 @@
 {% endblock %}
 
 {% block after_header %}
-  <div id="menu">
-    <div id="menu-content">
-      <div class="grid-row">
-        <div class="column-half">
-          <ul class="visually-hidden">
-            <li><a class="menu-button selected" href="results">Search</a></li>
-          </ul>
-        </div>
-        <div class="column-half" id="logout">
-		  <a href="login">Sign out</a>
-		  <span style="float:right; margin: 8px 0.25em 0px 0.5em; font-size:14px;">|</span> <span style="float:right; margin: 9px 0.25em 0px 0.5em;  font-size:14px;">ed</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  {% endblock %}
+<div id="menu">
+	<div id="menu-content">
+		<div class="grid-row">
+			<div class="column-half">
+				<ul class="visually-hidden">
+					<li><a class="menu-button selected" href="results">Search</a></li>
+				</ul>
+			</div>
+			<div class="column-half" id="logout">
+				<a href="login">Sign out</a>
+				<span style="float:right; margin: 8px 0.25em 0px 0.5em; font-size:14px;">|</span> <span style="float:right; margin: 9px 0.25em 0px 0.5em;  font-size:14px;">ed</span>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
 
-  {% block content %}
+{% block content %}
 
-  <style>
-.highlight {
-    min-height: 40%;
-}
-.link-back{
-    margin-left: 20px;
-}
-.form-control {
-    width: 90%;
-}
-.multiple-choice [type=radio] + label::before {
-    margin-left: -38px;
-    margin-top: -5px;
-}
-.multiple-choice [type=radio] + label::after {
-    left: 17px;
-    top: 19px;
-}
-.inline .multiple-choice label {
-    line-height: 120%;
-}
-.test{
-    padding-left: 30px;
-}
-.heading-medium{
-	margin-top: 15px;
-    margin-bottom: -5px;
-}
-.s1reg{
-	margin-top: -30px;
-}
-.buttonSubmit{
-	margin-top: -15px;
-}
-.acceptanceCriteria{
-	margin-top: -25px;
-}
-[hidden], .display-none {
-	display: none;
-}
-.hello1{
-	margin-top: 20px;
-}
-.column-full {
-    padding: 0 0px;
-}
-.link-back {
-    margin-left: 0px;
-}
-#uk-resident {
-    margin: -30px 0 10px 49px;
-}
-.align-radio {
-    margin-left: 0px;
-	padding-right: 0px;
-}
-.inline .multiple-choice label {
-    line-height: 120%;
-    font-size: 16px;
-}
-.unbranded * {
-    margin-bottom: 0px;
-}
-#reference-number,
-#reference-number-1,
-#reference-number-2,
-#reference-number-3,
-#reference-number-4,
-#reference-number-5,
-#reference-number-6,
-#reference-number-7,
-#country-of-treatment {
-    font-size: 16px;
-}
-.newbox {
-	margin-bottom: 15px;
-}
-.button.buttonSubmit2 {
-	margin-left: 15px;
-}
-.error-summary {
-	margin-bottom: 30px;
-}
-#done-tick{
-	background-color: transparent;
-	background-image: url(/public/images/bsa/tick-sign.png);
-	margin-bottom: -10px;
-}
+<style>
+	.highlight {
+		min-height: 40%;
+	}
+	.link-back{
+		margin-left: 20px;
+	}
+	.form-control {
+		width: 90%;
+	}
+	.multiple-choice [type=radio] + label::before {
+		margin-left: -38px;
+		margin-top: -5px;
+	}
+	.multiple-choice [type=radio] + label::after {
+		left: 17px;
+		top: 19px;
+	}
+	.inline .multiple-choice label {
+		line-height: 120%;
+	}
+	.test{
+		padding-left: 30px;
+	}
+	.heading-medium{
+		margin-top: 15px;
+		margin-bottom: -5px;
+	}
+	.s1reg{
+		margin-top: -30px;
+	}
+	.buttonSubmit{
+		margin-top: -15px;
+	}
+	.acceptanceCriteria{
+		margin-top: -25px;
+	}
+	[hidden], .display-none {
+		display: none;
+	}
+	.hello1{
+		margin-top: 20px;
+	}
+	.column-full {
+		padding: 0 0px;
+	}
+	.link-back {
+		margin-left: 0px;
+	}
+	#uk-resident {
+		margin: -30px 0 10px 49px;
+	}
+	.align-radio {
+		margin-left: 0px;
+		padding-right: 0px;
+	}
+	.inline .multiple-choice label {
+		line-height: 120%;
+		font-size: 16px;
+	}
+	.unbranded * {
+		margin-bottom: 0px;
+	}
+	#reference-number,
+	#reference-number-1,
+	#reference-number-2,
+	#reference-number-3,
+	#reference-number-4,
+	#reference-number-5,
+	#reference-number-6,
+	#reference-number-7,
+	#country-of-treatment {
+		font-size: 16px;
+	}
+	.newbox {
+		margin-bottom: 15px;
+	}
+	.button.buttonSubmit2 {
+		margin-left: 15px;
+	}
+	.error-summary {
+		margin-bottom: 30px;
+	}
+	#done-tick{
+		background-color: transparent;
+		background-image: url(/public/images/bsa/tick-sign.png);
+		margin-bottom: -10px;
+	}
 
-.dialog{
+	.dialog{
 		-webkit-box-sizing:border-box;
 		-moz-box-sizing:border-box;
 		box-sizing:border-box;
@@ -227,7 +227,7 @@
 	.dialog-actions .button{
 		width:auto
 	}
-	
+
 	.error{
 		margin-right:15px
 	}
@@ -304,7 +304,7 @@
 		font-weight:bold;
 		text-decoration:underline
 	}
-	
+
 	.icon{
 		background-size:100%;
 		background-repeat:no-repeat;
@@ -313,25 +313,25 @@
 		height:22px;
 		text-align:center;
 		width:22px
-		}
-		.icon-close{
+	}
+	.icon-close{
 		background-image:url("/public/images/bsa/icon-close.png");
 		display:block
 	}
-	
+
 	@media (min-width: 641px) {
 		.form-group {
 			margin-bottom: 30px;
 		}
 	}
-	
+
 	@media (min-width: 641px) {
 		p {
 			margin-top: .26316em;
 			margin-bottom: 1.05263em;
 		}
 	}
-	
+
 	.modals {
 		margin-top: 1em;
 		margin-left: 1em;
@@ -344,13 +344,13 @@
 </style>
 
 <main id="content" role="main">
-    <div class="grid-row">
-        <div class="column-full full" style="background-color: white;">
+	<div class="grid-row">
+		<div class="column-full full" style="background-color: white;">
 			<div class="column-one-half">
 				<a href="javascript:history.go(-1)" class="link-back">Back</a>
 			</div>
 			<div class="column-half" id="test1234" style="float: right; text-align: right;">
-				<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="#" disabled="disabled">End process</a>
+				<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="homepage">End process</a>
 			</div>
 		</div>
 		<br><br>
@@ -425,59 +425,59 @@
 								</details>
 							</div>
 							<div class="form-group" style="margin-top: -10px; margin-bottom: 5px;">
-								<a class="button buttonSubmit" href="homepage" role="button" style="font-size: 16px; margin: -5px 0 10px 0;">Next</a>
+								<a class="button buttonSubmit" href="homepage" role="button" style="font-size: 16px; margin: -5px 0 10px 0;">Back to start</a>
 							</div>
-							
-<!--							<div class="dialog" id="dialog-4" aria-hidden="true">
+
+							<!--							<div class="dialog" id="dialog-4" aria-hidden="true">
 								<div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
-								  <div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
-									<h1 class="dialog-heading" id="dialog-title-4">Override result</h1>
-									<form class="form">
-										<div class="form-group">
-											<fieldset>
-												<legend>
-													<h1 class="heading-small">Why do you want to override the result?</h1>
-												</legend>
-												<div class="multiple-choice">
-													<input id="radio-2" type="radio" name="radio-group" value="reason2">
-													<label for="radio-2">Evidence provided</label>
-												</div>
-												<div class="multiple-choice">
-													<input id="radio-3" type="radio" name="radio-group" value="reason3">
-													<label for="radio-3">Manager’s decision</label>
-												</div>						
-											</fieldset>
-										</div>
-										<div class="dialog-actions">
-											<button class="button" href="contactdetails" type="submit" style="font-size:16px;">Submit</button><br><br>
-											<a class="dialog-cancel" href="#" style="margin-left: -10px; font-size:16px;">Cancel</a>
-										</div>
-										<button class="dialog-close" aria-label="close" type="button">
-											<span class="icon icon-close">x</span>
-										</button>
-									</form>
-								  </div>
+									<div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
+										<h1 class="dialog-heading" id="dialog-title-4">Override result</h1>
+										<form class="form">
+											<div class="form-group">
+												<fieldset>
+													<legend>
+														<h1 class="heading-small">Why do you want to override the result?</h1>
+													</legend>
+													<div class="multiple-choice">
+														<input id="radio-2" type="radio" name="radio-group" value="reason2">
+														<label for="radio-2">Evidence provided</label>
+													</div>
+													<div class="multiple-choice">
+														<input id="radio-3" type="radio" name="radio-group" value="reason3">
+														<label for="radio-3">Manager’s decision</label>
+													</div>
+												</fieldset>
+											</div>
+											<div class="dialog-actions">
+												<button class="button" href="contactdetails" type="submit" style="font-size:16px;">Submit</button><br><br>
+												<a class="dialog-cancel" href="#" style="margin-left: -10px; font-size:16px;">Cancel</a>
+											</div>
+											<button class="dialog-close" aria-label="close" type="button">
+												<span class="icon icon-close">x</span>
+											</button>
+										</form>
+									</div>
 								</div>
-							</div>	
--->							
-						</div>
+							</div>
+						-->
 					</div>
 				</div>
-				<div class="column-one-third" style="padding-left:50px;">		
-					<h2 class="heading-medium second">Next steps</h2>
-						<div class="row sidebar collapse">
-							<div class="columns small-12">
-								<ul class="list list-bullet">
-									<li>Tell the applicant to email evidence (e.g. council tax or mobile phone bill) that they live in the UK to <a href="#">nhsbsa.ohsregistrations@nhs.net</a>.</li>
-									<li>Give the applicant their OHS number for future reference.</li>
-									<li>Forward the call to the registration team, providing them with the applicant’s OHS number.</li>	
-								</ul><br>
-							</div>
-						</div>
-			</div> 
-			</form>
-		</div>
+			</div>
+			<div class="column-one-third" style="padding-left:50px;">
+				<h2 class="heading-medium second">Next steps</h2>
+				<div class="row sidebar collapse">
+					<div class="columns small-12">
+						<ul class="list list-bullet">
+							<li>Tell the applicant to email evidence that they live in the UK (e.g. council tax or mobile phone bill) to <a href="#">nhsbsa.ohsregistrations@nhs.net</a>.</li>
+							<li>Give the applicant their OHS number for future reference.</li>
+							<li>Forward the call to the registration team, providing them with the applicant’s OHS number.</li>
+						</ul><br>
+					</div>
+				</div>
+			</div>
+		</form>
 	</div>
+</div>
 </main>
 
 {% endblock %}

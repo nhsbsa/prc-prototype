@@ -54,6 +54,12 @@
 .highlight {
     min-height: 280px;
 }
+#button-next {
+    background-color: #005EB8;
+}
+#button-next:hover {
+    background-color: #4276B8;
+}
 </style>
 
 <main id="content" role="main">
@@ -62,9 +68,9 @@
 		<div class="column-one-half">
 				<a href="javascript:history.go(-1)" class="link-back">Back</a>
 		</div>
-		<div class="column-half" id="test1234" style="float: right; text-align: right;">
+		<!-- <div class="column-half" id="test1234" style="float: right; text-align: right;">
 			<a class="button" role="button" style="font-size: 16px; background-color: #005EB8;" href="addReason" onClick="MyWindow=window.open('addReason','MyWindow','width=600,height=450'); return false;">End process</a>
-		</div>
+		</div> -->
 	</div>
 	<br>
 	<div class="column-two-thirds">
@@ -94,18 +100,21 @@
 				</div>			
 			</div>
 			<br>
-			<a class="button" href="search-results" role="button" style=" font-size: 16px; margin-top: 20px;">Next</a>			
+			<a class="button" href="search-results" role="button" style=" font-size: 16px; margin-top: 20px;">Search</a>			
 		</div>
 	</div>	
 	<div class="column-one-third" style="padding-left:50px; margin-top:-25px;">		
 		<h2 class="heading-medium second">Next steps</h2>
 		<div class="row sidebar collapse">
 			<div class="columns small-12">
-				<ul>
-					<li>1.	Search for the applicant using their OHS number or personal details.  </li>
-					<li>2.	Select the applicant from the list of results.</li>
-					<li>3.	If you cannot find the right person, you can register them.</li>
-				</ul><br>
+				<ul class="list list-bullet">
+					<li>Search for the applicant using their OHS number or personal details.  </li>
+					<li>Select the applicant from the list of results.</li>
+					<li>If you cannot find the right person, you can register them.</li>
+				</ul>
+				<div class="form-group">
+					<a id="button-next" class="button" href="#" role="button" style="font-size: 16px;">Register applicant</a>
+				</div>
 			</div>
 		</div>
 	</div> 
