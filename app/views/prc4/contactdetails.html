@@ -25,7 +25,7 @@
 
 <style>
 	.highlight {
-		min-height: 40%;
+		min-height: 300px;
 	}
 	.link-back{
 		margin-left: 5px;
@@ -87,8 +87,8 @@
 		<br>
 		<!-- <form autocomplete="off"> -->
 		<form action="done" id="contactdetails-form" class="form form-to-validate" method="get" novalidate="novalidate" autocomplete="off">
-			<div class="column-full"style="background-color: white;">
-				<div class="column-one-half lpads ">
+			<div class="column-full" style="background-color: white; display: flex;">
+				<div class="column-one-half lpads" style="flex: 1;">
 					<div style="padding: 0 2em 0 0">
 						<div class="grid-row highlight">
 							<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Main applicant's contact details</h1>
@@ -121,17 +121,17 @@
 					</div>
 				</div>
 				<!--  PRC time span -->
-				<div class="column-one-half">
+				<div class="column-one-half" style="flex: 1;">
 					<div style="padding: 0 2em 0 0em">
 						<div class="grid-row highlight" style="margin-right: -30px;">
 							<h2 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Treatment details</h2>
 							<!-- errors and validation -->
-							<div class="error-summary display-none" id="bcd" role="group" aria-labelledby="finance-login-message-heading" style="margin-right: 15px;">
+							<!-- <div class="error-summary display-none" id="bcd" role="group" aria-labelledby="finance-login-message-heading" style="margin-right: 15px;">
 								<ul class="error-summary-list">
 									<li><a href="#reference-number-1" id="login-error-list1" class="error1 display-none">Enter the starting date</a></li>
 									<li><a href="#reference-number-2" id="login-error-list2" class="error2 display-none">Enter the ending date</a></li>
 								</ul>
-							</div>
+							</div> -->
 							<div class="column-one-half">
 								<h2 class="heading-small">PRC starting date</h2>
 								<input class="form-control validate-text-input" id="reference-number-1" name="first-name-2" type="text" style="width:50%;" autocomplete="off" />
@@ -157,11 +157,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="column-full" style="padding: 0 2em 0 0em">
-					<br>
-					<!-- <a class="button" href="done" role="button" style=" font-size: 16px;">Submit and generate PRC</a> -->
-					<input class="button" type="submit" value="Submit" style="font-size: 16px;" />
-				</div>
+			</div>
+			<div class="column-full" style="padding: 0 2em 0 1em">
+				<br>
+				<!-- <a class="button" href="done" role="button" style=" font-size: 16px;">Submit and generate PRC</a> -->
+				<input class="button" type="submit" value="Submit" style="font-size: 16px;" />
 			</div>
 		</form>
 	</div>

@@ -1,0 +1,407 @@
+{% extends "layout_bsa_internal.html" %}
+
+{% block page_title %} Single User View
+{% endblock %}
+
+{% block after_header %}
+<div id="menu">
+	<div id="menu-content">
+		<div class="grid-row">
+			<div class="column-half">
+				<ul class="visually-hidden">
+					<li><a class="menu-button selected" href="results">Search</a></li>
+				</ul>
+			</div>
+			<div class="column-half" id="logout">
+				<a href="login">Sign out</a>
+				<span style="float:right; margin: 8px 0.25em 0px 0.5em; font-size:14px;">|</span> <span style="float:right; margin: 9px 0.25em 0px 0.5em;  font-size:14px;">ed</span>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<style>
+	.highlight {
+		min-height: 40%;
+	}
+	.link-back{
+		margin-left: 20px;
+	}
+	.form-control {
+		width: 90%;
+	}
+	.multiple-choice [type=radio] + label::before {
+		margin-left: -38px;
+		margin-top: -5px;
+	}
+	.multiple-choice [type=radio] + label::after {
+		left: 17px;
+		top: 19px;
+	}
+	.inline .multiple-choice label {
+		line-height: 120%;
+	}
+	.test{
+		padding-left: 30px;
+	}
+	.heading-medium{
+		margin-top: 15px;
+		margin-bottom: -5px;
+	}
+	.s1reg{
+		margin-top: -30px;
+	}
+	.buttonSubmit{
+		margin-top: -15px;
+	}
+	.acceptanceCriteria{
+		margin-top: -25px;
+	}
+	[hidden], .display-none {
+		display: none;
+	}
+	.hello1{
+		margin-top: 20px;
+	}
+	.column-full {
+		padding: 0 0px;
+	}
+	.link-back {
+		margin-left: 0px;
+	}
+	#uk-resident {
+		margin: -30px 0 10px 49px;
+	}
+	.align-radio {
+		margin-left: 0px;
+		padding-right: 0px;
+	}
+	.inline .multiple-choice label {
+		line-height: 120%;
+		font-size: 16px;
+	}
+	.unbranded * {
+		margin-bottom: 0px;
+	}
+	#reference-number,
+	#reference-number-1,
+	#reference-number-2,
+	#reference-number-3,
+	#reference-number-4,
+	#reference-number-5,
+	#reference-number-6,
+	#reference-number-7,
+	#country-of-treatment {
+		font-size: 16px;
+	}
+	.newbox {
+		margin-bottom: 15px;
+	}
+	.button.buttonSubmit2 {
+		margin-left: 15px;
+	}
+	.error-summary {
+		margin-bottom: 30px;
+	}
+	#done-tick{
+		background-color: transparent;
+		background-image: url(/public/images/bsa/tick-sign.png);
+		margin-bottom: -10px;
+	}
+
+	.dialog{
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+		background-color:rgba(0,0,0,0.5);
+		height:100%;
+		padding:15px;
+		position:fixed;
+		left:0;
+		top:0;
+		right:0;
+		bottom:0;
+		text-align:center;
+		width:100%;
+		z-index:0
+	}
+	.dialog[aria-hidden="true"]{
+		opacity:0;
+		visibility:hidden
+	}
+	.dialog[aria-hidden="false"]{
+		opacity:1;
+		visibility:visible;
+		z-index:11
+	}
+	@media (min-width: 641px){
+		.dialog{
+			padding:30px
+		}
+	}
+	@media (min-width: 1020px){
+		.dialog{
+			padding:0
+		}
+	}
+	.dialog:before{
+		content:'';
+		display:inline-block;
+		height:100%;
+		margin-right:-.25em;
+		vertical-align:middle
+	}
+	.dialog-holder{
+		background-color:#fff;
+		border:10px solid #fff;
+		display:inline-block;
+		margin:auto;
+		max-width:530px;
+		position:relative;
+		vertical-align:middle
+	}
+	.dialog-heading{
+		font-family:"nta",Arial,sans-serif;
+		font-size:36px;
+		line-height:1.11111;
+		font-weight:700;
+		text-transform:none;
+		margin-top:.625em;
+		margin-bottom:.41667em
+	}
+	@media (max-width: 640px){
+		.dialog-heading{
+			font-size:24px;
+			line-height:1.04167
+		}
+	}
+	@media (min-width: 641px){
+		.dialog-heading{
+			margin-top:.41667em;
+			margin-bottom:.55556em
+		}
+	}
+	.dialog-content{
+		outline:none;
+		padding:1em;
+		text-align:left
+	}
+	.dialog .form-group{
+		float:none
+	}
+	.dialog .form-control,.dialog .form-control-textarea{
+		width:100%
+	}
+	.dialog-close{
+		text-indent:-119988px;
+		overflow:hidden;
+		text-align:left;
+		text-transform:capitalize;
+		background-color:transparent;
+		border:0 none;
+		cursor:pointer;
+		height:22px;
+		margin:auto;
+		padding:0;
+		position:absolute;
+		top:5px;
+		right:5px;
+		width:22px
+	}
+	.dialog-close span{
+		cursor:pointer
+	}
+	.dialog-cancel{
+		display:inline-block;
+		font-size:1em;
+		line-height:1.25;
+		margin-right:.78947em;
+		padding:.52632em .78947em .26316em
+	}
+	.dialog-cancel:focus,.dialog-cancel:active{
+		outline:none
+	}
+	.dialog-actions .button{
+		width:auto
+	}
+
+	.error{
+		margin-right:15px
+	}
+	.error .error-message{
+		color:#b10e1e;
+		font-weight:bold
+	}
+	.error .form-control,.error .form-control-textarea{
+		border:4px solid #b10e1e
+	}
+	.error .form-hint{
+		margin-bottom:0
+	}
+	.error,.error-summary{
+		border-left:4px solid #b10e1e;
+		padding-left:10px
+	}
+	@media (min-width: 641px){
+		.error,.error-summary{
+			border-left:5px solid #b10e1e;
+			padding-left:15px
+		}
+	}
+	.error-message{
+		font-family:"nta",Arial,sans-serif;
+		font-size:19px;
+		line-height:1.31579;
+		font-weight:400;
+		text-transform:none;
+		display:block;
+		clear:both;
+		margin:0;
+		padding:5px 0 7px 0
+	}
+	@media (max-width: 640px){
+		.error-message{
+			font-size:16px;
+			line-height:1.25
+		}
+	}
+	.error-summary{
+		border:4px solid #b10e1e;
+		margin-top:15px;
+		margin-bottom:15px;
+		padding:15px 10px
+	}
+	@media (min-width: 641px){
+		.error-summary{
+			border:5px solid #b10e1e;
+			margin-top:30px;
+			margin-bottom:30px;
+			padding:20px 15px 15px 15px
+		}
+	}
+	.error-summary:focus{
+		outline:3px solid #ffbf47
+	}
+	.error-summary .error-summary-heading{
+		margin-top:0
+	}
+	.error-summary p{
+		margin-bottom:10px
+	}
+	.error-summary .error-summary-list{
+		padding-left:0
+	}
+	@media (min-width: 641px){
+		.error-summary .error-summary-list li{
+			margin-bottom:5px
+		}
+	}
+	.error-summary .error-summary-list a{
+		color:#b10e1e;
+		font-weight:bold;
+		text-decoration:underline
+	}
+
+	.icon{
+		background-size:100%;
+		background-repeat:no-repeat;
+		cursor:default;
+		display:block;
+		height:22px;
+		text-align:center;
+		width:22px
+	}
+	.icon-close{
+		background-image:url("/public/images/bsa/icon-close.png");
+		display:block
+	}
+
+	@media (min-width: 641px) {
+		.form-group {
+			margin-bottom: 30px;
+		}
+	}
+
+	@media (min-width: 641px) {
+		p {
+			margin-top: .26316em;
+			margin-bottom: 1.05263em;
+		}
+	}
+
+	.modals {
+		margin-top: 1em;
+		margin-left: 1em;
+	}
+
+	table td {
+		padding-bottom: 5px;
+		border-bottom: 1px solid #bfc1c3;
+	}
+</style>
+
+<main id="content" role="main">
+	<div class="grid-row">
+		<div class="column-full full" style="background-color: white;">
+			<div class="column-one-half">
+				<a href="javascript:history.go(-1)" class="link-back">Back</a>
+			</div>
+		</div>
+		<br><br>
+		<div class="column-full">
+			<form action="contactdetails" id="register1-form" class="form form-to-validate" method="get" novalidate="novalidate" autocomplete="off">
+				<div class="column-half lpads" style="padding: 0 2em 0 1em">
+					<div class="grid-row highlight">
+						<div class="column-full">
+							<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">
+								Check your answers
+							</h1>
+							<div class="column-full">
+								<table class="check-your-answers" style="width: 95%">
+									<thead>
+										<th colspan="3" style="border-bottom: 0; font-size: 20px;">Personal details</th>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="bold">Full name</td>
+											<td style="font-weight: normal;">John Smithe</td>
+											<td class="change-answer numeric">
+												<a href="registerperson#reference-number-1">Change <span class="visuallyhidden">full name</span></a>
+											</td>
+										</tr>
+										<tr>
+											<td class="bold">Date of birth</td>
+											<td style="font-weight: normal;">11/11/1987</td>
+											<td class="change-answer numeric">
+												<a href="registerperson#reference-number-3">Change <span class="visuallyhidden">date of birth</span></a>
+											</td>
+										</tr>
+										<tr>
+											<td class="bold">Address</td>
+											<td style="font-weight: normal;">
+												<span class="newLineAddress">5 Church Street,</span><br>
+												<span class="newLineAddress">Newcastle,</span><br>
+												<span class="newLineAddress">NE12 34AB</span><br>
+											</td>
+											<td class="change-answer numeric">
+												<a href="registerperson#reference-number-7">Change <span class="visuallyhidden">address</span></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="form-group" style="margin-top: 30px; margin-bottom: 5px;">
+								<a class="button buttonSubmit" href="donefail" role="button" style="font-size: 16px; margin: -5px 0 10px 0;">Next</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</main>
+
+{% endblock %}

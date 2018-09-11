@@ -25,6 +25,7 @@ Single User View
 {% endblock %}
 
 {% block content %}
+
 <style>
 .highlight{
 	min-height:430px;
@@ -213,6 +214,254 @@ ul.list-inline li {
 	margin-left: 30%;
 	margin-right: 30%;
 }
+
+/* modal */
+.multiple-choice [type=radio] + label::before {
+	margin-left: -38px;
+	margin-top: -5px;
+}
+.multiple-choice [type=radio] + label::after {
+	left: 17px;
+	top: 19px;
+}
+
+.dialog{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	background-color:rgba(0,0,0,0.5);
+	height:100%;
+	padding:15px;
+	position:fixed;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	text-align:center;
+	width:100%;
+	z-index:0
+}
+.dialog[aria-hidden="true"]{
+	opacity:0;
+	visibility:hidden
+}
+.dialog[aria-hidden="false"]{
+	opacity:1;
+	visibility:visible;
+	z-index:11
+}
+@media (min-width: 641px){
+	.dialog{
+		padding:30px
+	}
+}
+@media (min-width: 1020px){
+	.dialog{
+		padding:0
+	}
+}
+.dialog:before{
+	content:'';
+	display:inline-block;
+	height:100%;
+	margin-right:-.25em;
+	vertical-align:middle
+}
+.dialog-holder{
+	background-color:#fff;
+	border:10px solid #fff;
+	display:inline-block;
+	margin:auto;
+	max-width:530px;
+	position:relative;
+	vertical-align:middle
+}
+.dialog-heading{
+	font-family:"nta",Arial,sans-serif;
+	font-size:36px;
+	line-height:1.11111;
+	font-weight:700;
+	text-transform:none;
+	margin-top:.625em;
+	margin-bottom:.41667em
+}
+@media (max-width: 640px){
+	.dialog-heading{
+		font-size:24px;
+		line-height:1.04167
+	}
+}
+@media (min-width: 641px){
+	.dialog-heading{
+		margin-top:.41667em;
+		margin-bottom:.55556em
+	}
+}
+.dialog-content{
+	outline:none;
+	padding:1em;
+	text-align:left
+}
+.dialog .form-group{
+	float:none
+}
+.dialog .form-control,.dialog .form-control-textarea{
+	width:100%
+}
+.dialog-close{
+	text-indent:-119988px;
+	overflow:hidden;
+	text-align:left;
+	text-transform:capitalize;
+	background-color:transparent;
+	border:0 none;
+	cursor:pointer;
+	height:22px;
+	margin:auto;
+	padding:0;
+	position:absolute;
+	top:5px;
+	right:5px;
+	width:22px
+}
+.dialog-close span{
+	cursor:pointer
+}
+.dialog-cancel{
+	display:inline-block;
+	font-size:1em;
+	line-height:1.25;
+	margin-right:.78947em;
+	padding:.52632em .78947em .26316em
+}
+.dialog-cancel:focus,.dialog-cancel:active{
+	outline:none
+}
+.dialog-actions .button{
+	width:auto
+}
+
+.error{
+	margin-right:15px
+}
+.error .error-message{
+	color:#b10e1e;
+	font-weight:bold
+}
+.error .form-control,.error .form-control-textarea{
+	border:4px solid #b10e1e
+}
+.error .form-hint{
+	margin-bottom:0
+}
+.error,.error-summary{
+	border-left:4px solid #b10e1e;
+	padding-left:10px
+}
+@media (min-width: 641px){
+	.error,.error-summary{
+		border-left:5px solid #b10e1e;
+		padding-left:15px
+	}
+}
+.error-message{
+	font-family:"nta",Arial,sans-serif;
+	font-size:19px;
+	line-height:1.31579;
+	font-weight:400;
+	text-transform:none;
+	display:block;
+	clear:both;
+	margin:0;
+	padding:5px 0 7px 0
+}
+@media (max-width: 640px){
+	.error-message{
+		font-size:16px;
+		line-height:1.25
+	}
+}
+.error-summary{
+	border:4px solid #b10e1e;
+	margin-top:15px;
+	margin-bottom:15px;
+	padding:15px 10px
+}
+@media (min-width: 641px){
+	.error-summary{
+		border:5px solid #b10e1e;
+		margin-top:30px;
+		margin-bottom:30px;
+		padding:20px 15px 15px 15px
+	}
+}
+.error-summary:focus{
+	outline:3px solid #ffbf47
+}
+.error-summary .error-summary-heading{
+	margin-top:0
+}
+.error-summary p{
+	margin-bottom:10px
+}
+.error-summary .error-summary-list{
+	padding-left:0
+}
+@media (min-width: 641px){
+	.error-summary .error-summary-list li{
+		margin-bottom:5px
+	}
+}
+.error-summary .error-summary-list a{
+	color:#b10e1e;
+	font-weight:bold;
+	text-decoration:underline
+}
+
+.icon{
+	background-size:100%;
+	background-repeat:no-repeat;
+	cursor:default;
+	display:block;
+	height:22px;
+	text-align:center;
+	width:22px
+}
+.icon-close{
+	background-image:url("/public/images/bsa/icon-close.png");
+	display:block
+}
+
+@media (min-width: 641px) {
+	.form-group {
+		margin-bottom: 30px;
+	}
+}
+
+@media (min-width: 641px) {
+	p {
+		margin-top: .26316em;
+		margin-bottom: 1.05263em;
+	}
+}
+
+.modals {
+	margin-top: 1em;
+	margin-left: 1em;
+}
+
+table td {
+	padding-bottom: 5px;
+	border-bottom: 1px solid #bfc1c3;
+}
+
+.second{
+	padding-top: 20px;
+}
+
+tr > th {
+	width: 14%;
+}
 </style>
 
 <main id="content" role="main">
@@ -272,82 +521,137 @@ ul.list-inline li {
 	</div>
 	<div id="example" class="column-full" style="padding-left:20px; padding-top:20px;">
 		<!-- <div class="column-full" style="padding-left:20px; padding-top:20px;"> -->
-		<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Search results</h1>
-		<table id="simpleTable" class="internal-table-results">
-			<!-- <table class="internal-table-results"> -->
-			<caption id="caption" role="alert" aria-live="polite">Search results not sorted</caption>
-			<thead>
-				<tr>
-					<th role="columnheader" aria-sort="none" scope="col">
-						<a href="#1" id="OHS number|asc" title="Sort Make ascending">OHS number</a>
-					</th>
-					<th role="columnheader" aria-sort="none" scope="col">
-						<a href="#2" id="Full name|asc" title="Sort Model ascending">Full name</a>
-					</th>
-					<th role="columnheader" aria-sort="none" scope="col">
-						<a href="#3" id="Date of birth|asc" title="Sort Year ascending">Date of birth</a>
-					</th>
-					<th role="columnheader" aria-sort="none" scope="col">
-						<a href="#4" id="Postcode|asc" title="Sort 4 ascending">Postcode</a>
-					</th>
-					<th role="columnheader" aria-sort="none" scope="col">
-						<a href="#5" id="Start date|asc" title="Sort 5 ascending">Start date</a>
-					</th>
-					<th role="columnheader" aria-sort="none" scope="col">
-						<a href="#6" id="End date|asc" title="Sort 6 ascending">End date</a>
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td><a href="residencystatus-fail">62345678</a></td>
-					<td>Gordon Robinson</td>
-					<td>02/03/1975</td>
-					<td>NE123A</td>
-					<td>-</td>
-					<td>-</td>
-				</tr>
-				<tr>
-					<td>12345678</a></td>
-					<td>Gordon Robinson</td>
-					<td>02/03/1975</td>
-					<td>SR346A</td>
-					<td>14/06/2016</td>
-					<td>16/06/2016</td>
-				</tr>
-			</tbody>
-		</table>
-				
-		<nav id="next" class="page-numbers-container pagination-container" aria-label="Pagination" style="margin-left: 35%; margin-right: 35%;">
-			<div class="next">
-				<a href="#next" rel="next">
-					Next <span class="hidden-mobile">page</span>
-				</a>
-			</div><div class="pagination"><ul class="list-inline">
-				<li class="active"><a href="#next"><span class="visuallyhidden">Page </span>1</a></li>
-				<li><a id="two" href="#next"><span class="visuallyhidden">Page </span>2</a></li>
-				<li>…</li>
-				<li><a href="#next"><span class="visuallyhidden">Page </span>92</a></li>
-			</ul></div>
-		</nav>
-		
-		<nav id="previous" class="page-numbers-container pagination-container visually-hidden" aria-label="Pagination">
-			<div class="previous">
-				<a href="#previous" rel="previous">
-					Previous <span class="hidden-mobile">page</span>
-				</a>
-			</div><div class="next">
-				<a href="#previous" rel="next">
-					Next <span class="hidden-mobile">page</span>
-				</a>
-			</div><div class="pagination"><ul class="list-inline">
-				<li><a id="one" href="#previous"><span class="visuallyhidden">Page </span>1</a></li>
-				<li class="active"><a href="#previous"><span class="visuallyhidden">Page </span>2</a></li>
-				<li><a href="#previous"><span class="visuallyhidden">Page </span>3</a></li>
-				<li>…</li>
-				<li><a href="#previous"><span class="visuallyhidden">Page </span>92</a></li>
-			</ul></div>
-		</nav>
-	</div>
-</main>
-{% endblock %}
+			<h1 class="heading-medium" style="margin-top: 0.83333em; margin-bottom: 0.83333em;">Search results</h1>
+			<table id="simpleTable" class="internal-table-results">
+				<!-- <table class="internal-table-results"> -->
+					<caption id="caption" role="alert" aria-live="polite">Search results not sorted</caption>
+					<thead>
+						<tr>
+							<th role="columnheader" aria-sort="none" scope="col">
+								<a href="#1" id="OHS number|asc" title="Sort 1 ascending">OHS number</a>
+							</th>
+							<th role="columnheader" aria-sort="none" scope="col">
+								<a href="#2" id="Full name|asc" title="Sort 2 ascending">Full name</a>
+							</th>
+							<th role="columnheader" aria-sort="none" scope="col">
+								<a href="#3" id="Date of birth|asc" title="Sort 3 ascending">Date of birth</a>
+							</th>
+							<th role="columnheader" aria-sort="none" scope="col">
+								<a href="#4" id="Postcode|asc" title="Sort 4 ascending">Postcode</a>
+							</th>
+							<th role="columnheader" aria-sort="none" scope="col">
+								<a href="#5" id="Start date|asc" title="Sort 5 ascending">Start date</a>
+							</th>
+							<th role="columnheader" aria-sort="none" scope="col">
+								<a href="#6" id="End date|asc" title="Sort 6 ascending">End date</a>
+							</th>
+							<th role="columnheader" aria-sort="none" scope="col">
+								<a href="#7" id="Residency status|asc" title="Sort 7 ascending">Residency status</a>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>62345678</td>
+							<td>Gordon Robinson</td>
+							<td>02/03/1975</td>
+							<td>NE123A</td>
+							<td>-</td>
+							<td>-</td>
+							<td>
+								<a id="button-next" class="button" href="#" role="button" style="font-size: 16px; margin: -5px 0 10px 0;" data-toggle="dialog" data-target="dialog-4">Review result</a>
+							</td>
+						</tr>
+						<tr>
+							<td>12345678</td>
+							<td>Gordon Robinson</td>
+							<td>02/03/1975</td>
+							<td>SR346A</td>
+							<td>14/06/2016</td>
+							<td>16/06/2016</td>
+							<td>Passed</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<nav id="next" class="page-numbers-container pagination-container" aria-label="Pagination" style="margin-left: 35%; margin-right: 35%;">
+					<div class="next">
+						<a href="#next" rel="next">
+							Next <span class="hidden-mobile">page</span>
+						</a>
+					</div><div class="pagination"><ul class="list-inline">
+						<li class="active"><a href="#next"><span class="visuallyhidden">Page </span>1</a></li>
+						<li><a id="two" href="#next"><span class="visuallyhidden">Page </span>2</a></li>
+						<li>…</li>
+						<li><a href="#next"><span class="visuallyhidden">Page </span>92</a></li>
+					</ul></div>
+				</nav>
+
+				<nav id="previous" class="page-numbers-container pagination-container visually-hidden" aria-label="Pagination">
+					<div class="previous">
+						<a href="#previous" rel="previous">
+							Previous <span class="hidden-mobile">page</span>
+						</a>
+					</div><div class="next">
+						<a href="#previous" rel="next">
+							Next <span class="hidden-mobile">page</span>
+						</a>
+					</div><div class="pagination"><ul class="list-inline">
+						<li><a id="one" href="#previous"><span class="visuallyhidden">Page </span>1</a></li>
+						<li class="active"><a href="#previous"><span class="visuallyhidden">Page </span>2</a></li>
+						<li><a href="#previous"><span class="visuallyhidden">Page </span>3</a></li>
+						<li>…</li>
+						<li><a href="#previous"><span class="visuallyhidden">Page </span>92</a></li>
+					</ul></div>
+				</nav>
+
+				<div class="dialog" id="dialog-4" aria-hidden="true">
+					<div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
+						<div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
+							<h1 class="dialog-heading" id="dialog-title-4">Review result</h1>
+								<form action="contactdetails" id="register1-form" class="form form-to-validate" method="get" novalidate="novalidate" autocomplete="off">
+									<div class="form-group">
+										<fieldset>
+											<legend>
+												<h1 class="heading-small">What is your decision?</h1>
+											</legend>
+											<div class="multiple-choice">
+												<input id="radio-2" type="radio" name="radio-group-modal" value="reason1">
+												<label for="radio-2">Approved with evidence</label>
+											</div>
+											<div class="multiple-choice">
+												<input id="radio-3" type="radio" name="radio-group-modal" value="reason2">
+												<label for="radio-3">Approved but no evidence provided</label>
+											</div>
+											<div class="multiple-choice">
+												<input id="radio-4" type="radio" name="radio-group-modal" value="reason3">
+												<label for="radio-4">Not approved</label>
+											</div>
+										</fieldset>
+									</div>
+									<div class="dialog-actions">
+										<input id="submit-btn" class="button buttonSubmit" type="submit" value="Submit" style="font-size: 16px;" />
+										<br><br>
+										<a class="dialog-cancel" href="#" style="margin-left: -10px; font-size:16px;">Cancel</a>
+									</div>
+									<button class="dialog-close" aria-label="close" type="button">
+										<span class="icon icon-close">x</span>
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+
+			<script src="/public/javascripts/jquery-1.11.3.js"></script>
+			<script>
+				$("#submit-btn").on("click", function() {
+					var modalAnswer = $("input[name='radio-group-modal']:checked").val() || false; // false if undefined
+
+					if (modalAnswer != false && modalAnswer == 'reason3') {
+						$("#register1-form").attr("action", "/admin/definitoryquestions");
+					}
+				});
+			</script>
+			{% endblock %}
