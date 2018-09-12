@@ -215,7 +215,7 @@ ul.list-inline li {
 	margin-right: 30%;
 }
 
-/* modal */
+/* modal
 .multiple-choice [type=radio] + label::before {
 	margin-left: -38px;
 	margin-top: -5px;
@@ -224,7 +224,6 @@ ul.list-inline li {
 	left: 17px;
 	top: 19px;
 }
-
 .dialog{
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
@@ -340,7 +339,6 @@ ul.list-inline li {
 .dialog-actions .button{
 	width:auto
 }
-
 .error{
 	margin-right:15px
 }
@@ -417,7 +415,6 @@ ul.list-inline li {
 	font-weight:bold;
 	text-decoration:underline
 }
-
 .icon{
 	background-size:100%;
 	background-repeat:no-repeat;
@@ -431,37 +428,31 @@ ul.list-inline li {
 	background-image:url("/public/images/bsa/icon-close.png");
 	display:block
 }
-
 @media (min-width: 641px) {
 	.form-group {
 		margin-bottom: 30px;
 	}
 }
-
 @media (min-width: 641px) {
 	p {
 		margin-top: .26316em;
 		margin-bottom: 1.05263em;
 	}
 }
-
 .modals {
 	margin-top: 1em;
 	margin-left: 1em;
 }
-
 table td {
 	padding-bottom: 5px;
 	border-bottom: 1px solid #bfc1c3;
 }
-
 .second{
 	padding-top: 20px;
 }
-
 tr > th {
 	width: 14%;
-}
+} */
 </style>
 
 <main id="content" role="main">
@@ -545,22 +536,22 @@ tr > th {
 							<th role="columnheader" aria-sort="none" scope="col">
 								<a href="#6" id="End date|asc" title="Sort 6 ascending">End date</a>
 							</th>
-							<th role="columnheader" aria-sort="none" scope="col">
+							<!-- <th role="columnheader" aria-sort="none" scope="col">
 								<a href="#7" id="Residency status|asc" title="Sort 7 ascending">Residency status</a>
-							</th>
+							</th> -->
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>62345678</td>
+							<td><a href="residencystatus-fail">62345678</a></td>
 							<td>Gordon Robinson</td>
 							<td>02/03/1975</td>
 							<td>NE123A</td>
 							<td>-</td>
 							<td>-</td>
-							<td>
+							<!-- <td>
 								<a id="button-next" class="button" href="#" role="button" style="font-size: 16px; margin: -5px 0 10px 0;" data-toggle="dialog" data-target="dialog-4">Review result</a>
-							</td>
+							</td> -->
 						</tr>
 						<tr>
 							<td>12345678</td>
@@ -569,7 +560,7 @@ tr > th {
 							<td>SR346A</td>
 							<td>14/06/2016</td>
 							<td>16/06/2016</td>
-							<td>Passed</td>
+							<!-- <td>Passed</td> -->
 						</tr>
 					</tbody>
 				</table>
@@ -604,44 +595,6 @@ tr > th {
 						<li><a href="#previous"><span class="visuallyhidden">Page </span>92</a></li>
 					</ul></div>
 				</nav>
-
-				<div class="dialog" id="dialog-4" aria-hidden="true">
-					<div class="dialog-holder" aria-labelledby="dialog-title-4" aria-describedby="dialog-content-4" role="alertdialog">
-						<div class="dialog-content" id="dialog-content-4" role="document" tabindex="0">
-							<h1 class="dialog-heading" id="dialog-title-4">Review result</h1>
-								<form action="contactdetails" id="register1-form" class="form form-to-validate" method="get" novalidate="novalidate" autocomplete="off">
-									<div class="form-group">
-										<fieldset>
-											<legend>
-												<h1 class="heading-small">What is your decision?</h1>
-											</legend>
-											<div class="multiple-choice">
-												<input id="radio-2" type="radio" name="radio-group-modal" value="reason1">
-												<label for="radio-2">Approved with evidence</label>
-											</div>
-											<div class="multiple-choice">
-												<input id="radio-3" type="radio" name="radio-group-modal" value="reason2">
-												<label for="radio-3">Approved but no evidence provided</label>
-											</div>
-											<div class="multiple-choice">
-												<input id="radio-4" type="radio" name="radio-group-modal" value="reason3">
-												<label for="radio-4">Not approved</label>
-											</div>
-										</fieldset>
-									</div>
-									<div class="dialog-actions">
-										<input id="submit-btn" class="button buttonSubmit" type="submit" value="Submit" style="font-size: 16px;" />
-										<br><br>
-										<a class="dialog-cancel" href="#" style="margin-left: -10px; font-size:16px;">Cancel</a>
-									</div>
-									<button class="dialog-close" aria-label="close" type="button">
-										<span class="icon icon-close">x</span>
-									</button>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
 			</main>
 
 			<script src="/public/javascripts/jquery-1.11.3.js"></script>
